@@ -1,4 +1,4 @@
-[ 프론트엔드 웹개발 3회차 - 기본전달사항 ]
+[ 프론트엔드 웹개발 1회차 - 기본전달사항 ]
 탐쌤이멜: tombap@naver.com
 
 1. 교재: NCS 2권, 개발서 2권
@@ -12,11 +12,11 @@ https://www.w3schools.com/
 
 4. 소스 빌드용 폴더 생성하기!
 
-5. 강의 동영상 백업 유튜브: 코드 제로원 시즌3
-https://www.youtube.com/channel/UCZkCCEezosc3riCCWxNzHuQ
+5. 강의 동영상 백업 유튜브: 탐쌤코딩 시즌2
+https://www.youtube.com/channel/UCUlIM-C-ElFSe3z_K42FQVA
 
-6. 소스 깃허브
-https://github.com/tombap8/GITA-FED213
+6. 소스 깃허브 : 탐쌤코딩 시즌2
+https://github.com/tombap8/TOMCO2
 
 7. 사이트 벤치마킹 포털
 
