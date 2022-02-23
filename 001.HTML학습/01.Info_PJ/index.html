@@ -40,6 +40,21 @@
                 4. 안쪽여백 : padding
                 5. 바깥여백 : margin
             */
+
+            /* 공통클래스 */
+            /* box center의 의미로 이름지음! 자기맘! */
+            .bxc{
+                width: 727px;
+                /* 가로크기 */
+                margin: 0 auto;
+                /* 마영오! 블록박스 중앙! */
+                padding: 10px;
+                /* 패딩 */
+                box-sizing: border-box;
+                /* 크기유지 */
+                text-align: center;
+                /* 내부컨텐츠 인라인 중앙 */
+            }
             
             /* 1. 상단영역 */
             header{
@@ -123,6 +138,13 @@
                 */
             }
 
+            /* 메뉴 a에 마우스 오버시 */
+            /* 선택자:hover -> 마우스 오버시 가상클래스 */
+            .gnb>a:hover{
+                text-decoration: overline;/* 밋tdo */
+            }
+
+
             /* 로고이미지 */
             /* nav태그인데 클래스가 gnb인 요소 아래 자손중 img요소 선택 */
             nav.gnb img{
@@ -134,6 +156,11 @@
                 */
             }
 
+            /* 하단 주소 */
+            footer#info address {
+                background-color: #ccc;
+                padding: 20px;
+            }
 
 
         </style>
@@ -158,12 +185,12 @@
             </nav>
         </header>
         <!-- 2. 메인영역 -->
-        <main id="cont">
+        <main id="cont" class="bxc">
             <!-- 메인이미지 -->
             <img src="images/main.jpg" alt="뉴스메인이미지" title="요약뉴스 보고싶다!" style="width: 600px;">
         </main>
         <!-- 3. 하단영역 -->
-        <footer id="info">
+        <footer id="info" class="bxc">
             <!-- 회사주소 및 정보 -->
             <address>
                 서울시 강남구 역삼동 119 대호B 8F <br>
