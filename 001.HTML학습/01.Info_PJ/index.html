@@ -55,6 +55,20 @@
                 text-align: center;
                 /* 내부컨텐츠 인라인 중앙 */
             }
+            /* 다중클래스 적용연습 */
+
+            /* 글자색,글자그림자 클래스 */
+            .fc{ 
+                color: skyblue;
+                text-shadow: 1px 1px 1px #000;
+            }
+            /* 밑줄 */
+            .fu{
+                text-decoration: underline;
+                /* 밑줄 */
+                text-decoration-style: dotted;
+                /* 데코레이션 선 스타일 - 점선 */
+            }
             
             /* 1. 상단영역 */
             header{
@@ -212,7 +226,7 @@
             <!-- 회사주소 및 정보 -->
             <address>
                 서울시 강남구 역삼동 119 대호B 8F <br>
-                대표: <span>Tom Brace Parker</span> <br>
+                대표: <span class="fc fu">Tom Brace Parker</span> <br>
                 전화: 010-2222-3333
             </address>
         </footer>
