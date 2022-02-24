@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>네이버 요약뉴스 - 정치</title>
+        <meta charset="utf-8">
+        <!-- 스타일시트 코딩구역 : 인터널방식 -->
+        <style>
+            /* 스타일시트를 사용하는 영역 */
+            /* CSS문법만 쓸 수 있음! */
+            /* 
+                기본 사용법:
+
+                선택자 {
+                    속성명:값;
+                }
+
+                - 선택자: 태그명, 아이디명, 클래스명 등
+                - 속성명: 각 요소를 구성하는 상세속성들
+                - 값: 각 속성에서 사용할 수 있는 값들
+
+                [ CSS 선택자 ]
+                1. 타입선택자 : 요소명 (예:h1/a/p/div)
+                2. 자손선택자 : 띄어쓰기 (예: h1 a)
+                3. 아이디선택자 : # (예: #my)
+                4. 클래스선택자 : . (예: .you)
+                5. 직계자식선택자: > (예: div>a)
+                6. 그룹선택자: , (예: p,div)
+                7. 종속선택자: 태그명+아이디/클래스명
+                    (예: header#top)
+                8. 속성선택자: [] (예: a[href=#])
+                9. 형제선택자: + (예: li+li)
+                10. 다중형제선택자: ~ (틸드)
+                    (예: li:nth-child(4)~li)
+
+                [ 요소의 박스모델 ] - 네모난세상!
+                - 네모의 구성요소는?
+                1. 가로크기 : width
+                2. 세로크기 : height
+                3. 경계선 : border
+                4. 안쪽여백 : padding
+                5. 바깥여백 : margin
+            */
+
+            /* 공통클래스 */
+            /* box center의 의미로 이름지음! 자기맘! */
+            .bxc{
+                width: 727px;
+                /* 가로크기 */
+                margin: 0 auto;
+                /* 마영오! 블록박스 중앙! */
+                padding: 10px;
+                /* 패딩 */
+                box-sizing: border-box;
+                /* 크기유지 */
+                text-align: center;
+                /* 내부컨텐츠 인라인 중앙 */
+            }
+            /* 다중클래스 적용연습 */
+
+            /* 글자색,글자그림자 클래스 */
+            .fc{ 
+                color: skyblue;
+                text-shadow: 1px 1px 1px #000;
+            }
+            /* 밑줄 */
+            .fu{
+                text-decoration: underline;
+                /* 밑줄 */
+                text-decoration-style: dotted;
+                /* 데코레이션 선 스타일 - 점선 */
+            }
+            
+            /* 1. 상단영역 */
+            header{
+                /* 블록박스 셋팅 */
+                width: 727px;
+                /* height: 200px; */
+                border: 1px solid silver;
+                padding: 10px;
+                margin: 20px auto;
+
+                /* 블록박스 중앙정렬!
+                    margin: 0 auto;
+                    마영오! 씨
+
+                    margin: 값; (4방향)
+                    margin: 값 값; (위아래 양쪽)
+                    margin: 값 값 값; (위 양쪽 아래)
+                    margin: 값 값 값 값; (위 오른 아래 왼) -> 시계방향
+
+                    -> padding도 위와 같음!
+
+                    개별설정은
+                    margin-top, margin-bottom
+                    margin-left, margin-right
+
+                    -> padding도 위와 같음!
+
+
+                */
+                /* 
+                    width나 height크기를 안주면
+                    기본값 auto다!
+                    블록박스인 경우 width는 부모끝까지
+                    차지하고 height는 내용만큼 늘어남!
+                */
+
+                /* 내부의 텍스트/인라인요소 중앙정렬 */
+                text-align: center;
+
+                /* 배경색 주기 */
+                background-color: #b4eafa;
+
+                /* 보더, 패딩 사이즈 내부에 포함시키기 */
+                box-sizing: border-box;/* 젠 bxb */
+                /* 원래는 보더와 패딩만큼 커지는게 기본
+                속성이지만 이것을 내부에 포함시키는
+                속성은 위와 같다! 
+                기본값은 content-box */
+            }
+
+            /* 띄어쓰기는 자손선택자! */
+            /* 아이디가 top인 요소의 자손 중 h1선택 */
+            #top h1{
+                /* 글자색 */
+                color: hotpink;
+                /* 글자그림자 */
+                text-shadow: 2px 2px 2px #555;
+            }
+
+            /* 메뉴 */
+            .gnb a{
+                color: #ff01f2;
+                /* 밑줄없앰 */
+                text-decoration: none;/* 젠tdn */
+                /* 
+                    text-decoration 속성
+                    - underline 밑줄
+                    - overline 윗줄
+                    - linethrough 중간줄
+                    - none 없음
+                */
+                /* 글자 두껍게 */
+                font-weight: bold;/* 젠fwb */
+                /* 
+                    font-weight 속성
+                    - bold 두껍게
+                    - bolder 더두껍게
+                    - lighter 얇게
+                    - 100~900
+                    (기본적으로 글자체가 지원해야됨!)
+                */
+            }
+
+            /* 메뉴 a에 마우스 오버시 */
+            /* 선택자:hover -> 마우스 오버시 가상클래스 */
+            .gnb>a:hover{
+                text-decoration: overline;/* 밋tdo */
+            }
+
+
+            /* 로고이미지 */
+            /* nav태그인데 클래스가 gnb인 요소 아래 자손중 img요소 선택 */
+            nav.gnb img{
+                /* 인라인요소가 세로정렬 */
+                vertical-align: -5px;/* 젠va */
+                /* 
+                    값은 수치로 줄 수 있고
+                    top, middle, bottom, baseline 등 있음
+                */
+            }
+
+            /* 하단 주소 */
+            footer#info address {
+                background-color: #ccc;
+                padding: 20px;
+                font-style: normal;
+                /* 글자 스타일 
+                - italic 이탤릭체
+                - normal 특징없음 */
+                color: #444;
+                font-size: 14px;
+                /* 글자크기
+                - 기본크기는 16px
+                12pt=16px (이육사) */
+                line-height: 1.6;
+                /* 줄간격
+                - 단위없이 사용하면 글자크기배수
+                - px, em 등 여러가지 단위사용가능 */
+            }
+
+            /* 영문이름만 이탤릭체 */
+            #info span{
+                font-style: italic;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <!-- 1. 상단영역 -->
+        <header id="top">
+            <!-- 1-1. 제목 -->
+            <h1>네이버 요약뉴스 - 정치</h1>
+            <!-- 1-2. 메뉴 -->
+            <nav class="gnb">
+                <a href="index.html" title="메인페이지 가기">
+                    <img src="images/logo.png" alt="네이버로고" style="width: 20px;">
+                </a> | 
+                <a href="sub1.html">정치</a> | 
+                <a href="sub2.html">경제</a> | 
+                <a href="sub3.html">사회</a> | 
+                <a href="sub4.html">IT/과학</a> | 
+                <a href="sub5.html">TV/연예</a>
+
+            </nav>
+        </header>
+        <!-- 2. 메인영역 -->
+        <main id="cont" class="bxc">
+        </main>
+        <!-- 3. 하단영역 -->
+        <footer id="info" class="bxc">
+            <!-- 회사주소 및 정보 -->
+            <address>
+                서울시 강남구 역삼동 119 대호B 8F <br>
+                대표: <span class="fc fu">Tom Brace Parker</span> <br>
+                전화: 010-2222-3333
+            </address>
+        </footer>
+</body>
+</html>
