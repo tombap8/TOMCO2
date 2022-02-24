@@ -14,3 +14,8 @@
 /* @import url(파일주소); */
 @import url(style.css);
 
+/* 메인 전체박스 */
+#cont{
+    text-align: left;
+    /* .bxc에서 중앙정렬값 덮어쓰기! 왼쪽정렬로! */
+}
