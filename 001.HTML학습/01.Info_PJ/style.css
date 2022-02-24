@@ -135,9 +135,12 @@ nav.gnb img {
     vertical-align: -5px;
     /* 젠va */
     /* 
-                    값은 수치로 줄 수 있고
-                    top, middle, bottom, baseline 등 있음
-                */
+        값은 수치로 줄 수 있고
+        top, middle, bottom, baseline 등 있음
+    */
+    border: none;/* 보더없앰 */
+    /* 이미지에 링크가 걸린경우 파란색 테두리가
+    서버에 올린후 보일 수 있다! */
 }
 
 /* 하단 주소 */
