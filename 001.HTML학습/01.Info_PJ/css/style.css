@@ -45,30 +45,30 @@ header {
     margin: 20px auto;
 
     /* 블록박스 중앙정렬!
-                    margin: 0 auto;
-                    마영오! 씨
+        margin: 0 auto;
+        마영오! 씨
 
-                    margin: 값; (4방향)
-                    margin: 값 값; (위아래 양쪽)
-                    margin: 값 값 값; (위 양쪽 아래)
-                    margin: 값 값 값 값; (위 오른 아래 왼) -> 시계방향
+        margin: 값; (4방향)
+        margin: 값 값; (위아래 양쪽)
+        margin: 값 값 값; (위 양쪽 아래)
+        margin: 값 값 값 값; (위 오른 아래 왼) -> 시계방향
 
-                    -> padding도 위와 같음!
+        -> padding도 위와 같음!
 
-                    개별설정은
-                    margin-top, margin-bottom
-                    margin-left, margin-right
+        개별설정은
+        margin-top, margin-bottom
+        margin-left, margin-right
 
-                    -> padding도 위와 같음!
+        -> padding도 위와 같음!
 
 
-                */
+    */
     /* 
-                    width나 height크기를 안주면
-                    기본값 auto다!
-                    블록박스인 경우 width는 부모끝까지
-                    차지하고 height는 내용만큼 늘어남!
-                */
+        width나 height크기를 안주면
+        기본값 auto다!
+        블록박스인 경우 width는 부모끝까지
+        차지하고 height는 내용만큼 늘어남!
+    */
 
     /* 내부의 텍스트/인라인요소 중앙정렬 */
     text-align: center;
@@ -80,9 +80,9 @@ header {
     box-sizing: border-box;
     /* 젠 bxb */
     /* 원래는 보더와 패딩만큼 커지는게 기본
-                속성이지만 이것을 내부에 포함시키는
-                속성은 위와 같다! 
-                기본값은 content-box */
+        속성이지만 이것을 내부에 포함시키는
+        속성은 위와 같다! 
+        기본값은 content-box */
 }
 
 /* 띄어쓰기는 자손선택자! */
@@ -101,23 +101,23 @@ header {
     text-decoration: none;
     /* 젠tdn */
     /* 
-                    text-decoration 속성
-                    - underline 밑줄
-                    - overline 윗줄
-                    - linethrough 중간줄
-                    - none 없음
-                */
+        text-decoration 속성
+        - underline 밑줄
+        - overline 윗줄
+        - linethrough 중간줄
+        - none 없음
+    */
     /* 글자 두껍게 */
     font-weight: bold;
     /* 젠fwb */
     /* 
-                    font-weight 속성
-                    - bold 두껍게
-                    - bolder 더두껍게
-                    - lighter 얇게
-                    - 100~900
-                    (기본적으로 글자체가 지원해야됨!)
-                */
+        font-weight 속성
+        - bold 두껍게
+        - bolder 더두껍게
+        - lighter 얇게
+        - 100~900
+        (기본적으로 글자체가 지원해야됨!)
+    */
 }
 
 /* 메뉴 a에 마우스 오버시 */
@@ -158,8 +158,8 @@ footer#info address {
                 12pt=16px (이육사) */
     line-height: 1.6;
     /* 줄간격
-                - 단위없이 사용하면 글자크기배수
-                - px, em 등 여러가지 단위사용가능 */
+    - 단위없이 사용하면 글자크기배수
+    - px, em 등 여러가지 단위사용가능 */
 }
 
 /* 영문이름만 이탤릭체 */
