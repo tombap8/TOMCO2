@@ -1,0 +1,5 @@
+﻿<h1 class="wf1">그들의 장비와 기구는 모두 살아 있다.</h1>
+  <h1 class="wf2">삐죽삐죽한 날개 윤곽이 붉게 빛났다.</h1>
+  <h1 class="wf3">Mist enveloped the ship three hours out from port.</h1>
+  <h1 class="wf4">Silver mist suffused the deck of the ship.</h1>
+  <h1 class="wf5">My two natures had memory in common.</h1>
