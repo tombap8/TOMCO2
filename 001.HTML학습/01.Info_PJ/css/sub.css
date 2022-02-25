@@ -29,10 +29,10 @@
     /* 글씨체: 순서대로 적용됨 */
     letter-spacing: -2px;
     /* 자간: 0을 기준으로 조정 */
-    word-spacing: 3px;
+    word-spacing: 1px;
     /* 단어간격: 0을 기준으로 조정 */
-    white-space: nowrap;
-    /* 줄바꿈 방지 */
+    /* white-space: nowrap; */
+    /* 줄바꿈 방지 - 필요한 경우 적용 */
 }
 /* 이미지박스 */
 .afig{
@@ -82,6 +82,8 @@
 .quote{
     background-color: #ececec;
     /* 배경색 */
+    background-clip: content-box;
+    /* 배경색 컨텐트 영역만 넣기! */
     padding: 10px;
     /* 패딩 */
 }
@@ -142,4 +144,8 @@
     
     */
     padding: 15px;
+}
+/* 오늘의 작품 이미지 */
+.twrok img{
+    width: 210px;
 }
