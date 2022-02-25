@@ -85,9 +85,23 @@
     padding: 10px;
     /* 패딩 */
 }
+.quote h3{
+    text-align: center;
+}
 .quote blockquote{
     font-size: 12px;
     /* 글자크기 */
     text-indent: 15px;
     /* 첫줄 들여쓰기(마이너스는 내어쓰기) */
+    text-align: justify;
+    /* 글자정렬: 양쪽정렬 */
+}
+
+/* article 박스 마다 상단 보더 
+구분선 넣기 */
+#cont article{
+    border-top: 1px solid #ccc;
+    /* 보더위쪽 : 두께 종류 색상(두종색) */
+    margin-top: 25px;
+    /* 위쪽마진 */
 }
