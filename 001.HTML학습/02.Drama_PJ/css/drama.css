@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* 한국최신드라마 리스트 CSS - drama.css */
+
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@200&display=swap');
+/* 
+    font-family: 'Hahmlet', serif;
+*/
+
+
+/* 초기화 */
+html,body{
+    margin: 0;
+    padding: 0;
+}
+/* 테이블공통 */
+.tbl{
+    font-family: 'Hahmlet', serif;
+    /* 글씨체 - 순서대로 있는 글씨체 적용 */
+    color: #222;
+    /* 글자색 */
+    border-collapse: collapse;
+    /* 테이블 사이간극 없앰! */
+}
+/* 드라마 리스트 테이블 */
+#drama{
+    font-size: 24px;
+    margin: 0 auto;
+    /* 마영오! 블록요소(테이블) 가로중앙 */
+    width: 1000px;
+    /* 테이블 width지정이 없으면 내용만큼 늘어남!
+    좁으면 아래로 내용이 줄바꿈됨 */
+}
+/* 테이블 제목 */
+#drama caption{
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    /* 자간 */
+    word-spacing: 5px;
+    /* 단어사이 */
+    /* padding-top: 50px;
+    padding-bottom: 20px; */
+    padding: 50px 0 20px;
+    /* padding 3개(위 양쪽 아래) */
+
+}
+
+/* td와 th 패딩 */
+#drama td,
+#drama th{
+    padding: 8px 10px;
+    /* 패딩: 위아래 양쪽 */
+}
+/* td에 밑줄넣기 - 테이블 본문에만 적용 */
+#drama tbody td {
+    border-bottom: 1px solid #ccc;
+}
+/* th에 윗줄, 아랫줄 두꺼운 보더넣기 */
+#drama th {
+    border-top: 2px solid #555;
+    border-bottom: 2px solid #555;
+}
+/* 본문(tbody) 마지막 tr의 td 
+아래쪽 보더 넣기 */
+#drama tbody tr:last-child td{
+    border-bottom: 2px solid #555;    
+}
+/* 본문(tbody)의 짝수번째 tr의 td
+배경색 넣기 */
+/* nth-child(순번) -> odd(홀수), even(짝수) */
+#drama tbody tr:nth-child(even) td{
+    background-color: #f3f3f3;
+}
+
+/* 하단부분(tfoot) */
+#drama tfoot td{
+    text-align: center;
+    /* 텍스트 중앙정렬 */
+    padding: 45px 0;
+}
+
+/* 구분테이블 박스 */
+div.gubun{
+    width: 1000px;
+    margin: 0 auto;
+    /* 위의 테이블과 같은 사이즈 가로중앙정렬 */
+    margin-bottom: 100px;
+}
+/* 구분테이블 */
+table#gubun{
+    font-size: 20px;
+    border: 1px solid #999;
+}
+/* 구분테이블 td */
+#gubun td{
+    padding: 10px;
+}
+
+/* 구분테이블 첫번째 tr의 첫번째 td의
+오른쪽 점선넣기 */
+#gubun tr:first-child td:first-child{
+    border-right: 1px dotted #999;
+}
+/* 구분테이블 두번째 tr부터 마지막 tr까지
+즉, 앞에 tr형제가 있는 tr -> tr+tr 의
+td에 윗쪽 점선보더 주기(사이점선보더 생김) */
+#gubun tr+tr td{
+    border-top: 1px dotted #999;
+}
