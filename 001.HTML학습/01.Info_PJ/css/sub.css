@@ -72,3 +72,22 @@
     line-height: 1.6;
     /* 줄간격 (숫자만쓰면 배수) */
 }
+
+/* 기타 타이틀 h3 */
+#cont h3{
+    font-family: gulim;
+    font-size: 14px;
+}
+/* 인용구박스 */
+.quote{
+    background-color: #ececec;
+    /* 배경색 */
+    padding: 10px;
+    /* 패딩 */
+}
+.quote blockquote{
+    font-size: 12px;
+    /* 글자크기 */
+    text-indent: 15px;
+    /* 첫줄 들여쓰기(마이너스는 내어쓰기) */
+}
