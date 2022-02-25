@@ -19,3 +19,47 @@
     text-align: left;
     /* .bxc에서 중앙정렬값 덮어쓰기! 왼쪽정렬로! */
 }
+/* 기사제목 */
+.atit{
+    font-size: 30px;
+    /* 글자크기 */
+    font-weight: normal;
+    /* 글자두께: 보통 */
+    font-family: "굴림","궁서","맑은 고딕",serif;
+    /* 글씨체: 순서대로 적용됨 */
+    letter-spacing: -2px;
+    /* 자간: 0을 기준으로 조정 */
+    word-spacing: 3px;
+    /* 단어간격: 0을 기준으로 조정 */
+    white-space: nowrap;
+    /* 줄바꿈 방지 */
+}
+/* 이미지박스 */
+.afig{
+    margin: 15px 0;/* 위아래 양쪽 */
+    /* figure요소의 기본마진변경! */
+}
+/* 기사이미지 */
+.afig img {
+    width: 100%;
+    /* 부모박스를 채움 */
+    /* 이미지는 가로,세로중 하나만
+    크기를 주면 나머지는 자동으로 
+    비율유지를 한다! */
+}
+/* 기사설명박스 */
+.afig figcaption{
+    text-align: center;
+    /* 글자정렬 중앙 
+    -> 주의사항- 글자정렬은 블록박스에서
+    적용해야 내부의 인라인요소의 정렬이
+    변경된다!(인라인에서하면 적용안됨!)*/
+
+}
+/* 기사설명글 */
+.afig small{
+    font-family: gulim;
+    /* 글자체 */
+    color: #666;
+    /* 글자색 */
+}
