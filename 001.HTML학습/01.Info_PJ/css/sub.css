@@ -106,13 +106,40 @@
     /* 위쪽마진 */
 }
 
-/* 메인 컨텐츠 아래 a요소 */
+/* 메인 컨텐츠 아래 a요소 
+주의사항- 글자색,밑줄 셋팅 필수! */
 #cont a{
     color: #222;
+    /* 글자색 */
     text-decoration: none;
+    /* 밑줄없앰 */
+
+    font-size: 14px;
+    /* 글자크기 */
+    font-family: gulim;
+    /* 글자체 */
 }
 /* 마우스 오버시 */
 #cont a:hover{
-    color: red;
+    /* color: red; */
     text-decoration: underline;
+}
+
+/* 오늘의 작품 */
+.twrok{
+    text-align: center;
+    background-color: lightyellow;
+    background-clip: content-box;
+    /* background-clip 배경색 옵션
+        1. content-box 
+        -> 컨텐트영역에만 배경색넣기
+        (보더, 패딩빠짐)
+        2. padding-box
+        -> 패딩영역까지만 배경색넣기
+        (보더 빠짐)
+        3. border-box
+        -> 보더영역까지 배경색넣기(기본값)
+    
+    */
+    padding: 15px;
 }

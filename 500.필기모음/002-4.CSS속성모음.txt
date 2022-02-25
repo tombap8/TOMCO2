@@ -92,3 +92,15 @@ background-size: auto 200px;
 => 배경 한번에 셋팅하기! 
     background: 색 이미지 반복 고정 위치/크기;
     background: 색이반고윙/크; 
+
+
+7. 배경색 옵션 속성 : 배경색을 어디까지 칠할것인가?
+   background-clip 
+        1. content-box 
+        -> 컨텐트영역에만 배경색넣기
+        (보더, 패딩빠짐)
+        2. padding-box
+        -> 패딩영역까지만 배경색넣기
+        (보더 빠짐)
+        3. border-box
+        -> 보더영역까지 배경색넣기(기본값)
