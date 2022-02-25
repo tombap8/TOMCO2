@@ -105,3 +105,14 @@
     margin-top: 25px;
     /* 위쪽마진 */
 }
+
+/* 메인 컨텐츠 아래 a요소 */
+#cont a{
+    color: #222;
+    text-decoration: none;
+}
+/* 마우스 오버시 */
+#cont a:hover{
+    color: red;
+    text-decoration: underline;
+}
