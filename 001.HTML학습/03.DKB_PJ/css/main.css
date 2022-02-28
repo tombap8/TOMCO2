@@ -17,7 +17,7 @@ h1,h2,h3,h4,h5,h6{
 /* 작업진행중 외곽선 */
 /* 별표시(*)는 모든요소를 선택시 사용 */
 body * {
-    outline: 2px dashed gray;
+    outline: 1px dashed gray;
     /* outline은 보더와 달리
     주변요소에 전혀 영향을 주지 않는다!
     그래서 border는 박스요소에 필수포함요소지만
@@ -28,6 +28,56 @@ body * {
     outline: 두께 종류 색상; */
 }
 
+/* 컨텐츠 파트 최상위부모 */
+body{
+    /* 1. 배경색 */
+    background-color: lightpink;
+
+    /* 2. 배경이미지 - 기본적으로 반복됨(x,y방향) */
+    background-image: url(../images/bg_logo_a_01.png);
+    /* 외부css인 경우 css파일위치에서 한단계위로 올라간 후
+    이미지폴더를 찾는다!(경로에 주의!) ../ 는 한칸위로 */
+
+    /* 3. 배경반복여부 */
+    background-repeat: no-repeat;
+    /* 
+        no-repeat 반복안함
+        repeat-x x축반복
+        repeat-y y축반복
+    */
+    /* 4. 배경이미지 고정하기 */
+    background-attachment: fixed;
+    /* fixed는 보이는 화면에 고정함! */
+
+    /* 5. 배경이미지 위치변경 */
+    background-position: center;
+    /* background-position: right bottom; */
+    /* background-position: 100px 200px; */
+    /* 
+        background-position: 가로 세로; 
+        - 가로: px, % 등 단위 또는 left, center, right
+        - 세로: px, % 등 단위 또는 top, center, bottom
+    
+    */
+    /* 6.배경이미지 크기 */
+    /* background-size: cover; */
+    /* background-size: contain; */
+    /* background-size: auto 200px; */
+    /* background-size: 100px auto; */
+    /* background-size: 100px 400px; */
+    /* 
+        background-size: 가로 세로; 
+        - 가로 : px,% 등 단위 auto
+        - 세로 : px,% 등 단위 auto
+        -> 가로,세로중 한쪽만 크기주고 나머지는 auto일
+        경우 이미지가 고유 비율을 유지한다!
+        ->>> 특별한 값 : 
+        contain(비율유지 채우기-이미지모두 보임,빈틈있음)
+        cover(비율유지 채우기-배경박스에 빈틈없이 채움)
+    */
+
+}
+
 /********** 공통 클래스 **********/
 /* 속박스 클래스 */
 .ibx{
@@ -36,5 +86,15 @@ body * {
     /* 마영오! 블록박스 가로중앙 */
 }
 
-
-/* 1. 상단영역 */
+/********** 1. 상단영역 **********/
+.top{
+    height: 125px;
+}
+/********** 2. 메인영역 **********/
+.cont{
+    height: 800px;
+}
+/********** 3. 하단영역 **********/
+.info{
+    height: 241px;
+}
