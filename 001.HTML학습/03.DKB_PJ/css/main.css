@@ -30,27 +30,42 @@ body * {
 
 /* 컨텐츠 파트 최상위부모 */
 body{
+    /* background: url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover; */
+    
+    /* 한번에 배경주기!!! */
+    /* background: 색상 이미지 반복여부 고정 위치/크기 */
+    /* background: 색이반고윙/크 */
+
+    /* 따로주기 */
+    background-image: url(../images/bg_mainvisual.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+
+
     /* 1. 배경색 */
-    background-color: lightpink;
+    /* background-color: lightpink; */
 
     /* 2. 배경이미지 - 기본적으로 반복됨(x,y방향) */
-    background-image: url(../images/bg_logo_a_01.png);
+    /* background-image: url(../images/bg_logo_a_01.png); */
     /* 외부css인 경우 css파일위치에서 한단계위로 올라간 후
     이미지폴더를 찾는다!(경로에 주의!) ../ 는 한칸위로 */
 
     /* 3. 배경반복여부 */
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     /* 
         no-repeat 반복안함
         repeat-x x축반복
         repeat-y y축반복
     */
     /* 4. 배경이미지 고정하기 */
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     /* fixed는 보이는 화면에 고정함! */
 
     /* 5. 배경이미지 위치변경 */
-    background-position: center;
+    /* background-position: center; */
     /* background-position: right bottom; */
     /* background-position: 100px 200px; */
     /* 
