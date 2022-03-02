@@ -57,11 +57,63 @@
 
                 ____________________________________________
 
-                
+
+                2. inline 요소
+                (1) 표현법 :
+                    display: inline;
+                (2) 기본적으로 inline인 요소들
+                    a, img, span, b, i, em, strong, ...
+                (3) 특징 : 
+
+                    1) block 요소를 포함할 수 없다!
+
+                        예) <span><div></div></span> X
+                        -> 주의: 인라인을 블록요소로 변경해도
+                        원래 출신요소를 기준하여 판단한다!
+
+                        예외) a요소 -> 원래 블록을 싸면 안되는데
+                            하도 많이 싸서 허용으로 규칙변경함!
+                    2) width, height 크기가 적용안됨!
+                        -> 내용만큼 늘어남!
+                    3) margin은 양쪽만 적용됨!
+                        -> 위아래 마진은 적용되지 않는다!
+                    4) padding은 양쪽 패딩만 적용됨!
+                        단, 위아래 패딩은 디자인상만 보이고
+                        줄바꿈시 영향을 주지 않는다!
+                    5) border는 양쪽만 영향을 주고
+                    위아래는 영향이 없음. 단, 디자인은 적용됨
+
+                    참고) 인라인요소의 위아래 간격은 
+                          line-height로 설정함!
+
+                    [ 예외 인라인요소 -> img ]
+                    -> 이미지는 인라인요소지만 
+                    width, height, margin,padding, border
+                    모두 적용된다!
+
+                    [ 원래 display 출신을 바꿀 수 있나? ]
+                    ->>>> 변경가능하다!
+
+                    [ display를 숨기는 방법 ]
+                    display: none;
+                    -> 태그는 그대로인데 화면에 출력안됨!
+
+                    __________________________________
+
+                    3. inline-block 요소
+
+                    (1) 표현법 :
+                        display: inline-block;
+                    (2) 기본적으로 inline-block인 요소들
+                        button, input 등
+                    (3) 특징 :
+                        1) 인라인처럼 한줄에 온다!
+                        2) 블록처럼 박스모델요소가 적용된다!
+
 
         ***********************************************/
         
-
+        
 
     </style>
 </head>
@@ -74,9 +126,9 @@
         <img src="imgs/blogo.png" alt="로고" title="나는 img다!">
         <span>나는 span이다!</span>
         <b>나는 b다!</b>
-        <!-- <button>
+        <button>
             나는 button이다! 나는 인라인인가?
-        </button> -->
+        </button>
         <i>나는 i다!</i>
         <em>나는 em이다!</em>
         <strong>나는 strong이다!</strong>
