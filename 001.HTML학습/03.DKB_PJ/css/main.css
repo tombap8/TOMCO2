@@ -204,6 +204,14 @@ body{
 .ci span img:first-child{
     display: none;
 }
+/* .cat에 마우스 오버시 첫번째 이미지 보이기 */
+.cat:hover .ci span img:first-child{
+    display: inline;
+}
+/* .cat에 마우스 오버시 마지막 이미지 숨기기 */
+.cat:hover .ci span img:last-child{
+    display: none;
+}
 
 /********** 3. 하단영역 **********/
 .info{
