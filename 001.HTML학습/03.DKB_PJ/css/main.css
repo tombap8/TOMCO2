@@ -185,6 +185,17 @@ body{
     width: 40%;
     /* 부모박스(span)의 가로크기의 40%크기 */
 }
+/* 
+    [자식요소 선택 가상클래스]
+    - 전제조건: 자식요소가 같은 종류일 경우
+    :first-child 첫번째 자식
+    :last-child 마지막 자식
+    :nth-child(순번) 몇번째 자식
+*/
+/* 첫번째 이름이미지 숨기기 */
+.ci span img:first-child{
+    display: none;
+}
 
 /********** 3. 하단영역 **********/
 .info{
