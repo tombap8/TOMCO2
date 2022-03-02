@@ -30,18 +30,22 @@ body * {
 
 /* 컨텐츠 파트 최상위부모 */
 body{
-    /* background: url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover; */
-    
     /* 한번에 배경주기!!! */
     /* background: 색상 이미지 반복여부 고정 위치/크기 */
     /* background: 색이반고윙/크 */
 
+    background: 
+    url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
+    url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+    /* 로고가 위에 와야해서 먼저 배경셋팅함! */
+    
+
     /* 따로주기 */
-    background-image: url(../images/bg_mainvisual.jpg);
+    /* background-image: url(../images/bg_mainvisual.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
 
 
 
