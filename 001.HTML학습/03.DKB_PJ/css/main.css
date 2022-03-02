@@ -1,6 +1,13 @@
 @charset "utf-8";
 /* 도깨비 메인페이지 CSS - main.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&display=swap');
+
+/* 
+font-family: 'Black And White Picture', sans-serif;
+font-family: 'Kirang Haerang', cursive;
+*/
+
 /* 기본태그 초기화 - 마진,패딩 없애기 */
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd{
     margin: 0;
