@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <title>001.배경넣기 연습</title>
     <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* 세로높이값을 보이는 화면에 채움! 
+            기본적으로 height는 auto로 셋팅되어서
+            내용만큼 높이가 생김*/
+            overflow: hidden;
+            /* 넘치는 자식요소 숨기기
+            -> 여기서는 h1태그의 마진탑을 포함하기 위해줌! */
+        }
+
+        h1{
+            text-align: center;
+            /* 블록요소 내부의 인라인요소 중앙정렬 */
+            /* 
+                h1에 설정된 기본마진중 상단마진 즉 margin-top
+                값이 부모박스인 body바깥으로 나가서 표현됨
+                이것은 블록박스의 기본특성임(편리하라고 설정됨)
+                이렇게 안되게하려면 부모박스에 overflow:hidden
+                설정으로 막을 수 있다!(마진탑이 부모내부에 포함)
+            */
+        }
         
 
     </style>
