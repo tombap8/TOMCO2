@@ -129,10 +129,45 @@ body{
     /* 마영오! - 블록가로중앙 */
     margin-top: 400px;
     /* 윗쪽마진 400px로 설정 */
-    height: 300px;
+    /* height: 300px; */
     background-color: rgba(144, 238, 144, 0.637);
+    overflow: hidden;
+    /* float해제를 위해! */
 
 }
+
+/* 캐릭터박스 공통 */
+.cat{
+    /* 4등분 가로 크기는 몇%? 25% */
+    width: 25%;
+    float: left;
+    /* 
+        [ 블록요소를 옆으로 흘러가게 하기!!! ]
+        float속성
+        -> left 값은 나는 왼쪽에 너는 오른쪽에 올라와!
+        -> right 값은 나는 오른쪽에 너는 왼쪽에 올라와!
+
+        [ 자식요소가 float된 경우 부모요소는 높이값 0? ]
+        -> 블록 자식요소 float으로 인해 부모요소가 높이값
+        이 0인 경우 다음과 같이해결한다!
+        1. 부모요소에 overflow:hidden 설정
+        2. float자식요소 중 float이 아닌 마지막 요소에
+         float해제 속성인 clear설정하기!
+
+    */
+
+    /* height: 200px; */
+    outline: 4px dotted red;
+}
+
+/* 캐릭터 이미지 */
+.ci>img{
+    width: 100%;
+    /* 이미지크기를 싸고 있는 부모박스에 맞춰라!
+    height크기를 안주면 비율유지함! */
+    
+}
+
 /********** 3. 하단영역 **********/
 .info{
     height: 241px;
