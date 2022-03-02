@@ -178,12 +178,13 @@
     
     <h2>경우1</h2>
     <h3>
-        첫번째 float:left, 두번째 float:right, 세번째 clear:both
+        첫번째 float:left, 두번째 float:right, 
+        세번째 clear:right
     </h3>
     <div class="wrap">
-        <div class="bx bx1"></div>
-        <div class="bx bx2"></div>
-        <div class="bx bx3"></div>
+        <div class="bx bx1 fll"></div>
+        <div class="bx bx2 flr"></div>
+        <div class="bx bx3 clr"></div>
         <div class="bx bx4"></div>
     </div>
 
@@ -194,13 +195,13 @@
         clear:both를 위한 div를 마지막에 사용함!
     </h3>
     <div class="wrap">
-        <div class="bx bx1"></div>
-        <div class="bx bx2"></div>
-        <div class="bx bx3"></div>
-        <div class="bx bx4"></div>
+        <div class="bx bx1 fll"></div>
+        <div class="bx bx2 flr"></div>
+        <div class="bx bx3 clb fll"></div>
+        <div class="bx bx4 flr"></div>
 
         <!-- clear를 위한 block박스 -->
-        <!-- <div class="clb"></div> -->
+        <div class="clb"></div>
     </div>
 
     <h2>경우3</h2>
@@ -209,11 +210,11 @@
         세번째 clear:both + float:left, 네번째 float:right <br>
         부모요소에 가상요소 after를 사용하여 clear:both구현
     </h3>
-    <div class="wrap">
-        <div class="bx bx1"></div>
-        <div class="bx bx2"></div>
-        <div class="bx bx3"></div>
-        <div class="bx bx4"></div>
+    <div class="wrap flclb">
+        <div class="bx bx1 fll"></div>
+        <div class="bx bx2 flr"></div>
+        <div class="bx bx3 clb fll"></div>
+        <div class="bx bx4 flr"></div>
     </div>
 
     <h2>경우4</h2>
@@ -221,7 +222,7 @@
         모든 .bx박스에 float:left 적용하기 <br>
         부모박스에 overflow:hidden 적용하기
     </h3>
-    <div class="wrap">
+    <div class="wrap case4">
         <div class="bx bx1"></div>
         <div class="bx bx2"></div>
         <div class="bx bx3"></div>
@@ -233,7 +234,7 @@
         모든 .bx박스에 float:right 적용하기(순서역순!) <br>
         부모박스에 가상요소 after로 clear:both 적용하기
     </h3>
-    <div class="wrap">
+    <div class="wrap case5">
         <div class="bx bx1"></div>
         <div class="bx bx2"></div>
         <div class="bx bx3"></div>
