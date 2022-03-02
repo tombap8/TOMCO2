@@ -43,13 +43,66 @@
             /* 4. 배경고정: fixed 고정함! */
             background-attachment: fixed;
 
+            /* 5. 배경위치: 가로 세로 
+                값 - px, % 
+                가로 - left, center, right
+                세로 - top, center, bottom
+            */
+            background-position: right bottom;
+
+            /* 6. 배경크기: 가로 세로 
+            -> 가로,세로 중 한쪽 크기만 주면 이미지비율유지 */
+            background-size: auto 200px;
+
         }
+
+        /* 내부박스 */
+        .wrap{
+            height: 100%;
+            /* 부모박스 (body) 높이만큼 채우기 */
+            overflow: hidden;
+            /* 자식요소 마진포함 */
+
+            /* 
+                [ 배경이미지를 여러개 주려면 어떻게 하나? ]
+                -> 배경셋팅을 한번에 주고 콤마로 구분하여 여러개
+                배경을 셋팅할 수 있다!!!
+
+                background: 색 이미지 반복 고정 위치/크기;
+                background: 색이반고윙/크;
+
+                -> 유의사항: 여러 배경이미지 사용시 순서는 
+                나중에 셋팅한 배경이 아래깔린다!
+                
+                -> 참고) 배경이미지 크기 셋팅시 값을 하나만쓰면
+                 가로크기값이고 세로는 자동으로 auto셋팅됨!
+
+                -> 참고) 배경위치값 중 세로위치 기본값은 center이다.
+                따라서 세로중앙인 경우 이 값을 생략할 수 있다!
+                가로위치 기본값은 left임!
+                (셋팅상 생략이 불가할 경우 씀!)
+
+                -> 참고) 만약 위치값이 가로 기본인 left와 세로 기본인 center일지라도 한번쓸 경우 생략이 불가하다!
+                이때는 크기설정값 앞에 0이라고 쓰고 슬래쉬(/)하여
+                크기를 설정한다!
+            */
+            background: 
+            url(./imgs/dc1.png) no-repeat center/400px,
+            url(./imgs/dc2.png) no-repeat right top/auto 150px,
+            url(./imgs/dc3.png) no-repeat left bottom/300px,
+            url(./imgs/dc4.png) no-repeat right/250px,
+            url(./imgs/bg_mainvisual.jpg) no-repeat 0/50%;
+
+
+        }
+
+
         
 
     </style>
 </head>
 <body>
-    <div>
+    <div class="wrap">
         <h1>001.배경넣기 연습</h1>
     </div>
 </body>
