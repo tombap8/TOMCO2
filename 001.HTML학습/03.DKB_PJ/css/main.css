@@ -164,6 +164,8 @@ body{
 
     /* height: 200px; */
     /* outline: 4px dotted red; */
+    cursor: pointer;
+    /* 손가락모양 */
 }
 
 /* 캐릭터 이미지 */
@@ -179,6 +181,9 @@ body{
     /* 블록으로 변경해서 부모박스 끝까지 차지함! */
     text-align: center;
     /* 인라인요소 중앙정렬 */
+    margin-top: -21%;
+    /* 부모높이값 기준 21%크기만큼 
+    반대방향(위쪽)으로 위치 이동함 */
 }
 /* 캐릭터 이름이미지 */
 .ci span img{
