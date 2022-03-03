@@ -163,7 +163,9 @@ body{
 
 /* GNB 메뉴 */
 .gnb{
-
+    width: 569px;
+    margin: 0 auto;
+    /* 마영오! */
 }
 /* 가상요소로 clear설정하기 */
 .gnb>ul::after{
