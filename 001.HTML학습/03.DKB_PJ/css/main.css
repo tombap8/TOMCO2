@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* 도깨비 메인페이지 CSS - main.css */
 
+/* 외부파일 합치기 - 웹폰트(CDN) */
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&display=swap');
 
 /* 
@@ -125,7 +126,7 @@ body{
     max-width: 1920px;
     /* 가장 큰 일반 해상도 크기로 최대가로크기 변경! */
     height: 800px;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* 자식요소 마진탑포함! */
 }
 /* 캐릭터 부모박스 */
@@ -223,6 +224,39 @@ body{
 /* .cat에 마우스 오버시 마지막 이미지 숨기기 */
 .cat:hover .ci span img:last-child{
     display: none;
+}
+
+/* 캐릭터 설명박스 */
+.cd{
+    height: 0px;
+    /* .cat 오버시 250px로 높이값 변경! */
+    overflow-y: scroll;
+    /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
+
+    /* background:색이반고윙/크; */
+    background: url(../images/eachBG.jpg) no-repeat center/cover;
+    margin-top: 15px;
+}
+/* .cat에 오버시 높이값 변경! */
+.cat:hover .cd{
+    height: 250px;
+}
+/* 캐릭터설명 타이틀 */
+.cd h3{
+    font-family: 'Black And White Picture', sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    padding: 5px 10px 0;
+    /* 패딩: 위 양쪽 아래 */
+}
+/* 캐릭터 설명 문단 */
+.cd p{
+    font-family: 'Kirang Haerang', cursive;
+    font-size: 17px;
+    line-height: 1.7;
+    padding: 10px;
+    text-align: justify;
+    /* 양쪽정렬 */
 }
 
 /********** 3. 하단영역 **********/
