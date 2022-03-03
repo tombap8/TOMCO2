@@ -94,6 +94,8 @@
                 spread - 그림자 크기
                 color - 그림자색
             */
+            border-radius: 5px;
+            /* 모서리 둥글게 */
         }
         
 
@@ -107,22 +109,53 @@
         }
 
         /* 반복되는 요소의 앞에 아이콘 가상요소로 넣기 */
+        dl dt::before{
+            content: '♣';
+            color: blue;
+            font-size: 30px;
+            margin-right: 10px;
+            vertical-align: 1px;
+        }
         
         /* dd전체와 
         dd.story>h3에 가상요소 before적용하기 */
+        dl dd::before,
+        dd.story>h3::before{
+            content: '♥';
+            color: red;
+            margin-right: 5px;
+            vertical-align: 2px;
+        }
         
         
 
         /* 스토리의 dd는 가상요소 없애기 */
+        dd.story::before{
+            display: none;
+        }
         
         /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
+        dd.story p:first-of-type::first-letter{
+            font-size: 50px;
+            font-weight: bold;
+            color: hotpink;
+        }
 
         /* .story의 첫번째 p태그의 첫번째줄 디자인 변경하기 */
+        dd.story p:first-of-type::first-line{
+            color: blue;
+        }
         
 
         /* 두번째 p태그는 태그로 
         첫번째 글자(b태그), 첫번째 줄(span)변경 */
-        
+        dd.story p:last-of-type b{
+            font-size: 50px;
+            color: hotpink;
+        }
+        dd.story p:last-of-type span{
+            color: blue;
+        }
         
 
     </style>
