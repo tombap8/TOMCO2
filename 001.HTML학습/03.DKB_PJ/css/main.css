@@ -2,11 +2,12 @@
 /* 도깨비 메인페이지 CSS - main.css */
 
 /* 외부파일 합치기 - 웹폰트(CDN) */
-@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&family=Nanum+Gothic&display=swap');
 
 /* 
 font-family: 'Black And White Picture', sans-serif;
 font-family: 'Kirang Haerang', cursive;
+font-family: 'Nanum Gothic', sans-serif;
 */
 
 /* 기본태그 초기화 - 마진,패딩 없애기 */
@@ -19,6 +20,11 @@ h1,h2,h3,h4,h5,h6{
     font-size: 100%;
     /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
     기본글자크기는 16px */
+}
+/* ul,ol초기화 */
+ul,ol{
+    list-style: none;
+    /* 블릿 표시자 없앰 */
 }
 
 
@@ -139,9 +145,49 @@ body{
 }
 
 /********** 1. 상단영역 **********/
-.top{
+#top{/* 겉박스 */
+    background-color: #fff;
+}
+.top{/* 속박스 */
     height: 125px;
 }
+/* 로고박스 */
+#logo{
+    padding: 20px;
+    text-align: center;
+}
+/* 로고이미지 */
+#logo img{
+    width: 100px;
+}
+
+/* GNB 메뉴 */
+.gnb{
+
+}
+/* 가상요소로 clear설정하기 */
+.gnb>ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.gnb>ul>li{
+    float: left;/* 옆으로 흐르게 */
+    padding: 0 15px;
+}
+/* 메뉴 링크 */
+.gnb>ul>li>a{
+    color: #222;
+    text-decoration: none;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 17px;
+    line-height: 40px;
+}
+
+
+
+
+
 /********** 2. 메인영역 **********/
 .cont{
     max-width: 1920px;
