@@ -437,3 +437,21 @@ body{
     color: red;
     text-decoration: underline;
 }
+
+/* 회사주소박스 */
+.addr{
+    width: 804px;
+    margin: 10px auto;
+    border: 4px double #222;
+    font: 14px/2 'Nanum Gothic', sans-serif;
+    /* 원래 address요소는 italic체인데 font한번에쓰기에서
+    스타일 설정을 안하면 기본 normal이 적용되서 없어짐 */
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    /* 크기유지 */
+}
+/* 하단로고 */
+.blogo{
+    text-align: center;
+}
