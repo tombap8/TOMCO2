@@ -159,7 +159,7 @@ body{
     margin-top: 400px;
     /* 윗쪽마진 400px로 설정 */
     /* height: 300px; */
-    background-color: rgba(144, 238, 144, 0.637);
+    /* background-color: rgba(144, 238, 144, 0.637); */
     
     /* overflow: hidden; */
     /* float해제를 위해! 
@@ -276,6 +276,10 @@ body{
     /* background:색이반고윙/크; */
     background: url(../images/eachBG.jpg) no-repeat center/cover;
     margin-top: 15px;
+
+    /* 둥근모서리 - border-radius */
+    border-radius: 20px 0 0 20px;
+    /* 4개의 값 - 왼쪽 위 부터 시계방향 */
 
     /* 트랜지션: 속시이지 - trs */
     transition: height .4s ease-out;
