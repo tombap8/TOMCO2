@@ -183,28 +183,65 @@
         }
         
         /* 3번째 li */
+        .part1 li:nth-child(3){
+            font-size: 24px;
+            font-family: "돋움";
+            color: brown;
+            font-weight: bold;
+            font-style: italic;
+        }
         
         /* 오버시 */
-        
+        .part1 li:nth-child(3):hover{
+            font-style: normal;
+        }
 
         /* 4번째 li */
+        .part1 li:nth-child(4){
+            font-size: 50px;
+            font-family: "궁서";
+            color: dodgerblue;
+        }
 
         /* 처음에 한글(b태그)숨기기 */
+        .part1 li:nth-child(4) b{
+            display: none;
+        }
 
-        /* 오버시 한글(b태그)보이고 한자(span태그)숨기기 */
-
+        /* 오버시 한글(b태그)보이고*/
+        .part1 li:nth-child(4):hover b{
+            display: inline;/* 원래 display로 */
+        }
+        /* 오버시 한자(span태그)숨기기 */
+        .part1 li:nth-child(4):hover span{
+            display: none;/* 숨기기 */
+        }
         /* 오버시 li에 노란배경색 */
-
+        .part1 li:nth-child(4):hover{
+            background-color: yellow;
+        }
 
         /* 4번 이후 모든 li 전부셋팅 */
         /* 틸드(~)를 사용한 다중형제 요소 선택 */
-
+        .part1 li:nth-child(4)~li{
+            font-size: 25px;
+            font-family: "궁서";
+            color: orangered;
+        }
         /* 오버시 */
-        
+        .part1 li:nth-child(4)~li:hover{
+            font-size: 28px;
+            color: blue;
+        }
 
         /* 마지막 li */
+        body .part1 li:last-child{
+            font-size: 40px;
+            font-family: "맑은 고딕";
+            color: coral;
+        }
        
-        /* 
+        /*      
             틸드(~)를 사용한 CSS가 한단계 더 선택하여서
             우선 순위가 높으므로 이것보다 우선순위를 
             높이는 가장쉬운 방법은 한단계위의 부모요소를
@@ -230,15 +267,28 @@
         }
 
         /* 두번째 div */
-        
+        .part2 div:nth-of-type(2){
+            font-size: 30px;
+            font-family: "궁서";
+            color: blueviolet;
+        }
 
         /* 첫번째 i */
-        
+        .part2 i:first-of-type{
+            font-size: 20px;
+            font-weight: bold;
+            color: palevioletred;
+        }
        
 
         /* 3번째 div 이후 div형제요소 모두 */
+        .part2 div:nth-child(3)~div{
+            font-family: "궁서";
+            color: red;
+        }
         /* .part2 div:nth-of-type(3)~i{ 이후의 i태그만 */
         /* .part2 div:nth-of-type(3)~*{ 이후의 모든 태그들 */
+
        
 
 
@@ -299,7 +349,9 @@
         <li>나 보기가 역겨워</li>
         <li>가실 때에는</li>
         <li>말없이 고이 보내 드리우리다</li>
-        <li><b>영변</b><span>寧邊</span>에 <b>약산</b><span>藥山</span></li>
+        <li>
+            <b>영변</b><span>寧邊</span>에 <b>약산</b><span>藥山</span>
+        </li>
         <li>진달래꽃</li>
         <li>아름 따다 가실 길에 뿌리우리다</li>
         <li>가시는 걸음 걸음</li>
