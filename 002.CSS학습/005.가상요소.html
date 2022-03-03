@@ -66,7 +66,35 @@
         
 
         /* 맨뒤 추가요소 ::after */
-        
+        h2::after{
+            content: '';
+            /* content만 빈것으로 쓰면
+            마치 span태그를 쓴것과 같다 
+            크기가 적용안된다! 
+            display를 적용하여 크기를
+            변경할 수 있다!
+            display: block;-> div와 비슷
+            줄바꿈 안되고 디자인적용하려면
+            display: inline-block;
+            */
+            display: inline-block;
+            width: 40px;
+            height: 60px;
+            background: url(./imgs/bg_logo_a_01.png) no-repeat center/cover;
+            vertical-align: middle;
+            margin-left: 20px;
+            box-shadow: 0px 0px 10px #999;
+            /* 
+                박스그림자
+                box-shadow: 
+                inset - 내부그림자
+                hoff - x축이동
+                voff - y축이동
+                blur - 경계선흐림
+                spread - 그림자 크기
+                color - 그림자색
+            */
+        }
         
 
         /* dl요소 디자인 */
