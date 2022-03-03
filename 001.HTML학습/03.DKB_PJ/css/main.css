@@ -400,10 +400,15 @@ body{
 }
 .info{/* 속박스 */
     height: 241px;
+    padding: 15px;
+    box-sizing: border-box;
+    /* 크기유지 - 보더,패딩포함 */
 }
 /* 하단링크 */
 .blink{
-    
+    width: 804px;
+    margin: 0 auto;
+    /* 마영오! */
 }
 /* 가상요소 clear */
 .blink ul::after{
@@ -426,4 +431,9 @@ body{
         font: 스두크/줄체
         font: 스타일 두께 크기/줄간격 글자체
     */
+}
+/* 마우스 오버시 a요소 */
+.blink a:hover{
+    color: red;
+    text-decoration: underline;
 }
