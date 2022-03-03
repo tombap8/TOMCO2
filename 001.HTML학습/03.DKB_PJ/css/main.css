@@ -228,7 +228,7 @@ body{
 
 /* 캐릭터 설명박스 */
 .cd{
-    height: 0px;
+    height: 250px;
     /* .cat 오버시 250px로 높이값 변경! */
     overflow-y: scroll;
     /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
@@ -249,6 +249,17 @@ body{
     padding: 5px 10px 0;
     /* 패딩: 위 양쪽 아래 */
 }
+/* 가상요소로 타이틀 앞에 작은 도깨비로고 넣기 */
+.cd h3::before{
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    background: url(../images/bg_logo_a_01.png) no-repeat right -184px; 
+    vertical-align: -5px;
+    margin-right: 5px;
+    /* outline: 1px solid red; */
+}
 /* 캐릭터 설명 문단 */
 .cd p{
     font-family: 'Kirang Haerang', cursive;
@@ -257,6 +268,14 @@ body{
     padding: 10px;
     text-align: justify;
     /* 양쪽정렬 */
+}
+/* 캐릭터 설명 첫번째 글자 가상요소로 변경하기! */
+.cd p:first-of-type::first-letter{
+    font-size: 30px;
+    color: cyan;
+    text-shadow: 1px 0 #000,-1px 0 #000,
+    0 1px #000, 0 -1px #000;
+    /* 4개의 그림자로 글자 테두리 주기! */
 }
 
 /********** 3. 하단영역 **********/
