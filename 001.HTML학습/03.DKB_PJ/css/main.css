@@ -395,6 +395,35 @@ body{
 }
 
 /********** 3. 하단영역 **********/
-.info{
+#info{/* 겉박스 */
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.info{/* 속박스 */
     height: 241px;
+}
+/* 하단링크 */
+.blink{
+    
+}
+/* 가상요소 clear */
+.blink ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.blink li{
+    float: left;
+    padding: 0 15px;
+}
+/* 하단링크 a */
+.blink a{
+    color: #222;
+    text-decoration: none;
+    /* font-family: 'Nanum Gothic', sans-serif; */
+    font: bold 14px/39px 'Nanum Gothic', sans-serif;
+    /* 
+        font 한번에 셋팅하기!
+        font: 스두크/줄체
+        font: 스타일 두께 크기/줄간격 글자체
+    */
 }
