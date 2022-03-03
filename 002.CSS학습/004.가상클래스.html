@@ -94,6 +94,10 @@
         
 
         /* :hover 마우스 오버상태 */
+        h2 a:hover{
+            color: red;
+            text-decoration: overline;
+        }
         
        
 
@@ -111,7 +115,10 @@
         
 
         /* :focus 요소를 클릭하여 초점이 올때 */
-        
+        h2 a:focus{
+            outline: 10px dotted orangered;
+            /* outline: 두종색; */
+        }
         
 
         /* 시인이름 */
@@ -145,19 +152,35 @@
             border: 2px solid #ccc;
             /* 보더 */
             border-radius: 20px;
+            /* 둥근모서리 */
             text-align: center;
         }
 
         /* 1번 li */
-
+        .part1 li:first-child{
+            font-size: 40px;
+            font-family: "궁서";
+            color: red;
+        }
         /* 오버시(:hover) */  
-        
+        .part1 li:first-child:hover{
+            font-size: 50px;
+            color: blueviolet;
+        }
 
         /* 2번째 li */
+        .part1 li:nth-child(2){
+            font-size: 30px;
+            font-family: "굴림";
+            color: lightcoral;
+            font-weight: bold;
+        }
         
        
         /* 오버시 */
-        
+        .part1 li:nth-child(2):hover{
+            color: skyblue;
+        }
         
         /* 3번째 li */
         
