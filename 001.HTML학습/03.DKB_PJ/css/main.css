@@ -126,7 +126,7 @@ body{
     max-width: 1920px;
     /* 가장 큰 일반 해상도 크기로 최대가로크기 변경! */
     height: 800px;
-    /* overflow: hidden; */
+    overflow: hidden;
     /* 자식요소 마진탑포함! */
 }
 /* 캐릭터 부모박스 */
@@ -139,9 +139,19 @@ body{
     /* 윗쪽마진 400px로 설정 */
     /* height: 300px; */
     background-color: rgba(144, 238, 144, 0.637);
-    overflow: hidden;
-    /* float해제를 위해! */
-
+    
+    /* overflow: hidden; */
+    /* float해제를 위해! 
+    -> 자식요소가 위로 올라갈때 가려져서 쓸 수 없음!!! */
+    /* -> 가상요소로 마지막에 float해제설정하기! */
+}
+/* 가상요소로 clear설정하기! */
+#cbx::after{
+    content: '';
+    display: block;
+    /* div와 비슷 */
+    clear: both;
+    /* float을 끊어서 부모가 자식을 인식함! */
 }
 
 /* 캐릭터박스 공통 */
@@ -174,6 +184,15 @@ body{
     /* outline: 4px dotted red; */
     cursor: pointer;
     /* 손가락모양 */
+}
+/* 캐릭터 이미지박스 */
+.ci{
+    /* 트랜지션: 속시이지 */
+    transition: margin-top .4s ease-out;
+}
+/* .cat에 마우스 오버시 .ci의 마진탑을 마이너스로 설정! */
+.cat:hover .ci{
+    margin-top: -57%;
 }
 
 /* 캐릭터 이미지 */
@@ -228,7 +247,7 @@ body{
 
 /* 캐릭터 설명박스 */
 .cd{
-    height: 250px;
+    height: 0;
     /* .cat 오버시 250px로 높이값 변경! */
     overflow-y: scroll;
     /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
@@ -236,7 +255,31 @@ body{
     /* background:색이반고윙/크; */
     background: url(../images/eachBG.jpg) no-repeat center/cover;
     margin-top: 15px;
+
+    /* 트랜지션: 속시이지 - trs */
+    transition: height .4s ease-out;
+    /* transition: .4s; -> 시간만 줘도 적용됨
+    옵션이 모든 속성과 가속도는 기본 ease적용*/
 }
+/***************************************************** 
+    트랜지션(Transition) 애니메이션효과주기
+    -> 속성값을 변화과정을 보여주면서 애니메이션하는 속성
+    transition: 속성 시간 이징 지연 -> 속시이지!
+    1. 속성 - 변경애니메이션 대상속성
+            (안쓰거나 all을 쓰면 모든 속성이 선택됨)
+    2. 시간 - 애니메이션 시간 : 초단위(s)
+    3. 이징 - 가속도
+            1) ease : 앞뒤로 약간씩 느림(기본값)
+            2) ease-in : 처음에 천천히 나중에 빨라짐
+            3) ease-out : 나중에 천천히 처음엔 빠름
+            4) ease-in-out : 처음과 끝에 천천히
+            5) linear : 등속도
+            -> 베지어곡선으로 매우 다채롭게 가속도 조정가능
+    6. 지연 - 지연시간 즉, 처음에 대기시간(초단위:s)
+    7. 적용법: 오버시와 원상복귀되는 애니가 같다면
+            오버전 원본에 한번만 주면 양방향 동일하게 적용됨
+            만약 오버시와 아웃시 따로 주려면 각각설정해야함!
+*****************************************************/
 /* .cat에 오버시 높이값 변경! */
 .cat:hover .cd{
     height: 250px;
