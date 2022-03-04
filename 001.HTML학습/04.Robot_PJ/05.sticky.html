@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position - sticky</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        .bx {
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            text-align: center;
+            /* 글자가로중앙 */
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 100px;
+            /* 높이값과 같은 줄간격은 글자세로중앙! */
+        }
+
+        .f1{
+            position: fixed;
+            /******************************************** 
+            
+                [ 4. fixed 포지션 ]
+
+                1) 위치값을 설정하지 않을때
+                - 자신보다 위에 있는 static한 요소 아래에
+                그대로 있다가 스크롤시 그 자리를 화면에서
+                지키고 움직이지 않는다!
+                -> 젠틀앱솔루트와 유사! 젠틀픽스드!
+
+                2) 위치이동값을 썼을때
+                - 부모를 기준하여 위치를 잡는다!
+                -> 부모가 누구? 보이는 화면 즉, window!!!
+
+                -> 보이는 화면에서 사라지지 않게 할 수 있다!
+                -> 스크롤에 영향을 받지 않는다!
+                -> 부모를 제외한 모든 다른특성은 앱솔루트와 거의 동일하다!
+
+                3) 아무리 부모요소가 여러개일지라도 자식요소 중
+                fixed를 주면 화면을 기준함!!!
+
+                4) 부모박스가 fixed이면 그 자식요소들은
+                모두 화면에 고정된다!
+                (자식요소가 fixed일 필요가 없다!!!)
+
+                5) 화면 바깥으로 숨겼다가 보이게 할때
+                fixed를 사용함!
+
+                6) z-index도 포지션이 있는 경우 숫자로
+                비교하여 위아래 디스플레이를 변경한다!
+
+
+
+            ********************************************/
+            width: 100%;
+            height: 100px;
+            line-height: 50px;
+            text-align: center;
+            border: 4px double green;
+            font-size: 30px;
+            
+            color: #fff;
+            background: url(./ab_img/ab0.jpg) repeat-x 0/auto 100%;
+        
+        }
+        .f2{
+            position: fixed;
+            /* 부모자격있음!!! */
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            /* 먼저 코딩되고 순서상 위에 오고자할때
+            z-index값을 크게 주면 가장위에 올 수 있다! */
+
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border: 4px double green;
+            font-size: 30px;
+            box-sizing: border-box;
+            
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) repeat-x 0/auto 100%;
+        }
+
+        /* fixed부모 아래 자식요소 앱솔루트 */
+        .newabs{
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            /* 부모는? .f2 */
+            background-color: pink;
+            line-height: 1;
+            color: #000;
+        }
+
+        /* 자식요소로 있는 경우 fixed만들기 */
+        .f3{
+            position: fixed;
+            top: 0;
+            right: -180px;
+            /* 나의 부모는? 당연히 보이는 화면!!! */
+
+            /* 트랜지션: 속시이지 */
+            transition: right .4s ease-out;
+
+            width: 300px;
+            height: 100px;
+
+            background-color: #ff0;
+            font-size: 30px;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+            z-index: 99999;
+        }
+        /* .f3에 마우스 오버시 right값 변경하여 화면에 등장 */
+        .f3:hover{
+            right: 0;
+        }
+
+        #a1 {
+            position: absolute;
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+        #a2 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            /* 나의 부모는? */
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+
+        #r1 {
+            position: relative;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+            /* 0보다 크면 비교해서 위로올림 */
+
+            color: #fff;
+            background: url(./ab_img/ab5.jpg) no-repeat center/cover;
+        }
+
+        #r2 {
+            position: relative;
+            bottom: 75px;
+            right: -86px;
+            z-index: -1;
+            /* static보다 아래! */
+
+            color: #fff;
+            background: url(./ab_img/ab4.jpg) no-repeat center/cover;
+        }
+
+        /* 부모박스들 */
+        .bx2{
+            border: 2px dotted orange;
+            padding: 50px;
+            font-size: 24px;
+            text-align: center;
+        }
+        /* 각 부모박스 */
+        .s5{
+            position: relative;
+            /* 부모자격! */
+            width: 60%;
+            margin: 0 auto;
+            background-color: lightblue;
+        }
+        .s6{
+            position: relative;
+            /* 부모자격! */
+            background-color: lightcoral;
+        }
+        .s7{
+            position: relative;
+            /* 부모자격! */
+            background-color: lightgreen;
+        }
+        .s8{
+            position: relative;
+            /* 부모자격! */
+            background-color: lightsalmon;
+        }
+        /* 부모찾는 앱솔루트 */
+        .a3{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+        .a4{
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 나의 부모는? */
+
+            width: 50px;
+            height: 50px;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+
+        /* 앱솔루트 : 판타롱스타킹! */
+        .a5{
+            position: absolute;
+            /* 크기를 안주면 내용만큼 늘어남! */
+            top: 50%;
+            right: 10%;
+            /* 부모는? 보이는 화면! */
+        }
+        .a5 img{
+            vertical-align: bottom;
+            /* 이미지가 박스에 들어갈때
+            하단에 간극이 생긴다! 이것을 없애려면
+            vertical-align설정을 준다!(값은 상관없음...) */
+        }
+
+        /* span을 앱솔루트로! */
+        .spab{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            /* 나의 부모는? .s5요소 */
+        }
+
+        /* 앱솔루트 끼리는 서로겹친다! */
+        .absimg{
+            width: 92px;
+            height: 115px;
+            border: 4px ridge purple;
+            /* 액자틀모양 보더 */
+        }
+        /* 이미지가 앱솔루트! */
+        .absimg img{
+            position: absolute;
+            /* 겹치니까 마지막 이미지만 보인다! */
+        }
+        /* 마지막 이미지를 투명하게 */
+        .absimg img:last-child{
+            opacity: 0;
+            /* opacity는 투명도
+            (0 완전투명, 1 모두보임, 0.몇 반투명) */
+            transition: 1s;
+            /* 트랜지션: 속시이지 -> 속성생략시 all */
+        }
+        /* 박스에 오버시 마지막 이미지 보이기 */
+        .absimg:hover img:last-child{
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="bx" id="r1">r1</div>
+    <div class="bx" id="s2">s2</div>
+    <div class="bx" id="a1">a1</div>
+    <div class="bx" id="r2">r2</div>
+    <div class="bx" id="s3">s3</div>
+    <div class="bx" id="a2">a2</div>
+
+    <!-- 앱솔루트 : 판타롱스타킹! -->
+    <div class="a5">
+        <img src="./ab_img/ab2.jpg" alt="타노스">
+    </div>
+
+    <!-- 앱솔루트 끼리는 서로 겹친다! -->
+    <div class="absimg">
+        <img src="./ab_img/ab3.jpg" alt="토르">
+        <img src="./ab_img/ab4.jpg" alt="닥스">
+    </div>
+
+    <!-- 화면고정 fixed 포지션 -->
+    <div class="f1">f1</div>
+    <div class="f2">f2
+        <div class="newabs">나는 fixed자식!</div>
+    </div>
+
+    <!-- 부모를 찾는 absolute요소 -->
+    <div class="bx2 s5">s5
+        <div class="bx2 s6">s6
+            <div class="bx2 s7">s7
+                <div class="bx2 s8">s8
+                    <div class="a3">a3</div>
+                    <div class="a4">a4</div>
+                    <span class="spab">
+                        나는 span앱솔루트다!
+                    </span>
+                    <div class="f3">
+                        나는 fixed다!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- 
+        [ 에밋코딩 기법 ]
+        .bx#s${s$}*3
+        -> 클래스가 bx이고 아이디가 s번호이고 
+        내용이 s번호인 div요소를 3개만드시오
+
+        _____________________
+
+        클래스나 아이디는 css문법과 동일함
+        $표시는 연속번호 자리를 나타냄
+        [] 대괄호는 속성
+        {} 중괄호는 데이터
+        * 별표시는 곱하기(여러개 만들때)
+     -->
+
+</body>
+
+</html>
