@@ -59,6 +59,14 @@
                     보이는 화면(window)을 기준한다!
                     ->>> 보이는 화면은 body가 아니다!
                     스크롤이 생겨도 스크롤 위쪽화면을 말함
+
+                2) 앱솔루트에 가로, 세로 크기를 주지않은 경우
+                일반적으로 block요소 이므로 width:auto로써
+                부모요소 끝까지 차지 하지만 앱솔루트는...
+                내용만큼 그 크기가 자동으로 설정된다!!!
+                [-> 앱솔루트 판타롱스타킹!]
+
+
             */
 
             color: #fff;
@@ -106,7 +114,25 @@
         /* 각 부모박스 */
         .s5{
             position: relative;
+            /* 부모자격! */
+            width: 60%;
+            margin: 0 auto;
             background-color: lightblue;
+        }
+        .s6{
+            position: relative;
+            /* 부모자격! */
+            background-color: lightcoral;
+        }
+        .s7{
+            position: relative;
+            /* 부모자격! */
+            background-color: lightgreen;
+        }
+        .s8{
+            position: relative;
+            /* 부모자격! */
+            background-color: lightsalmon;
         }
         /* 부모찾는 앱솔루트 */
         .a3{
