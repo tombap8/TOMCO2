@@ -20,7 +20,55 @@
 
         #a1 {
             position: absolute;
+            /* 
+                [ 3. absolute 포지션 ]
 
+                1) absolute 포지션은 위치이동값을
+                쓰기전과 후로 나눠 볼 수 있다!
+
+                    (1) 위치이동값을 쓰지 않은 경우
+
+                    - 자기보다 위에 있는 static요소를
+                    존중하여 그 아래에 위치한다!
+                    (젠틀앱솔루트!)
+                    + 어떤요소의 자식요소로 앱솔루트를
+                    주는 경우 위치값을 안쓸때 그 부모박스
+                    안에 가만히 있는다!(젠틀앱솔루트)
+
+                    - 자기보다 아래쪽에 있는 요소는
+                    앱솔루트를 인식하지 못하여 같은자리를
+                    차지한다!
+
+                    (2) 위치이동값을 사용한 경우
+                    - 위치이동값을 사용한 부분에 대해서만!!!!!!!!!!!!!!!!!!
+                    앱솔루트가 위치를 잡을때 부모를 찾는다!
+                    일반적으로는 싸고 있는 요소가 부모지만
+                    앱솔루트는 싸고 있는 요소들 중
+                    포지션이 static이 아닌 요소가 부모다!
+
+                    -> static이 아닌 포지션이란?
+                    relative / absolute / fixed / sticky
+
+                    -> 위치 이동값을 쓰지 않은 부분은
+                    젠틀하다!!!
+
+                    -> 부모자격이 있는 부모요소들 중
+                    가장 가까운것이 부모가 된다!
+
+                    -> 만약 부모자격이 모두 없으면
+                    보이는 화면(window)을 기준한다!
+                    ->>> 보이는 화면은 body가 아니다!
+                    스크롤이 생겨도 스크롤 위쪽화면을 말함
+            */
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+        #a2 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            /* 나의 부모는? */
 
             color: #fff;
             background: url(./ab_img/ab1.jpg) no-repeat center/cover;
@@ -57,6 +105,26 @@
     <div class="bx" id="r2">r2</div>
     <div class="bx" id="s3">s3</div>
     <div class="bx" id="a2">a2</div>
+
+    <!-- 부모를 찾는 absolute요소 -->
+    <div class="bx2 s5">
+        <div class="bx2 s6">
+            <div class="bx2 s7">
+                <div class="bx2 s8">
+                    <div class="a3">a3</div>
+                    <div class="a4">a4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
     <!-- 
         [ 에밋코딩 기법 ]
         .bx#s${s$}*3
