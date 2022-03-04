@@ -43,7 +43,7 @@
 
             ********************************************/
             width: 100%;
-            height: 50px;
+            height: 100px;
             line-height: 50px;
             text-align: center;
             border: 4px double green;
@@ -52,6 +52,62 @@
             color: #fff;
             background: url(./ab_img/ab0.jpg) repeat-x 0/auto 100%;
         
+        }
+        .f2{
+            position: fixed;
+            /* 부모자격있음!!! */
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            /* 먼저 코딩되고 순서상 위에 오고자할때
+            z-index값을 크게 주면 가장위에 올 수 있다! */
+
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border: 4px double green;
+            font-size: 30px;
+            box-sizing: border-box;
+            
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) repeat-x 0/auto 100%;
+        }
+
+        /* fixed부모 아래 자식요소 앱솔루트 */
+        .newabs{
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            /* 부모는? .f2 */
+            background-color: pink;
+            line-height: 1;
+            color: #000;
+        }
+
+        /* 자식요소로 있는 경우 fixed만들기 */
+        .f3{
+            position: fixed;
+            top: 0;
+            right: -180px;
+            /* 나의 부모는? 당연히 보이는 화면!!! */
+
+            /* 트랜지션: 속시이지 */
+            transition: right .4s ease-out;
+
+            width: 300px;
+            height: 100px;
+
+            background-color: #ff0;
+            font-size: 30px;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+            z-index: 99999;
+        }
+        /* .f3에 마우스 오버시 right값 변경하여 화면에 등장 */
+        .f3:hover{
+            right: 0;
         }
 
         #a1 {
@@ -216,7 +272,9 @@
 
     <!-- 화면고정 fixed 포지션 -->
     <div class="f1">f1</div>
-    <div class="f2">f2</div>
+    <div class="f2">f2
+        <div class="newabs">나는 fixed자식!</div>
+    </div>
 
     <!-- 부모를 찾는 absolute요소 -->
     <div class="bx2 s5">s5
@@ -228,6 +286,9 @@
                     <span class="spab">
                         나는 span앱솔루트다!
                     </span>
+                    <div class="f3">
+                        나는 fixed다!
+                    </div>
                 </div>
             </div>
         </div>
