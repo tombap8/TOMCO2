@@ -79,6 +79,26 @@
                     bottom을 적용했으면 margin-bottom
                     right를 적용했으면 margin-right
 
+                    -> 앱솔루트 마진은 위치 이동후
+                    미세조정을 개별요소에 필요로 할때
+                    즉, 위치이동값에 더 이상 손댈  수 없을때
+                    사용하는 경우가 많다!
+
+                    -> 앱솔루트에 위치이동값이 설정되지
+                    않은경우 기본 위치 기준값이
+                    top, left 이므로
+                    margin-top, margin-left 만 적용된다!
+
+                5) 위치 이동값의 초기화!
+                - 값으로 auto를 쓰면된다!
+                - top: auto 이런식으로~~
+                - 언제 초기화하죠?
+                    예컨데 기존에 top값으로 설정된 경우
+                    이를 미디어쿼리 등으로 변경할때
+                    기존 설정값을 해제해야 새로운 기준값으로
+                    변경할 수 있다! 이때 auto셋팅을 한다!
+                예) top: auto; bottom: 100px;
+
 
             */
 
@@ -206,6 +226,12 @@
     <!-- 앱솔루트 : 판타롱스타킹! -->
     <div class="a5">
         <img src="./ab_img/ab2.jpg" alt="타노스">
+    </div>
+
+    <!-- 앱솔루트 끼리는 서로 겹친다! -->
+    <div class="absimg">
+        <img src="./ab_img/ab3.jpg" alt="토르">
+        <img src="./ab_img/ab4.jpg" alt="닥스">
     </div>
 
     <!-- 부모를 찾는 absolute요소 -->
