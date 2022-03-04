@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Position - absolute</title>
     <style>
-        .bx{
+        .bx {
             width: 100px;
             height: 100px;
             border: 2px solid blue;
@@ -17,73 +18,16 @@
             /* 높이값과 같은 줄간격은 글자세로중앙! */
         }
 
-        #r1{
+        #a1 {
+            position: absolute;
+
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+
+        #r1 {
             position: relative;
-            /* 
-                [ 2. relative 포지션 ]
-                - 렐러티브! 라고 읽어주세요~~~!
-
-                1) 위치이동속성이 적용된다!
-
-                2) 위치이동의 기준은 원래 있던 위치임!
-                (그래서 상대적인 즉, relative라는 단어를 사용함!)
-
-                3) 이동시에 다른 요소에 영향이 없이 겹쳐질 수 있다!
-
-                4) 원래 자신이 있던 위치는 그대로 보존된다!
-                (의미: 기존위치가 보존되기 때문에 이동시켜도 본래의 디자인이 망가져 보이지 않는다!)
-
-                5) 위치값 설정시 2가지 기준으로만 셋팅한다!
-                - 위, 아래 중 하나
-                - 좌, 우 중 하나
-                top, left / top, right
-                bottom, left / bottom, right
-
-                6) 마진은 그대로 적용된다!
-                (다른 static 요소에 영향을 미친다!)
-                -> 원래 위치에서 마진으로 밀고 있는 것과 같다!
-
-                7) relative는 위치 이동값을 사용하지 않으면 static과 똑같은 특성을 가진다!
-
-                8) relative는 겹쳐질 수 있으므로
-                위아래 관계가 성립된다!
-                기본적인 위아래 관계는 아래와 같다!
-                    (1) static보다 항상위!
-                    (2) static 포지션이 아닌경우
-                        나중에 그려진 요소가 위!
-                        (손 놓고 손등때리기!)
-                    (3) z-index 속성으로 숫자가 크면 위!
-
-
-                9) 부모자격!!!
-                
-                ____________________________________
-
-                [ z-index란? ]
-
-                - 겹치는 포지션을 주는 경우 위치순서를
-                정하여 디스플레이를 변경하는 속성
-
-                - z는 화면방향의 z축을 의미하며
-                기본값은 0이다. 이는 같은층에 있다는 의미!
-                (z-index를 설정안해도 0이다!)
-
-                - 포지션이 static인 경우 즉, 아무런 포진션도 주지 않은 경우에 z-index를
-                줘도 적용되지 않는다!
-                왜? 스스로 겹칠수 없고 위치이동값을
-                쓸 수 없기 때문이다!
-
-                -> 결론적으로 포지션이 있는 경우에만
-                z-index를 쓸 수 있다~!!!!!
-
-                ((유의사항))
-                - z-index 비교시에 형제레벨에 있어야
-                비교가 된다! 만약 자손요소에 z-index가
-                또 있게 되면 위로 올라오지 않는 경우가
-                발생할 수 있다! z-index를 남발하지 않게
-                조심하자!
-
-            */
             top: 50px;
             left: 50px;
             z-index: 1;
@@ -92,19 +36,20 @@
             color: #fff;
             background: url(./ab_img/ab5.jpg) no-repeat center/cover;
         }
-        #r2{
+
+        #r2 {
             position: relative;
             bottom: 75px;
             right: -86px;
-            z-index: -1;/* static보다 아래! */
+            z-index: -1;
+            /* static보다 아래! */
 
             color: #fff;
             background: url(./ab_img/ab4.jpg) no-repeat center/cover;
         }
-
-        
     </style>
 </head>
+
 <body>
     <div class="bx" id="r1">r1</div>
     <div class="bx" id="s2">s2</div>
@@ -128,4 +73,5 @@
      -->
 
 </body>
+
 </html>
