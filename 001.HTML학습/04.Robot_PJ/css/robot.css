@@ -23,6 +23,7 @@ body *{
     background: url(../images/metal01.jpg) no-repeat center/cover;
     margin: 0 auto;
     margin-top: 100px;
+    border-radius: 50px 50px 0 0;
 }
 /* 눈1 */
 #eye1{
@@ -72,7 +73,7 @@ body *{
 #ear1{
     position: absolute;
     top: 69px;
-    left: -50px;
+    left: -48px;
     /* 부모는? #head */
     
     width: 48px;
@@ -84,7 +85,7 @@ body *{
 #ear2{
     position: absolute;
     top: 69px;
-    right: -50px;
+    right: -48px;
     /* 부모는? #head */
     
     width: 48px;
