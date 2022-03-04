@@ -120,5 +120,28 @@ body *{
 
 /* 팔다리 공통 */
 .part{
-    
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    background: url(../images/metal02.jpg) repeat-y 0/100%;
+}
+/* 왼팔 */
+#arm1{
+    top: 0px;
+    left: -53px;
+}
+/* 오른팔 */
+#arm2{
+    top: 0px;
+    right: -53px;
+}
+/* 왼다리 */
+#leg1{
+    top: 100%;
+    left: 0x;
+}
+/* 오른다리 */
+#leg2{
+    top: 100%;
+    right: 0;
 }
