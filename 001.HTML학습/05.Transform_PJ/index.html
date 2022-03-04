@@ -81,21 +81,13 @@
             - deg는 각도의 단위(도:degree)
          */
          #trans1:hover img{
-             transform: rotateY(180deg);
-             filter: grayscale(100%);
-             /* 필터(이미지필터효과) */
-             /* grayscale(비율%) - 100% 완전흑백 */
-             transition-property: all;
-             transition-duration: 2s;
-             /* 트랜지션 개별속성 변경이 가능함! */
+             
          }
         /* 
             2. rotateX(각도deg) - X축회전
          */
          #trans2:hover img{
-             transform: rotateX(180deg);
-             filter: blur(1px);
-             /* 필터 blur(px) - 흐림효과 */
+             
          }
 
          /* 
@@ -116,7 +108,7 @@
             - 이동방향: + 는 오른쪽, - 는 왼쪽
           */
           #trans3:hover img{
-              transform: translateX(-50%);
+              
           }
           /* 
             4. translateY(거리) - Y축이동
@@ -127,7 +119,7 @@
             - 이동방향: + 는 아랫쪽, - 는 윗쪽
           */
           #trans4:hover img{
-              transform: translateY(-100%);
+              
           }
            /* 
             5. translate(X축거리,Y축거리) - X,Y축이동
@@ -140,7 +132,7 @@
                         - 는 왼쪽/윗쪽
           */
           #trans5:hover img{
-              transform: translate(-100px, 200px);
+              
           }
           /* 
             6. rotate(각도deg) - 원형회전
@@ -150,12 +142,11 @@
                 (변경가능: transform-origin)
            */
            #trans6:hover img{
-               transform: rotate(5432deg);
-               transition-duration: 10s;
+               
            }
            /* 회전축 변경하기 */
            #trans6 img{
-               transform-origin: 70% 60%;
+               
                /* 
                   [트랜스폼 축변경 속성]
                   transform-origin: 가로값 세로값;
@@ -170,7 +161,7 @@
                 - 각도가 양수/음수에 따라 기울임 방향달라짐                
             */
             #trans7:hover img{
-                transform: skewY(30deg);
+                
             }
             /* 
                8. scale(배수)
@@ -179,11 +170,11 @@
                - 값이 0이면 사라짐
              */
              #trans8 img{
-                 transform: scale(.5);
+                 
                  /* 0.5배 -> 축소 */
              }
              #trans8:hover img{
-                 transform: scale(2);
+                 
                  /* transform: scaleY(2); */
              }
              /* 
@@ -191,8 +182,7 @@
                 transform: 속성1 속성2 속성3 .....;
               */
               #trans9:hover img{
-                  transform: scale(2) translate(-200%,-100%) rotateX(1200deg) skewX(50deg) rotate(5300deg);
-                  transition-duration: 20s;
+                  
               }
 
               /* 
@@ -204,15 +194,13 @@
                */
                /* 2개의 이미지를 겹치게한다 */
                #trans10 img{
-                   position: absolute;
-                   width: 200px;
+                   
                }
 
                /* 1. 보거미 처음상태(돌아옴) */
                /* Y축 0도로 돌아옴 - 0.4초 기다림 */
                #trans10 img:last-child{
-                   transform: rotateY(0deg);
-                   transition: transform .4s ease-out .4s;
+                   
                    /* ease-out 처음엔 빠르고 나중엔 천천히 */
                }
                
@@ -220,16 +208,14 @@
                /* 2. 보거미 오버상태 */
                /* Y축 90도회전 - 회전후 안보임*/
                #trans10:hover img:last-child{
-                   transform: rotateY(90deg);
-                   transition: transform .4s ease-in;
+                   
                    /* ease-in 처음엔 천천히 나중엔 빠르게 */
                }
 
                /* 3. 유정이 처음상태(돌아옴) */
                /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
                #trans10 img:first-child{
-                   transform: rotateY(90deg);
-                   transition: transform .4s ease-in;
+                   
                    /* ease-in 처음엔 천천히 나중엔 빠르게 */
                }
                
@@ -238,8 +224,7 @@
                /* Y축 0도로 회전 
                - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
                #trans10:hover img:first-child{
-                   transform: rotateY(0deg);
-                   transition: transform .4s ease-out .4s;
+                   
                    /* ease-out 처음엔 빠르고 나중엔 천천히 */
                }
                

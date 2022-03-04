@@ -6,65 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스타벅스 연습</title>
     <style>
-        body {
-            background: #000 url(./starbucks_img/reserve_bg.jpg) no-repeat top/100%;
-        }
-
-        #trans10{
-            width: 334px;
-            height: 334px;
-            margin: 100px auto;
-            /* 가로중앙정렬 */
-        }
-
-        /* 2개의 이미지를 겹치게한다 */
-        #trans10 img {
-            position: absolute;
-            width: 334px;
-        }
-
-        /* 1. 보거미 처음상태(돌아옴) */
-        /* Y축 0도로 돌아옴 - 0.4초 기다림 */
-        #trans10 img:last-child {
-            transform: rotateY(0deg);
-            transition: transform .4s ease-out .4s;
-            /* ease-out 처음엔 빠르고 나중엔 천천히 */
-        }
-
-
-        /* 2. 보거미 오버상태 */
-        /* Y축 90도회전 - 회전후 안보임*/
-        #trans10:hover img:last-child {
-            transform: rotateY(90deg);
-            transition: transform .4s ease-in;
-            /* ease-in 처음엔 천천히 나중엔 빠르게 */
-        }
-
-        /* 3. 유정이 처음상태(돌아옴) */
-        /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
-        #trans10 img:first-child {
-            transform: rotateY(90deg);
-            transition: transform .4s ease-in;
-            /* ease-in 처음엔 천천히 나중엔 빠르게 */
-        }
-
-
-        /* 4. 유정이 오버상태 */
-        /* Y축 0도로 회전 
-               - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
-        #trans10:hover img:first-child {
-            transform: rotateY(0deg);
-            transition: transform .4s ease-out .4s;
-            /* ease-out 처음엔 빠르고 나중엔 천천히 */
-        }
+        
     </style>
 </head>
 
 <body>
-    <div id="trans10">
-        <img src="./starbucks_img/reserve_medal02.png" alt="매장안내">
-        <img src="./starbucks_img/reserve_medal01.png" alt="스타벅스별">
-    </div>
+    
 
 </body>
 
