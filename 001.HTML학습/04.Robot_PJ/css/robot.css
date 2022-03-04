@@ -13,3 +13,82 @@ body{
 body *{
     outline: 2px dashed lime;
 }
+
+/* 로봇머리 */
+#head{
+    position: relative;
+    /* 부모자격! */
+    width: 250px;
+    height: 250px;
+    background: url(../images/metal01.jpg) no-repeat center/cover;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+/* 눈1 */
+#eye1{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    /* 부모는? #head */
+
+    width: 50px;
+    height: 50px;
+    background: url(../images/e1.jpg) no-repeat 0/100% 100%;
+}
+/* 눈2 */
+#eye2{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    /* 부모는? #head */
+
+    width: 50px;
+    height: 50px;
+    background: url(../images/e2.jpg) no-repeat 0/100% 100%;
+}
+/* 코 */
+#nose{
+    position: absolute;
+    top: 103px;
+    right: 104px;
+    /* 부모는? #head */
+    
+    width: 43px;
+    height: 65px;
+    background: url(../images/nose.jpg) no-repeat 0/110% 100%;
+}
+/* 입 */
+#mouth{
+    position: absolute;
+    bottom: 29px;
+    left: 77px;
+    /* 부모는? #head */
+    
+    width: 96px;
+    height: 42px;
+    background: url(../images/mouth.png) no-repeat 0/100% 100%;
+}
+/* 귀1 */
+#ear1{
+    position: absolute;
+    top: 69px;
+    left: -50px;
+    /* 부모는? #head */
+    
+    width: 48px;
+    height: 94px;
+    border-radius: 15px 0 0 15px;
+    background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+}
+/* 귀2 */
+#ear2{
+    position: absolute;
+    top: 69px;
+    right: -50px;
+    /* 부모는? #head */
+    
+    width: 48px;
+    height: 94px;
+    border-radius: 0 15px 15px 0;
+    background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+}
