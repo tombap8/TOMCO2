@@ -156,6 +156,21 @@
             background: url(./ab_img/ab1.jpg) no-repeat center/cover;
         }
 
+        /* 앱솔루트 : 판타롱스타킹! */
+        .a5{
+            position: absolute;
+            /* 크기를 안주면 내용만큼 늘어남! */
+            top: 50%;
+            right: 10%;
+            /* 부모는? 보이는 화면! */
+        }
+        .a5 img{
+            vertical-align: bottom;
+            /* 이미지가 박스에 들어갈때
+            하단에 간극이 생긴다! 이것을 없애려면
+            vertical-align설정을 준다!(값은 상관없음...) */
+        }
+
     </style>
 </head>
 
@@ -167,6 +182,11 @@
     <div class="bx" id="s3">s3</div>
     <div class="bx" id="a2">a2</div>
 
+    <!-- 앱솔루트 : 판타롱스타킹! -->
+    <div class="a5">
+        <img src="./ab_img/ab2.jpg" alt="타노스">
+    </div>
+
     <!-- 부모를 찾는 absolute요소 -->
     <div class="bx2 s5">s5
         <div class="bx2 s6">s6
@@ -174,6 +194,9 @@
                 <div class="bx2 s8">s8
                     <div class="a3">a3</div>
                     <div class="a4">a4</div>
+                    <span class="spab">
+                        나는 span앱솔루트다!
+                    </span>
                 </div>
             </div>
         </div>
