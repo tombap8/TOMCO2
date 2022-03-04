@@ -212,6 +212,32 @@
             /* 나의 부모는? .s5요소 */
         }
 
+        /* 앱솔루트 끼리는 서로겹친다! */
+        .absimg{
+            width: 92px;
+            height: 115px;
+            border: 4px ridge purple;
+            /* 액자틀모양 보더 */
+        }
+        /* 이미지가 앱솔루트! */
+        .absimg img{
+            position: absolute;
+            /* 겹치니까 마지막 이미지만 보인다! */
+        }
+        /* 마지막 이미지를 투명하게 */
+        .absimg img:last-child{
+            opacity: 0;
+            /* opacity는 투명도
+            (0 완전투명, 1 모두보임, 0.몇 반투명) */
+            transition: 1s;
+            /* 트랜지션: 속시이지 -> 속성생략시 all */
+        }
+        /* 박스에 오버시 마지막 이미지 보이기 */
+        .absimg:hover img:last-child{
+            opacity: 1;
+        }
+
+
     </style>
 </head>
 
