@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* 로봇 PJ CSS - robot.css */
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url(../images/bg.jpg) no-repeat fixed top/cover;
+}
+
+/* 공사중 아웃라인 */
+body *{
+    outline: 2px dashed lime;
+}
