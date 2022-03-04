@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position - static</title>
+    <style>
+        .bx{
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            text-align: center;
+            /* 글자가로중앙 */
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 100px;
+            /* 높이값과 같은 줄간격은 글자세로중앙! */
+        }
+
+        #s1{
+            position: static;
+            /* 
+                [ CSS의 포지션은 뭐지? ]
+                - 위치를 효과적으로 배치하기위한
+                코딩법을 제공하는 속성
+
+                [ 1. static 포지션 ]
+                1) 설정하지 않아도 기본값
+                2) 위치이동값(top,left,bottom,right) 속성이
+                    적용되지 않는다!
+                3) 위치이동을 하려면 margin을 사용
+                -> 특징: 마진위치를 이동시키면 아래 또는 옆의
+                요소가 영향을 받아 같이 이동됨!
+
+                [ 위치이동속성 ]
+                - 선택요소의 위치를 이동하기 위한 속성
+                - 포지션에 따라 다르게 적용된다!
+                - 종류: 4가지
+                    top, bottom, left, right
+            */
+            top: 100px;
+            left: 100px;
+            /* 위치이동속성은 static에는 적용되지 않는다! */
+
+            /* 마진으로 이동하기 */
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="bx" id="s1">s1</div>
+    <div class="bx" id="s2">s2</div>
+    <div class="bx" id="s3">s3</div>
+
+    <!-- 
+        젠코딩
+        .bx#s${s$}*3
+        div인데 클래스가 bx, 
+        아이디가 s1,s2,s3 연속 증가번호로 생성하기
+        $(달러)는 연속번호가 들어가는 위치임!
+        중괄호({})는 데이터에 들어갈 내용임!
+
+     -->
+</body>
+</html>
