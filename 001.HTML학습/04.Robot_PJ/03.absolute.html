@@ -95,6 +95,41 @@
             color: #fff;
             background: url(./ab_img/ab4.jpg) no-repeat center/cover;
         }
+
+        /* 부모박스들 */
+        .bx2{
+            border: 2px dotted orange;
+            padding: 50px;
+            font-size: 24px;
+            text-align: center;
+        }
+        /* 각 부모박스 */
+        .s5{
+            position: relative;
+            background-color: lightblue;
+        }
+        /* 부모찾는 앱솔루트 */
+        .a3{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+        .a4{
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 나의 부모는? */
+
+            width: 50px;
+            height: 50px;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+
     </style>
 </head>
 
@@ -107,10 +142,10 @@
     <div class="bx" id="a2">a2</div>
 
     <!-- 부모를 찾는 absolute요소 -->
-    <div class="bx2 s5">
-        <div class="bx2 s6">
-            <div class="bx2 s7">
-                <div class="bx2 s8">
+    <div class="bx2 s5">s5
+        <div class="bx2 s6">s6
+            <div class="bx2 s7">s7
+                <div class="bx2 s8">s8
                     <div class="a3">a3</div>
                     <div class="a4">a4</div>
                 </div>
