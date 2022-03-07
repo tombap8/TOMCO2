@@ -145,3 +145,23 @@ body *{
     top: 100%;
     right: 0;
 }
+
+/* TV */
+#tv{
+    position: absolute;
+    /* 부모자격 - #screen */
+    top: 49px;
+    left: 24px;
+    /* 부모는? #body */
+
+    width: 200px;
+    height: 150px;
+    background: url(../images/tv.jpg) no-repeat 0/100% 100%;
+}
+/* 스크린 */
+#screen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 부모는? #tv */
+}
