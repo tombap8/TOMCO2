@@ -10,6 +10,8 @@
 
                 - 트랜지션이란? CSS속성값이 변경되는 과정을
                 애니메이션으로 보여누는 속성
+                - 마우스 오버시 혹은 미리셋팅된 클래스에 설정하여
+                JS로 클래스를 요소에 부여해도 적용할 수 있다!
 
                 - 형식: 
                 transition: 속성명 시간 이징 지연시간
@@ -74,28 +76,44 @@
         /* 트랜지션을 hover가 아닌 원래 요소에 주면
         양방향 모두 동시적용된다! */
         #tr1 span{
-            
+            transition: 2s;
+            /* 앞에 속성을 생략하면 all과 같다! 
+            즉, 모든 속성이 변경될때 애니메이션 함! */
         }
         #tr1:hover span{
-            
+            left: 50%;
+            background-color: #f00;
         }
 
-        /* #tr2에 트랜지션 설정 */
+        /* #tr2에 트랜지션 설정 하지 않음! */
         #tr2 span{
-            
+            left: -5%;
+            background-color: orange;
         }
         /* 오버시에만 트랜지션을 주면 오버시에만 적용됨! */
         #tr2:hover span{
-            
+            left: 70%;
+            background-color: lime;
+            transition: all 3s;
         }
         
 
         /* #tr3에 트랜지션 설정 */
         #tr3 span{
-            
+            /* 원상복귀시 적용! */
+            transition: all 5s ease-in-out 2s;
+            /* 모든 속성이 5초동안 처음과 마지막에 천천히 2초후에 애니 */
         }
+        /* 오버시 트랜지션 별도 설정하기! */
         #tr3:hover span{
-            
+            left: 60%;
+            background-color: pink;
+            border-radius: 0;
+            /* 원을 사각형으로! */
+
+            /* 트랜지션: 속시이지 -> 오버시 적용! */
+            transition: 1s ease-out;
+            /* 모든 속성을 1초간 마지막에 천천히 애니 */
         }
 
         /* #tr4에 트랜지션 설정 */
