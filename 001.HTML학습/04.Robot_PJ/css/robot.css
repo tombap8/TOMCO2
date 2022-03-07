@@ -74,6 +74,29 @@ h1#logo{
     text-decoration: overline;
 }
 
+/* 위로이동버튼 */
+.btnTop{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    /* 보이는 화면 기준 */
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 50%;
+    color: blue;
+    font-family: 'Black Ops One', cursive;
+    font-size: 30px;
+    text-decoration: none;
+    background-color: #ccc;
+}
+/* 버튼오버시 */
+.btnTop:hover{
+    background-color: #ff0;
+    color: red;
+}
+
 /* 로봇머리 */
 #head{
     position: relative;
