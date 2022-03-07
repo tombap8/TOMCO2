@@ -8,6 +8,13 @@ font-family: 'Black Ops One', cursive;
 font-family: 'Orbitron', sans-serif;
 */
 
+html{
+    scroll-behavior: smooth;
+    /* 내부 아이디 요소 위치로 이동시
+    스크롤 애니메이션을 부드럽게 처리함!
+    최상위 요소인 html에 셋팅함! */
+}
+
 html,body{
     margin: 0;
     padding: 0;
@@ -299,6 +306,10 @@ h1#logo{
 }
 /* 로봇설명 제목 */
 #dcbx h2{
+    position: sticky;
+    top: 10px;
+    /* 스크롤시 top값 설정으로
+    위치를 고정할 수 있다! */
     font-size: 35px;
     text-align: center;
     color: lime;
