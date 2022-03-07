@@ -179,7 +179,8 @@
                 transform: skewY(30deg);
             }
             /* 
-               8. scale(배수)
+               8. scale(x축배수,y축배수)
+               - 값을 하나만 쓰면 양방향 같은값
                - 배수가 1보다 크면 확대, 작으면 축소
                - scaleX(배수), scaleY(배수) - x,y축별
                - 값이 0이면 사라짐
@@ -197,7 +198,8 @@
                 transform: 속성1 속성2 속성3 .....;
               */
               #trans9:hover img{
-                  
+                  transform: scale(2) translate(-200%,-100%) rotateX(1200deg) skewX(50deg) rotate(5300deg);
+                  transition-duration: 20s;
               }
 
               /* 
