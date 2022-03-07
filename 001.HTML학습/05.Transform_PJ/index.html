@@ -145,7 +145,7 @@
                         - 는 왼쪽/윗쪽
           */
           #trans5:hover img{
-              
+              transform: translate(-50%, 100%);
           }
           /* 
             6. rotate(각도deg) - 원형회전
@@ -155,18 +155,20 @@
                 (변경가능: transform-origin)
            */
            #trans6:hover img{
-               
+               transform: rotate(5432deg);
+               transition-duration: 10s;
+               /* 트랜지션 시간변경 */
            }
            /* 회전축 변경하기 */
            #trans6 img{
-               
-               /* 
-                  [트랜스폼 축변경 속성]
-                  transform-origin: 가로값 세로값;
-                  - 가로값: left, right, center, 몇px, 몇%
-                  - 세로값: top, bottom, center, 몇px, 몇%
-                  - 기본값은 center임!
-               */
+               transform-origin: 40% 40%;
+        /* 
+            [트랜스폼 축변경 속성]
+            transform-origin: 가로값 세로값;
+            - 가로값: left, right, center, 몇px, 몇%
+            - 세로값: top, bottom, center, 몇px, 몇%
+            - 기본값은 center임!
+        */
            }
            /* 
                 7. skew - x,y축 기울임
@@ -174,7 +176,7 @@
                 - 각도가 양수/음수에 따라 기울임 방향달라짐                
             */
             #trans7:hover img{
-                
+                transform: skewY(30deg);
             }
             /* 
                8. scale(배수)
@@ -183,11 +185,11 @@
                - 값이 0이면 사라짐
              */
              #trans8 img{
-                 
+                 transform: scale(.5);
                  /* 0.5배 -> 축소 */
              }
              #trans8:hover img{
-                 
+                 transform: scale(2);
                  /* transform: scaleY(2); */
              }
              /* 
