@@ -240,4 +240,32 @@ body *{
     word-spacing: 2px;
     /* 단어간격 */
 
+    /* 가독성을 위한 다단설정 */
+    /* 다단표시(다중열속성) */
+
+    column-count: 3;
+    /* 다중열개수 */
+    column-rule: 5px dotted #68cfff;
+    /* 다중열구분선
+    -> 값은 보더와 같다(두께 종류 색상) */
+    column-gap: 55px;
+    /* 다중열 사이간격
+    -> 구분선 오른쪽 간격조정 */
+
+    /* 문단정렬 */
+    text-align: justify;
+    /* 양쪽정렬 - 양쪽 끝라인 맞춤! */
+    word-break: break-all;
+    /* 단어깨기! - 단어의 한글자씩 깨줌!
+    영문자는 단어 단위로 기본적으로 
+    붙어다님! 이것을 깨줘야 양쪽정렬이
+    보기 좋아짐(한글은 안깨도 괜찮음!) */
+    text-indent: 20px;
+    /* 첫줄 들여쓰기(마이너스값은 내어쓰기) */
+}
+/* 가상요소로 첫글자 디자인변경하기 */
+#dcbx p::first-letter{
+    font-size: 30px;
+    font-weight: bold;
+    color: lightsalmon;
 }
