@@ -100,8 +100,10 @@ body *{
     /* 부모자격! */
     width: 250px;
     height: 300px;
-    margin: 0 auto;
+    margin: 0 auto;/* 마영오! */
     margin-top: 50px;
+    margin-bottom: 300px;
+    /* 아래쪽 다리만큼 여유공간주기 */
 
     background: url(../images/metal01.jpg) no-repeat center/cover;
 }
@@ -187,4 +189,28 @@ body *{
 
     border: none;
     /* 아이프레임 기본보더 없앰! */
+}
+
+/* 로봇 설명박스 */
+#dcbx {
+    width: 800px;
+    margin: 0 auto;/* 마영오! */
+    margin-bottom: 200px;/* 하단공간 */
+    border: 3px solid #fff;
+    border-radius: 20px;
+    padding: 15px 30px;
+    /* 패딩: 위아래 양쪽 */
+    background-color: rgba(0, 0, 0, 0.5);
+
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    /* 글자그림자: x y 블러 색 */
+    box-shadow: 
+    inset 0 0 20px blue,
+    inset 0 0 50px 20px cyan;
+    /* 박스그림자: (내부) x y 블러 (크기) 색
+    -> 그림자색을 형광계열로 주면 glow효과를 줄 수 있다!
+    -> 글자그림자와 달리 그림자 크기(spread)를 줄 수 있다!
+    이것으로 더 강한 효과를 줄 수 있음(0은 기본값)
+    -> 글자그림자나 박스그림자 모두 여러개를 콤마로 셋팅가능! */
 }
