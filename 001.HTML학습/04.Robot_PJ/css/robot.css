@@ -1,6 +1,13 @@
 @charset "utf-8";
 /* 로봇 PJ CSS - robot.css */
 
+/* 웹폰트(CDN) */
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron&display=swap');
+/* 
+font-family: 'Black Ops One', cursive;
+font-family: 'Orbitron', sans-serif;
+*/
+
 html,body{
     margin: 0;
     padding: 0;
