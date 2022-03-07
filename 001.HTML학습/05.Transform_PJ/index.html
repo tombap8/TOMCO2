@@ -8,21 +8,23 @@
         body {
             background: url(images/bg-main.jpg) no-repeat fixed center top/cover;
         }
+
         /* 타이틀 */
-        .tit{
+        .tit {
             text-align: center;
             color: #fff;
             font-size: 50px;
             line-height: 100px;
             border-radius: 50px;
             /* 그림자를 이용한 글자테두리 만들기 */
-            text-shadow: 2px 0 #000,-2px 0 #000,
-                        0 2px #000, 0 -2px #000;
+            text-shadow: 2px 0 #000, -2px 0 #000,
+                0 2px #000, 0 -2px #000;
             /* https://www.w3schools.com/css/css3_shadows.asp */
             background-color: rgba(0, 0, 0, 0.459);
         }
+
         /* 전체부모박스 */
-        .cont{
+        .cont {
             width: 1500px;
             max-width: 80%;
             box-sizing: border-box;
@@ -32,24 +34,31 @@
             margin: 100px auto;
             /* 블록가로중앙 - 마영오 */
         }
+
         /* 가상요소로 float해제하기 - 부모요소가 자식요소 높이값인식*/
-        .cont::after{
-            content: '';/* 필수속성 */
-            display: block;/* clear속성적용위해 */
-            clear: both;/* float해제 */
+        .cont::after {
+            content: '';
+            /* 필수속성 */
+            display: block;
+            /* clear속성적용위해 */
+            clear: both;
+            /* float해제 */
         }
+
         /* 캐릭터박스 공통 */
-        .cont>div{
+        .cont>div {
             width: 200px;
             height: 200px;
             margin: 44px;
             float: left;
             /* 블록박스를 옆으로 흐르게 */
         }
+
         /* 이미지 맞춤 */
-        .cont>div>img{
+        .cont>div>img {
             width: 100%;
-            border-radius: 50%;/* 원 */
+            border-radius: 50%;
+            /* 원 */
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             /* 
@@ -71,6 +80,7 @@
             /* 트랜지션: 속시이지 */
             transition: transform .6s;
         }
+
         /* 
             [ Transform 효과주기 ]
             - 선택요소의 크기, 회전, 이동, 기울임
@@ -80,30 +90,31 @@
             1. rotateY(각도deg) - Y축회전
             - deg는 각도의 단위(도:degree)
          */
-         #trans1:hover img{
-             transform: rotateY(180deg);
-             filter: grayscale(100%);
-             /* 필터(이미지필터효과)
+        #trans1:hover img {
+            transform: rotateY(180deg);
+            filter: grayscale(100%);
+            /* 필터(이미지필터효과)
              grayscale(비율%) - 100% 완전흑백 */
 
-             /* 기본 트랜지션 변경하기 */
-             /* transition: transform .6s; */
-             transition-property: all;
-             /* 트랜지션 속성 변경 */
-             transition-duration: 2s;
-             /* 트랜지션 시간 변경 */
+            /* 기본 트랜지션 변경하기 */
+            /* transition: transform .6s; */
+            transition-property: all;
+            /* 트랜지션 속성 변경 */
+            transition-duration: 2s;
+            /* 트랜지션 시간 변경 */
 
-         }
+        }
+
         /* 
             2. rotateX(각도deg) - X축회전
          */
-         #trans2:hover img{
-             transform: rotateX(180deg);
-             filter: blur(1px);
-             /* 필터 blur(px값) - 흐림효과 */
-         }
+        #trans2:hover img {
+            transform: rotateX(180deg);
+            filter: blur(1px);
+            /* 필터 blur(px값) - 흐림효과 */
+        }
 
-         /* 
+        /* 
             [ CSS 필터속성 ]
             - 흑백, 흐림, 세피아, 명암, 채도 등 출력 이미지를
             변경하고 할때 사용하는 속성
@@ -112,7 +123,7 @@
          */
 
 
-         /* 
+        /* 
             3. translateX(거리) - X축이동
             - 단위: px, %
             - 현재 위치로부터 이동
@@ -120,10 +131,11 @@
             - % 단위를 쓸 경우 기준은 요소의 width
             - 이동방향: + 는 오른쪽, - 는 왼쪽
           */
-          #trans3:hover img{
-              transform: translateX(-50%);
-          }
-          /* 
+        #trans3:hover img {
+            transform: translateX(-50%);
+        }
+
+        /* 
             4. translateY(거리) - Y축이동
             - 단위: px, %
             - 현재 위치로부터 이동
@@ -131,10 +143,11 @@
             - % 단위를 쓸 경우 기준은 요소의 height
             - 이동방향: + 는 아랫쪽, - 는 윗쪽
           */
-          #trans4:hover img{
-              transform: translateY(-100%);
-          }
-           /* 
+        #trans4:hover img {
+            transform: translateY(-100%);
+        }
+
+        /* 
             5. translate(X축거리,Y축거리) - X,Y축이동
             - 단위: px, %
             - 현재 위치로부터 이동
@@ -144,110 +157,135 @@
             - 이동방향: + 는 오른쪽/아랫쪽, 
                         - 는 왼쪽/윗쪽
           */
-          #trans5:hover img{
-              transform: translate(-50%, 100%);
-          }
-          /* 
+        #trans5:hover img {
+            transform: translate(-50%, 100%);
+        }
+
+        /* 
             6. rotate(각도deg) - 원형회전
             - 각도의 숫자가 양수면 시계방향
                 (음수는 반시계)
             - 기본회전축은 정중앙
                 (변경가능: transform-origin)
            */
-           #trans6:hover img{
-               transform: rotate(5432deg);
-               transition-duration: 10s;
-               /* 트랜지션 시간변경 */
-           }
-           /* 회전축 변경하기 */
-           #trans6 img{
-               transform-origin: 40% 40%;
-        /* 
+        #trans6:hover img {
+            transform: rotate(5432deg);
+            transition-duration: 10s;
+            /* 트랜지션 시간변경 */
+        }
+
+        /* 회전축 변경하기 */
+        #trans6 img {
+            transform-origin: 40% 40%;
+            /* 
             [트랜스폼 축변경 속성]
             transform-origin: 가로값 세로값;
             - 가로값: left, right, center, 몇px, 몇%
             - 세로값: top, bottom, center, 몇px, 몇%
             - 기본값은 center임!
         */
-           }
-           /* 
+        }
+
+        /* 
                 7. skew - x,y축 기울임
                 - skewX(각도deg), skewY(각도deg)
                 - 각도가 양수/음수에 따라 기울임 방향달라짐                
             */
-            #trans7:hover img{
-                transform: skewY(30deg);
-            }
-            /* 
+        #trans7:hover img {
+            transform: skewY(30deg);
+        }
+
+        /* 
                8. scale(x축배수,y축배수)
                - 값을 하나만 쓰면 양방향 같은값
                - 배수가 1보다 크면 확대, 작으면 축소
                - scaleX(배수), scaleY(배수) - x,y축별
                - 값이 0이면 사라짐
              */
-             #trans8 img{
-                 transform: scale(.5);
-                 /* 0.5배 -> 축소 */
-             }
-             #trans8:hover img{
-                 transform: scale(2);
-                 /* transform: scaleY(2); */
-             }
-             /* 
+        #trans8 img {
+            transform: scale(.5);
+            /* 0.5배 -> 축소 */
+        }
+
+        #trans8:hover img {
+            transform: scale(2);
+            /* transform: scaleY(2); */
+        }
+
+        /* 
                 9. 복합적용하기
                 transform: 속성1 속성2 속성3 .....;
               */
-              #trans9:hover img{
-                  transform: scale(2) translate(-200%,-100%) rotateX(1200deg) skewX(50deg) rotate(5300deg);
-                  transition-duration: 20s;
-              }
+        #trans9:hover img {
+            transform: scale(2) translate(-200%, -100%) rotateX(1200deg) skewX(50deg) rotate(5300deg);
+            transition-duration: 20s;
+        }
 
-              /* 
+        /* 
                 10. 앞뒤로 있는 이미지 뒤집기
                 - 셋팅: 한박스 안에 이미지가 2장 있으므로 겹쳐지게 하기위해 이미지
                 포지션을 absolute로 준다!
                 - 앱솔루트 끼리는 서로 겹쳐진다
                 - 순서는 나중에 그려진요소가 위에 온다
                */
-               /* 2개의 이미지를 겹치게한다 */
-               #trans10 img{
-                   
-               }
+        /* 2개의 이미지를 겹치게한다 */
+        #trans10 img {
+            position: absolute;
+            /* 위치값을 주지 않으면
+                   싸고있는 박스에 그대로 위치함!
+                   이것을 젠틀엡솔루트!!! */
+            width: 200px;
+        }
 
-               /* 1. 보거미 처음상태(돌아옴) */
-               /* Y축 0도로 돌아옴 - 0.4초 기다림 */
-               #trans10 img:last-child{
-                   
-                   /* ease-out 처음엔 빠르고 나중엔 천천히 */
-               }
-               
+        /* 이미지크기에 관하여... 
+        현재 이미지는 100%로 설정됨. 포지션이
+        없는 경우엔 싸고있는 요소가 기준이됨
+        그러나... 앱솔루트일 경우 크기가 %이면
+        부모자격이 있는 요소를 기준하여 %를 설정
+        한다. 여기서는 부모자격이 조상들중
+        아무도 없기 때문에 보이는 화면(window)이
+        기준이 된다! 따라서 편리하게 코딩하기위해
+        200px 로 크기를 절대단위 설정한다!*/
 
-               /* 2. 보거미 오버상태 */
-               /* Y축 90도회전 - 회전후 안보임*/
-               #trans10:hover img:last-child{
-                   
-                   /* ease-in 처음엔 천천히 나중엔 빠르게 */
-               }
 
-               /* 3. 유정이 처음상태(돌아옴) */
-               /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
-               #trans10 img:first-child{
-                   
-                   /* ease-in 처음엔 천천히 나중엔 빠르게 */
-               }
-               
+        /* 1. 보거미 처음상태(돌아옴) */
+        /* Y축 0도로 돌아옴 - 0.4초 기다림 */
+        #trans10 img:last-child {
+            transform: rotateY(0deg);
+            transition: transform .4s ease-out .4s;
+            /* ease-out 처음엔 빠르고 나중엔 천천히 */
+        }
 
-               /* 4. 유정이 오버상태 */
-               /* Y축 0도로 회전 
+
+        /* 2. 보거미 오버상태 */
+        /* Y축 90도회전 - 회전후 안보임*/
+        #trans10:hover img:last-child {
+            transform: rotateY(90deg);
+            transition: transform .4s ease-in;
+            /* ease-in 처음엔 천천히 나중엔 빠르게 */
+        }
+
+        /* 3. 유정이 처음상태(돌아옴) */
+        /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
+        #trans10 img:first-child {
+            transform: rotateY(90deg);
+            transition: transform .4s ease-in;
+            /* ease-in 처음엔 천천히 나중엔 빠르게 */
+        }
+
+
+        /* 4. 유정이 오버상태 */
+        /* Y축 0도로 회전 
                - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
-               #trans10:hover img:first-child{
-                   
-                   /* ease-out 처음엔 빠르고 나중엔 천천히 */
-               }
-               
-               
+        #trans10:hover img:first-child {
+            transform: rotateY(0deg);
+            transition: transform .4s ease-out .4s;
+            /* ease-out 처음엔 빠르고 나중엔 천천히 */
+        }
 
-                /* 
+
+
+        /* 
                     [ 트랜지션 이징(easing) 가속도 ]
                     - transition-timing-function
                     - 설정에 따라 빠르기를 조정함
@@ -274,7 +312,6 @@
                     (6번 예시)
                     https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_transition-timing-function3
                  */
-
     </style>
 </head>
 
