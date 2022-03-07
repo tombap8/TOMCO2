@@ -122,10 +122,17 @@
             속시이지 순으로 셋팅하고 콤마로 구분한다!
         */
         #tr4 span{
-            
+            transition: left 5s ease-in-out,
+                        /* left속성을 5초간 처음과 끝에 천천히 애니 */
+                        background-color 2s ease-in 3s,
+                        /* 배경색은 2초간 처음에 천천히 3초후 애니 */
+                        border-radius 3s ease-out 5s;
+                        /* 둥근모서리 3초간 나중에 천천히 5초후 애니 */
         }
         #tr4:hover span{
-            
+            left: 70%;
+            background-color: hotpink;
+            border-radius: 0;
         }
         
     </style>
