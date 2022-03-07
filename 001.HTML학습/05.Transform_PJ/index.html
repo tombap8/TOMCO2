@@ -81,13 +81,26 @@
             - deg는 각도의 단위(도:degree)
          */
          #trans1:hover img{
-             
+             transform: rotateY(180deg);
+             filter: grayscale(100%);
+             /* 필터(이미지필터효과)
+             grayscale(비율%) - 100% 완전흑백 */
+
+             /* 기본 트랜지션 변경하기 */
+             /* transition: transform .6s; */
+             transition-property: all;
+             /* 트랜지션 속성 변경 */
+             transition-duration: 2s;
+             /* 트랜지션 시간 변경 */
+
          }
         /* 
             2. rotateX(각도deg) - X축회전
          */
          #trans2:hover img{
-             
+             transform: rotateX(180deg);
+             filter: blur(1px);
+             /* 필터 blur(px값) - 흐림효과 */
          }
 
          /* 
