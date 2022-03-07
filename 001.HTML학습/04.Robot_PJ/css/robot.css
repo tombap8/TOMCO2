@@ -17,8 +17,61 @@ body{
 }
 
 /* 공사중 아웃라인 */
-body *{
+/* body *{
     outline: 2px dashed lime;
+} */
+
+/* 로봇페이지 로고 */
+h1#logo{
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  /* fixed의 부모는 항상 보이는화면! */
+  width: 200px;
+  height: 200px;  
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin: 0;
+
+  /* 글자정중앙 */
+  text-align: center;/* 가로중앙 */
+  line-height: 200px;/* 세로중앙 */
+
+  color: #00ffb3;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 45px;
+  text-shadow: 2px 2px 2px #000;
+  /* 글자그림자: x y blur 색 */
+  box-shadow: 0 0 20px 5px pink,
+            inset 0 0 20px 5px #000; 
+/* 박스그림자: x y blur spread 색 */
+
+  /* 배경 */
+  background: pink url(../images/robot_03.png) no-repeat;
+  background-position: center 10px;
+  background-size: 160px;
+}
+
+/* 내용보기 링크 타이틀 */
+.link{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    /* 부모는? 보이는화면 */
+}
+/* 링크 a요소 */
+.link a{
+    font-family: 'Black Ops One', cursive; 
+    font-size: 50px;
+    font-weight: normal;
+    color: lawngreen;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #000;
+}
+/* 마우스 오버시 */
+.link a:hover{
+    color: orangered;
+    text-decoration: overline;
 }
 
 /* 로봇머리 */
