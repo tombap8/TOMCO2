@@ -214,3 +214,30 @@ body *{
     이것으로 더 강한 효과를 줄 수 있음(0은 기본값)
     -> 글자그림자나 박스그림자 모두 여러개를 콤마로 셋팅가능! */
 }
+/* 로봇설명 제목 */
+#dcbx h2{
+    font-size: 35px;
+    text-align: center;
+    color: lime;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+}
+/* 로봇 출처 */
+#dcbx small{
+    display: block;
+    text-align: center;
+    color: #ff0;
+
+}
+/* 설명문단 */
+#dcbx p{
+    font-size: 15px;
+    /* 기본글자는 16px */
+    line-height: 1.8;
+    /* 줄간격: 배수/단위 등 */
+    letter-spacing: 1px;
+    /* 자간 */
+    word-spacing: 2px;
+    /* 단어간격 */
+
+}
