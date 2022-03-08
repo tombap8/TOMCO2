@@ -190,7 +190,19 @@ body{
 .smenu{
     position: absolute;
     /* 젠틀앱솔루트 */
+    background-color: #fff;
 
+    /* 서브메뉴 숨기기 */
+    height: 0;
+    overflow: hidden;
+
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
+
+}
+/* 상위메뉴 li에 마우스 오버시 .smenu 보이기 */
+.gnb>ul>li:hover .smenu{
+    height: 130px;
 }
 /* 서브 하위 ol */
 .smenu ol{
