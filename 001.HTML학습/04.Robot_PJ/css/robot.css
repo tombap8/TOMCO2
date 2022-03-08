@@ -404,7 +404,8 @@ h1#logo {
     transform: rotate(0deg);
 
     /* 애니메이션: 이시이지반방마 */
-    animation: armAni .8s ease-in-out 5s forwards;
+    animation: armAni .8s ease-in-out 5s forwards,
+                armAni2 .4s ease-in-out 5.8s infinite alternate;
 }
 /* 오른팔 키프레임 */
 @keyframes armAni {
@@ -412,6 +413,14 @@ h1#logo {
         transform: rotate(-140deg);
     }
 } /* armAni 키프레임 */
+
+/* 오른팔 흔들기 키프레임 */
+@keyframes armAni2 {
+    /* 첫번째 애니가 끝난상태에서 출발! from생략! */
+    to{
+        transform: rotate(-155deg);
+    }
+} /* armAni2 키프레임 */
 
 /* 왼다리 */
 #leg1 {
