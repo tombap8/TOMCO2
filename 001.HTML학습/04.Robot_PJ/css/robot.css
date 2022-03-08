@@ -211,6 +211,21 @@ h1#logo {
     /* 부모는? 보이는화면 */
 }
 
+/* 투명했다 보이는 키프레임호출 클래스 */
+.showCall{
+    opacity: 0;/* 처음에 투명!!! */
+    
+    /* 애니메이션: 이시이지반방마 */
+    animation: showIt .5s ease-out 8s forwards;
+}
+
+/* 투명했다가 보이는 키프레임 */
+@keyframes showIt {
+    to{
+        opacity: 1;
+    }
+} /* showIt 키프레임 */
+
 /* 링크 a요소 */
 .link a {
     font-family: 'Black Ops One', cursive;
