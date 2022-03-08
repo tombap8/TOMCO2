@@ -214,16 +214,27 @@ h1#logo {
 /* 투명했다 보이는 키프레임호출 클래스 */
 .showCall{
     opacity: 0;/* 처음에 투명!!! */
-    
+
     /* 애니메이션: 이시이지반방마 */
-    animation: showIt .5s ease-out 8s forwards;
+    animation: showIt 1s ease-out 6s forwards;
+}
+/* 애니 등장시간 차이 클래스 : 기본설정이 6s인데 덮어씀! */
+.cT1{
+    animation-delay: 7s;
+}
+.cT2{
+    animation-delay: 8s;
 }
 
 /* 투명했다가 보이는 키프레임 */
 @keyframes showIt {
-    to{
-        opacity: 1;
-    }
+    0%{opacity: 0;}
+    20%{opacity: 0.5;}
+    30%{opacity: 0;}
+    40%{opacity: 1;}
+    60%{opacity: 0.3;}
+    70%{opacity: 0;}
+    100%{opacity: 1;}
 } /* showIt 키프레임 */
 
 /* 링크 a요소 */
