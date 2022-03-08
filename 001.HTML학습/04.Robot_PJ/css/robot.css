@@ -8,20 +8,22 @@ font-family: 'Black Ops One', cursive;
 font-family: 'Orbitron', sans-serif;
 */
 
-html{
+html {
     scroll-behavior: smooth;
     /* 내부 아이디 요소 위치로 이동시
     스크롤 애니메이션을 부드럽게 처리함!
     최상위 요소인 html에 셋팅함! */
 }
 
-html,body{
+html,
+body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     /* 가로스크롤 숨기기 */
 }
-body{
+
+body {
     background: url(../images/bg.jpg) no-repeat fixed top/cover;
 }
 
@@ -49,40 +51,63 @@ body{
 **************************************************/
 
 /* 로봇페이지 로고 */
-h1#logo{
-  position: fixed;
-  top: calc(50% - 100px);
-  left: calc(50% - 100px);
-  /* fixed의 부모는 항상 보이는화면! */
-  z-index: 1;/* 위치 위 */
+h1#logo {
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    /* fixed의 부모는 항상 보이는화면! */
+    z-index: 1;
+    /* 위치 위 */
 
-  /* 크기확대 2배 */
-  transform: scale(2);
+    /* 크기확대 2배 */
+    transform: scale(2);
 
-  width: 200px;
-  height: 200px;  
-  border: 2px solid #ccc;
-  border-radius: 50%;
-  margin: 0;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin: 0;
 
-  /* 글자정중앙 */
-  text-align: center;/* 가로중앙 */
-  line-height: 200px;/* 세로중앙 */
+    /* 글자정중앙 */
+    text-align: center;
+    /* 가로중앙 */
+    line-height: 200px;
+    /* 세로중앙 */
 
-  color: #00ffb3;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 45px;
-  text-shadow: 2px 2px 2px #000;
-  /* 글자그림자: x y blur 색 */
-  box-shadow: 0 0 20px 5px pink,
-            inset 0 0 20px 5px #000; 
-/* 박스그림자: x y blur spread 색 */
+    color: #00ffb3;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 45px;
+    text-shadow: 2px 2px 2px #000;
+    /* 글자그림자: x y blur 색 */
+    box-shadow: 0 0 20px 5px pink,
+        inset 0 0 20px 5px #000;
+    /* 박스그림자: x y blur spread 색 */
 
-  /* 배경 */
-  background: pink url(../images/robot_03.png) no-repeat;
-  background-position: center 10px;
-  background-size: 160px;
+    /* 배경 */
+    background: pink url(../images/robot_03.png) no-repeat;
+    background-position: center 10px;
+    background-size: 160px;
+
+    /* 애니메이션 : 이시이지반방마 */
+    animation: logoAni 2s ease-in-out 2s;
 }
+
+/* 로고 애니 키프레임 */
+@keyframes logoAni {
+    /* 시작값 */
+    from {
+        top: calc(50% - 100px);
+        left: calc(50% - 100px);
+        transform: scale(2);
+    }
+    /* 끝값 */
+    to{
+        top: 50px;
+        left: 50px;
+        transform: scale(1);
+    }
+} /* logoAni 키프레임 */
+
 
 /**************************************************** 
     [ CSS로 애니메이션 하기 ]
@@ -157,29 +182,31 @@ h1#logo{
 ****************************************************/
 
 /* 내용보기 링크 타이틀 */
-.link{
+.link {
     position: absolute;
     top: 100px;
     right: 50px;
     /* 부모는? 보이는화면 */
 }
+
 /* 링크 a요소 */
-.link a{
-    font-family: 'Black Ops One', cursive; 
+.link a {
+    font-family: 'Black Ops One', cursive;
     font-size: 50px;
     font-weight: normal;
     color: lawngreen;
     text-decoration: none;
     text-shadow: 2px 2px 2px #000;
 }
+
 /* 마우스 오버시 */
-.link a:hover{
+.link a:hover {
     color: orangered;
     text-decoration: overline;
 }
 
 /* 위로이동버튼 */
-.btnTop{
+.btnTop {
     position: fixed;
     bottom: 50px;
     right: 50px;
@@ -195,14 +222,15 @@ h1#logo{
     text-decoration: none;
     background-color: #ccc;
 }
+
 /* 버튼오버시 */
-.btnTop:hover{
+.btnTop:hover {
     background-color: #ff0;
     color: red;
 }
 
 /* 로봇머리 */
-#head{
+#head {
     position: relative;
     /* 부모자격! */
     left: 100%;
@@ -214,8 +242,9 @@ h1#logo{
     margin-top: 100px;
     border-radius: 50px 50px 0 0;
 }
+
 /* 눈1 */
-#eye1{
+#eye1 {
     position: absolute;
     top: 50px;
     left: 50px;
@@ -225,8 +254,9 @@ h1#logo{
     height: 50px;
     background: url(../images/e1.jpg) no-repeat 0/100% 100%;
 }
+
 /* 눈2 */
-#eye2{
+#eye2 {
     position: absolute;
     top: 50px;
     right: 50px;
@@ -236,47 +266,51 @@ h1#logo{
     height: 50px;
     background: url(../images/e2.jpg) no-repeat 0/100% 100%;
 }
+
 /* 코 */
-#nose{
+#nose {
     position: absolute;
     top: 103px;
     right: 104px;
     /* 부모는? #head */
-    
+
     width: 43px;
     height: 65px;
     background: url(../images/nose.jpg) no-repeat 0/110% 100%;
 }
+
 /* 입 */
-#mouth{
+#mouth {
     position: absolute;
     bottom: 29px;
     left: 77px;
     /* 부모는? #head */
-    
+
     width: 96px;
     height: 42px;
     background: url(../images/mouth.png) no-repeat 0/100% 100%;
 }
+
 /* 귀1 */
-#ear1{
+#ear1 {
     position: absolute;
     top: 69px;
     left: -48px;
     /* 부모는? #head */
-    
+
     width: 48px;
     height: 94px;
     border-radius: 15px 0 0 15px;
     background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
 }
+
 /* 귀2 */
-#ear2{
+#ear2 {
     position: absolute;
     top: 69px;
     right: -48px;
     /* 부모는? #head */
-    
+
     width: 48px;
     height: 94px;
     border-radius: 0 15px 15px 0;
@@ -284,14 +318,15 @@ h1#logo{
 }
 
 /* 로봇몸 */
-#body{
+#body {
     position: relative;
     /* 부모자격! */
     left: -100%;
     /* 몸 왼쪽 바깥에 나가있음 */
     width: 250px;
     height: 300px;
-    margin: 0 auto;/* 마영오! */
+    margin: 0 auto;
+    /* 마영오! */
     margin-top: 50px;
     margin-bottom: 300px;
     /* 아래쪽 다리만큼 여유공간주기 */
@@ -300,7 +335,7 @@ h1#logo{
 }
 
 /* 목 */
-#neck{
+#neck {
     position: absolute;
     top: -50px;
     left: 91px;
@@ -312,35 +347,39 @@ h1#logo{
 }
 
 /* 팔다리 공통 */
-.part{
+.part {
     position: absolute;
     width: 50px;
     height: 250px;
     background: url(../images/metal02.jpg) repeat-y 0/100%;
 }
+
 /* 왼팔 */
-#arm1{
+#arm1 {
     top: 0px;
     left: -53px;
 }
+
 /* 오른팔 */
-#arm2{
+#arm2 {
     top: 0px;
     right: -53px;
 }
+
 /* 왼다리 */
-#leg1{
+#leg1 {
     top: 100%;
     left: 0x;
 }
+
 /* 오른다리 */
-#leg2{
+#leg2 {
     top: 100%;
     right: 0;
 }
 
 /* TV */
-#tv{
+#tv {
     position: absolute;
     /* 부모자격 - #screen */
     top: 49px;
@@ -351,14 +390,15 @@ h1#logo{
     height: 150px;
     background: url(../images/tv.jpg) no-repeat 0/100% 100%;
 }
+
 /* 스크린 */
-#screen{
+#screen {
     position: absolute;
     /* 부모자격 - #screen iframe */
     top: 18px;
     left: 12px;
     /* 부모는? #tv */
-    
+
     width: 137px;
     height: 102px;
     background-color: #000;
@@ -369,12 +409,12 @@ h1#logo{
 }
 
 /* 유튜브 아이프레임 */
-#screen iframe{
+#screen iframe {
     position: absolute;
     top: -17px;
     left: -51px;
     /* 부모는? #screen */
-    
+
     width: 180%;
     height: 138%;
 
@@ -385,8 +425,10 @@ h1#logo{
 /* 로봇 설명박스 */
 #dcbx {
     width: 800px;
-    margin: 0 auto;/* 마영오! */
-    margin-bottom: 200px;/* 하단공간 */
+    margin: 0 auto;
+    /* 마영오! */
+    margin-bottom: 200px;
+    /* 하단공간 */
     border: 3px solid #fff;
     border-radius: 20px;
     padding: 15px 30px;
@@ -396,17 +438,18 @@ h1#logo{
     color: #fff;
     text-shadow: 1px 1px 1px #000;
     /* 글자그림자: x y 블러 색 */
-    box-shadow: 
-    inset 0 0 20px blue,
-    inset 0 0 50px 20px cyan;
+    box-shadow:
+        inset 0 0 20px blue,
+        inset 0 0 50px 20px cyan;
     /* 박스그림자: (내부) x y 블러 (크기) 색
     -> 그림자색을 형광계열로 주면 glow효과를 줄 수 있다!
     -> 글자그림자와 달리 그림자 크기(spread)를 줄 수 있다!
     이것으로 더 강한 효과를 줄 수 있음(0은 기본값)
     -> 글자그림자나 박스그림자 모두 여러개를 콤마로 셋팅가능! */
 }
+
 /* 로봇설명 제목 */
-#dcbx h2{
+#dcbx h2 {
     position: sticky;
     top: 10px;
     /* 스크롤시 top값 설정으로
@@ -417,15 +460,17 @@ h1#logo{
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 20px;
 }
+
 /* 로봇 출처 */
-#dcbx small{
+#dcbx small {
     display: block;
     text-align: center;
     color: #ff0;
 
 }
+
 /* 설명문단 */
-#dcbx p{
+#dcbx p {
     font-size: 15px;
     /* 기본글자는 16px */
     line-height: 1.8;
@@ -458,8 +503,9 @@ h1#logo{
     text-indent: 20px;
     /* 첫줄 들여쓰기(마이너스값은 내어쓰기) */
 }
+
 /* 가상요소로 첫글자 디자인변경하기 */
-#dcbx p::first-letter{
+#dcbx p::first-letter {
     font-size: 30px;
     font-weight: bold;
     color: lightsalmon;
