@@ -19,12 +19,14 @@ html,
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    /* 가로스크롤 숨기기 */
 }
 
 body {
     background: url(../images/bg.jpg) no-repeat fixed top/cover;
+    overflow-x: hidden;
+    /* 가로스크롤 숨기기 
+    - html요소에 주지 않도록 주의! (sticky안됨!) */
+
 }
 
 /* 공사중 아웃라인 */
