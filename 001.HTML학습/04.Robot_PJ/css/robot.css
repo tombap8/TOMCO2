@@ -89,24 +89,46 @@ h1#logo {
     background-size: 160px;
 
     /* 애니메이션 : 이시이지반방마 */
-    animation: logoAni 2s ease-in-out 2s;
+    animation: logoAni 2s ease-in-out 2s forwards,
+                logoAni2 1s ease-in-out 4s infinite alternate;
 }
 
 /* 로고 애니 키프레임 */
 @keyframes logoAni {
-    /* 시작값 */
-    from {
+    /* 시작값 - 초기값과 같으면 생략! */
+    /* from {
         top: calc(50% - 100px);
         left: calc(50% - 100px);
         transform: scale(2);
-    }
-    /* 끝값 */
-    to{
+    } */
+
+    /* 80%값 */
+    80%{
         top: 50px;
         left: 50px;
-        transform: scale(1);
+        transform: scale(1) rotate(0deg);
+    }
+
+    /* 80%~100% 구간에 rotate각도만 20도로 변경애니
+    후속애니와 자연스럽게 연결됨! */
+    
+    /* 끝값 */
+    100%{
+        top: 50px;
+        left: 50px;
+        transform: scale(1) rotate(20deg);
     }
 } /* logoAni 키프레임 */
+
+/* 로고 흔들기 키프레임 */
+@keyframes logoAni2 {
+    0%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(-20deg);
+    }
+} /* logoAni2 키프레임 */
 
 
 /**************************************************** 
