@@ -325,7 +325,17 @@ h1#logo {
     width: 96px;
     height: 42px;
     background: url(../images/mouth.png) no-repeat 0/100% 100%;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: mouthAni .1s linear 6s infinite alternate;
 }
+
+/* 입움직이기 키프레임 */
+@keyframes mouthAni {
+    to{
+        transform: scaleY(.2);
+    }
+} /* mouthAni 키프레임 */
 
 /* 귀1 */
 #ear1 {
@@ -410,7 +420,7 @@ h1#logo {
 /* 오른팔 키프레임 */
 @keyframes armAni {
     to{
-        transform: rotate(-140deg);
+        transform: rotate(-155deg);
     }
 } /* armAni 키프레임 */
 
@@ -418,7 +428,7 @@ h1#logo {
 @keyframes armAni2 {
     /* 첫번째 애니가 끝난상태에서 출발! from생략! */
     to{
-        transform: rotate(-155deg);
+        transform: rotate(-140deg);
     }
 } /* armAni2 키프레임 */
 
