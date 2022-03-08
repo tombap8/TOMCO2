@@ -190,7 +190,10 @@ body{
 .smenu{
     position: absolute;
     /* 젠틀앱솔루트 */
+    z-index: 1;
+    /* li 가상요소 after 앱솔루트보다 위! */
     background-color: #fff;
+
 
     /* 서브메뉴 숨기기 */
     height: 0;
@@ -201,9 +204,17 @@ body{
 
 }
 /* 상위메뉴 li에 마우스 오버시 .smenu 보이기 */
-.gnb>ul>li:hover .smenu{
-    height: 130px;
+.gnb>ul>li.sm1:hover .smenu{
+    height: 110px;
 }
+.gnb>ul>li.sm2:hover .smenu{
+    height: 140px;
+}
+.gnb>ul>li.sm3:hover .smenu{
+    height: 80px;
+}
+
+
 /* 서브 하위 ol */
 .smenu ol{
     padding: 10px 0;
@@ -216,6 +227,50 @@ body{
     /* 글자색+밑줄 변경 */
     color: #222;
     text-decoration: none;
+}
+
+/* 하위메뉴가 있는 상위 li요소에 마우스 오버시
+가상요소로 페이지 끝까지 차지하는 흰색배경 만들기  
+클래스 sm이 부여된 li만 적용된다!*/
+.gnb>ul>li.sm::after {
+    content: '';
+    display: block;/* div와 비슷! */
+    position: absolute;
+    /* top에 대한 설정이 없으므로 젠틀앱솔루트!
+    a요소 아래에 그대로 위치함! */
+    left: 0;
+    /* 부모는? 보이는 화면 */
+    width: 100%;
+    /* 앱솔루트 크기에 %사용시 부모를 기준함! 
+    보이는 화면이 부모! */
+    height: 0px;
+    background-color: #fff;
+
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
+}
+
+/* li.sm에 마우스 오버시 가상요소 내려오기! */
+/* 공통으로 하단보더설정 */
+.gnb>ul>li.sm:hover::after{
+    border-bottom: 2px solid red;
+}
+/* 높이값 각각 다르게 셋팅 */
+/* + 상위메뉴 li에 마우스 오버시 .smenu 보이기 동시코딩!!! */
+/* 프로그램 소개 : 메뉴3개*30+20=110px */
+.gnb>ul>li.sm.sm1:hover::after,
+.gnb>ul>li.sm1:hover .smenu {
+    height: 110px;
+}
+/* 동영상 : 메뉴4개*30+20=140px */
+.gnb>ul>li.sm.sm2:hover::after,
+.gnb>ul>li.sm2:hover .smenu {
+    height: 140px;
+}
+/* 사진첩 : 메뉴2개*30+20=80px */
+.gnb>ul>li.sm.sm3:hover::after,
+.gnb>ul>li.sm3:hover .smenu {
+    height: 80px;
 }
 
 
