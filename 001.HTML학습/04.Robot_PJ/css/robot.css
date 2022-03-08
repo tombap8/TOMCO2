@@ -111,7 +111,7 @@ h1#logo {
 
     /* 80%~100% 구간에 rotate각도만 20도로 변경애니
     후속애니와 자연스럽게 연결됨! */
-    
+
     /* 끝값 */
     100%{
         top: 50px;
@@ -263,7 +263,21 @@ h1#logo {
     margin: 0 auto;
     margin-top: 100px;
     border-radius: 50px 50px 0 0;
+
 }
+
+/* 로봇애니 호출 클래스 : 로봇머리, 로봇몸 요소에서 호출! */
+.rAni{
+    /* 애니메인션: 이시이지반방마 */
+    animation: robotAni 1.5s ease-out 3s forwards;
+}
+
+/* 로봇머리, 몸 제자리 키프레임 */
+@keyframes robotAni {
+    to{
+        left: 0;
+    }
+}/* robotAni 키프레임 */
 
 /* 눈1 */
 #eye1 {
