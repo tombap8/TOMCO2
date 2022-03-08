@@ -400,7 +400,18 @@ h1#logo {
 #arm2 {
     top: 0px;
     right: -53px;
+    transform-origin: top;
+    transform: rotate(0deg);
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: armAni .8s ease-in-out 5s forwards;
 }
+/* 오른팔 키프레임 */
+@keyframes armAni {
+    to{
+        transform: rotate(-140deg);
+    }
+} /* armAni 키프레임 */
 
 /* 왼다리 */
 #leg1 {
@@ -420,6 +431,19 @@ h1#logo {
     width: 80px;
     height: 80px;
     background: url(../images/metal01.jpg) no-repeat center/cover;
+}
+/* 왼어깨 */
+#sh1{
+    top: -37px;
+    left: -80px;
+    border-radius: 50% 5px 5px 50%;
+}
+/* 오른어깨 */
+#sh2{
+    top: -37px;
+    right: -80px;
+    border-radius: 5px 50% 50% 5px;
+    /* 왼쪽위부터 시계방향 */
 }
 
 /* TV */
