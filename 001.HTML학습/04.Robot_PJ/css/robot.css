@@ -18,6 +18,8 @@ html{
 html,body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    /* 가로스크롤 숨기기 */
 }
 body{
     background: url(../images/bg.jpg) no-repeat fixed top/cover;
@@ -27,12 +29,27 @@ body{
 /* body *{
     outline: 2px dashed lime;
 } */
+/***************************** 
+    [ 요소 정중앙 정렬법 ]
+    
+    1. 50%로 밀고 자기크기의 절반만큼 빼기
+    ((사용예)) calc(50% - 특정px)
+    - 주의: 마이너스 기호 앞뒤에 띄어쓰기 필수!
+    ->>> calc() 메서드 사용
+    - 사칙연산이 모두 가능하며
+    여기서는 유동적인 % 단위에서 특정 px을
+    빼는데 사용함!
+
+    2. 50%로 밀고 자기자신크기의 절반 반대방향이동
+    ->>> transform: translate(-50%,-50%) 사용!
+
+*****************************/
 
 /* 로봇페이지 로고 */
 h1#logo{
   position: fixed;
-  top: 50px;
-  left: 50px;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
   /* fixed의 부모는 항상 보이는화면! */
   width: 200px;
   height: 200px;  
@@ -108,6 +125,8 @@ h1#logo{
 #head{
     position: relative;
     /* 부모자격! */
+    left: 100%;
+    /* 머리 오른쪽 바깥에 나가있음! */
     width: 250px;
     height: 250px;
     background: url(../images/metal01.jpg) no-repeat center/cover;
@@ -188,6 +207,8 @@ h1#logo{
 #body{
     position: relative;
     /* 부모자격! */
+    left: -100%;
+    /* 몸 왼쪽 바깥에 나가있음 */
     width: 250px;
     height: 300px;
     margin: 0 auto;/* 마영오! */
