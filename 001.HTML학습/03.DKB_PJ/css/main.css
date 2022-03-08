@@ -30,17 +30,18 @@ ul,ol{
 
 /* 작업진행중 외곽선 */
 /* 별표시(*)는 모든요소를 선택시 사용 */
-body * {
+/* body * {
     outline: 1px dashed gray;
-    /* outline은 보더와 달리
-    주변요소에 전혀 영향을 주지 않는다!
-    그래서 border는 박스요소에 필수포함요소지만
-    outline은 필수요소가 아니다!!!
-    그리고 요소의 외곽선 바깥으로 보임!
+} */
 
-    사용법은 border와 유사함
-    outline: 두께 종류 색상; */
-}
+/* outline은 보더와 달리
+주변요소에 전혀 영향을 주지 않는다!
+그래서 border는 박스요소에 필수포함요소지만
+outline은 필수요소가 아니다!!!
+그리고 요소의 외곽선 바깥으로 보임!
+
+사용법은 border와 유사함
+outline: 두께 종류 색상; */
 
 /* 컨텐츠 파트 최상위부모 */
 body{
@@ -147,6 +148,7 @@ body{
 /********** 1. 상단영역 **********/
 #top{/* 겉박스 */
     background-color: #fff;
+    border-bottom: 1px solid #ccc;
 }
 .top{/* 속박스 */
     height: 125px;
@@ -192,7 +194,7 @@ body{
     /* 젠틀앱솔루트 */
     z-index: 1;
     /* li 가상요소 after 앱솔루트보다 위! */
-    background-color: #fff;
+    /* background-color: #fff; */
 
 
     /* 서브메뉴 숨기기 */
@@ -234,6 +236,10 @@ body{
     보이는 화면이 부모! */
     height: 0px;
     background-color: #fff;
+
+    /* 세부위치조정은 마진으로!!! */
+    margin-top: 2px;
+    /* #top의 하단보더를 가리므로 아래쪽으로 위치이동함! */
 
     /* 트랜지션: 속시이지 */
     transition: height .4s ease-out;
