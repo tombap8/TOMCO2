@@ -186,6 +186,27 @@ body{
     line-height: 40px;
 }
 
+/* 서브메뉴 */
+.smenu{
+    position: absolute;
+    /* 젠틀앱솔루트 */
+
+}
+/* 서브 하위 ol */
+.smenu ol{
+    padding: 10px 0;
+}
+/* 서브 a */
+.smenu a{
+    font-size: 14px;
+    line-height: 30px;
+
+    /* 글자색+밑줄 변경 */
+    color: #222;
+    text-decoration: none;
+}
+
+
 
 
 
