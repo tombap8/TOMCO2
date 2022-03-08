@@ -203,17 +203,6 @@ body{
     transition: height .4s ease-out;
 
 }
-/* 상위메뉴 li에 마우스 오버시 .smenu 보이기 */
-.gnb>ul>li.sm1:hover .smenu{
-    height: 110px;
-}
-.gnb>ul>li.sm2:hover .smenu{
-    height: 140px;
-}
-.gnb>ul>li.sm3:hover .smenu{
-    height: 80px;
-}
-
 
 /* 서브 하위 ol */
 .smenu ol{
@@ -255,6 +244,7 @@ body{
 .gnb>ul>li.sm:hover::after{
     border-bottom: 2px solid red;
 }
+
 /* 높이값 각각 다르게 셋팅 */
 /* + 상위메뉴 li에 마우스 오버시 .smenu 보이기 동시코딩!!! */
 /* 프로그램 소개 : 메뉴3개*30+20=110px */
