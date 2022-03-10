@@ -444,7 +444,7 @@ body{
 /* 캐릭터설명 타이틀 */
 .cd h3{
     font-family: 'Black And White Picture', sans-serif;
-    font-size: 30px;
+    font-size: min(2vw,30px);
     font-weight: normal;
     padding: 5px 10px 0;
     /* 패딩: 위 양쪽 아래 */
@@ -463,7 +463,7 @@ body{
 /* 캐릭터 설명 문단 */
 .cd p{
     font-family: 'Kirang Haerang', cursive;
-    font-size: 17px;
+    font-size: min(1.5vw,20px);
     line-height: 1.7;
     padding: 10px;
     text-align: justify;
