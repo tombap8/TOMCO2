@@ -341,25 +341,6 @@
 
         /* 830px 이하 */
 
-        /***************** 가로모드 + 830px이하 *****************/
-        @media screen and (orientation:landscape) and (max-width:830px) {
-
-            /* .bx의 가상요소 배경변경하기 */
-            .bx::after {
-                background-position: top;
-                background-size: auto 60%;
-            }
-
-            /* 스크린 위치변경 */
-            .screen {
-                top: 171px;
-            }
-
-
-        }
-
-        /* 가로모드 + 830px이하 */
-
 
         /******************** 810px 이하 ********************/
         @media screen and (max-width:810px) {
@@ -425,10 +406,54 @@
             .screen img:nth-child(10) {
                 display: inline;
             }
-
         }
 
         /* 770px 이하 */
+
+
+
+
+        /***********************************
+         가로모드와 세로모드 변경 코드!!! 
+        ***********************************/
+
+        /***************** 가로모드 + 830px이하 *****************/
+        @media screen and (orientation:landscape) and (max-width:830px) {
+
+            /* .bx의 가상요소 배경변경하기 */
+            .bx::after {
+                background-position: top;
+                background-size: auto 60%;
+            }
+
+            /* 스크린 위치변경 */
+            .screen {
+                top: 171px;
+            }
+
+
+        }
+
+        /* 가로모드 + 830px이하 */
+
+        /***************** 세로모드 + 830px이하 *****************/
+        @media screen and (orientation:portrait) and (max-width:830px) {
+
+            /* .bx의 가상요소 배경변경하기 */
+            .bx::after {
+                background-position: top;
+                background-size: auto 60%;
+            }
+
+            /* 스크린 위치변경 */
+            .screen {
+                top: 123px;
+            }
+
+
+        }
+
+        /* 세로모드 + 830px이하 */
     </style>
 </head>
 
