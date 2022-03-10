@@ -1,3 +1,15 @@
 @charset "utf-8";
 /* 도깨비 PJ 메인페이지 미디어쿼리 - media.css */
 
+/******** 1024px 이하 미디어쿼리 ********/
+@media screen and (max-width:1024px) {
+    html{
+        font-size: 8px;
+    }
+
+    /* 메뉴 글자 크기에 따른 gnb 가로크기변경 */
+    .gnb{
+        width: 491px;
+    }
+
+} /* 1024px 이하 */
