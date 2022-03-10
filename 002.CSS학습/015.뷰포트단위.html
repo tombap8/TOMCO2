@@ -134,38 +134,54 @@
         
         /* 2. vh단위 - 보이는 화면 세로폭기준 */
         .vp2{
-            
+            width: 50vh;
+            font-size: 10vh;
         }
 
         /* 3. vmax단위 - 보이는 화면 가로,세로폭 중 큰것기준 */
         .vp3{
-            
+            width: 50vmax;
+            font-size: 10vmax;
         }
 
         /* 4. vmin단위 - 보이는 화면 가로,세로폭 중 작은것기준 */
         .vp4{
-            
+            width: 50vmin;
+            font-size: 10vmin;
         }
         
 
         /* 뷰포트 단위와 일반 %단위 비교 */
         .vp5 {
-            
+            width: 50%;
+            /* %를 쓰면 싸고있는 요소가 기준이다! */
+            font-size: 24px;
         }
         .vp5-1{/* 뷰포트단위사용! */
-            
+            width: 50vw;
+            /* 아무리 부모요소가 싸고 있어도 뷰포트단위를 쓰면
+            보이는 화면이 기준이된다!!! */
+            border: 5px dotted red;
         }
         .vp5-2{/* %단위사용! */
-            
+            width: 50%;
+            /* %를 쓰면 싸고있는 요소가 기준이다! */
+            border: 5px dotted green;
         }
 
         /* 100vw */
         .vp6{
-            
+            width: 100vw;
+            /* 100vw는 스크롤바트랙 무시! 보이는화면 전체기준 */
+            background-color: #ff8888;
+            font-size: 24px;
         }
         /* 100% */
         .vp7{
-            
+            width: 100%;
+            /* 100%는 스크롤바트랙을 존중! 이것을 뺀 화면전체 */
+            background-color: #9e88ff;
+            font-size: 24px;
         }
         
 
