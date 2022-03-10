@@ -90,7 +90,20 @@
 
                 [ 웹페이지 가로/세로 모드 인식하기 ]
 
-                
+                1. 가로모드 -> (orientation:landscape)
+                    - landscape는 "풍경"이란뜻
+
+                @media (orientation:landscape) {
+                    가로모드 CSS
+                }
+
+                2. 세로모드 -> (orientation:portrait)
+                    - portrait는 "초상화"란뜻
+
+                @media (orientation:portrait) {
+                    세로모드 CSS
+                }
+
 
                 __________________________________________    
 
@@ -260,26 +273,96 @@
         /* 1000px이하 */
 
         /*************** 900px 이하 ***************/
+        @media screen and (max-width:900px) {
 
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "900px이하";
+                color: hotpink;
+            }
+
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(4) {
+                display: none;
+            }
+
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(5) {
+                display: inline;
+            }
+
+        }
 
         /* 900px 이하 */
 
         /***************** 850px 이하 *****************/
+        @media screen and (max-width:850px) {
 
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "850px이하";
+                color: lightgreen;
+            }
+
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(5) {
+                display: none;
+            }
+
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(6) {
+                display: inline;
+            }
+
+        }
 
         /* 850px 이하 */
 
         /****************** 830px 이하 ******************/
+        @media screen and (max-width:830px) {
 
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "830px이하";
+                color: lightseagreen;
+            }
+
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(6) {
+                display: none;
+            }
+
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(7) {
+                display: inline;
+            }
+
+        }
 
         /* 830px 이하 */
 
         /***************** 가로모드 + 830px이하 *****************/
+        @media screen and (max-width:830px) {
+
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "830px이하";
+                color: lightseagreen;
+            }
+
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(6) {
+                display: none;
+            }
+
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(7) {
+                display: inline;
+            }
+
+        }
 
         /* 가로모드 + 830px이하 */
-
-
-
 
 
         /******************** 810px 이하 ********************/
