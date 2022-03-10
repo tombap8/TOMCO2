@@ -508,7 +508,7 @@ body{
 }
 /* 하단링크 */
 .blink{
-    width: 804px;
+    max-width: 804px;
     margin: 0 auto;
     /* 마영오! */
 }
@@ -542,7 +542,7 @@ body{
 
 /* 회사주소박스 */
 .addr{
-    width: 804px;
+    max-width: 804px;
     margin: 10px auto;
     border: 4px double #222;
     font: 1.4rem/2 'Nanum Gothic', sans-serif;

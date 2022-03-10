@@ -13,3 +13,57 @@
     }
 
 } /* 1024px 이하 */
+
+/******** 800px 이하 미디어쿼리 ********/
+@media screen and (max-width:800px) {
+
+    /* 1. 숨기기 - GNB메뉴 */
+    .gnb{
+        display: none;
+    }
+    /* 2. 보이기 - 햄버거버튼 */
+    .ham{
+        display: block;
+    }
+
+    /* 3. 상단영역 높이값 자동 */
+    .top{
+        height: auto;
+    }
+
+    /* 4. 캐릭터 박스 레이아웃 변경 */
+    .cat{
+        width: 99%;
+        /* 한줄에 하나의 캐릭터박스 옴 */
+        margin-bottom: 3vh;
+        /* 하단마진 뷰포트 단위로 지정! */
+    }
+
+    /* 5. 메인 컨텐츠 박스 높이값 해제 */
+    .cont{
+        height: auto;
+    }
+    /* 6. 캐릭터 부모박스 마진조정 */
+    #cbx{
+        margin-top: 100px;
+    }
+    /* 7. 캐릭터 박스 마우스 오버시 이미지박스 올라오기 초기화 */
+    .cat:hover .ci {
+        margin-top: 0;
+    }
+    /* 8. 타이틀글자 */
+    .cd h3{
+        font-size: 7vw;
+        padding: 2vw 4vw 0;
+    }
+    /* 9. 내용글자 */
+    .cd p{
+        font-size: 4vw;
+        padding: 5vw;
+    }
+    /* 10. 캐릭터박스 오버시 글자박스 높이값 */
+    .cat:hover .cd {
+        height: 50vh;
+    }
+
+} /* 800px 이하 */
