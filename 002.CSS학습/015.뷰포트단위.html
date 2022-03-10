@@ -30,10 +30,13 @@
 
             1. vw (viewport width)
             - 화면의 가로크기를 기준한 %비율(0~100)
+
             2. vh (viewport height)
             - 화면의 세로크기를 기준한 %비율(0~100)
+
             3. vmax (viewport maximum)
             - 화면의 가로,세로크기 중 큰 사이즈를 기준한 %비율(0~100)
+
             4. vmin (viewport minimum)
             - 화면의 가로,세로크기 중 작은 사이즈를 기준한 %비율(0~100)
 
@@ -96,16 +99,37 @@
         }
         /* 1. vw단위 - 보이는 화면 가로폭기준 */
         .vp1 {
-            
+            width: 50vw;
+            font-size: 10vw;
         }
         .vp1-2 {
-            
+            width: 50vw;
+            font-size: min(10vw,100px);
+            /* 
+                css함수 : min(값들) -> 최소값 선택함!
+                예)
+                min(유동적인값,특정값) -> 특정값 보다 안커짐!
+                이는 최대크기를 지정한 것과 같음!
+            */
         }
         .vp1-3 {
-            
+            width: 50vw;
+            font-size: max(10vw,70px);
+            /* 
+                css함수 : max(값들) -> 최대값 선택함!
+                예)
+                max(유동적인값,특정값) -> 특정값 보다 안작아짐!
+                이는 최소크기를 지정한 것과 같음!
+            */
         }
         .vp1-4 {
-            
+            width: 50vw;
+            font-size: min(max(10vw,70px),100px);
+            /* 최대 100px, 최소70px, 중간엔 10vw유동사이즈 */
+            /* 
+                min,max 같이 사용하면 사이범위를 만들 수 있음
+                min(max(유동적인px,특정px),특정px)
+            */
         }
         
         /* 2. vh단위 - 보이는 화면 세로폭기준 */
