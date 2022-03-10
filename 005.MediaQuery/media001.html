@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta:vp 로 젠코딩해서 쓰자! -->
+    <!-- 
+        [ 뷰포트(viewport)란? ]
+        - 모바일 기기에서 볼때 모바일 기기의 랜더링 화면사이즈를
+        일반적인 물리적 크기의 픽셀로 변환해 주는 메타태그임
+        - 미디어쿼리를 사용하는 웹 페이지에서 필수!!!
+
+        mata  요소 속성 name="viewport" 로 설정
+        content 속성에
+        1) width=device-width 
+            : 가로픽셀크기를 디바이스 물리적크기와 일치시킴
+        2) initial-scale=1.0
+            : 물리적크기를 그대로 쓸때 1.0을 사용
+            (1보다 작게하면 축소, 1보다 크게하면 확대)
+
+        예) 아이폰 6플러스의 물리적 가로크기는 414px인데
+            디스플레이할때는 1080px로 보여진다!
+            이때 viewport를 쓰면 414px로 변환해서 보여준다!
+
+
+     -->
+    <title>미디어쿼리란?</title>
+    <style>
+        /* 
+                [ 미디어쿼리(Media Query)란? ]
+
+                - 디바이스의 가로 사이즈에 대해 계속된
+                질의(Query)를 브라우저에 함으로써 사이즈
+                변경 시점에 필요한 CSS를 적용하여 디자인
+                변경을 할 수 있도록 구현된 CSS 코딩기법
+
+                - 반응형(적응형)웹을 구현하는 핵심기술
+
+                1. 반응형웹(Responsive Web) :
+                미디어 화면크기에 따라 종합적인 변경사항을
+                기술적으로 다룬 사이트
+
+                2. 적응형웹(Adaptive Web) :
+                미디어 화면크기에 따라 레이아웃 등의 CSS로
+                요소의 속성변경을 다룬 웹사이트
+
+                - 우리가 CSS 코딩으로 구현하는 것은 적응형웹이다!
+                즉, 적응형웹은 반응형웹의 일부분이다!
+                하지만 일반적인 명칭으로 반응형웹으로 부른다!
+
+                [ 구현방법 ]
+
+                
+
+
+                __________________________________________
+
+                [ 웹페이지 가로/세로 모드 인식하기 ]
+
+                
+
+                __________________________________________    
+
+
+                [ 미디어 쿼리 코딩시 주의사항! ]
+
+                
+            */
+        /* 초기화 */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* 스크롤바없앰 */
+        }
+
+        body {
+            background-color: #000;
+        }
+
+        /* 배경이미지 박스 */
+        .bx {
+            position: relative;
+            /* 부모자격 */
+            width: 100%;
+            height: 1000px;
+            margin: 0 auto;
+            /* 마영오! 블록가로중앙 */
+            /* background: url(./images/oldTVON.png) no-repeat center/auto 100%; */
+        }
+
+        /* .bx의 가상요소로 배경이미지 넣고 스크린보다 위에 오게하기 */
+        .bx::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            /* 타이틀위치로 올라감 */
+            width: 100%;
+            height: 100%;
+            background: url(./images/oldTVON.png) no-repeat center/auto 100%;
+        }
+
+
+        /* 스크린 */
+        .screen {
+            position: absolute;
+            top: 307px;
+            left: 50%;
+            transform: translateX(-61%);
+            width: 345px;
+            height: 258px;
+            /* outline: 2px solid red; */
+        }
+
+        /* 스크린이미지 */
+        .screen img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        /* 첫번째 이미지만 보이게 */
+        .screen img:first-child {
+            display: inline;
+        }
+
+        /* 타이틀 */
+        .tit {
+            position: relative;
+            /* z-index를 적용하기 위해 relative */
+            z-index: 1;
+            /* 아래쪽에 코딩된 absolute요소 보다 위 */
+            text-align: center;
+            color: #fff;
+            padding: 50px 0;
+            margin: 0;
+        }
+
+        /* 타이틀 가상요소로 화면크기 찍어보기 */
+        .tit::after {
+            content: "나야나!";
+            display: block;
+            /* div와 유사함 - 안쓰면 span과 유사 */
+            font-size: 24px;
+            line-height: 3;
+            /* 단위가 없으면 글자크기의 몇배임 */
+            color: cyan;
+        }
+
+
+
+
+        /************ 미디어쿼리 적용하기 ************/
+
+        /*************** 1200px 이하 ***************/
+        
+        /* 1200px이하 */
+
+
+
+        /***************** 1100px 이하 *****************/
+        
+
+        /* 1100px 이하 */
+
+
+
+        /****************** 1000px 이하 ******************/
+        
+        /* 1000px이하 */
+
+        /*************** 900px 이하 ***************/
+        
+
+        /* 900px 이하 */
+
+        /***************** 850px 이하 *****************/
+        
+
+        /* 850px 이하 */
+
+        /****************** 830px 이하 ******************/
+        
+
+        /* 830px 이하 */
+
+        /***************** 가로모드 + 830px이하 *****************/
+        
+        /* 가로모드 + 830px이하 */
+
+
+
+
+
+        /******************** 810px 이하 ********************/
+        
+        /* 810px 이하 */
+
+        /******************* 790px 이하 *******************/
+        
+
+        /* 790px 이하 */
+
+        /******************* 770px 이하 *******************/
+        
+
+        /* 770px 이하 */
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="bx">
+        <h1 class="tit">
+            이정재 컬렉션
+        </h1>
+        <div class="screen">
+            <img src="./images/sc_noise.png" alt="노이즈화면">
+            <img src="./images/jeong1.jpg" alt="이정재1">
+            <img src="./images/jeong2.jpg" alt="이정재2">
+            <img src="./images/jeong3.jpg" alt="이정재3">
+            <img src="./images/jeong4.jpg" alt="이정재4">
+            <img src="./images/jeong5.jpg" alt="이정재5">
+            <img src="./images/jeong6.jpg" alt="이정재6">
+            <img src="./images/jeong7.jpg" alt="이정재7">
+            <img src="./images/jeong8.jpg" alt="이정재8">
+            <img src="./images/jeong9.jpg" alt="이정재9">
+        </div>
+    </div>
+
+</body>
+
+</html>
