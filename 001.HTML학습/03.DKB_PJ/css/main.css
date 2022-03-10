@@ -10,6 +10,12 @@ font-family: 'Kirang Haerang', cursive;
 font-family: 'Nanum Gothic', sans-serif;
 */
 
+/* 상대단위를 위한 html 글자크기 */
+html{
+    font-size: 10px;
+    /* rem단위 계산을 쉽게하기 위해 10px로 셋팅! */
+}
+
 /* 기본태그 초기화 - 마진,패딩 없애기 */
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd{
     margin: 0;
@@ -181,13 +187,20 @@ body{
 }
 /* 메뉴 링크 */
 .gnb>ul>li>a{
+    display: inline-block;
+    /* 인라인블록이면 위아래로 영역이 줄간격만큼 확장됨! */
     color: #222;
     text-decoration: none;
     font-family: 'Nanum Gothic', sans-serif;
-    font-size: 17px;
+    font-size: 1.7rem;
     line-height: 40px;
+    
 }
-
+/* 상위메뉴 li에 마우스 오버시 a요소 빨간색 하단보더넣기 */
+.gnb>ul>li:hover>a{
+    border-bottom: 4px solid red;
+    /* 인라인블록이어서 보더가 크기에 영향을 미치지 않음! */
+}
 /* 서브메뉴 */
 .smenu{
     position: absolute;
@@ -212,7 +225,7 @@ body{
 }
 /* 서브 a */
 .smenu a{
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 30px;
 
     /* 글자색+밑줄 변경 */
@@ -227,8 +240,7 @@ body{
     content: '';
     display: block;/* div와 비슷! */
     position: absolute;
-    /* top에 대한 설정이 없으므로 젠틀앱솔루트!
-    a요소 아래에 그대로 위치함! */
+    top: 126px;
     left: 0;
     /* 부모는? 보이는 화면 */
     width: 100%;
@@ -238,7 +250,7 @@ body{
     background-color: #fff;
 
     /* 세부위치조정은 마진으로!!! */
-    margin-top: 2px;
+    /* margin-top: 4px; */
     /* #top의 하단보더를 가리므로 아래쪽으로 위치이동함! */
 
     /* 트랜지션: 속시이지 */
@@ -509,7 +521,7 @@ body{
     color: #222;
     text-decoration: none;
     /* font-family: 'Nanum Gothic', sans-serif; */
-    font: bold 14px/39px 'Nanum Gothic', sans-serif;
+    font: bold 1.4rem/2.8 'Nanum Gothic', sans-serif;
     /* 
         font 한번에 셋팅하기!
         font: 스두크/줄체
@@ -527,7 +539,7 @@ body{
     width: 804px;
     margin: 10px auto;
     border: 4px double #222;
-    font: 14px/2 'Nanum Gothic', sans-serif;
+    font: 1.4rem/2 'Nanum Gothic', sans-serif;
     /* 원래 address요소는 italic체인데 font한번에쓰기에서
     스타일 설정을 안하면 기본 normal이 적용되서 없어짐 */
     text-align: center;
