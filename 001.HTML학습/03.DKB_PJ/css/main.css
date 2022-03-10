@@ -198,6 +198,8 @@ body{
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 1.7rem;
     line-height: 40px;
+    border-bottom: 4px solid #fff;
+    /* 미리보더를 만들고 하위메뉴에 영향이 없도록함! */
 
 }
 /* 상위메뉴 li에 마우스 오버시 a요소 빨간색 하단보더넣기 */
@@ -304,8 +306,8 @@ body{
     /* 부모박스크기의 90%가로크기 */
     margin: 0 auto;
     /* 마영오! - 블록가로중앙 */
-    margin-top: 400px;
-    /* 윗쪽마진 400px로 설정 */
+    margin-top: 527px;
+    /* 윗쪽마진 400px+127px(#top만큼)로 설정 */
     /* height: 300px; */
     /* background-color: rgba(144, 238, 144, 0.637); */
     
