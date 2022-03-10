@@ -110,6 +110,26 @@
 
                 [ 미디어 쿼리 코딩시 주의사항! ]
 
+                1. 기존 CSS 선택자와 동일하게 코딩한다!
+                    (그래야 덮어쓰기가 원활하다!)
+
+                2. max-width 로 셋팅한 후 큰 사이즈 부터 작은 사이즈
+                순으로 코딩한다! (min-width는 순서반대!)
+                -> 그래야 같은 속성 덮어쓰기가 가능함!
+
+                3. 미디어쿼리를 외부CSS파일로 만들어 사용할 경우
+                    @import방식으로 호출하면 적용되지 않는다!
+                    이유는 미디어쿼리는 덮어쓰기 방식이므로
+                    기존 CSS코드보다 아래에 있어야함!!!!
+                    link방식으로 html코드 상단에 기본 CSS 외부파일보다
+                    아래에서 호출하면 된다!!!
+
+                예) 
+                <head>
+                    <link rel="stylesheet" href="일반CSS">
+                    <link rel="stylesheet" href="미디어쿼리CSS">
+                </head>
+
                 
             */
         /* 초기화 */
@@ -417,8 +437,8 @@
          가로모드와 세로모드 변경 코드!!! 
         ***********************************/
 
-        /***************** 가로모드 + 830px이하 *****************/
-        @media screen and (orientation:landscape) and (max-width:830px) {
+        /***************** 가로모드 + 1000px이하 *****************/
+        @media screen and (orientation:landscape) and (max-width:1000px) {
 
             /* .bx의 가상요소 배경변경하기 */
             .bx::after {
@@ -434,10 +454,10 @@
 
         }
 
-        /* 가로모드 + 830px이하 */
+        /* 가로모드 + 1000px이하 */
 
-        /***************** 세로모드 + 830px이하 *****************/
-        @media screen and (orientation:portrait) and (max-width:830px) {
+        /***************** 세로모드 + 1000px이하 *****************/
+        @media screen and (orientation:portrait) and (max-width:1000px) {
 
             /* .bx의 가상요소 배경변경하기 */
             .bx::after {
@@ -452,8 +472,7 @@
 
 
         }
-
-        /* 세로모드 + 830px이하 */
+        /* 세로모드 + 1000px이하 */
     </style>
 </head>
 
