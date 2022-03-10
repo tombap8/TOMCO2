@@ -153,6 +153,10 @@ body{
 
 /********** 1. 상단영역 **********/
 #top{/* 겉박스 */
+    position: absolute;
+    /* 앱솔을 준이유는 아래쪽 스테틱박스에 영향을 주기때문! */
+    width: 100%;
+    /* 크기를 화면에 채움! */
     background-color: #fff;
     border-bottom: 1px solid #ccc;
 }
@@ -194,7 +198,7 @@ body{
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 1.7rem;
     line-height: 40px;
-    
+
 }
 /* 상위메뉴 li에 마우스 오버시 a요소 빨간색 하단보더넣기 */
 .gnb>ul>li:hover>a{
@@ -240,7 +244,7 @@ body{
     content: '';
     display: block;/* div와 비슷! */
     position: absolute;
-    top: 126px;
+    top: 127px;/* 겉박스 하단보더 1px보이게 1px더함! */
     left: 0;
     /* 부모는? 보이는 화면 */
     width: 100%;
