@@ -342,23 +342,18 @@
         /* 830px 이하 */
 
         /***************** 가로모드 + 830px이하 *****************/
-        @media screen and (max-width:830px) {
-
-            /* 출력글자 변경하기 */
-            .tit::after {
-                content: "830px이하";
-                color: lightseagreen;
+        @media screen and (orientation:landscape) and (max-width:830px) {
+            /* .bx의 가상요소 배경변경하기 */
+            .bx::after{
+                background-position: top;
+                background-size: auto 60%;
             }
 
-            /* 기존이미지 숨기기 */
-            .screen img:nth-child(6) {
-                display: none;
+            /* 스크린 위치변경 */
+            .screen{
+                top: 171px;
             }
-
-            /* 다음이미지 보이기 */
-            .screen img:nth-child(7) {
-                display: inline;
-            }
+            
 
         }
 
