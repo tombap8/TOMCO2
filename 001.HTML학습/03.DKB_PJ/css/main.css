@@ -471,7 +471,7 @@ body{
 }
 /* 캐릭터 설명 첫번째 글자 가상요소로 변경하기! */
 .cd p:first-of-type::first-letter{
-    font-size: 30px;
+    font-size: min(2vw,30px);
     color: cyan;
     text-shadow: 1px 0 #000,-1px 0 #000,
     0 1px #000, 0 -1px #000;
