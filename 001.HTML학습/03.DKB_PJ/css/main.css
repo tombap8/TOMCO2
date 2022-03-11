@@ -272,12 +272,33 @@ body {
     float: left;
     margin: 0 5px;
 }
+.sns li:nth-child(2){/* 회원가입 li */
+    margin-right: 20px;
+}
 /* sns메뉴용 li만 디자인 */
 /* 두번째 li이후 모든 li형제들 : 틸드(~) 형제들선택자 */
 .sns li:nth-child(2)~li{
     width: 30px;
     height: 30px;
-    background-color: rgb(255, 149, 246);
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+    margin: 0 1px;
+}
+/* 스프라이츠 기법으로 배경이미지 셋업 */
+.sns li:nth-child(3):hover{/* 트위터오버시 */
+    background-position: 0 -30px;
+}
+.sns li:nth-child(4){/* 페북 */
+    background-position: -30px 0;
+}
+.sns li:nth-child(4):hover{/* 페북 오버시 */
+    background-position: -30px -30px;
+}
+.sns li:nth-child(5){/* 인스타 */
+    background-position: -60px 0;
+}
+.sns li:nth-child(5):hover{/* 인스타 오버시 */
+    background-position: -60px -30px;
 }
 .sns a{   
     color: #222;
