@@ -48,7 +48,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: #fff;
+        background-color: #000;
     }
     .gnb>ul{
         margin-top: 20vh;
@@ -66,6 +66,13 @@
         line-height: 10vh;
         /* 메뉴가 6개이므로 줄간격 60vh
         즉, 보이는 높이값화면의 60%임 */
+        color: #fff;
+        /* 글자색 흰색 */
+    }
+    /* 오버시 하단보더 없애기 */
+    .gnb>ul>li>a,
+    .gnb>ul>li:hover>a{
+        border-bottom: none;
     }
 
     /* 4. 캐릭터 박스 레이아웃 변경 */
