@@ -249,19 +249,19 @@ body {
 /*********** sns메뉴 ***********/
 .snsbx{ /* 최상위박스 */
     position: absolute;
-    top: 20px;
+    top: 25px;
     left: 50%;
     transform: translateX(-50%);
     /* x축방향으로 자기크기의 절반 반대방향이동(중앙정렬) */
     width: 1200px;
     max-width: 100%;
     /* 1200px이었다가 화면이 작아지면 100%로 변경! */
-    outline: 2px dotted blue;
+    /* outline: 2px dotted blue; */
 }
 .sns{
     float: right;
     margin-right: 50px;
-    outline: 2px dotted red;
+    /* outline: 2px dotted red; */
 }
 .sns ul::after{ /* clear셋팅 */
     content: '';
