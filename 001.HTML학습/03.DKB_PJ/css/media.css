@@ -22,7 +22,7 @@
     /* 1. 숨기기 
     - GNB메뉴, 문구이미지, 하단링크, 
     서브메뉴, 메뉴배경가상요소 */
-    /* .gnb, */
+    .gnb,
     #dtxt,
     .blink,
     .smenu,
@@ -48,7 +48,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.7);
     }
     .gnb>ul{
         margin-top: 20vh;
@@ -62,7 +62,7 @@
         text-align: center;
     }
     .gnb>ul>li>a{
-        font-size: 5vh;
+        font-size: 4vh;
         line-height: 10vh;
         /* 메뉴가 6개이므로 줄간격 60vh
         즉, 보이는 높이값화면의 60%임 */
@@ -73,6 +73,12 @@
     .gnb>ul>li>a,
     .gnb>ul>li:hover>a{
         border-bottom: none;
+    }
+
+    /* 3.6. 상단영역 클래스 설정변경 */
+    /* .top에 클래스 on을 주면 하위요소 변경 */
+    .top.on .gnb{
+        display: block;
     }
 
     /* 4. 캐릭터 박스 레이아웃 변경 */
