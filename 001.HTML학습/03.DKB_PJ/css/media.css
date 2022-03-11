@@ -21,13 +21,14 @@
 
     /* 1. 숨기기 
     - GNB메뉴, 문구이미지, 하단링크, 
-    서브메뉴, 메뉴배경가상요소, sns메뉴박스 */
+    서브메뉴, 메뉴배경가상요소, sns메뉴박스, 선택박스 */
     .gnb,
     #dtxt,
     .blink,
     .smenu,
     .gnb>ul>li.sm::after,
-    .snsbx {
+    .snsbx,
+    #sel {
         display: none;
     }
 

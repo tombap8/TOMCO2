@@ -749,6 +749,8 @@ body {
 }
 
 .info {
+    position: relative;
+    /* 부모자격 - .sel 선택박스 */
     /* 속박스 */
     height: 241px;
     padding: 15px;
@@ -811,4 +813,14 @@ body {
 /* 하단로고 */
 .blogo {
     text-align: center;
+}
+
+/* 브랜드 바로가기 선택박스 */
+#sel{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* 부모는? .info */
+    font: bold 1.4rem/2.8 'Nanum Gothic', sans-serif;
+    padding: 5px;
 }
