@@ -270,7 +270,14 @@ body {
 }
 .sns li{
     float: left;
-    margin: 0 15px;
+    margin: 0 5px;
+}
+/* sns메뉴용 li만 디자인 */
+/* 두번째 li이후 모든 li형제들 : 틸드(~) 형제들선택자 */
+.sns li:nth-child(2)~li{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 149, 246);
 }
 .sns a{   
     color: #222;
