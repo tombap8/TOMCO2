@@ -246,8 +246,28 @@ body {
 #logo img {
     width: 100px;
 }
+/*********** sns메뉴 ***********/
+.sns{
+    position: absolute;
+    left: 50%;
+    outline: 2px dotted red;
+}
+.sns li{
+    float: left;
+}
+.sns a{    
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.7rem;
+    line-height: 40px;
+}
 
-/* GNB 메뉴 */
+/* sns 설명글 숨기기 */
+.ir{
+    display: none;
+}
+
+
+/********** GNB 메뉴 **********/
 .gnb {
     width: 569px;
     margin: 0 auto;
