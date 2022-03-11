@@ -50,6 +50,23 @@
         height: 100vh;
         background-color: #fff;
     }
+    .gnb>ul{
+        margin-top: 20vh;
+        /* 리스트가 60vh이므로 나머지 40vh 중
+        절반인 20vh만 밀어주면 리스트가 세로
+        중앙에 오게됨! */
+    }
+    .gnb>ul>li{
+        float: none;
+        /* float 없앰! */
+        text-align: center;
+    }
+    .gnb>ul>li>a{
+        font-size: 5vh;
+        line-height: 10vh;
+        /* 메뉴가 6개이므로 줄간격 60vh
+        즉, 보이는 높이값화면의 60%임 */
+    }
 
     /* 4. 캐릭터 박스 레이아웃 변경 */
     .cat {
