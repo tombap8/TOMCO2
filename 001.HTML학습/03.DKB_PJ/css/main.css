@@ -393,16 +393,7 @@ body {
 .ham::before{
     content: '≡';
 }
-/* 상단영역 .top에 클래스 on적용시 버튼변경 */
-.top.on .ham::before{
-    content: '×';
-    color: #fff;
-}
-/* 상단영역 .top에 클래스 on적용시 버튼고정 */
-.top.on .ham{
-    position: fixed;
-    transform: scale(1.5);
-}
+
 
 
 
