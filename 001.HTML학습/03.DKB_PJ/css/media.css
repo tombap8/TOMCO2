@@ -22,11 +22,11 @@
     /* 1. 숨기기 
     - GNB메뉴, 문구이미지, 하단링크, 
     서브메뉴, 메뉴배경가상요소 */
-    .gnb,
+    /* .gnb, */
     #dtxt,
     .blink,
     .smenu,
-    .gnb>li::after {
+    .gnb>ul>li.sm::after {
         display: none;
     }
 
@@ -36,8 +36,19 @@
     }
 
     /* 3. 높이값 자동 : 상단영역, 하단영역 */
-    .top, .info {
+    .top,
+    .info {
         height: auto;
+    }
+
+    /* 3.5. GNB 디자인변경하기 */
+    .gnb {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #fff;
     }
 
     /* 4. 캐릭터 박스 레이아웃 변경 */
