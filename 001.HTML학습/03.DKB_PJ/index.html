@@ -18,11 +18,37 @@
         // JS 주석1
         /* JS 주석2 */
         // JS 코드 저장공간 -> 함수(호출시에만 실행!)
+
         // 함수는 키워드 function 을 사용함!
         // 함수형식: function 함수명(){코드}
-        function 클래스넣어(){
 
-        } //////// 클래스넣어 함수 ////////
+        function 바꿔(){
+
+            // 1. 함수호출확인 : 경고창 띄우기
+            alert("나야나!");
+
+            // 2. 변경대상선정 : .top
+            // 변수에 대상을 담자!
+            // 변수는 데이터가 사는 곳!
+            // 여기를 봐!!! var
+            var 대상 = document
+            // 문서 탐색하기!
+            // (1) html문서 전체 -> document
+            // (2) 문서내용 중 아이디요소 -> get Element
+            //                              가져와 요소
+            //                              By Id
+            //                              아이디로!
+            // -----> getElementById(아이디명)
+            // (3) 문서내용 중 클래스요소 -> get Elements
+            //                              가져와 요소들
+            //                              By ClassName
+            //                              클래스로!
+            // -----> getElementByClassName(클래스명)
+            // 주의! 클래스는 여러개 사용하는 것이므로
+            // 무조건 순번으로 선택함! 첫번째는 0번!
+            // ------> getElementByClassName(클래스명).item(0)
+
+        } //////// 바꿔 함수 ////////
     </script>
 </head>
 
@@ -139,7 +165,7 @@
                 </ul>
             </nav>
             <!-- 모바일용 햄버거버튼 : 햄버거모양(ㄷ한자키) -->
-            <button class="ham"></button>
+            <button class="ham" onclick="바꿔()"></button>
         </header>
     </div>
     <!-- 2. 메인영역 -->
