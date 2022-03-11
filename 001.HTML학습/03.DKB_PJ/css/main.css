@@ -247,10 +247,18 @@ body {
     width: 100px;
 }
 /*********** sns메뉴 ***********/
+.snsbx{
+    overflow: hidden;
+    outline: 2px dotted blue;
+}
 .sns{
-    position: absolute;
-    left: 50%;
+    float: right;
     outline: 2px dotted red;
+}
+.sns ul::after{ /* clear셋팅 */
+    content: '';
+    display: block;
+    clear: both;
 }
 .sns li{
     float: left;
