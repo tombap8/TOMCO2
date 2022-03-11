@@ -372,7 +372,23 @@ body {
     height: 80px;
 }
 
+/* 모바일용 햄버거 버튼 */
+.ham{
+    position: absolute;
+    top: 18px;
+    right: 20px;
 
+    font-size: 40px;
+    transform: scaleX(1.5);
+
+    /* 버튼 기본없애기 */
+    background-color: transparent;
+    border: none;
+
+    /* 모바일 아닐때 안보임 */
+    display: none;
+
+}
 
 
 

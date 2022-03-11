@@ -19,10 +19,14 @@
 /******** 800px 이하 미디어쿼리 ********/
 @media screen and (max-width:800px) {
 
-    /* 1. 숨기기 - GNB메뉴, 문구이미지, 하단링크 */
+    /* 1. 숨기기 
+    - GNB메뉴, 문구이미지, 하단링크, 
+    서브메뉴, 메뉴배경가상요소 */
     .gnb,
     #dtxt,
-    .blink {
+    .blink,
+    .smenu,
+    .gnb>li::after {
         display: none;
     }
 
