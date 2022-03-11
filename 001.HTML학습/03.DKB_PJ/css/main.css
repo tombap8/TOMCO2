@@ -108,6 +108,7 @@ body {
     background:
         url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
         url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+
     /* 로고가 위에 와야해서 먼저 배경셋팅함! */
 
 
@@ -215,6 +216,7 @@ body {
     /* 크기를 화면에 채움! */
     background-color: #fff;
     border-bottom: 1px solid #ccc;
+    z-index: 9999;/* 상단박스 위치 가장위! */
 
     /* 애니메이션: 이시이지반방마 */
     animation: topAni .8s ease-out 6s forwards;
