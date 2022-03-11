@@ -461,6 +461,10 @@ body {
 .ham::before{
     content: '≡';
 }
+/* 크롬브라우저 포커스 아웃라인 없애기 */
+.ham:focus{
+    outline: none;
+}
 
 
 
