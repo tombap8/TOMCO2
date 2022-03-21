@@ -313,6 +313,22 @@
             // 3-8. 줄간격
             목표.style.lineHeight = "300px";
 
+            // 3-9. 위치이동
+            목표.style.top = "50%";
+            목표.style.left = "50%";
+
+            // 3-10. 트랜스폼 중앙이동(축소, 회전)
+            목표.style.transform = 
+            "translate(-50%,-50%) rotate(360deg) scale(.7)";
+
+            // 3-11. 전체배경색 변경하기
+            // 대상: body
+            // JS에서 body는 특별히 취급해서
+            // document.body 라고 선택함
+            var 바디 = document.body;
+            바디.style.backgroundColor = "orange";
+            바디.style.transition = "5s";
+
 
 
        } ///////// 보여줘 함수 ///////////////////////
@@ -333,6 +349,49 @@
             text-shadow: 1px 1px 1px #000;
             line-height: 100px;
         }
+
+        /* 원모양 박스 */
+        .원이야 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+
+            /* 배경공통 */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* 원박스 개별배경이미지 */
+        .원이야:nth-child(1){
+            right: 400px;
+            background-image: url(./images/01.png);
+        }
+        .원이야:nth-child(2){
+            right: 200px;
+            background-image: url(./images/02.png);
+        }
+        .원이야:nth-child(3){
+            background-image: url(./images/03.png);
+        }
+
+        /* 사각형으로 변할 원박스 */
+        .넌뭐냐 {
+            position: absolute;
+            top: 40%;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            white-space: nowrap;
+            /* 줄바꿈방지 */
+            border-radius: 50%;
+            background: #bcd4b4 url(./images/prog.jpg) no-repeat center/auto 100%;
+        }
+
+
     </style>
 </head>
 <body>
@@ -342,6 +401,16 @@
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name"></span>
     </p>
+
+    <div class="박스야">
+        <!-- 원모양박스 -->
+        <div class="원이야"></div>
+        <div class="원이야"></div>
+        <div class="원이야"></div>
+
+        <!-- 사각형으로 변할 원박스 -->
+        <div class="넌뭐냐"></div>
+    </div>
     
 </body>
 </html>
