@@ -4,3 +4,37 @@
 /* 외부CSS합치기 */
 @import url(reset.css);
 @import url(core.css);
+
+body{
+    background-color: #000;
+}
+
+/* 공사중표시 */
+body *{
+    outline: 2px dotted lime;
+}
+
+/* 레이아웃 공통 class */
+.part{
+    max-width: 1200px;
+    /* 최대 1200px, 이하일땐 auto */
+    margin: 0 auto;
+    /* 마영오! - 가로중앙 */
+}
+
+/******************* 1. 상단영역 *******************/
+#top{
+    height: 80px;
+    background: url(../images/curtain.jpg) repeat-x;
+}
+
+/******************* 2. 메인영역 *******************/
+#cont{
+    height: 788px;
+    background: url(../images/bg.jpg) no-repeat;
+}
+
+/******************* 3. 하단영역 *******************/
+#info{
+    height: 100px;
+}
