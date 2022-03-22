@@ -38,12 +38,12 @@ body *{
 /* 2-1. 스크린 박스 */
 #screen{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 136px;
+    left: 257px;
     /* 부모는? #cont */
     width: 701px;
     height: 398px;
-    background-color: red;
+    background-color: #000;
 }
 
 /******************* 3. 하단영역 *******************/
