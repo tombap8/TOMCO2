@@ -213,6 +213,34 @@
             margin-top: auto;
         }
 
+        /* 타이틀5 */
+        .t5{
+            top: 50px;
+            left: 50px;
+            width: 150px;
+
+            /* 플렉스 박스 */
+            display: flex;
+        }
+        /* 자식요소에 flex-shrink 설정으로 크기유지하기! */
+        .t5>li{
+            flex-shrink: 0;
+            /* 부모박스가 줄어들때 
+            같이 자동으로 줄어들래? 0 아니! */
+
+            /* 
+                flex속성을 자식요소에 셋팅하지 않으면
+                기본값은 아래와 같다!
+                flex: initial
+                즉, 아래와 동일
+                flex: 0 1 auto
+                -> 두번째 값이 flex-shrink:1 로 셋팅
+                그래서 부모박스 크기가 작아지면
+                자식요소도 가로크기를 줄이게 됨!
+                이 값을 0으로 하면 자기원래 크기유지함!
+            */
+        }
+
     </style>
 </head>
 
@@ -252,6 +280,14 @@
         </ol>
         <!-- 타이틀 박스4 -->
         <ol class="tit t4">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀 박스5 -->
+        <ol class="tit t5">
             <li>W</li>
             <li>O</li>
             <li>R</li>
