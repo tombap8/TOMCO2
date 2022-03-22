@@ -6,6 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flex 레이아웃 연습</title>
     <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        ul,ol{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            /* 3無 */
+        }
+        /* 전체부모박스 */
+        #wrap {
+            height: 100%;
+            /* 부모박스 높이값을 채움! */
+        }
+        /* 파티션박스 ul */
+        #wrap>ul{
+            display: flex;
+            height: 100%;
+        }
+        #wrap>ul>li{
+            flex: 1;
+            /* 등분할 속성 */
+
+            /* 배경공통 */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        /* 파티션별 배경이미지 */
+        #wrap>ul>li:nth-child(1){
+            background-image: url(./images/m01_bg.jpg);
+        }
+        #wrap>ul>li:nth-child(2){
+            background-image: url(./images/m02_bg.jpg);
+        }
+        #wrap>ul>li:nth-child(3){
+            background-image: url(./images/m03_bg.jpg);
+        }
+        #wrap>ul>li:nth-child(4){
+            background-image: url(./images/m04_bg.jpg);
+        }
+        #wrap>ul>li:nth-child(5){
+            background-image: url(./images/m05_bg.jpg);
+        }
         
     </style>
 </head>
