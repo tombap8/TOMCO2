@@ -129,6 +129,44 @@
             color: #fff;
             background-color: #f00;
         }
+
+        /* 타이틀1 */
+        .t1{
+            top: 50px;
+
+            /* 플렉스박스 */
+            display: flex;
+            justify-content: space-evenly;
+            /* 
+                justify-content 속성:
+                - 수평정렬속성 (justify 양쪽정렬의 뜻)
+                - content는 수평방향으로 여러개의 아이템요소
+                가 있으니까 컨텐트임!
+                1) flex-start : 왼쪽끝(기본값)
+                2) flex-end : 오른쪽끝
+                3) center : 중앙
+                4) space-between :
+                    아이템 요소 양쪽끝에 붙고 사이간격 일정
+                5) space-around :
+                    아이템 요소 양쪽간격 일정
+                6) space-evenly :
+                    아이템 요소 양쪽과 사이간격 모두일정
+            */
+            align-items: center;
+            /* 
+                align-items 속성:
+                - 한줄 수직정렬 속성
+
+                1) flex-start : 맨위(기본값)
+                2) flex-end : 맨아래
+                3) center : 세로중앙
+                4) stretch : 세로방향 꽉채워 늘림
+                    (단, height 크기가 auto여야함!)
+                5) baseline : 각 요소에 글자가 있다면
+                    글자 아래쪽 기준선으로 정렬됨
+                    (글자의 line-height를 변경해 보면됨!)
+            */
+        }
         
     </style>
 </head>
