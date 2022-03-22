@@ -45,6 +45,13 @@ body *{
     height: 398px;
     background-color: #000;
 }
+/* 스크린 아이프레임 */
+#screen iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* 아이프레임 기본보더 없앰! */
+}
 
 /******************* 3. 하단영역 *******************/
 #info{
