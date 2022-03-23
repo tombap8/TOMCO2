@@ -29,26 +29,42 @@
 
             // 점수에 따른 메시지변수
             var msg;
+            // 결과에 따른 글자색 변수
+            var fc;
 
             // 3. 점수환산하기 ///////////////////
+            // 셋팅내용: msg - 메시지, fc - 글자색
             if(score >= 90){
                 msg = "매우잘함";
+                fc = "blue";
             }
             else if(score >= 80){
                 msg = "잘함";
+                fc = "green";
             }
             else if(score >= 70){
                 msg = "보통";
+                fc = "purple";
             }
             else if(score >= 60){
                 msg = "노력요함";
+                fc = "orange";
             }
             else{
                 msg = "재시험";
+                fc = "red";
             }
+
+            // 할당된 변수값 확인
+            console.log("msg:",msg,"/fc:",fc);
 
             // 4. 결과출력
             jexp.innerText = "평가결과는 " + msg;
+
+            // 5. 글자색 변경하기
+            // -> fc라는 변수에 각 조건별 색상명이 할당됨!
+            // 선택자.style.color = 값
+            jexp.style.color = fc;
 
 
        } ///////////////// jumsu 함수 //////////////////
@@ -100,6 +116,26 @@
        ************************************************/
 
     </script>
+    <!-- 스타일시트 -->
+    <style>
+        #jshow{
+            position: absolute;
+            top: -17px;
+            left: 149px;
+            width: 322px;
+            height: 322px;
+            background: url(./images/ifshow.jpg) no-repeat;
+            transform: scale(.3);/* 크기줄이기 */
+            outline: 1px solid silver;
+        }
+        /* IR(배경이미지설명 숨기기) */
+        .ir{
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <h1>JS 제어문</h1>
@@ -110,6 +146,11 @@
     <label for="jumsu">점수입력:</label>
     <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3">
     <button class="sbtn" onclick="jumsu()">평가하기</button>
+
+    <!-- 칭찬스티커 -->
+    <div id="jshow">
+        <span class="ir">칭찬스티커</span>
+    </div>
     <!-- 
         [ input 요소 :  입력양식 요소 ]
         - 텍스트, 라디오버튼, 체크박스, 버튼 등
