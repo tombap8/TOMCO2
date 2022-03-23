@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>등분할 레이아웃 사이트</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* 보이는 화면채우기 - 자식요소의 %기준 필수! */
+            overflow: hidden;
+        }
+
+        ul,
+        ol {
+            /* 3無 */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* 전체부모 */
+        #wrap {
+            height: 100%;
+        }
+
+        /* ul 파티션 부모박스 */
+        #wrap>ul {
+            display: flex;
+            /* 플렉스박스 설정! */
+            height: 100%;
+        }
+
+        /* 파티션 li공통 */
+        #wrap>ul>li {
+            position: relative;
+            /* 부모자격! */
+            flex: 1;
+            /* 등분할 설정 */
+
+            /* 배경공통 */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            /* 트랜지션: 속시이지 */
+            transition: flex .4s ease-in-out;
+        }
+
+        /* 파티션 li에 마우스 오버시 가로 넓어짐 */
+        #wrap>ul>li:hover {
+            flex: 1.4;
+            /* 숫자를 1보다 크게하면 다른 등분할 요소의
+            몇배라고 해석함! 지금은 1.4배임 */
+        }
+
+        /* li에 가상요소로 반투명 가림막 만들기 */
+        #wrap>ul>li::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            /* 부모는? li */
+            background-color: #000;
+            opacity: 0.5;
+            /* 반투명 */
+
+            /* 트랜지션: 속시이지 */
+            transition: opacity .4s ease-in-out;
+        }
+
+        /* li에 오버시 가상요소 투명하게하기 */
+        #wrap>ul>li:hover::before {
+            opacity: 0;
+        }
+
+        /* 각 파티션 li 셋팅 */
+        #wrap>ul>li:nth-child(1) {
+            background-image: url(images/m01_bg.jpg);
+        }
+
+        #wrap>ul>li:nth-child(2) {
+            background-image: url(images/m02_bg.jpg);
+        }
+
+        #wrap>ul>li:nth-child(3) {
+            background-image: url(images/m03_bg.jpg);
+        }
+
+        #wrap>ul>li:nth-child(4) {
+            background-image: url(images/m04_bg.jpg);
+        }
+
+        #wrap>ul>li:nth-child(5) {
+            background-image: url(images/m05_bg.jpg);
+        }
+
+        /* 파트별 타이틀+로고 이미지 공통 */
+        #wrap>ul>li>img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 정중앙이동 */
+        }
+
+        /* 타이틀이미지 */
+        #wrap>ul>li>img:first-child {
+            width: min(80%, 240px);
+            /* min을 사용하여 240px보다 더 커지지 않게함! */
+        }
+
+        /* 로고이미지 */
+        #wrap>ul>li>img:last-child {
+            top: auto;
+            /* 기존top값 해제 */
+            bottom: 40px;
+            /* 새로 bottom값 설정1 */
+        }
+
+        /* 
+            [ CSS 함수기능 ]
+            -> 참고(W3S):
+            https://www.w3schools.com/css/css_math_functions.asp
+
+            1. calc() 
+                -> 특정값을 계산으로 적용하기(사칙연산가능)
+                예) calc(100% - 200px) 
+                -> 100%에서 200px을 뺀 나머지
+            2. max() 
+                -> 나열된 값에서 가장 큰값을 적용함(2개이상가능)
+                예) max(50%,200px) 
+                -> 두값중 큰것이 적용됨
+            3. min() 
+                -> 나열된 값에서 가장 작은값을 적용함(2개이상가능)
+                예) min(50%,200px) 
+                -> 두값중 작은것이 적용됨
+        */
+
+        /* 중앙타이틀 */
+        .tit {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            /* 가로중앙이동 */
+
+            /* 플렉스설정 */
+            display: flex;
+            flex-wrap: wrap;
+            /* 플렉스 줄바꿈 */
+            justify-content: space-evenly;
+            /* 플렉스 수평정렬 */
+
+            width: 500px;
+            /* outline: 4px dotted lime; */
+        }
+
+        /* 타이틀 li */
+        .tit>li {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            background-color: #f00;
+            font: bold 14px/50px Verdana;
+            color: #fff;
+            text-align: center;
+
+            /* 양쪽마진으로 한줄에 오는글자조정 */
+            margin: 30px 14px;
+        }
+
+        /* 하단로고바 */
+        .binfo {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            padding: 7px;
+            text-align: center;
+            background-color: #da041c;
+        }
+
+        @media only screen and (max-width:800px)  {
+
+            /* 파티션 박스 아랫방향으로 변경하기 */
+            #wrap>ul {
+                flex-direction: column;
+                height: calc(100vh - 97px);
+                /* 보이는 화면높이에서 위아래크기 뺌 */
+                margin-top: 50px;
+                /* 상단 시작위치 조정 */
+            }
+
+            /* 중앙타이틀 */
+            .tit {
+                top: 0;
+                left: 0;
+                transform: none;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                width: 100vw;
+            }
+
+            /* 타이틀 li */
+            .tit>li {
+                flex: 1;
+                width: auto;
+                height: auto;
+                border: none;
+                border-radius: 0;
+                margin: 0;
+            }
+
+            /* 타이틀이미지 */
+            #wrap>ul>li>img:first-child {
+                width: auto;
+                height: 80%;
+                /* 높이값을 기준으로 변경 */
+            }
+
+            /* 로고이미지 */
+            #wrap>ul>li>img:last-child {
+                top: 50%;
+                bottom: auto;
+                /* 기존 bottom해제 */
+                left: 18%;
+                height: 61%;
+            }
+
+            /* 하단로고바 */
+            .binfo {
+                width: 100vw;
+            }
+
+
+        }
+
+        /* 미디어쿼리 */
+    </style>
+</head>
+
+<body>
+    <!-- 전체부모박스 -->
+    <div id="wrap">
+        <!-- 파티션박스 -->
+        <ul>
+            <li>
+                <img src="images/m01_txtbox.png" alt="썸머페스티벌">
+                <img src="images/m01_logo1.png" alt="어드벤처로고">
+            </li>
+            <li>
+                <img src="images/m02_txtbox.png" alt="서울을 한눈에 담다">
+                <img src="images/m04_logo.png" alt="서울스카이로고">
+            </li>
+            <li>
+                <img src="images/m03_txtbox.png" alt="쉐어더드림">
+                <img src="images/m03_logo.png" alt="아쿠아리움로고">
+            </li>
+            <li>
+                <img src="images/m04_txtbox.png" alt="어린이왕국">
+                <img src="images/m05_logo.png" alt="키즈파크로고">
+            </li>
+            <li>
+                <img src="images/m05_txtbox.png" alt="워터파크">
+                <img src="images/m02_logo.png" alt="워터파크로고">
+            </li>
+        </ul><!-- 파티션박스 -->
+
+        <!-- 타이틀박스 -->
+        <ol class="tit">
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+
+        <!-- 하단로고바 -->
+        <footer class="binfo">
+            <img src="images/lotte_logo.gif" alt="로고">
+        </footer>
+
+
+    </div>
+
+</body>
+
+</html>
