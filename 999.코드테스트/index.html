@@ -33,8 +33,8 @@
             /* 테스트시 left밀기 */
             height: 70%;
             width: 100%;
-            overflow: hidden;
-            /* outline: 2px dotted red; */
+            /* overflow: hidden; */
+            outline: 2px dotted red;
 
         }
 
@@ -75,11 +75,10 @@
 
 
 
-                num--; // 1씩감소
                 tg.style.left = num + "px";
 
                 // 이미지 하나당 크기보다 작아지면
-                if (num <= -320) {
+                if (num < -320) {
 
                     // 하위 li 갱신하기
                     let lst = wlst.querySelectorAll("li");
@@ -88,6 +87,8 @@
                     // 수치값 초기화!
                     num = 0;
                 }
+
+                num--; // 1씩감소
 
                 // 재귀호출
                 setTimeout(mymv, 10);
