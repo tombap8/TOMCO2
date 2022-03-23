@@ -281,6 +281,7 @@
                 6) space-evenly :
                     아이템 요소 상하와 사이간격 모두일정
 
+                비교) 한줄 수직정렬은? align-items
             */
         }
 
@@ -288,6 +289,35 @@
         li에 마진 설정 */
         .t6>li{
             margin: 0 14px;
+        }
+
+        /* 타이틀7 */
+        .t7{            
+            top: 50px;
+            right: 50px;
+            left: auto;
+            /* 기존left해제 */
+            width: 450px;
+            height: auto;
+            /* 높이값 자동 */
+
+            /* 플렉스박스 */
+            display: flex;
+            flex-wrap: wrap;
+            /* 자동줄바꿈 */
+            justify-content: space-between;
+        }
+
+        /* 줄바꿈을 위한 li */
+        /* 원리는 줄바꿈할 부분에서 
+        가로크기를 100%차지하게 해서 줄바꿈함! */
+        .t7>li.brk{
+            flex-basis: 100%;
+            /* flex-basis는 width임 */
+            height: 0;
+            border: none;
+            /* 기존디자인을 없애고
+            안보이게 처리함! */
         }
 
     </style>
@@ -363,6 +393,23 @@
             <li>T</li>
             <li>T</li>
             <li>E</li>
+        </ol>
+
+        <!-- 타이틀 박스7 -->
+        <ol class="tit t7">
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+
+            <li class="brk"></li>
+
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
         </ol>
 
 
