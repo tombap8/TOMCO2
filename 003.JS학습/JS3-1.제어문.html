@@ -27,32 +27,43 @@
             // 2-3. 출력대상: #jexp
             var jexp = document.querySelector("#jexp");
 
+            // 2-4. 칭찬스티커 대상: #jshow
+            var jshow = document.querySelector("#jshow");
+
             // 점수에 따른 메시지변수
             var msg;
             // 결과에 따른 글자색 변수
             var fc;
+            // 결과에 따른 칭찬스티커 위치변수
+            var bgp;
 
             // 3. 점수환산하기 ///////////////////
-            // 셋팅내용: msg - 메시지, fc - 글자색
+            // 셋팅내용: 
+            // msg - 메시지, fc - 글자색, bgp - 배경위치
             if(score >= 90){
                 msg = "매우잘함";
                 fc = "blue";
+                bgp = "0 0";
             }
             else if(score >= 80){
                 msg = "잘함";
                 fc = "green";
+                bgp = "-322px 0";
             }
             else if(score >= 70){
                 msg = "보통";
                 fc = "purple";
+                bgp = "-322px -322px";
             }
             else if(score >= 60){
                 msg = "노력요함";
                 fc = "orange";
+                bgp = "0 -644px";
             }
             else{
                 msg = "재시험";
                 fc = "red";
+                bgp = "-644px -644px";
             }
 
             // 할당된 변수값 확인
@@ -65,6 +76,10 @@
             // -> fc라는 변수에 각 조건별 색상명이 할당됨!
             // 선택자.style.color = 값
             jexp.style.color = fc;
+
+            // 6. 칭찬스티커 나오게하기
+            // -> bgp라는 변수에 각 조건별 배경이미지 위치값 할당
+            jshow.style.backgroundPosition = bgp;
 
 
        } ///////////////// jumsu 함수 //////////////////
@@ -125,8 +140,10 @@
             width: 322px;
             height: 322px;
             background: url(./images/ifshow.jpg) no-repeat;
+            background-position: 322px 0;
             transform: scale(.3);/* 크기줄이기 */
-            outline: 1px solid silver;
+            transition: all .4s ease-out;
+            /* outline: 1px solid silver; */
         }
         /* IR(배경이미지설명 숨기기) */
         .ir{
