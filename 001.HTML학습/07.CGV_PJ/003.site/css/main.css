@@ -52,6 +52,29 @@ body *{
     border: none;
     /* 아이프레임 기본보더 없앰! */
 }
+/* 2-2. 예고편 선택메뉴 */
+.mlist{
+    position: absolute;
+    bottom: 58px;
+    left: 50%;
+    /* 부모는? #cont */
+    transform: translateX(-50%);
+    /* x축 중앙이동 -> 정중앙 */
+}
+/* ul 플렉스박스 */
+.mlist ul{
+    display: flex;
+}
+/* 각 리스트 */
+.mlist ul>li{
+    margin: 0 9px;
+}
+
+.mlist img{
+    width: 99px;
+    height: 140px;
+}
+
 
 /******************* 3. 하단영역 *******************/
 #info{
