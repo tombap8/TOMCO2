@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>무한이동</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+
+
+
+        /*움직일 갤러리 화면크기의 부모박스*/
+        #handle {
+            position: relative;
+            left: 10%;
+            /* 테스트시 left밀기 */
+            height: 70%;
+            width: 100%;
+            overflow: hidden;
+            /* outline: 2px dotted red; */
+
+        }
+
+        /*움직일박스*/
+        #move {
+            position: relative;
+            height: 100%;
+        }
+
+        #move img {
+            position: relative;
+            width: 320px;
+            height: 375px;
+        }
+
+        /*플렉스박스!*/
+        #move>ul {
+            display: flex;
+        }
+
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", () => {
+
+            // 움직일 대상
+            let tg = document.querySelector("#move");
+            // 하위 ul 
+            let wlst = tg.querySelector("ul");
+            // 이동수치변수
+            let num = 0;
+
+            function mymv() {
+
+
+
+                num--; // 1씩감소
+                tg.style.left = num + "px";
+
+                // 이미지 하나당 크기보다 작아지면
+                if (num <= -320) {
+
+                    // 하위 li 갱신하기
+                    let lst = wlst.querySelectorAll("li");
+                    // 맨앞요소 맨뒤로
+                    wlst.appendChild(lst[0]);
+                    // 수치값 초기화!
+                    num = 0;
+                }
+
+                // 재귀호출
+                setTimeout(mymv, 10);
+            } /////// mymv 함수 /////////////
+
+            // 최초호출
+            mymv();
+
+        }); ///////// load ///////////////////
+    </script>
+
+
+</head>
+
+<body>
+
+    <h1 class="dselect">ICE CREAM GALLERY</h1>
+    <div id="handle">
+        <div id="move">
+            <ul class="dselect">
+                <li><img src="images/1.jpg" alt="items"></li>
+                <li><img src="images/2.jpg" alt="items"></li>
+                <li><img src="images/3.jpg" alt="items"></li>
+                <li><img src="images/4.jpg" alt="items"></li>
+                <li><img src="images/5.jpg" alt="items"></li>
+                <li><img src="images/6.jpg" alt="items"></li>
+                <li><img src="images/7.jpg" alt="items"></li>
+                <li><img src="images/8.jpg" alt="items"></li>
+                <li><img src="images/9.jpg" alt="items"></li>
+                <li><img src="images/10.jpg" alt="items"></li>
+                <li><img src="images/11.jpg" alt="items"></li>
+                <li><img src="images/12.jpg" alt="items"></li>
+                <li><img src="images/13.jpg" alt="items"></li>
+                <li><img src="images/14.jpg" alt="items"></li>
+                <li><img src="images/15.png" alt="items"></li>
+                <li><img src="images/16.png" alt="items"></li>
+                <li><img src="images/17.png" alt="items"></li>
+                <li><img src="images/18.jpg" alt="items"></li>
+                <li><img src="images/19.jpg" alt="items"></li>
+                <li><img src="images/20.png" alt="items"></li>
+                <li><img src="images/21.png" alt="items"></li>
+                <li><img src="images/22.png" alt="items"></li>
+                <li><img src="images/23.jpg" alt="items"></li>
+                <li><img src="images/24.jpg" alt="items"></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
