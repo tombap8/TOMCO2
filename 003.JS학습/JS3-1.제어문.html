@@ -266,6 +266,13 @@
         - 웹접근성(평등의 원칙) 측면에서 라벨은 input요소의
         필수요소로 사용할 것을 권고하고 있다!(리더기가 읽음)
      -->
+
+     <!-- switch case문 -->
+     <h2>switch case문 연습</h2>
+     <h3 id="info">국번안내</h3>
+     <label for="local">지역명 입력:</label>
+     <input type="text" id="local" placeholder="지역명에 '도'를 빼고 쓰세요!" onkeypress="if(event.keyCode === 13)local()">
+     <button class="sbtn" onclick="local()">국번문의</button>
     
 </body>
 </html>
