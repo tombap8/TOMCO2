@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <title>JS3-1.제어문 
+    <title>JS3-1.제어문
         - if문, switch case문, for문, while문</title>
     <script>
         // 함수는 호출시에만 실행되는 코드 저장소!
@@ -10,7 +11,7 @@
             함수명: jumsu
             기능: 평가점수를 평가결과로 변환하여 출력
         *********************************************/
-       function jumsu() {
+        function jumsu() {
 
             // 1. 함수호출확인
             // console.log("점수가 뭐야?");
@@ -39,9 +40,9 @@
             // is Not a Number? 숫자가 아니니?
             // 만약 숫자가 아니면 true
 
-            console.log("숫자가 아니니? ",isNaN(score));
+            console.log("숫자가 아니니? ", isNaN(score));
 
-            if(isNaN(score)){
+            if (isNaN(score)) {
 
                 // 1. 숫자가 아닌 경우 메시지 출력
                 jexp.innerText = "숫자를 입력하세요!";
@@ -67,7 +68,7 @@
 
             } ////// if /////////
 
-            
+
             ///////////////////////////////
             /// 2.5-2. 숫자범위 판별하기 ///
             ///////////////////////////////
@@ -75,7 +76,7 @@
             // 0~100 사이수가 아닌 경우 걸러내기!
             // 조건: 0미만 이거나 100초과인 경우
 
-            if(score < 0 || score > 100){
+            if (score < 0 || score > 100) {
 
                 // 1. 숫자범위가 아닌 경우 메시지 출력
                 jexp.innerText = "0이상 100이하의 숫자만 입력하세요!";
@@ -114,27 +115,23 @@
             // 3. 점수환산하기 ///////////////////
             // 셋팅내용: 
             // msg - 메시지, fc - 글자색, bgp - 배경위치
-            if(score >= 90){
+            if (score >= 90) {
                 msg = "매우잘함";
                 fc = "blue";
                 bgp = "0 0";
-            }
-            else if(score >= 80){
+            } else if (score >= 80) {
                 msg = "잘함";
                 fc = "green";
                 bgp = "-322px 0";
-            }
-            else if(score >= 70){
+            } else if (score >= 70) {
                 msg = "보통";
                 fc = "purple";
                 bgp = "-322px -322px";
-            }
-            else if(score >= 60){
+            } else if (score >= 60) {
                 msg = "노력요함";
                 fc = "orange";
                 bgp = "0 -644px";
-            }
-            else{
+            } else {
                 msg = "재시험";
                 fc = "red";
                 bgp = "-644px -644px";
@@ -156,56 +153,56 @@
             jshow.style.backgroundPosition = bgp;
 
 
-       } ///////////////// jumsu 함수 //////////////////
+        } ///////////////// jumsu 함수 //////////////////
 
 
-       /************************************************ 
-        [ if문 ]
-        - 조건문을 검사하여 true이면
-        중괄호안의 코드가 실행되는 제어문
+        /************************************************ 
+         [ if문 ]
+         - 조건문을 검사하여 true이면
+         중괄호안의 코드가 실행되는 제어문
 
-        - 조건문이란 결과가 true / false 로 나오는 구문
-        - 보통 비교연산자나 논리연산자가 사용된다!
+         - 조건문이란 결과가 true / false 로 나오는 구문
+         - 보통 비교연산자나 논리연산자가 사용된다!
 
-        ((구문))
-        ___________________________
+         ((구문))
+         ___________________________
 
-        if(조건문){
-            실행코드
-        }
-        else if(조건문){
-            실행코드
-        }
-        ...
-        else{
-            실행코드
-        }
-        ____________________________
+         if(조건문){
+             실행코드
+         }
+         else if(조건문){
+             실행코드
+         }
+         ...
+         else{
+             실행코드
+         }
+         ____________________________
 
-        ((구문해석))
-        1. if문은 단독으로 따로 사용가능
-        2. else if 문은 if문 뒤에 또는 다른 else if문 뒤에
-            사용가능함!
-            if와 else if문으로 구성된 조건문은
-            하나의 조건에 들어가면 다른 조건은 통과한다!
-        3. else문은 조건에 해당이 없을때 사용하며
-            필요할 경우 if문 맨 끝에 코딩함
+         ((구문해석))
+         1. if문은 단독으로 따로 사용가능
+         2. else if 문은 if문 뒤에 또는 다른 else if문 뒤에
+             사용가능함!
+             if와 else if문으로 구성된 조건문은
+             하나의 조건에 들어가면 다른 조건은 통과한다!
+         3. else문은 조건에 해당이 없을때 사용하며
+             필요할 경우 if문 맨 끝에 코딩함
 
-        ※ 주의사항: else if나 else문은 단독으로 사용못함!
+         ※ 주의사항: else if나 else문은 단독으로 사용못함!
 
-        ※ 참고: 만약 if문의 실행문이 한줄일 경우 중괄호생략이
-        가능하다
-        예)
-        if(aa>10) {my="야야";}
-        아래처럼 중괄호 생략가능
-        if(aa>10) my="야야";
+         ※ 참고: 만약 if문의 실행문이 한줄일 경우 중괄호생략이
+         가능하다
+         예)
+         if(aa>10) {my="야야";}
+         아래처럼 중괄호 생략가능
+         if(aa>10) my="야야";
 
-       ************************************************/
+        ************************************************/
 
-       /*********************************************** 
-            함수명: local
-            기능: 지역명을 입력하면 지역국번을 안내한다!
-       ***********************************************/
+        /*********************************************** 
+             함수명: local
+             기능: 지역명을 입력하면 지역국번을 안내한다!
+        ***********************************************/
         function local() {
 
             // 1. 함수호출확인
@@ -217,7 +214,7 @@
             // 2-2. 입력된 값 읽어오기
             var txt = tg.value;
             // input요소에 입력된 값 읽어옴(value)
-            console.log("지역명: ",txt);
+            console.log("지역명: ", txt);
 
             // 2-3. 대상선정: 출력대상 - #info
             var info = document.querySelector("#info");
@@ -226,6 +223,63 @@
             var msg; // 선언만하고 할당은 제어문에서!
 
             // 3. 지역명을 switch case문으로 분류하여 메시지 넣기
+            switch (txt) {
+                case "서울":
+                    msg = "02";
+                    break;
+                case "경기":
+                    msg = "031";
+                    break;
+                case "인천":
+                    msg = "032";
+                    break;
+                case "부산":
+                    msg = "051";
+                    break;
+                case "대구":
+                    msg = "053";
+                    break;
+                case "광주":
+                    msg = "062";
+                    break;
+                case "전북":
+                    msg = "063";
+                    break;
+                case "전남":
+                    msg = "061";
+                    break;
+                case "경북":
+                    msg = "054";
+                    break;
+                case "경남":
+                    msg = "055";
+                    break;
+                case "세종":
+                    msg = "044";
+                    break;
+                case "울산":
+                    msg = "052";
+                    break;
+                case "대전":
+                    msg = "042";
+                    break;
+                case "충북":
+                    msg = "043";
+                    break;
+                case "충남":
+                    msg = "041";
+                    break;
+                case "제주":
+                    msg = "064";
+                    break;
+                case "나성":
+                    msg = "나성에 가면 편지를 전해줘요~";
+                    break;
+                default:
+                    msg = "esc";
+            } /////////// switch case ///////
+
+            console.log("메시지:",msg);
 
         } ///////////////// local 함수 /////////////////
 
@@ -248,7 +302,7 @@
             __________________________________
 
             ((구문해석))
-            
+
             1. 변수값에 해당하는 경우 그 값에 해당하는
             case에 들어가서 실행코드를 실행함
 
@@ -261,11 +315,10 @@
             -> default에는 break문을 쓰지 않는다!
 
         ************************************************/
-
     </script>
     <!-- 스타일시트 -->
     <style>
-        #jshow{
+        #jshow {
             position: absolute;
             top: -17px;
             left: 149px;
@@ -273,12 +326,14 @@
             height: 322px;
             background: url(./images/ifshow.jpg) no-repeat;
             background-position: 322px 0;
-            transform: scale(.3);/* 크기줄이기 */
+            transform: scale(.3);
+            /* 크기줄이기 */
             transition: all .4s ease-out;
             /* outline: 1px solid silver; */
         }
+
         /* IR(배경이미지설명 숨기기) */
-        .ir{
+        .ir {
             display: block;
             width: 0;
             height: 0;
@@ -286,6 +341,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>JS 제어문</h1>
     <hr>
@@ -325,14 +381,15 @@
         필수요소로 사용할 것을 권고하고 있다!(리더기가 읽음)
      -->
 
-     <hr>
+    <hr>
 
-     <!-- switch case문 -->
-     <h2>switch case문 연습</h2>
-     <h3 id="info">국번안내</h3>
-     <label for="local">지역명 입력:</label>
-     <input type="text" id="local" placeholder="지역명에 '도'를 빼고 쓰세요!" onkeypress="if(event.keyCode === 13)local()">
-     <button class="sbtn" onclick="local()">국번문의</button>
-    
+    <!-- switch case문 -->
+    <h2>switch case문 연습</h2>
+    <h3 id="info">국번안내</h3>
+    <label for="local">지역명 입력:</label>
+    <input type="text" id="local" placeholder="지역명에 '도'를 빼고 쓰세요!" onkeypress="if(event.keyCode === 13)local()">
+    <button class="sbtn" onclick="local()">국번문의</button>
+
 </body>
+
 </html>
