@@ -44,6 +44,8 @@
 
             // 전역변수 uk와 같은 이름의 지역변수를 선언하고 할당하면?
             var uk = "유케이";
+            // -> 전역변수인 uk는 더이상 사용할 수 없다!ㅠ.ㅠ
+
 
             console.log(
                 "함수바깥 uk를 함수내에서:",uk);
@@ -67,6 +69,30 @@
 
         // 함수내 지역변수 usa 찍어보기 -> 에러남!
         // console.log("함수내 usa 바깥에서 찍기:",usa);
+        // Uncaught ReferenceError: usa is not defined
+        // 함수 내의 지역변수는 전역에서 참조할 수 없다!
+
+        // if문 중괄호 var ////////////////////
+        if(true){
+            var who = "누구?";
+            console.log("if문안 who:",who);
+        } ///// if /////////
+        
+        console.log("if문밖 who:",who);
+        // if문 중괄호안에서 변수를 선언하면
+        // 전역변수와 같다!
+
+        // for문 중괄호 var ///////
+        for(var i = 3; i > 0; i--){
+            console.log("for문안 i:",i);
+        } /////// for문 //////////
+        
+        console.log("for문밖 i:",i);
+        // for문 중괄호안에서 변수를 선언하면
+        // 전역변수와 같다!
+
+        //->>>>> var는 오직 함수의 중괄호 안에서만 선언시
+        // 지역변수로 사용된다!
 
     </script>
 </head>
