@@ -121,6 +121,74 @@
         //->>>>> var는 오직 함수의 중괄호 안에서만 선언시
         // 지역변수로 사용된다!
 
+        ///////////////////////////////////////////////////
+
+        //// let, const 테스트 ////////////////
+        var seoul = "서울";
+        var jeju = "제주도";
+        let toktok = "카톡";
+        let sport = "축구";
+
+        /// 중괄호로 블록영역을 만들어 본다! //////////
+
+        /* **************************************** */
+        {
+
+            // 블록내부에서 전역변수 찍기! 앞
+            console.log("블록내부에서 전역변수 찍기! 앞");
+            console.log("seoul:",seoul);
+            // console.log("jeju:",jeju); 에러남!
+            // console.log("toktok:",toktok); 에러남!
+            console.log("sport:",sport);
+
+            // 블록에서 변수 재선언하기! //////
+            var seoul = "강남구";
+            // 전역변수가 다시 선언되어 할당된 결과임!
+            let jeju = "마라도";
+            // 전역변수 var로 선언된 같은 이름의 변수를
+            // let으로 블록영역에서 선언하여 할당하면
+            // 블록영역의 지역변수가 된다!
+            // 이 변수보다 위에서 미리 찍을 수 없다!(에러발생)
+            // -> 전역변수 jeju와의 연결이 끊어짐!
+
+            let toktok = "라인";
+            // 전역변수 let으로 선언된 같은 이름의 변수를
+            // let으로 블록영역에서 선언하여 할당하면
+            // 블록영역의 지역변수가 된다!(jeju와 같음)
+
+            // var sport = "배구"; 에러남!
+            // let으로 이미 전역변수에 선언된 변수는
+            // 블록영역에서 var로 재선언할 수 없다!
+            // 왜? var는 전역변수로 선언하는 것과 같기때문!
+
+            myitem = "곰인형";
+            // 선언없이 변수를 할당하면?
+            // 함수가 아니기 때문에 기본적으로 var선언하여
+            // 전역변수로 등록된 것과 같다!
+            // 편리한게 아니고 변수관리가 부실해짐!
+            // 반드시 선언하고 사용할 것!
+
+            // 블록내부에서 전역변수 찍기! 뒤
+            console.log("블록내부에서 전역변수 찍기! 뒤");
+            console.log("seoul:",seoul);
+            console.log("jeju:",jeju); // 마라도
+            console.log("toktok:",toktok); // 라인
+            console.log("sport:",sport);
+            console.log("myitem:",myitem);
+
+
+        }
+        /* **************************************** */
+
+        // 전역에서 전역변수 찍기!
+        console.log("전역에서 전역변수 찍기!");
+        console.log("seoul:",seoul);
+        console.log("jeju:",jeju); // 제주도
+        console.log("toktok:",toktok); // 카톡
+        console.log("sport:",sport);        
+        console.log("myitem:",myitem);
+
+
     </script>
 </head>
 <body>
