@@ -24,6 +24,9 @@ body *{
 
 /******************* 1. 상단영역 *******************/
 #top{
+    position: relative;
+    /* z-index적용위해 relative줌 + 부모자격 */
+    z-index: 999;
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
 }
@@ -48,6 +51,25 @@ h1.tit{
         text-shadow: 0 0 12px aquamarine;
     }
 } /* 키프레임 */
+
+/* 1-2. 전체메뉴(GNb) */
+.gnb{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    /* 부모는? #top */
+}
+/* GNB ul */
+.glist{
+    display: flex;
+    /* 플렉스박스 */
+}
+/* GNB li 리스트 */
+.glist>li{
+    padding: 0 10px;
+    font-family: 'Jua', sans-serif;
+    font-size: 20px;
+}
 
 /******************* 2. 메인영역 *******************/
 #cont{
