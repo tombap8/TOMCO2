@@ -75,6 +75,31 @@ body *{
     height: 140px;
 }
 
+/* 영화정보박스 */
+.movtxt{
+    position: absolute;
+    top: 0;
+    /* 부모는? .mlist */
+    width: 99px;
+    height: 140px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* 글자셋팅 */
+    font-family: 'Cute Font', cursive;
+    font-size: 14px;
+    line-height: 2;
+    text-align: center;
+}
+
+/* 첫번째 li 영화제목 */
+.movtxt li:first-child{
+    color: aqua;
+    font-size: 17px;
+    letter-spacing: -1px;
+    margin-top: 30%;
+}
+
 
 /******************* 3. 하단영역 *******************/
 #info{
