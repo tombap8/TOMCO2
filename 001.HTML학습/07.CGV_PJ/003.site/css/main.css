@@ -10,9 +10,9 @@ body{
 }
 
 /* 공사중표시 */
-body *{
+/* body *{
     outline: 2px dotted lime;
-}
+} */
 
 /* 레이아웃 공통 class */
 .part{
@@ -69,6 +69,27 @@ h1.tit{
     padding: 0 10px;
     font-family: 'Jua', sans-serif;
     font-size: 20px;
+}
+/* GNB 서브메뉴 */
+.smenu{
+    position: absolute;
+    width: 140px;
+    background: 
+    url(../images/bg_smenu.png) no-repeat center/cover;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+}
+
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+/* 서브메뉴 li */
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
 }
 
 /******************* 2. 메인영역 *******************/
