@@ -22,7 +22,7 @@
             // 2-2. 입력된 값 읽어오기
             var score = jumsu.value;
             // value는 값을 읽어오는 속성
-            console.log("입력값",score);
+            // console.log("입력값",score);
 
             // 2-3. 출력대상: #jexp
             var jexp = document.querySelector("#jexp");
@@ -30,6 +30,32 @@
             // 2-4. 칭찬스티커 대상: #jshow
             var jshow = document.querySelector("#jshow");
 
+
+            ///////////////////////////////
+            /// 2.5-1. 숫자여부 판별하기 ///
+            ///////////////////////////////
+
+            // 숫자여부 판별 JS내장함수 : isNaN(값)
+            // is Not a Number? 숫자가 아니니?
+            // 만약 숫자가 아니면 true
+
+            console.log("숫자가 아니니? ",isNaN(score));
+
+            if(isNaN(score)){
+
+                // 1. 숫자가 아닌 경우 메시지 출력
+                jexp.innerText = "숫자를 입력하세요!";
+
+                // 아래쪽 코드를 실행하지 않도록 함수나가기!
+                return;
+                // 리턴은 함수를 나가는 키워드!
+                // return 값 -> 어떤 값을 가지고 나감
+                // 함수에서 어디로 돌아가나? 호출한 곳으로!
+
+            } ////// if /////////
+
+
+            //////////////////////////
             // 점수에 따른 메시지변수
             var msg;
             // 결과에 따른 글자색 변수
@@ -37,6 +63,7 @@
             // 결과에 따른 칭찬스티커 위치변수
             var bgp;
 
+            //////////////////////////////////////
             // 3. 점수환산하기 ///////////////////
             // 셋팅내용: 
             // msg - 메시지, fc - 글자색, bgp - 배경위치
@@ -67,7 +94,7 @@
             }
 
             // 할당된 변수값 확인
-            console.log("msg:",msg,"/fc:",fc);
+            // console.log("msg:",msg,"/fc:",fc);
 
             // 4. 결과출력
             jexp.innerText = "평가결과는 " + msg;
