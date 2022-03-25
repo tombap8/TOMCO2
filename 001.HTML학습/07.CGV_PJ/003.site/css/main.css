@@ -180,6 +180,17 @@ h1.tit{
     z-index: 1;
     /* 영사기 이미지가 빔박스보다 위! */
     width: 50px;
+
+    /* 영사기 회전 */
+    transform: rotate(25deg);
+    /* 양수값은 시계방향 */
+
+    /* 트랜지션: 속시이지 */
+    transition: .5s ease-out;
+}
+/* GNB에 마우스 오버시 영사기 회전하기 */
+.gnb:hover #cam img{
+    transform: rotate(0deg);
 }
 
 /* 빔박스 */
@@ -188,7 +199,7 @@ h1.tit{
     top: -16px;
     right: 8px;
     /* 부모는? #cam */
-    width: 200px;
+    width: 0;/* 200px; */
     height: 70px;
     background: url(../images/bim.png) no-repeat;
     background-position: right center;
