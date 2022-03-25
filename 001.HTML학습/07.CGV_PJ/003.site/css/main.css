@@ -253,6 +253,8 @@ h1.tit{
 
 /******************* 3. 하단영역 *******************/
 #info{
+    position: relative;
+    /* 부모자격 - .sns */
     height: 100px;
 }
 /* 3-1.회사정보 */
@@ -272,4 +274,37 @@ h1.tit{
     float: left;
     /* 이미지 자신은 왼쪽, 글자는 오른쪽에 흐르게함 */
     margin-right: 20px;
+}
+
+/* 3-2. sns박스 */
+ul.sns{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* 부모는? #info */
+
+    display: flex;
+    /* 플렉스박스 */
+
+}
+.sns li{
+    width: 34px;
+    height: 34px;
+    background: url(../images/sprites_logo.png) no-repeat;
+    /* outline: 1px solid lime; */
+    margin: 0 2px;
+}
+
+/* 배경위치 */
+/* 페이스북 */
+.sns li:first-child{
+    background-position: -510px -429px;
+}
+/* 트위터 */
+.sns li:nth-child(2){
+    background-position: -552px -429px;
+}
+/* 인스타그램 */
+.sns li:last-child{
+    background-position: -594px -429px;
 }
