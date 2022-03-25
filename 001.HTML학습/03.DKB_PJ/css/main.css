@@ -1,25 +1,6 @@
 @charset "utf-8";
 /* 도깨비 메인페이지 CSS - main.css */
 
-/* 외부파일 합치기 - 웹폰트(CDN) */
-@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&family=Nanum+Gothic&display=swap');
-
-/* 
-font-family: 'Black And White Picture', sans-serif;
-font-family: 'Kirang Haerang', cursive;
-font-family: 'Nanum Gothic', sans-serif;
-*/
-
-/* 상대단위를 위한 html 글자크기 */
-html {
-    font-size: 10px;
-    /* rem단위 계산을 쉽게하기 위해 10px로 셋팅! */
-}
-
-body {
-    overflow-x: hidden;
-    /* 가로스크롤바 없앰! */
-}
 
 
 /* 애니가 진행하는 동안 투명막 만들기 */
@@ -46,42 +27,6 @@ body::after{
 } /* coverDel 키프레임 */
 
 
-/* 기본태그 초기화 - 마진,패딩 없애기 */
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-ol,
-dl,
-dt,
-dd {
-    margin: 0;
-    padding: 0;
-}
-
-/* 헤딩태그 글자크기 초기화 */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: 100%;
-    /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
-    기본글자크기는 16px */
-}
-
-/* ul,ol초기화 */
-ul,
-ol {
-    list-style: none;
-    /* 블릿 표시자 없앰 */
-}
 
 
 /* 작업진행중 외곽선 */
