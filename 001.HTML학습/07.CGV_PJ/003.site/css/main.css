@@ -55,7 +55,7 @@ h1.tit{
 /* 1-2. 전체메뉴(GNb) */
 .gnb{
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     right: 15px;
     /* 부모는? #top */
 }
@@ -69,6 +69,8 @@ h1.tit{
     position: relative;
     /* 부모자격 - .smenu */
     padding: 0 10px;
+    padding-bottom: 5px;
+    /* 아래쪽 패딩으로 서브메뉴 간극없앰 */
     font-family: 'Jua', sans-serif;
     font-size: 20px;
 }
@@ -85,6 +87,12 @@ h1.tit{
     padding: 3px;
     border-radius: 5px;
     box-shadow: 0 0 5px #fff;
+
+    display: none;/* 처음에 안보임! */
+}
+/* 상위메뉴 li에 마우스 오버시 하위메뉴 보이기 */
+.glist>li:hover .smenu{
+    display: block;
 }
 
 /* 가상요소로 삼각형 만들기 */
