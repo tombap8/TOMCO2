@@ -19,28 +19,11 @@ body {
 /********** 1. 상단영역 **********/
 #top {
     /* 겉박스 */
-    position: absolute;
-    /* 앱솔을 준이유는 아래쪽 스테틱박스에 영향을 주기때문! */
-    top: -127px;
-    /* 위쪽에 숨겼다가 내려오는 애니위해 셋팅! */
-    width: 100%;
-    /* 크기를 화면에 채움! */
+    position: relative;    
     background-color: #fff;
     border-bottom: 1px solid #ccc;
     z-index: 9999;/* 상단박스 위치 가장위! */
-
-    /* 애니메이션: 이시이지반방마 */
-    animation: topAni .8s ease-out 6s forwards;
 }
-
-/* 상단박스 애니 키프레임 */
-@keyframes topAni {
-    to {
-        top: 0;
-    }
-}
-
-/* topAni 키프레임 */
 
 .top {
     /* 속박스 */
