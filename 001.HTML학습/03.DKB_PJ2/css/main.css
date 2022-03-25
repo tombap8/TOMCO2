@@ -1,0 +1,438 @@
+@charset "utf-8";
+/* 도깨비 메인페이지 CSS - main.css */
+
+/* 외부파일 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+
+
+/* 애니가 진행하는 동안 투명막 만들기 */
+body::after {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    /* background-color: #f00;
+    opacity: 0.5; */
+
+    /* 애니메이션으로 일정시간뒤 없앰 */
+    animation: coverDel .1s 7s forwards;
+}
+
+/* 애니후 없애기 */
+@keyframes coverDel {
+    to {
+        height: 0;
+    }
+}
+
+/* coverDel 키프레임 */
+
+
+
+
+/* 작업진행중 외곽선 */
+/* 별표시(*)는 모든요소를 선택시 사용 */
+/* body * {
+    outline: 1px dashed gray;
+} */
+
+/* outline은 보더와 달리
+주변요소에 전혀 영향을 주지 않는다!
+그래서 border는 박스요소에 필수포함요소지만
+outline은 필수요소가 아니다!!!
+그리고 요소의 외곽선 바깥으로 보임!
+
+사용법은 border와 유사함
+outline: 두께 종류 색상; */
+
+/* 컨텐츠 파트 최상위부모 */
+body {
+    /* 한번에 배경주기!!! */
+    /* background: 색상 이미지 반복여부 고정 위치/크기 */
+    /* background: 색이반고윙/크 */
+
+    background:
+        url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
+        url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+
+    /* 로고가 위에 와야해서 먼저 배경셋팅함! */
+
+
+    /* 따로주기 */
+    /* background-image: url(../images/bg_mainvisual.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; */
+
+
+
+    /* 1. 배경색 */
+    /* background-color: lightpink; */
+
+    /* 2. 배경이미지 - 기본적으로 반복됨(x,y방향) */
+    /* background-image: url(../images/bg_logo_a_01.png); */
+    /* 외부css인 경우 css파일위치에서 한단계위로 올라간 후
+    이미지폴더를 찾는다!(경로에 주의!) ../ 는 한칸위로 */
+
+    /* 3. 배경반복여부 */
+    /* background-repeat: no-repeat; */
+    /* 
+        no-repeat 반복안함
+        repeat-x x축반복
+        repeat-y y축반복
+    */
+    /* 4. 배경이미지 고정하기 */
+    /* background-attachment: fixed; */
+    /* fixed는 보이는 화면에 고정함! */
+
+    /* 5. 배경이미지 위치변경 */
+    /* background-position: center; */
+    /* background-position: right bottom; */
+    /* background-position: 100px 200px; */
+    /* 
+        background-position: 가로 세로; 
+        - 가로: px, % 등 단위 또는 left, center, right
+        - 세로: px, % 등 단위 또는 top, center, bottom
+    
+    */
+    /* 6.배경이미지 크기 */
+    /* background-size: cover; */
+    /* background-size: contain; */
+    /* background-size: auto 200px; */
+    /* background-size: 100px auto; */
+    /* background-size: 100px 400px; */
+    /* 
+        background-size: 가로 세로; 
+        - 가로 : px,% 등 단위 auto
+        - 세로 : px,% 등 단위 auto
+        -> 가로,세로중 한쪽만 크기주고 나머지는 auto일
+        경우 이미지가 고유 비율을 유지한다!
+        ->>> 특별한 값 : 
+        contain(비율유지 채우기-이미지모두 보임,빈틈있음)
+        cover(비율유지 채우기-배경박스에 빈틈없이 채움)
+    */
+
+}
+
+/********** 1. 상단영역 **********/
+#top {
+    /* 겉박스 */
+    position: absolute;
+    /* 앱솔을 준이유는 아래쪽 스테틱박스에 영향을 주기때문! */
+    top: -127px;
+    /* 위쪽에 숨겼다가 내려오는 애니위해 셋팅! */
+    width: 100%;
+    /* 크기를 화면에 채움! */
+    /* 애니메이션: 이시이지반방마 */
+    animation: topAni .8s ease-out 6s forwards;
+}
+
+/* 상단박스 애니 키프레임 */
+@keyframes topAni {
+    to {
+        top: 0;
+    }
+}
+
+/* topAni 키프레임 */
+
+/* 메뉴 링크 */
+.gnb>ul>li>a {
+    margin-top: 0px;
+    /* 아래선 간격때문에 미세조정 */
+}
+
+
+
+/********** 2. 메인영역 **********/
+.cont {
+    max-width: 1920px;
+    /* 가장 큰 일반 해상도 크기로 최대가로크기 변경! */
+    height: 800px;
+    overflow: hidden;
+    /* 자식요소 마진탑포함! */
+    padding-bottom: 150px;
+}
+
+/* 캐릭터 부모박스 */
+#cbx {
+    width: 90%;
+    /* 부모박스크기의 90%가로크기 */
+    margin: 0 auto;
+    /* 마영오! - 블록가로중앙 */
+    margin-top: 527px;
+    /* 윗쪽마진 400px+127px(#top만큼)로 설정 */
+    /* height: 300px; */
+    /* background-color: rgba(144, 238, 144, 0.637); */
+
+    /* overflow: hidden; */
+    /* float해제를 위해! 
+    -> 자식요소가 위로 올라갈때 가려져서 쓸 수 없음!!! */
+    /* -> 가상요소로 마지막에 float해제설정하기! */
+}
+
+/* 가상요소로 clear설정하기! */
+#cbx::after {
+    content: '';
+    display: block;
+    /* div와 비슷 */
+    clear: both;
+    /* float을 끊어서 부모가 자식을 인식함! */
+}
+
+/* 캐릭터박스 공통 */
+.cat {
+    /* 4등분 가로 크기는 몇%? 25% */
+    width: 24%;
+    /* 25% - 1%(양쪽마진) = 24% */
+    margin: 0 .5%;
+    /* margin: 0 0.5%; */
+    /* 양쪽마진은 0.5%씩 2개이므로 합이 1%임
+    이를 크기에 반영한다! 
+    참고) 0.몇 이런수치값은 보통 0을 생략하는 경우가 많다*/
+    float: left;
+    /* 
+        [ 블록요소를 옆으로 흘러가게 하기!!! ]
+        float속성
+        -> left 값은 나는 왼쪽에 너는 오른쪽에 올라와!
+        -> right 값은 나는 오른쪽에 너는 왼쪽에 올라와!
+
+        [ 자식요소가 float된 경우 부모요소는 높이값 0? ]
+        -> 블록 자식요소 float으로 인해 부모요소가 높이값
+        이 0인 경우 다음과 같이해결한다!
+        1. 부모요소에 overflow:hidden 설정
+        2. float자식요소 중 float이 아닌 마지막 요소에
+         float해제 속성인 clear설정하기!
+
+    */
+
+    /* height: 200px; */
+    /* outline: 4px dotted red; */
+    cursor: pointer;
+    /* 손가락모양 */
+
+    /* 애니위한 변경속성 */
+    transform: translateY(-200%);
+    opacity: 0;
+
+}
+
+/* 캐릭터박스 애니 시차주기 */
+.cat:nth-child(1) {
+    /* 도깨비 */
+    /* 애니메이션: 이시이지반방마 */
+    animation: catAni 1s ease-out 3s forwards;
+}
+
+/* 캐릭터박스 애니 시차주기 */
+.cat:nth-child(2) {
+    /* 지은탁 */
+    animation: catAni 1s ease-out 3.5s forwards;
+}
+
+.cat:nth-child(3) {
+    /* 저승사자 */
+    animation: catAni 1s ease-out 4s forwards;
+}
+
+.cat:nth-child(4) {
+    /* 써니 */
+    animation: catAni 1s ease-out 4.5s forwards;
+}
+
+/* 캐릭터박스 키프레임 */
+@keyframes catAni {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* catAni 키프레임 */
+
+
+/* 캐릭터 이미지박스 */
+.ci {
+    /* 트랜지션: 속시이지 */
+    transition: margin-top .4s ease-out;
+}
+
+/* .cat에 마우스 오버시 .ci의 마진탑을 마이너스로 설정! */
+.cat:hover .ci {
+    margin-top: -57%;
+}
+
+/* 캐릭터 이미지 */
+.ci>img {
+    width: 100%;
+    /* 이미지크기를 싸고 있는 부모박스에 맞춰라!
+    height크기를 안주면 비율유지함! */
+
+}
+
+/* 캐릭터 이름이미지 박스 */
+.ci span {
+    display: block;
+    /* 블록으로 변경해서 부모박스 끝까지 차지함! */
+    text-align: center;
+    /* 인라인요소 중앙정렬 */
+    margin-top: -21%;
+    /* 부모높이값 기준 21%크기만큼 
+    반대방향(위쪽)으로 위치 이동함 */
+}
+
+/* 캐릭터 이름이미지 */
+.ci span img {
+    width: 40%;
+    /* 부모박스(span)의 가로크기의 40%크기 */
+}
+
+/* 
+    [ 자식요소 선택 가상클래스 ]
+
+    - 전제조건: 자식요소가 같은 종류일 경우
+    :first-child 첫번째 자식
+    :last-child 마지막 자식
+    :nth-child(순번) 몇번째 자식
+    - 순번은 1부터~!
+
+    - 전제조건: 자식요소가 여러가지일 경우
+    :first-of-type 첫번째 자식
+    :last-of-type 마지막 자식
+    :nth-of-type(순번) 몇번째 자식
+    - 순번은 1부터~!
+*/
+/* 첫번째 이름이미지 숨기기 */
+.ci span img:first-child {
+    display: none;
+}
+
+/* .cat에 마우스 오버시 첫번째 이미지 보이기 */
+.cat:hover .ci span img:first-child {
+    display: inline;
+}
+
+/* .cat에 마우스 오버시 마지막 이미지 숨기기 */
+.cat:hover .ci span img:last-child {
+    display: none;
+}
+
+/* 캐릭터 설명박스 */
+.cd {
+    height: 0;
+    /* .cat 오버시 250px로 높이값 변경! */
+    overflow-y: scroll;
+    /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
+
+    /* background:색이반고윙/크; */
+    background: url(../images/eachBG.jpg) no-repeat center/cover;
+    margin-top: 15px;
+
+    /* 둥근모서리 - border-radius */
+    border-radius: 20px 0 0 20px;
+    /* 4개의 값 - 왼쪽 위 부터 시계방향 */
+
+    /* 트랜지션: 속시이지 - trs */
+    transition: height .4s ease-out;
+    /* transition: .4s; -> 시간만 줘도 적용됨
+    옵션이 모든 속성과 가속도는 기본 ease적용*/
+}
+
+/***************************************************** 
+    트랜지션(Transition) 애니메이션효과주기
+    -> 속성값을 변화과정을 보여주면서 애니메이션하는 속성
+    transition: 속성 시간 이징 지연 -> 속시이지!
+    1. 속성 - 변경애니메이션 대상속성
+            (안쓰거나 all을 쓰면 모든 속성이 선택됨)
+    2. 시간 - 애니메이션 시간 : 초단위(s)
+    3. 이징 - 가속도
+            1) ease : 앞뒤로 약간씩 느림(기본값)
+            2) ease-in : 처음에 천천히 나중에 빨라짐
+            3) ease-out : 나중에 천천히 처음엔 빠름
+            4) ease-in-out : 처음과 끝에 천천히
+            5) linear : 등속도
+            -> 베지어곡선으로 매우 다채롭게 가속도 조정가능
+    6. 지연 - 지연시간 즉, 처음에 대기시간(초단위:s)
+    7. 적용법: 오버시와 원상복귀되는 애니가 같다면
+            오버전 원본에 한번만 주면 양방향 동일하게 적용됨
+            만약 오버시와 아웃시 따로 주려면 각각설정해야함!
+*****************************************************/
+/* .cat에 오버시 높이값 변경! */
+.cat:hover .cd {
+    height: 250px;
+}
+
+/* 캐릭터설명 타이틀 */
+.cd h3 {
+    font-family: 'Black And White Picture', sans-serif;
+    font-size: min(2vw, 30px);
+    font-weight: normal;
+    padding: 5px 10px 0;
+    /* 패딩: 위 양쪽 아래 */
+}
+
+/* 가상요소로 타이틀 앞에 작은 도깨비로고 넣기 */
+.cd h3::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    background: url(../images/bg_logo_a_01.png) no-repeat right -184px;
+    vertical-align: -5px;
+    margin-right: 5px;
+    /* outline: 1px solid red; */
+}
+
+/* 캐릭터 설명 문단 */
+.cd p {
+    font-family: 'Kirang Haerang', cursive;
+    font-size: min(1.5vw, 20px);
+    line-height: 1.7;
+    padding: 10px;
+    text-align: justify;
+    /* 양쪽정렬 */
+}
+
+/* 캐릭터 설명 첫번째 글자 가상요소로 변경하기! */
+.cd p:first-of-type::first-letter {
+    font-size: min(2vw, 30px);
+    color: cyan;
+    text-shadow: 1px 0 #000, -1px 0 #000,
+        0 1px #000, 0 -1px #000;
+    /* 4개의 그림자로 글자 테두리 주기! */
+}
+
+/* 도깨비 문구 이미지 */
+#dtxt {
+    position: absolute;
+    top: 200px;
+    right: 50px;
+    /* 부모는? 보이는 화면 */
+    width: min(25vw, 327px);
+    /* 이미지의 최대크기 제한하기 */
+
+    /* 변경애니속성 2가지 */
+    transform: translate(100%, 50%);
+    opacity: 0;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: dtxtAni 2s ease-in-out 1s forwards;
+}
+
+/* 문구 키프레임 */
+@keyframes dtxtAni {
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+/* dtxtAni키프레임 */

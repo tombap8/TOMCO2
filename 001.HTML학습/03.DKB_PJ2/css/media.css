@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* 도깨비 PJ 메인페이지 미디어쿼리 - media.css */
+
+/******** 1024px 이하 미디어쿼리 ********/
+@media screen and (max-width:1024px) {
+    html {
+        font-size: 8px;
+    }
+
+    /* 메뉴 글자 크기에 따른 gnb 가로크기변경 */
+    .gnb {
+        width: 491px;
+    }
+
+}
+
+/* 1024px 이하 */
+
+/******** 800px 이하 미디어쿼리 ********/
+@media screen and (max-width:800px) {
+
+    /* 1. 숨기기 
+    - GNB메뉴, 문구이미지, 하단링크, 
+    서브메뉴, 메뉴배경가상요소, sns메뉴박스, 선택박스 */
+    .gnb,
+    #dtxt,
+    .blink,
+    .smenu,
+    .gnb>ul>li.sm::after,
+    .snsbx,
+    #sel {
+        display: none;
+    }
+
+    /* 2. 보이기 - 햄버거버튼 */
+    .ham {
+        display: block;
+    }
+
+    /* 3. 높이값 자동 : 상단영역, 하단영역 */
+    .top,
+    .info {
+        height: auto;
+    }
+
+    /* 3.5. GNB 디자인변경하기 */
+    .gnb {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .gnb>ul{
+        margin-top: 20vh;
+        /* 리스트가 60vh이므로 나머지 40vh 중
+        절반인 20vh만 밀어주면 리스트가 세로
+        중앙에 오게됨! */
+    }
+    .gnb>ul>li{
+        float: none;
+        /* float 없앰! */
+        text-align: center;
+    }
+    .gnb>ul>li>a{
+        font-size: 4vh;
+        line-height: 10vh;
+        /* 메뉴가 6개이므로 줄간격 60vh
+        즉, 보이는 높이값화면의 60%임 */
+        color: #fff;
+        /* 글자색 흰색 */
+    }
+    /* 오버시 하단보더 없애기 */
+    .gnb>ul>li>a,
+    .gnb>ul>li:hover>a{
+        border-bottom: none;
+    }
+
+    /* 3.6. 상단영역 클래스 설정변경 */
+    /* .top에 클래스 on을 주면 하위요소 변경 */
+    .top.on .gnb{
+        display: block;
+    }
+    /* 상단영역 .top에 클래스 on적용시 버튼변경 */
+    .top.on .ham::before{
+        content: '×';
+        color: #fff;
+    }
+    /* 상단영역 .top에 클래스 on적용시 버튼고정 */
+    .top.on .ham{
+        position: fixed;
+        transform: scale(1.5);
+    }
+
+    /* 4. 캐릭터 박스 레이아웃 변경 */
+    .cat {
+        width: 99%;
+        /* 한줄에 하나의 캐릭터박스 옴 */
+        margin-bottom: 3vh;
+        /* 하단마진 뷰포트 단위로 지정! */
+    }
+
+    /* 5. 메인 컨텐츠 박스 : 높이값 해제 */
+    .cont {
+        height: auto;
+        padding-bottom: 0;
+    }
+
+    /* 6. 캐릭터 부모박스 마진조정 */
+    #cbx {
+        margin-top: 100px;
+    }
+
+    /* 7. 캐릭터 박스 마우스 오버시 이미지박스 올라오기 초기화 */
+    .cat:hover .ci {
+        margin-top: 0;
+    }
+
+    /* 8. 타이틀글자 */
+    .cd h3 {
+        font-size: 7vw;
+        padding: 2vw 4vw 0;
+    }
+
+    /* 9. 내용글자 */
+    .cd p {
+        font-size: 4vw;
+        padding: 5vw;
+    }
+
+    /* 10. 캐릭터박스 오버시 글자박스 높이값 */
+    .cat:hover .cd {
+        height: 50vh;
+    }
+
+}
+
+/* 800px 이하 */

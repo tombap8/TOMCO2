@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* 도깨비 PJ 핵심공통 CSS - core.css */
+/* 웹폰트 및 공통 클래스 */
+
+
+/* 외부파일 합치기 - 웹폰트(CDN) */
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&family=Nanum+Gothic&display=swap');
+
+/* 
+font-family: 'Black And White Picture', sans-serif;
+font-family: 'Kirang Haerang', cursive;
+font-family: 'Nanum Gothic', sans-serif;
+*/
+
+
+/********** 공통 클래스 **********/
+
+/* 스크롤바 디자인 클래스 */
+/* -webkit- 벤더사명(크롬,사파리) 접두어 */
+.scbar::-webkit-scrollbar {
+    /* 전체 스크롤바 크기변경 */
+    width: 7px;
+}
+
+.scbar::-webkit-scrollbar-thumb {
+    /* 스크롤바 */
+    background-color: #666;
+    border-radius: 5px;
+}
+
+.scbar::-webkit-scrollbar-track {
+    /* 스크롤바 트랙 */
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+
+
+
+/* 속박스 클래스 */
+.ibx {
+    /* width: 1200px; */
+    max-width: 1200px;
+    /* 최대가로 크기 1200px이다가 화면이 
+    1200px 보다 작아지면 auto로 자동변경 
+    가로스크롤이 생기지 않는다! */
+    margin: 0 auto;
+    /* 위아래 양쪽(auto는 등분함) */
+    /* 마영오! 블록박스 가로중앙 */
+}
