@@ -138,6 +138,7 @@ body {
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 1.7rem;
     line-height: 40px;
+    margin-top: -1px;/* 아래선 가려서올림 */
     border-bottom: 4px solid #fff;
     /* 미리보더를 만들고 하위메뉴에 영향이 없도록함! */
 

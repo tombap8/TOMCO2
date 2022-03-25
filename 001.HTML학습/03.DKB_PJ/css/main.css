@@ -9,7 +9,7 @@
 
 
 /* 애니가 진행하는 동안 투명막 만들기 */
-body::after{
+body::after {
     content: '';
     display: block;
     position: fixed;
@@ -24,12 +24,15 @@ body::after{
     /* 애니메이션으로 일정시간뒤 없앰 */
     animation: coverDel .1s 7s forwards;
 }
+
 /* 애니후 없애기 */
 @keyframes coverDel {
-    to{
+    to {
         height: 0;
     }
-} /* coverDel 키프레임 */
+}
+
+/* coverDel 키프레임 */
 
 
 
@@ -138,7 +141,14 @@ body {
         top: 0;
     }
 }
+
 /* topAni 키프레임 */
+
+/* 메뉴 링크 */
+.gnb>ul>li>a {
+    margin-top: 0px;
+    /* 아래선 간격때문에 미세조정 */
+}
 
 
 
@@ -214,19 +224,27 @@ body {
     opacity: 0;
 
 }
+
 /* 캐릭터박스 애니 시차주기 */
-.cat:nth-child(1){/* 도깨비 */
+.cat:nth-child(1) {
+    /* 도깨비 */
     /* 애니메이션: 이시이지반방마 */
     animation: catAni 1s ease-out 3s forwards;
 }
+
 /* 캐릭터박스 애니 시차주기 */
-.cat:nth-child(2){/* 지은탁 */
+.cat:nth-child(2) {
+    /* 지은탁 */
     animation: catAni 1s ease-out 3.5s forwards;
 }
-.cat:nth-child(3){/* 저승사자 */
+
+.cat:nth-child(3) {
+    /* 저승사자 */
     animation: catAni 1s ease-out 4s forwards;
 }
-.cat:nth-child(4){/* 써니 */
+
+.cat:nth-child(4) {
+    /* 써니 */
     animation: catAni 1s ease-out 4.5s forwards;
 }
 
@@ -236,7 +254,9 @@ body {
         transform: translateY(0);
         opacity: 1;
     }
-} /* catAni 키프레임 */
+}
+
+/* catAni 키프레임 */
 
 
 /* 캐릭터 이미지박스 */
