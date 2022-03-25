@@ -13,3 +13,353 @@ body {
     overflow-x: hidden;
     /* 가로스크롤바 없앰! */
 }
+
+
+
+/********** 1. 상단영역 **********/
+#top {
+    /* 겉박스 */
+    position: absolute;
+    /* 앱솔을 준이유는 아래쪽 스테틱박스에 영향을 주기때문! */
+    top: -127px;
+    /* 위쪽에 숨겼다가 내려오는 애니위해 셋팅! */
+    width: 100%;
+    /* 크기를 화면에 채움! */
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    z-index: 9999;/* 상단박스 위치 가장위! */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: topAni .8s ease-out 6s forwards;
+}
+
+/* 상단박스 애니 키프레임 */
+@keyframes topAni {
+    to {
+        top: 0;
+    }
+}
+
+/* topAni 키프레임 */
+
+.top {
+    /* 속박스 */
+    height: 125px;
+}
+
+/* 로고박스 */
+#logo {
+    padding: 20px;
+    text-align: center;
+}
+
+/* 로고이미지 */
+#logo img {
+    width: 100px;
+}
+/*********** sns메뉴 ***********/
+.snsbx{ /* 최상위박스 */
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* x축방향으로 자기크기의 절반 반대방향이동(중앙정렬) */
+    width: 1200px;
+    max-width: 100%;
+    /* 1200px이었다가 화면이 작아지면 100%로 변경! */
+    /* outline: 2px dotted blue; */
+}
+.sns{
+    float: right;
+    margin-right: 50px;
+    /* outline: 2px dotted red; */
+}
+.sns ul::after{ /* clear셋팅 */
+    content: '';
+    display: block;
+    clear: both;
+}
+.sns li{
+    float: left;
+    margin: 0 5px;
+}
+.sns li:nth-child(2){/* 회원가입 li */
+    margin-right: 20px;
+}
+/* sns메뉴용 li만 디자인 */
+/* 두번째 li이후 모든 li형제들 : 틸드(~) 형제들선택자 */
+.sns li:nth-child(2)~li{
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+    margin: 0 1px;
+}
+/* 스프라이츠 기법으로 배경이미지 셋업 */
+.sns li:nth-child(3):hover{/* 트위터오버시 */
+    background-position: 0 -30px;
+}
+.sns li:nth-child(4){/* 페북 */
+    background-position: -30px 0;
+}
+.sns li:nth-child(4):hover{/* 페북 오버시 */
+    background-position: -30px -30px;
+}
+.sns li:nth-child(5){/* 인스타 */
+    background-position: -60px 0;
+}
+.sns li:nth-child(5):hover{/* 인스타 오버시 */
+    background-position: -60px -30px;
+}
+.sns a{   
+    color: #222;
+    text-decoration: none;
+
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.5rem;
+    line-height: 30px;
+}
+
+/* sns 설명글 숨기기 */
+.ir{
+    display: none;
+}
+
+
+/********** GNB 메뉴 **********/
+.gnb {
+    width: 569px;
+    margin: 0 auto;
+    /* 마영오! */
+}
+
+/* 가상요소로 clear설정하기 */
+.gnb>ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.gnb>ul>li {
+    float: left;
+    /* 옆으로 흐르게 */
+    padding: 0 15px;
+}
+
+/* 메뉴 링크 */
+.gnb>ul>li>a {
+    display: inline-block;
+    /* 인라인블록이면 위아래로 영역이 줄간격만큼 확장됨! */
+    color: #222;
+    text-decoration: none;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.7rem;
+    line-height: 40px;
+    border-bottom: 4px solid #fff;
+    /* 미리보더를 만들고 하위메뉴에 영향이 없도록함! */
+
+}
+
+/* 상위메뉴 li에 마우스 오버시 a요소 빨간색 하단보더넣기 */
+.gnb>ul>li:hover>a {
+    border-bottom: 4px solid red;
+    /* 인라인블록이어서 보더가 크기에 영향을 미치지 않음! */
+}
+
+/* 서브메뉴 */
+.smenu {
+    position: absolute;
+    /* 젠틀앱솔루트 */
+    z-index: 1;
+    /* li 가상요소 after 앱솔루트보다 위! */
+    /* background-color: #fff; */
+
+
+    /* 서브메뉴 숨기기 */
+    height: 0;
+    overflow: hidden;
+
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
+
+}
+
+/* 서브 하위 ol */
+.smenu ol {
+    padding: 10px 0;
+}
+
+/* 서브 a */
+.smenu a {
+    font-size: 1.4rem;
+    line-height: 30px;
+
+    /* 글자색+밑줄 변경 */
+    color: #222;
+    text-decoration: none;
+}
+
+/* 하위메뉴가 있는 상위 li요소에 마우스 오버시
+가상요소로 페이지 끝까지 차지하는 흰색배경 만들기  
+클래스 sm이 부여된 li만 적용된다!*/
+.gnb>ul>li.sm::after {
+    content: '';
+    display: block;
+    /* div와 비슷! */
+    position: absolute;
+    top: 127px;
+    /* 겉박스 하단보더 1px보이게 1px더함! */
+    left: 0;
+    /* 부모는? 보이는 화면 */
+    width: 100%;
+    /* 앱솔루트 크기에 %사용시 부모를 기준함! 
+    보이는 화면이 부모! */
+    height: 0px;
+    background-color: #fff;
+
+    /* 세부위치조정은 마진으로!!! */
+    /* margin-top: 4px; */
+    /* #top의 하단보더를 가리므로 아래쪽으로 위치이동함! */
+
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
+}
+
+/* li.sm에 마우스 오버시 가상요소 내려오기! */
+/* 공통으로 하단보더설정 */
+.gnb>ul>li.sm:hover::after {
+    border-bottom: 2px solid red;
+}
+
+/* 높이값 각각 다르게 셋팅 */
+/* + 상위메뉴 li에 마우스 오버시 .smenu 보이기 동시코딩!!! */
+/* 프로그램 소개 : 메뉴3개*30+20=110px */
+.gnb>ul>li.sm.sm1:hover::after,
+.gnb>ul>li.sm1:hover .smenu {
+    height: 110px;
+}
+
+/* 동영상 : 메뉴4개*30+20=140px */
+.gnb>ul>li.sm.sm2:hover::after,
+.gnb>ul>li.sm2:hover .smenu {
+    height: 140px;
+}
+
+/* 사진첩 : 메뉴2개*30+20=80px */
+.gnb>ul>li.sm.sm3:hover::after,
+.gnb>ul>li.sm3:hover .smenu {
+    height: 80px;
+}
+
+/* 모바일용 햄버거 버튼 */
+.ham{
+    position: absolute;
+    top: 18px;
+    right: 20px;
+
+    font-size: 40px;
+    transform: scaleX(1.5);
+
+    /* 버튼 기본없애기 */
+    background-color: transparent;
+    border: none;
+
+    /* 모바일 아닐때 안보임 */
+    display: none;
+
+}
+/* 버튼모양 변경위해 가상요소로 내용넣기! */
+.ham::before{
+    content: '≡';
+}
+/* 크롬브라우저 포커스 아웃라인 없애기 */
+.ham:focus{
+    outline: none;
+}
+
+
+/********** 3. 하단영역 **********/
+#info {
+    /* 겉박스 */
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.info {
+    position: relative;
+    /* 부모자격 - .sel 선택박스 */
+    /* 속박스 */
+    height: 241px;
+    padding: 15px;
+    box-sizing: border-box;
+    /* 크기유지 - 보더,패딩포함 */
+}
+
+/* 하단링크 */
+.blink {
+    max-width: 804px;
+    margin: 0 auto;
+    /* 마영오! */
+}
+
+/* 가상요소 clear */
+.blink ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.blink li {
+    float: left;
+    padding: 0 15px;
+}
+
+/* 하단링크 a */
+.blink a {
+    color: #222;
+    text-decoration: none;
+    /* font-family: 'Nanum Gothic', sans-serif; */
+    font: bold 1.4rem/2.8 'Nanum Gothic', sans-serif;
+    /* 
+        font 한번에 셋팅하기!
+        font: 스두크/줄체
+        font: 스타일 두께 크기/줄간격 글자체
+    */
+}
+
+/* 마우스 오버시 a요소 */
+.blink a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* 회사주소박스 */
+.addr {
+    max-width: 804px;
+    margin: 10px auto;
+    border: 4px double #222;
+    font: 1.4rem/2 'Nanum Gothic', sans-serif;
+    /* 원래 address요소는 italic체인데 font한번에쓰기에서
+    스타일 설정을 안하면 기본 normal이 적용되서 없어짐 */
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    /* 크기유지 */
+}
+
+/* 하단로고 */
+.blogo {
+    text-align: center;
+}
+
+/* 브랜드 바로가기 선택박스 */
+#sel{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* 부모는? .info */
+    font: bold 1.4rem/2.8 'Nanum Gothic', sans-serif;
+    padding: 5px;
+}
+
+
+
