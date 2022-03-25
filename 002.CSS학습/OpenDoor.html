@@ -135,9 +135,24 @@
         #elsa img{
             margin-left: 50px;
             margin-top: 28px;
-            transform: rotate(-10deg);
+            transform: rotate(0deg);
             transform-origin: bottom;
+
+            /* 애니메이션: 이시이지반방마 */
+            animation: elsa 1s ease-in-out infinite alternate;
+            /* 애니메이션 상태관리하기 */
+            animation-play-state: paused;
         }
+        /* 오버시 엘사 동작하기 */
+        .cont:hover #elsa img{
+            animation-play-state: running;
+        }
+        /* 엘사 키프레임 */
+        @keyframes elsa {
+            to{
+                transform: rotate(-10deg);
+            }
+        } /* 키프레임 */
 
     </style>
 </head>
