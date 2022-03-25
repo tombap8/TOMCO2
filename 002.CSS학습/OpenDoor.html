@@ -232,58 +232,32 @@
             box-sizing: border-box;
             /* 박스크기유지 */
 
-            /* 문짝 Y축으로 회전하기 */
-            transform: rotateY(0);
+            /* 문짝 X축으로 회전하기 */
+            transform: rotateX(0);
             /* 회전축 변경하기 */
-            transform-origin: left;
+            transform-origin: top;
             /* 
                 트랜스폼 회전축 변경속성
                 transform-origin: 가로축 세로축
                 - 가로축: left, center, right, px, % 등 단위
                 - 세로축: top, center, bottom, px, % 등 단위
             */
-
-            /* 애니메이션: 이시이지반방마 */
-            animation: 
-            openFirst 1s ease-in-out forwards,
-            openDoor 2s ease-in-out 1s infinite alternate;
-            /* 애니메이션 상태관리하기! */
-            animation-play-state: paused;
-            /* paused - 멈춤상태
-            running - 진행상태 */
+            transition: all .4s;
         }
-        /* 오버시 애니메이션 작동! */
-        .cont:hover .door{
-            animation-play-state: running;
+        /* 오버시 창문열기 */
+        .cont2:hover .door2{
+            transform: rotateX(65deg);
         }
 
-        /* 문짝 처음열기 키프레임 */
-        @keyframes openFirst {
-            to{
-                transform: rotateY(60deg);
-            }
-        } /* 키프레임 */
-
-        /* 문짝 여닫기 키프레임 */
-        @keyframes openDoor {
-            0%{
-                transform: rotateY(60deg);
-            }
-            100%{
-                transform: rotateY(-60deg);
-            }
-        } /* 키프레임 */
-
-
-        /* 손잡이 */
-        .handle{
+        /* 창문손잡이 */
+        .handle2{
             position: absolute;
-            top: 140px;
-            right: 10px;
-            /* 부모는? .door */
+            bottom: 10px;
+            left: calc(50% - 10px);
+            /* 부모는? .door2 */
+
             width: 20px;
-            height: 20px;
-            border-radius: 50%;
+            height: 5px;
             background-color: blue;
         }
 
@@ -318,7 +292,7 @@
                 마우스 <br>
                 오버해
                 <!-- 손잡이 -->
-                <div class="handle"></div>
+                <div class="handle2"></div>
             </div>
         </div>
     </div>
