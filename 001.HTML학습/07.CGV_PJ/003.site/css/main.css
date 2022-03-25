@@ -293,6 +293,13 @@ ul.sns{
     background: url(../images/sprites_logo.png) no-repeat;
     /* outline: 1px solid lime; */
     margin: 0 2px;
+    
+    filter: grayscale(100%);
+    /* 필터: 흑백처리 */
+}
+/* 오버시 칼라 */
+.sns li:hover{
+    filter: grayscale(0%);
 }
 
 /* 배경위치 */
@@ -307,4 +314,10 @@ ul.sns{
 /* 인스타그램 */
 .sns li:last-child{
     background-position: -594px -429px;
+}
+/* sns a링크 확장 */
+.sns a{
+    display: block;
+    width: 100%;
+    height: 100%;
 }
