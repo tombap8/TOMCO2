@@ -59,7 +59,53 @@
             기능: 버튼 클릭시 해당 이미지변경하기
         */ /////////////////////////////////////////
         function chgImg(U) {
-            
+
+            // 1. 함수호출 및 전달값 확인
+            console.log("나야나!", U.innerText);
+
+            // 2. 전달값 변수할당
+            let txt = U.innerText;
+
+            // 3. 변경대상: #scene
+            let scene = document.querySelector("#scene");
+
+            // 4. 변경내용: 대상img 요소의 src속성값 변경
+            // 버튼마다 다른 이미지경로를 변수에 분기할당!
+
+            // 이미지 src 변수
+            let isrc;
+
+            // 버튼별 분기 : switch문
+            switch (txt) {
+                case "포스터":
+                    isrc = "./images/ala1.jpg";
+                    break;
+                case "장면1":
+                    isrc = "./images/ala2.jpg";
+                    break;
+                case "장면2":
+                    isrc = "./images/ala4.jpg";
+                    break;
+                case "장면3":
+                    isrc = "./images/ala3.jpg";
+                    break;
+            } //////// switch case /////////
+
+
+            // 5. 이미지변경하기
+            scene.setAttribute("src",isrc);
+            // scene.src = isrc;
+
+            /* 
+                [요소의 속성을 변경하는 JS의 2가지 방법]
+                1. 선택요소.속성명 = 값
+                2. 선택요소.setAttribute(속성명,속성값)
+                -> setAttribute()는 JS내장함수
+                (참고) getAttribute(속성명) - 속성값읽기
+
+            */
+
+
 
         } //////// chgImg 함수 ////////////////////
         ///////////////////////////////////////////

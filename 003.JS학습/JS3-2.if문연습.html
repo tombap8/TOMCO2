@@ -58,8 +58,40 @@
             함수명: chgImg
             기능: 버튼 클릭시 해당 이미지변경하기
         */ /////////////////////////////////////////
-        function chgImg(U){ 
+        function chgImg(U){ // U는 this를 받는 전달변수
             
+            // 1. 함수호출 및 전달값 확인
+            console.log("나야나!",U.innerText);
+
+            // 2. 전달값 변수할당
+            let txt = U.innerText;
+
+            // 3. 변경대상: #scene
+            let scene = document.querySelector("#scene");
+
+            // 4. 변경내용: 대상img 요소의 src속성값 변경
+            // 버튼마다 다른 이미지경로를 변수에 분기할당!
+
+            // 이미지 src 변수
+            let isrc;
+
+            // 버튼별 분기 : if문
+            if(txt==="포스터"){
+                isrc = "./images/ala1.jpg";
+            } ///// if ///////
+            else if(txt==="장면1"){
+                isrc = "./images/ala4.jpg";
+            } ///// else if ///////
+            else if(txt==="장면2"){
+                isrc = "./images/ala3.jpg";
+            } ///// else if ///////
+            else if(txt==="장면3"){
+                isrc = "./images/ala2.jpg";
+            } ///// else if ///////
+
+
+            // 5. 이미지변경하기
+            scene.src = isrc;
 
         } //////// chgImg 함수 ////////////////////
         ///////////////////////////////////////////
@@ -78,10 +110,10 @@
 
     <!-- 선택버튼박스 -->
     <div class="btnbx">
-        <button class="btns">포스터</button>
-        <button class="btns">장면1</button>
-        <button class="btns">장면2</button>
-        <button class="btns">장면3</button>
+        <button class="btns" onclick="chgImg(this)">포스터</button>
+        <button class="btns" onclick="chgImg(this)">장면1</button>
+        <button class="btns" onclick="chgImg(this)">장면2</button>
+        <button class="btns" onclick="chgImg(this)">장면3</button>
     </div>
     <!-- 
         함수호출시 this란?
