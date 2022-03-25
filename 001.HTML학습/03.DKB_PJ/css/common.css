@@ -1,14 +1,7 @@
 @charset "utf-8";
 /* 도깨비 PJ 공통 CSS - common.css */
+/* 페이지 공통 모듈 디자인 */
 
-/* 외부파일 합치기 - 웹폰트(CDN) */
-@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&family=Nanum+Gothic&display=swap');
-
-/* 
-font-family: 'Black And White Picture', sans-serif;
-font-family: 'Kirang Haerang', cursive;
-font-family: 'Nanum Gothic', sans-serif;
-*/
 
 /* 상대단위를 위한 html 글자크기 */
 html {

@@ -1,2 +1,13 @@
 @charset "utf-8";
 /* 도깨비 PJ 핵심공통 CSS - core.css */
+/* 웹폰트 및 공통 클래스 */
+
+
+/* 외부파일 합치기 - 웹폰트(CDN) */
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&family=Nanum+Gothic&display=swap');
+
+/* 
+font-family: 'Black And White Picture', sans-serif;
+font-family: 'Kirang Haerang', cursive;
+font-family: 'Nanum Gothic', sans-serif;
+*/
