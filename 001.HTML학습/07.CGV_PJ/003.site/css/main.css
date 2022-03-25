@@ -167,6 +167,19 @@ h1.tit{
     /* 인라인요소 오른쪽 끝으로 보냄! */
 }
 
+/* 영사기 박스 */
+#cam{
+    position: absolute;
+    bottom: 0;
+    right: -51px;
+    /* 부모는? .gnb */
+}
+/* 영사기이미지 */
+#cam img{
+    width: 50px;
+}
+
+
 /******************* 2. 메인영역 *******************/
 #cont{
     position: relative;
@@ -279,7 +292,7 @@ h1.tit{
 /* 3-2. sns박스 */
 ul.sns{
     position: absolute;
-    top: 20px;
+    top: 35px;
     right: 20px;
     /* 부모는? #info */
 
