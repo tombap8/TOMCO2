@@ -61,6 +61,9 @@ h1.tit{
 }
 /* GNB ul */
 .glist{
+    position: relative;
+    z-index: 1;
+    /* 메뉴가 영사기보다 위! */
     display: flex;
     /* 플렉스박스 */
 }
@@ -170,7 +173,7 @@ h1.tit{
 /* 영사기 박스 */
 #cam{
     position: absolute;
-    bottom: 0;
+    bottom: -14px;
     right: -51px;
     /* 부모는? .gnb */
 }
@@ -186,11 +189,14 @@ h1.tit{
     /* 양수값은 시계방향 */
 
     /* 트랜지션: 속시이지 */
-    transition: .5s ease-out;
+    transition: .5s ease-out .3s;
+    /* 돌아올땐 0.3초 기다려! */
 }
 /* GNB에 마우스 오버시 영사기 회전하기 */
 .gnb:hover #cam img{
     transform: rotate(0deg);
+    transition-delay: 0s;
+    /* 오버시엔 기다리지마! */
 }
 
 /* 빔박스 */
@@ -204,8 +210,30 @@ h1.tit{
     background: url(../images/bim.png) no-repeat;
     background-position: right center;
     background-size: auto 100%;
-    outline: 2px dotted yellow;
+    /* outline: 2px dotted yellow; */
+
+    /* 트랜지션: 속시이지 */
+    transition: width .3s linear;
 }
+/* GNB 마우스 오버시 영사기 쏘기 */
+.gnb:hover .beam{
+    width: 200px;
+    transition-delay: .5s;
+    /* 오버시엔 0.5초 기다려! */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: beamAni .04s linear infinite alternate;
+}
+
+/* 빔이 너울너울 거리도록 애니메이션 키프레임 */
+@keyframes beamAni {
+    from{
+        opacity: 0.9;
+    }
+    to{
+        opacity: 0.5;
+    }
+} /*  beamAni 키프레임 */
 
 
 /******************* 2. 메인영역 *******************/
