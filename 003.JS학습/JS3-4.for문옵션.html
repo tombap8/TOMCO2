@@ -39,6 +39,12 @@
                 // 조건: num이 1이고 i가 4 또는 7일때
                 if (num === 1 && (i === 4 || i === 7)) continue;
 
+                // [ 5번까지만 돌리기 ]
+                // break 키워드 사용!
+                // -> break 를 만나는 순간 제어문을 빠져나감!
+                // 조건: num이 2이고 i가 6이면 나가라!
+                if (num === 2 && i === 6) break;
+
                 tg[num].innerHTML +=
                     `<img src="images/num/num_0${i}.png" alt="숫자">`;
 
