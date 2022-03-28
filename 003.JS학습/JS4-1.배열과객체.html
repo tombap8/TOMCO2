@@ -349,18 +349,37 @@
             // 변수명을 자신이 지어본다
             const myMv = {
                 // 1. 영화제목
-                title: "",
+                title: "더 배트맨",
                 // 2. 감독
-                director: "",
+                director: "맷 리브스",
                 // 3. 배우
-                actors: "",
+                actors: "로버트 패틴슨, 폴 다노",
                 // 4. 장르
-                genre:"",
+                genre:"액션, 범죄, 드라마",
                 // 5. 관람가
-                ratings:"",
+                ratings:"15세 관람가",
                 // 6. 예고편(메서드)
-                trailer:()=>{}
-            }; /////// myMv객체 //////////
+                trailer:()=>{
+
+                } ///// trailer 메서드 ///
+            }; ////////// myMv객체 ////////////
+
+            // 출력대상: #txt6
+            let txt6 = document.querySelector("#txt6");
+
+            // 줄간격 조정
+            txt6.style.lineHeight = "34px";
+
+            // 출력
+            txt6.innerHTML = 
+            `
+                ♣️ 영화명 : ${myMv.title}
+                ♣️ 감독 : ${myMv.director} 
+                ♣️ 배우 : ${myMv.actors} <br>
+                ♣️ 장르 : ${myMv.genre}
+                ♣️ 등급 : ${myMv.ratings}
+
+            `;
 
 
 
