@@ -207,6 +207,8 @@
             "팬레터":function(){
                 // 1. 메시지 띄우기
                 alert("오빠, 지금뭐해?");
+                // 2. 배경이미지 넣기
+                txt4.style.background = "url(https://file2.nocutnews.co.kr/newsroom/image/2020/01/01/20200101093641185867_0_786_786.jpg) repeat-x top/auto 100%";
             }
         }); ////// SHK객체 /////////
 
@@ -225,7 +227,11 @@
         txt4.onclick = SHK["팬레터"];
 
         // title속성 넣기
-        
+        txt4.title = `여기를 클릭하여 ${SHK["너의 이름은?"]} 팬레터를 확인하세요!`;
+
+        // 손가락 표시
+        txt4.style.cursor = "pointer";
+
 
 
 
