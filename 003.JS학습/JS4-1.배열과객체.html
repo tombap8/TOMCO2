@@ -360,6 +360,8 @@
                 ratings:"15세 관람가",
                 // 6. 예고편(메서드)
                 trailer:()=>{
+                    // 1. 호출확인
+                    console.log("예고편!");
 
                 } ///// trailer 메서드 ///
             }; ////////// myMv객체 ////////////
@@ -380,6 +382,17 @@
                 ♣️ 등급 : ${myMv.ratings}
 
             `;
+
+
+            // 툴팁보이기
+            txt6.title = 
+            `클릭하시면 ${myMv.title}예고편을 보실 수 있습니다!`;
+            // 손가락표시
+            txt6.style.cursor = "pointer";
+
+            // 트레일러 메서드 호출하기
+            // #txt6클릭시
+            txt6.onclick = myMv.trailer;
 
 
 
