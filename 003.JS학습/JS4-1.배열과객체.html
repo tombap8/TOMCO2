@@ -362,6 +362,31 @@
                 trailer:()=>{
                     // 1. 호출확인
                    console.log("예고편");
+                   // 2. 영화박스 만들고 iframe 넣기
+                   // 대상: #mvbx
+                   let mvbx = document.querySelector("#mvbx");
+
+                   // 영화박스에 아이프레임용 박스넣기
+                   mvbx.innerHTML = `
+                        <div id="mv">
+                            <!--유튜브 아이프레임-->
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CKOjENn2MVI?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                            <!--닫기버튼-->
+                            <span class="cbtn">×</span>
+                        </div>
+                   
+                   `;
+
+                   // 삽입된 동영상박스(#mv) CSS설정하기
+                   let mv = document.querySelector("#mv");
+                   mv.style.position = "fixed";
+                   mv.style.top = "50%";
+                   mv.style.left = "50%";
+                   mv.style.transform = "translate(-50%,-50%)";
+                   mv.style.width = "700px";
+                   mv.style.height = "450px";
+                   mv.style.backgroundColor = "#000";
 
                 } ///// trailer 메서드 ///
             }; ////////// myMv객체 ////////////
@@ -387,7 +412,7 @@
             // 툴팁보이기
             txt6.title = 
             `클릭하시면 ${myMv.title}예고편을 보실 수 있습니다!`;
-            
+
             // 손가락표시
             txt6.style.cursor = "pointer";
 
@@ -441,6 +466,9 @@
     <div id="txt4"></div>
     <div id="txt5"></div>
     <div id="txt6"></div>
+
+    <!-- 예고편 동영상용 박스 -->
+    <aside id="mvbx"></aside>
 </body>
 
 </html>
