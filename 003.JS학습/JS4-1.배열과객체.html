@@ -211,6 +211,21 @@
         }); ////// SHK객체 /////////
 
         // 객체출력하기
+        // 대상: txt4
+
+        let txt4 = document.querySelector("#txt4");
+
+        txt4.innerText = 
+        `당신이 좋아하는 남자배우는? ${SHK["너의 이름은?"]}`;
+        txt4.innerText += 
+        ` / 몸무게를 아세요? ${SHK["몸무게"]}`;
+
+        // 객체에 셋팅된 함수를 보통 "메서드"라고 부른다!
+        // 이 메서드를 호출해 보자!
+        txt4.onclick = SHK["팬레터"];
+
+        // title속성 넣기
+        
 
 
 
