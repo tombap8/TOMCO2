@@ -39,15 +39,18 @@
         function insMini(num) { // num - 전달값 변수
 
             // 1. 호출 및 전달값 확인
-            console.log("미니언즈!",num);
+            console.log("미니언즈!", num);
 
             // 2. 대상선정: .Bcase
             let tg = document.querySelector(".Bcase");
-            
+
             // 3. 변경내용: 대상 내부에 이미지태그 넣기
             // html넣기 -> innerHTML = 값
             // += 대입연산자를 사용하여 기존값에 더함!
-            tg.innerHTML += '<img src="./images/Minions.png" alt="미니언즈">';
+            // for(시;한;증){코드} 를 이용한 반복코드실행!
+            for (let i = 1; i <= num; i++) {
+                tg.innerHTML += '<img src="./images/Minions.png" alt="미니언즈">';
+            } //////////// for ////////////////
 
         } ////////// insMini 함수 /////////////////
         ///////////////////////////////////////////
