@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>JS의 함수(function)</title>
+    <title>JS5-1. 함수(function)</title>
     <style>
         body{
             background: url(https://www.johnsoncontrols.com/ko_kr/-/media/jci/corp/homepage/images/ent_banner_korea.jpg) no-repeat fixed center/cover;
@@ -12,6 +12,9 @@
             color: #fff;
             text-shadow: 0 0 5px #000;
             text-align: center;
+        }
+        button{
+            font-size: 40px;
         }
     </style>
     <script>
@@ -44,6 +47,7 @@
                 - 파라미터변수는 var로 선언하지 않는다!(자동선언됨)
                 - 파라미터변수의 개수만큼 함수 호출시 같은 개수의 값을
                 보내야한다!!!
+
                 ->>> 파라미터 변수 없이 전달값 받는 방법
                 함수안에 arguments라는 변수받는 배열변수가 셋팅된다!
                 보낸 순서대로 배열순번으로 찍을 수 있다!
@@ -85,7 +89,7 @@
                 예) myHome(), MyHome(), myHOME() 모두 다른함수임!!
 
 
-                [ 함수의 종류 ]
+            [ 함수의 종류 ]
 
             1. 선언적 함수(이름있는함수)
 
@@ -170,7 +174,7 @@
         */////////////////////////////////
         function Korea(txt){
             //1. 함수호출,파라미터 확인
-            
+            alert(txt);
             //2. 다른함수 호출
             //"우리"전달
             //3. 리턴값 찍기
@@ -237,7 +241,7 @@
 </head>
 <body>
 
-    <button onclick="">우리나라 대한민국 만세 프로젝트 시작!</button>
+    <button onclick="Korea('우')">우리나라 대한민국 만세 프로젝트 시작!</button>
     
 </body>
 </html>
