@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>for문 확장 - for of문</title>
+    <script>
+        // 배열 만들기
+        var mv1 = ["조제", "한지민(조제), 남주혁(영석)",
+            "자신을 ‘조제’로 불러달라는 그녀처음 만난 그날부터 ‘조제’는 ‘영석’에게 잊을 수 없는 이름으로 남는다.할머니와 단둘이 사는 집, 그곳에서 책을 읽고 상상하며자신만의 세계를 살고 있는 ‘조제’.우연히 만난 그녀에게 특별한 감정을 느끼기 시작한 ‘영석’은천천히, 그리고 솔직하게 다가가기 시작한다.하지만 처음 경험해보는 사랑이 설레는 한편 가슴 아픈 ‘조제’는자신에게 찾아온 낯선 감정을 밀어내는데…기억할 거야너와 함께한 모든 순간을"
+        ];
+        var mv2 = ["원더 우먼 1984", "갤 가돗(다이애나/원더우먼), 크리스 파인(스티브 트레버)",
+            "1984년 모든 것이 활기찬 시대, 다이애나 프린스는 고고학자로서 인간들 사이에서 조용히 살고 있다. 단지 원더 우먼으로서 위기에 처한 사람을 구할 때만 빼고는. 그런 다이애나 앞에 거짓말처럼 죽었던 스티브 트레버가 나타나고, 거부할 수 없는 적마저 함께 찾아오는데…"
+        ];
+        var mv3 = ["도굴", "이제훈(동구), 조우진(존스박사)",
+            "흙 맛만 봐도 보물을 찾아내는 타고난 천재 도굴꾼 강동구(이제훈).자칭 한국의 '인디아나 존스'로 불리는 고분벽화 도굴 전문가 존스 박사(조우진), 전설의 삽질 달인 삽다리(임원희)를 만나 환상(?)의 팀플레이를 자랑하며 위험천만하고도 짜릿한 도굴의 판을 키운다."
+        ];
+
+        //////// 로드구역 ////////////////////////////////
+        
+    </script>
+    <style>
+        .btns {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .btns>button {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 4px double #555;
+            border-radius: 10px;
+            font-size: 24px;
+            line-height: 2;
+        }
+
+        .wrap>div {
+            color: #444;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+            border-top: 2px dashed #ccc;
+            border-bottom: 2px dashed #ccc;
+            font-size: 35px;
+        }
+        h1+div{
+            /* +형제선택자
+            h1+div 앞에 형제로 h1 다음에 오는 div */
+            font-size: 33px;
+            font-weight: bold;
+            text-align: center;
+        }
+        h2+div{
+            /* +형제선택자
+            h2+div 앞에 형제로 h2 다음에 오는 div */
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 버튼그룹 -->
+    <div class="btns">
+        <button class="btngo">조제</button>
+        <button class="btngo">원더 우먼 1984</button>
+        <button class="btngo">도굴</button>
+    </div>
+    <!-- 내용박스 -->
+    <div class="wrap">
+
+        <!--1.영화제목-->
+        <h1>영화제목</h1>
+        <div class="minfo"></div>
+
+        <!--2.주연배우-->
+        <h2>주연배우</h2>
+        <div class="minfo"></div>
+
+        <!--3.영화스토리-->
+        <h3>영화스토리</h3>
+        <div class="minfo"></div>
+
+    </div>
+
+</body>
+
+</html>
