@@ -21,11 +21,16 @@
         }
     </style>
     <script>
+        // 온라인상 배경이미지 주소를 배열로 셋팅
         const scene = [
             "https://www.johnsoncontrols.com/ko_kr/-/media/jci/corp/homepage/images/ent_banner_korea.jpg",
+
             "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F1ee63066-4239-11ec-b414-b1f6389ab345.jpg?crop=2667%2C1500%2C0%2C0&resize=1200",
+
             "https://www.bakermckenzie.com/-/media/images/locations/seoul.jpg?sc_lang=en",
+
             "https://www.asml.com/-/media/asml/images/careers/working-at-asml/south-korea/gyeongbokgung_palace_south_korea.jpg?mw=1920&rev=5154661f5c8943bb8c81419c01b327e2&hash=30B844A1D30F8A9B2BB0A2FE6377E953",
+
             "https://images.adsttc.com/media/images/5f73/76e0/63c0/17bc/c900/04e8/large_jpg/HK_1_N3.jpg?1601402564",
         ];
         /* 
@@ -278,18 +283,31 @@
         // 전달변수없이 전달값을 arguments배열로 받기!
         // arguments 전달값 배열변수는 화살표함수에선 못씀!
         const chgbg = function () {
-            for(let i=0;i<arguments.length;i++){
+
+            // for문으로 파라미터변수 문자만큼 h2요소 만들기
+            // i=1 즉, 첫번째(0)은 생략한다!(배경배열순번이니까)
+            for(let i=1;i<arguments.length;i++){
                 console.log(arguments[i]);
                 // 화면에 h2요소로 글자 넣기!
                 document.body.innerHTML +=
                 `<h2>${arguments[i]}</h2>`;
             } /////// for ////////
+
+            // 첫번째 파라미터로 배열순번을 넘김
+            document.body.style.backgroundImage =
+            `url(${scene[arguments[0]]})`;
+            // scene[] -> 배경이미지 배열변수
+            // arguments[0] -> 첫번째 파라미터 변수
+
+
         }; ///////// chgbg함수 ///////////
 
         // 아래 body태그가 로딩된 후에 함수 호출해야 에러없음!
         /////////////// 로딩구역 ///////////////
         window.addEventListener("load",()=>{
-            chgbg("동해물과","백두산이","마르고 닳도록","하느님이 보우하사","우리나라","만세!!!");
+            // 바로호출해야 하므로 로딩구역이 필요!
+            // 첫번째 전달값으로 배경배열번호를 넘긴다!
+            chgbg(0,"동해물과","백두산이","마르고 닳도록","하느님이 보우하사","우리나라","만세!!!");
         }); //////////// load ////////////////
 
 
