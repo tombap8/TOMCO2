@@ -119,9 +119,29 @@ input:focus {
     text-decoration: none;
 }
 
+/* 모바일시 줄바꿈 장치 */
+.addbx i {
+    font-style: normal;
+}
+
+.brk {
+    display: none;
+}
+
 
 /* 미디어쿼리 690px이하 */
 @media screen and (max-width:690px) {
+
+    /* 입력창 라벨 공통 */
+    .minput label {
+        display: block;
+        width: auto;
+    }
+
+    /* 입력양식 공통 */
+    .minput input {
+        width: 100%;
+    }
 
     /* 버튼영역 */
     .btnbx {
@@ -134,4 +154,20 @@ input:focus {
         height: 50px;
         margin-top: 20px;
     }
-} /* 미디어쿼리 690px이하 끝 */
+
+    /* 모바일시 줄바꿈 장치변경 */
+    .addbx i {
+        display: none;
+    }
+
+    .brk {
+        display: inline;
+    }
+    /* 줄간격변경 */
+    .addbx{
+        line-height: 2.5;
+    }
+
+}
+
+/* 미디어쿼리 690px이하 끝 */
