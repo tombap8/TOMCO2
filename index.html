@@ -92,14 +92,14 @@
             padding-left: 5rem;
         }
 
-        .pbx>div:first-child::after {
+        .pbx>div+div::before {
             content: '';
             position: absolute;
             width: 1px;
             height: 70%;
             top: 20%;
-            right: 10%;
-            border-right: 4px dotted rgb(204, 133, 0);
+            left: 10%;
+            border-left: 4px dotted rgb(204, 133, 0);
 
         }
 
@@ -123,13 +123,12 @@
                 text-align: center;
             }
 
-            .pbx>div:first-child::after {
+            .pbx>div+div::before {
                 width: 60%;
                 height: 1px;
-                top: auto;
-                bottom: 0;
-                right: 20%;
-                border-right: none;
+                top: -10px;
+                left: 20%;
+                border-left: none;
                 border-bottom: 4px dotted rgb(204, 133, 0);
 
 
