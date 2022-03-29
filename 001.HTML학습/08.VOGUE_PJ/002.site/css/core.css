@@ -1,0 +1,192 @@
+@charset "utf-8";
+/* 보그 PJ 공통핵심 CSS - core.css */
+/* 웹폰트, 공용클래스 */
+
+/*********** 1. 웹폰트 ***********/
+/* Roboto체 + Roboto Condensed체 - CDN */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap');
+/* 
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+*/
+/* 나눔바른고딕 */
+@font-face {
+    font-family: nbg;
+    src: url(../fonts/NanumBarunGothicLightSubset.woff) format("woff");
+}
+/* Pistilli체 */
+@font-face {
+    font-family: pist;
+    src: url(../fonts/Pistilli-Roman.woff) format("woff");
+}
+
+
+/************* 2. 공통 class *************/
+
+/* 속박스 class */
+.ibx{
+    max-width: 1300px;
+    /* 최대 1300px, 보다 작아지면 auto */
+    margin: 0 auto;
+    /* 박스 중앙정렬 */
+}
+
+/* 비율유지박스 class */
+.rbx{
+    position: relative;
+    /* 비율유지속박스의 부모자격 */
+}
+/* 비율생성 가상요소 */
+.rbx::before{
+    content: '';
+    display: block;
+    /* 패딩탑값 %로 비율에 맞게 각각셋팅 */
+    /* padding-top: 50%; */
+}
+/* 박스종류별 비율변경적용 */
+/* 파티션1개박스 */
+.pt1.rbx::before{
+    padding-top: 55.69%;
+    /* 
+        비율계산-> 가로크기:세로크기=100:x
+        x = 세로크기 * 100 / 가로크기
+        724 * 100 / 1300 = 55.69
+    */
+}
+/* 파티션3개박스 */
+.pt3.rbx::before{
+    padding-top: 50%;
+    /* 
+        비율계산-> 가로크기:세로크기=100:x
+        x = 세로크기 * 100 / 가로크기
+        650 * 100 / 1300 = 55.69
+    */
+}
+/* 비율유지속박스 */
+.rbxIn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+/* 한개짜리 파티션 박스의 높이값 100% */
+.pt1 .cbx{
+    height: 100%;
+}
+
+/* 컨텐츠박스 */
+.cbx{
+    position: relative;
+    /* 부모자격 */
+}
+/* 가상요소로 반투명 검정배경 그라데이션 넣기 */
+/* h2보다 먼저그려지도록 ::before사용!(아래위치) */
+.cbx::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-image: 
+    linear-gradient(
+        to top,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0));
+}
+
+/* 컨텐츠박스 가상요소로 보더애니 구현 */
+.cbx::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* 나의 부모? .cbx */
+    box-sizing: border-box;
+    /* 박스크기 유지(보더포함) */
+    border: 0px solid transparent;
+    /* 처음에 보더가 투명색 두께0 */
+    cursor: pointer;
+    /* 손가락모양 */
+
+    /* 트랜지션: 속시이지 */
+    transition: border .2s ease-in;
+}
+/* .cbx에 마우스 오버시 보더애니 */
+.cbx:hover::after{
+    border: 20px solid red;
+}
+
+/* 컨텐츠 타이틀박스 */
+.cbx h2{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* 부모는? 싸고있는 .cbx */
+
+    /* 글자설정 */
+    font-family: pist,nbg;
+    /* 웹폰트 영문체(Pistilli), 한글체(나눔바른고딕) */
+    font-size: min(33px,3vw);
+    /* min()을 사용하여 작은크기선택으로 최대크기를 제한함 */
+    font-weight: lighter;
+    text-align: center;
+    color: #fff;
+
+    padding: min(50px,3vw);
+    /* min()으로 최대50px제한! */
+    box-sizing: border-box;
+    /* 크기유지! */
+
+}
+
+/* 컨텐츠 타이틀박스 하위 small 요소 */
+.cbx h2 small {
+    font-size: 14px;
+}
+
+
+/* 플렉스 박스 class */
+.fbx{
+    display: flex;
+}
+/* 플렉스 자식박스 설정 */
+.fbx .cbx{
+    flex: 1;
+    /* 등분할설정시 높이값은 자동으로 100%됨! */
+}
+
+/* IR(Image Replacement) 클래스 */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* 배경이미지 공통 class */
+.bgi{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* 배경색 class */
+.bgc{
+    background-color: #f9f9f9;
+}
+
+/* 등장액션 class */
+.scAct{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+/* 원위치 복귀 등장! */
+.scAct.on{
+    transform: translateY(0);
+    opacity: 1;
+}
+
