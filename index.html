@@ -4,68 +4,220 @@
     <meta charset="UTF-8">
     <title>나의 아카이브 페이지</title>
     <style>
-        /* 기본셋팅 초기화! */
-        html,body,h1,h2{
+        @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Gugi&display=swap');
+
+        /*             
+                font-family: 'Black And White Picture', sans-serif;
+                font-family: 'Gugi', sans-serif;
+            */
+
+        html,
+        body,
+        h1,
+        h2 {
             margin: 0;
             padding: 0;
         }
-        body{
-            background-image: url(./imgs/worksbg.jpg);
-            /* 배경이미지 */
-            background-repeat: no-repeat;
-            /* 배경반복 안함 */
-            background-attachment: fixed;
-            /* 배경고정 */
-            background-position: center;
-            /* 배경중앙 */
-            background-size: cover;
-            /* 배경크기 빈틈없이 채우기(비율유지) */
+
+        html,
+        body {
+            overflow-x: hidden;
         }
 
-        /* 전체박스 */
-        .wrap{
+        body {
+            background: url(./imgs/worksbg.jpg) no-repeat fixed center/cover;
+        }
+
+        /* 초기화 */
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        .wrap {
             width: 1200px;
-            margin: 50px auto; 
-            /* 마영오! 블록 가로중앙 */
+            max-width: 85%;
             background-color: rgba(255, 255, 255, 0.7);
-            /* 배경색 반투명 흰색 */
-            padding: 15px;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
             border-radius: 15px;
-            /* 둥근모서리 */
-        }
-        /* 1. 전체제목 */
-        .tit{
-            text-align: center;
-            /* 글자중앙정렬-> 글자가 아니어도 
-            인라인요소면 중앙정렬됨! */
+            padding: 15px;
+            white-space: nowrap;
         }
 
+        .tit {
+            text-align: center;
+        }
+
+        .tit img {
+            max-width: 80%;
+            /* 이미지 크기의 80%보다 작아질때 최대 80%크기유지!
+            이 사이즈 보다 크면 원래 이미지 사이즈를 유지함! */
+        }
+
+        /* 프로젝트 박스 */
+        .pbx {
+            display: flex;
+            /* 자식 블록요소를 옆으로 흐르게함! */
+        }
+
+        .pbx>div {
+            position: relative;
+            flex: 1;
+            /* 부모가 flex인 자식을 등분할시 설정값은 1 */
+            padding: 10px;
+        }
+
+        .pbx h2 {
+            font-family: 'Gugi', sans-serif;
+            color: #fff;
+            font-weight: normal;
+            text-shadow: 2px 2px 2px #000;
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .pbx ul {
+            padding-top: 50px;
+        }
+
+        .pbx ul li {
+            padding-left: 5rem;
+        }
+
+        .pbx>div:first-child::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 70%;
+            top: 20%;
+            right: 10%;
+            border-right: 4px dotted rgb(204, 133, 0);
+
+        }
+
+        .pbx a {
+            font-family: 'Black And White Picture', sans-serif;
+            font-size: 2rem;
+            line-height: 2;
+        }
+
+        .pbx a:hover {
+            color: rgb(251, 123, 48);
+            text-decoration: overline;
+        }
+
+        /* 미디어쿼리 - 1000px이하 */
+        @media screen and (max-width:1000px) {
+
+            .pbx {
+                flex-direction: column;
+                /* 레이아웃 진행방향 세로! */
+                text-align: center;
+            }
+
+            .pbx>div:first-child::after {
+                width: 60%;
+                height: 1px;
+                top: auto;
+                bottom: 0;
+                right: 20%;
+                border-right: none;
+                border-bottom: 4px dotted rgb(204, 133, 0);
+
+
+            }
+
+            .pbx>div:last-child {
+                margin-top: 50px;
+            }
+
+            .pbx ul li {
+                padding-left: 0;
+            }
+
+            .pbx a {
+                font-size: 7vmin;
+            }
+
+            .pbx h2 {
+                font-size: 8vmin;
+            }
+        }
+
+        /* 1000px이하 */
     </style>
 </head>
-<body>
-    <!-- 전체박스 -->
-    <div class="wrap">
-        <!-- 1. 전체 제목 -->
-        <h1 class="tit">
-            <img src="imgs/mylogo_14.png" alt="아카이브로고">
-        </h1>
-        <!-- 2. 프로젝트 박스 -->
-        <div class="pbx">
-            <!-- 2-1. 공통 프로젝트 -->
-            <section>
-                <h2>개인프로젝트</h2>
-                <ul>
-                    <li>
-                        <a href="001.HTML학습/01.Info_PJ/info.html" target="_blank">기본전달사항</a>
-                    </li>
-                    <li>
-                        <a href="001.HTML학습/01.Info_PJ/" target="_blank">네이버 요약뉴스</a>
-                    </li>
-                </ul>
-            </section>
-            <!-- 2-2. 개인 프로젝트 -->
+<body><div class="wrap">
+    <h1 class="tit">
+        <img src="imgs/mylogo_14.png" alt="아카이브로고">
+    </h1>
+
+    <div class="pbx">
+        <!-- 공통프로젝트 -->
+        <div>
+            <h2>공통프로젝트</h2>
+            <ul>
+                <li>
+                    <a href="001.HTML학습/01.Info_PJ/info.html" target="_blank">
+                        기본전달사항
+                    </a>
+                </li>
+                <li>
+                    <a href="999.portfolios/" target="_blank">
+                        포폴관리페이지
+                    </a>
+                </li>
+                <li>
+                    <a href="001.HTML학습/02.Drama_PJ/drama1.html" target="_blank">
+                        드라마 테이블
+                    </a>
+                </li>
+                <li>
+                    <a href="001.HTML학습/04.Robot_PJ/avengers.html" target="_blank">
+                        어벤저스
+                    </a>
+                </li>
+                <li>
+                    <a href="001.HTML학습/03.DKB_PJ/" target="_blank">
+                        도깨비 PJ
+                    </a>
+                </li>
+                <li>
+                    <a href="001.HTML학습/07.CGV_PJ/003.site/intro.html" target="_blank">
+                        CGV PJ
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 개인프로젝트 -->
+        <div>
+            <h2>개인프로젝트</h2>
+            <ul>
+                <li>
+                    <a href="001.HTML학습/01.Info_PJ/info.html" target="_blank">
+                        기본전달사항
+                    </a>
+                </li>
+                <li>
+                    <a href="999.portfolios/" target="_blank">
+                        포폴관리페이지
+                    </a>
+                </li>
+                <li>
+                    <a href="001.HTML학습/03.DKB_PJ_v2/index.html"_blank">
+                        도깨비 PJ
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
-    
-</body>
+</div></body>
 </html>
