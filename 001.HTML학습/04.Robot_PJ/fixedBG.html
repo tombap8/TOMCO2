@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Fixed Background</title>
+    <style>
+        /* 웹폰트 CDN */
+        @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Orbitron&family=Cute+Font&family=Single+Day&display=swap');
+
+        /* 
+            웹폰트 글자이름
+            font-family: 'Black And White Picture', sans-serif;
+            font-family: 'Orbitron', sans-serif;
+            font-family: 'Cute Font', cursive;
+            font-family: 'Single Day', cursive;
+         */
+
+         html{
+             scroll-behavior: smooth;
+         }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* 높이값을 100%로 html,body에 동시에 주는 이유는?
+            자식요소의 높이값을 보이는 화면에 채우기 위함 */
+        }
+
+        /* 타이틀요소 초기화 */
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+        }
+
+        /* ul요소 초기화 */
+        ul {
+            /* 3無 */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* 스크롤바 트랙 디자인변경 class */
+        .scbar::-webkit-scrollbar {
+            width: 5px;
+            /* 스크롤바 가로크기 */
+        }
+
+        .scbar::-webkit-scrollbar-thumb {
+            background: #666;
+            border-radius: 5px;
+            /* 스크롤바 배경색, 모서리 둥글게 */
+        }
+
+        .scbar::-webkit-scrollbar-track {
+            background: #ddd;
+            border-radius: 5px;
+            /* 스크롤바 트랙 배경색, 모서리 둥글게 */
+        }
+
+        /* 전체 타이틀 */
+        .tit {
+            position: fixed;
+            top: 2%;
+            /* 기준은 보이는화면의 높이값 */
+            left: 50%;
+            /* 화면의 절반만큼 이동 */
+            /* fixed의 부모는 항상 보이는화면(window) */
+            transform: translateX(-50%);
+            /* 위치이동시 -50%는 자신의 가로크기기준 
+            왼쪽방향으로 자기자신의 크기의 절반이동
+            가로방향 중앙이동함*/
+            font-family: 'Black And White Picture', sans-serif;
+            /* 웹폰트 적용 */
+            font-size: 50px;
+            font-weight: normal;
+            /* 볼드해제 */
+            color: #fff;
+            text-shadow: 1px 0 #000, -1px 0 #000,
+                0 1px #000, 0 -1px #000;
+            /* 그림자를 이용한 테두리주기 */
+
+            background-color: #ffffff70;
+            /* 해시코드로 반투명 주기 : #6자리+2자리(%수치-해시값) */
+            padding: 10px;
+            border-radius: 10px;
+
+            /* width: 100%;
+            text-align: center;
+            fixed포지션은 가로크기가 없을 경우
+            내용만큼만 자동크기 설정되므로 글자
+            가운데 정렬 설정시 적용이 안되어 보인다
+            이럴경우엔 반드시 가로 크기를 크게만들어준다 */
+
+            z-index: 1;
+            /* 이걸 왜줬지?
+            부모자격위해 .page에 relative를 주었다
+            이것때문에 위치관계가 성립이 되어
+            나중에 코딩된 .page가 .tit와 .gnb li
+            보다 위에 오게됨
+            따라서 위치관계를 위에 오도록 z-index: index:1 로 설정함
+            
+            z-index는 반드시 static이 아닌
+            포지션 즉, 겹칠수 있는 포지션
+            relative/ absolute /fixed 이런거...
+            이런 포지션에서만 성립된다!
+
+            z-index를 안준경우 모두 0층에 있다!
+            1만 줘도 위로 올라온다!
+            여러개를 비교할 경우엔 숫자가 크면
+            위로 온다!
+            같은 형제 요소간 위아래 관계를 따진다!
+            
+            z-index없이 static이 아닌 요소는
+             일반 static요소보다
+            무조건 위에 온다!
+
+            단, static 요소보다 아래쪽에 가는방법은
+            z-index를 마이너스 값을 주면 된다!
+            예) z-index: -1;
+            
+            
+             */
+        }
+
+        /* 메뉴 공통 */
+        .gnb li {
+            position: fixed;
+            /* fixed는 화면기준 */
+            width: 100px;
+            height: 100px;
+            /* outline: 5px dotted red; */
+            box-shadow: inset 0 0 10px #fff;
+            /* 내부그림자 밝게주기 */
+
+            z-index: 1;
+            /* .page보다 위 */
+        }
+
+        /* 메뉴 공통 a */
+        .gnb a {
+            color: #fff;
+            /* 글자색 */
+            text-decoration: none;
+            /* 밑줄없앰 */
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            /* 웹폰트적용 */
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 100px;
+            /* 글자세로중앙 */
+            text-shadow: 2px 2px 1px #777;
+            /* 글자그림자 */
+
+            display: block;
+            /* 크기디자인 적용위해 */
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /* 메뉴 각 위치 */
+        /* Home - 왼쪽위 */
+        .gnb li:first-child {
+            top: 0;
+            left: 0;
+            background-color: plum;
+            border-radius: 0 0 50% 0;
+            /* 오른아래만 */
+            /* 
+                모서리 둥글게 4방향 셋팅하기
+                border-radius : 왼위 오른위 오른아래 왼아래;
+                -> 왼쪽위부터 시계방향 순서로 셋팅한다!
+                -> 완전원형으로 주려면 50%값을 준다
+             */
+        }
+
+        /* home메뉴 이미지 */
+        .gnb li:first-child img {
+            height: 80px;
+            margin-top: 8px;
+        }
+
+        /* HTML - 오른쪽위*/
+        .gnb li:nth-child(2) {
+            top: 0;
+            right: 0;
+            background-color: lightskyblue;
+            border-radius: 0 0 0 50%;
+            /* 왼아래만 */
+        }
+
+        /* CSS - 왼쪽아래*/
+        .gnb li:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            background-color: lightgreen;
+            border-radius: 0 50% 0 0;
+            /* 오른위만 */
+        }
+
+        /* JS - 오른쪽아래*/
+        .gnb li:last-child {
+            bottom: 0;
+            right: 0;
+            background-color: lightsalmon;
+            border-radius: 50% 0 0 0;
+            /* 왼위만 */
+        }
+
+        /* 페이지 타이틀 */
+        .pgtit {
+            position: absolute;
+            top: 16%;
+            /* 기준은 부모의 높이값 */
+            left: 50%;
+            /* 나의 부모는? .page */
+            transform: translateX(-50%);
+            /* 가로방향 중앙이동 */
+
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            font-size: 30px;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        /* 공통페이지 */
+        .page {
+            position: relative;
+            /* 부모자격 */
+            height: 100%;
+            /* body셋팅을 기준함! */
+
+            /* 배경디자인 공통 */
+            background-repeat: no-repeat;
+            /* 반복여부 */
+            background-attachment: fixed;
+            /* 배경고정 - 보이는 화면에 고정함 */
+            background-position: center;
+            /* 배경위치 */
+            background-size: cover;
+            /* 배경크기 */
+        }
+
+        /* 각 페이지 */
+        /* 1. Home */
+        #home {
+            background-image: url(images2/001.jpg);
+        }
+
+        /* 2. HTML 소개 */
+        #html {
+            background-image: url(images2/002.jpg);
+        }
+
+        /* 3.  CSS 소개 */
+        #css {
+            background-image: url(images2/005.jpg);
+        }
+
+        /* 4. JS 소개 */
+        #js {
+            background-image: url(images2/004.jpg);
+        }
+
+        /* 내용박스 공통 */
+        .inbox {
+            position: relative;
+            /* top값으로 현재위치로부터 위치이동하려고 설정함 */
+            top: 25%;
+            /* 싸고있는 박스 높이값의 25% */
+            /* 박스높이값이 50%이므로 남은 공간 50%의 절반인 25%
+            를 밀어주면 중앙에 오게된다 */
+            width: 70%;
+            height: 50%;
+            margin: 0 auto;
+            /* 가로중앙정렬 */
+            background-color: #ffffff80;
+
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            /* 
+                보더와 아웃라인과의 차이점
+                - 보더는 디자인요소에 포함되고 아웃라인은 아니다
+                - 보더는 박스크기에 영향을 주고 아웃라인은 아니다
+                - 보더는 테두리 둥글게가 되고 아웃라인 아니다
+                - 따라서 테두리 디자인은 반드시 보더로 준다
+                - 아웃라인은 외곽라인 표시자로 사용한다
+                (예: 크롬브라우저 포커스 표시를 아웃라인으로 함)
+             */
+        }
+
+        /* 인박스의 가상요소로 중앙분리선 만들기 */
+        .inbox::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            /* 나의 부모는? .inbox */
+            width: 0;
+            height: 80%;
+            border-right: 5px dotted blue;
+        }
+
+        /* 인박스 내부의 2개의 div를 옆으로 흐르게 */
+        .inbox>div {
+            width: 50%;
+            height: 100%;
+            float: left;
+            padding: 25px;
+            /* 패딩을 주면 일반적으로 박스가 커짐 - 플롯된 박스가
+            아래로 떨어짐(왜? 좁으니까) */
+            box-sizing: border-box;
+            /* 보더박스는 보더와 패딩을 내부로 포함한다(크기유지!) */
+            /* 이 속성을 안주면 기본값 content-box임(커지는박스) */
+            overflow: auto;
+            /* 내용이 넘치면 보통 박스바깥으로 나가는데
+            이것이 visible 값이다.(기본값)
+            넘치면 스크롤바가 생기게 해주는 옵션이 auto임 */
+        }
+
+        /* 공통 내용 중제목 */
+        .inbox>div>h3 {
+            position: absolute;
+            /* 스크롤시 고정하기 위해 */
+            /* 젠틀앱솔루트 - 하단요소들은 이 존재를 모름 */
+            /* background-color: lightcoral; 
+            - 배경색 파트별로 각각넣기 */
+            padding: 10px;
+            color: #fff;
+            font-family: 'Cute Font', cursive;
+            font-size: 30px;
+            text-shadow: 1px 0 #000, -1px 0 #000,
+                0 1px #000, 0 -1px #000;
+            /* 글자 그림자를 이용한 글자테두리 */
+        }
+
+        /* 공통 내용 소제목 */
+        .inbox>div>h4 {
+            font-family: 'Single Day', cursive;
+            margin-top: 70px;
+            /* 중제목이 앱솔루트 이므로
+            아래있는 소제목은 중제목을 인식하지 못한다!
+            따라서 마진으로 위쪽여백을 준다! */
+            font-size: 20px;
+        }
+
+        /* 공통 내용 상세리스트 */
+        .inbox>div>ul {
+            font-family: 'Cute Font', cursive;
+            font-size: 24px;
+            line-height: 34px;
+            padding-top: 20px;
+        }
+
+        /* 가상요소로 li블릿만들기 */
+        .inbox>div>ul>li::before {
+            content: "◈";
+            font-size: 14px;
+            margin-right: 5px;
+            color: blue;
+        }
+
+
+        /* 공통 내용 중제목 배경색 각각 넣기 */
+        #html .inbox>div>h3 {
+            background-color: lightskyblue;
+        }
+
+        #css .inbox>div>h3 {
+            background-color: lightgreen;
+        }
+
+        #js .inbox>div>h3 {
+            background-color: lightsalmon;
+        }
+
+        /* 첫 페이지 구성하기 */
+        /* 인박스의 중앙분리선 가상요소 없애기 */
+        #home .inbox::before{
+            display: none;
+        }
+        /* 인트로 텍스트 박스 */
+        .itxt{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            /* 세로중앙이동 */
+            width: 500px;
+            margin: 0 auto;
+            /* 마영오 - 가로중앙 */
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 90px;
+            color: #fff;
+            text-shadow: 2px 2px 2px #000;
+            /* outline: 2px solid red; */
+        }
+        /* 각 글자색 셋팅 */
+        .itxt li:nth-child(1){
+            color: plum;
+            transform: translate(-39%,219%);
+        }
+        .itxt li:nth-child(2){
+            color: lightskyblue;
+            transform: translate(51%,247%);
+        }
+        .itxt li:nth-child(3){
+            color: lightgreen;
+            transform: translate(30%,-138%);
+        }
+        .itxt li:nth-child(4){
+            color: lightsalmon;
+            transform: translate(-50%,-293%);
+        }
+
+        /* 공통 트랜지션 */
+        .itxt li{
+            transition: transform 3s ease-in-out;
+        }
+
+        /* 마우스 오버시 원래위치로 돌아가기 */
+        #home .inbox:hover .itxt li{
+            transform: translate(0%,0%);
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- 1. 전체 타이틀 -->
+    <h1 class="tit">
+        { 웹 퍼블리싱 개발 }
+    </h1>
+    <!-- 2. 메뉴 -->
+    <nav class="gnb">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="images2/logo.png" alt="로고">
+                </a>
+            </li>
+            <li>
+                <a href="#html">HTML</a>
+            </li>
+            <li>
+                <a href="#css">CSS</a>
+            </li>
+            <li>
+                <a href="#js">JS</a>
+            </li>
+            <!-- a요소 href에 값으로 "#아이디명" 
+            을 쓰면 해당 아이디 요소의 위치로 
+            바로 이동된다! a요소의 기본특징 -->
+
+        </ul>
+    </nav>
+    <!-- 3. 각 페이지 -->
+    <!-- 3-1.홈 -->
+    <section id="home" class="page">
+        <article class="inbox">
+            <ul class="itxt">
+                <li>웹퍼블리싱</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+            </ul>
+        </article>
+    </section>
+    <!-- 3-2.HTML소개 -->
+    <section id="html" class="page">
+        <h2 class="pgtit">HTML</h2>
+        <!-- 내용박스 -->
+        <article class="inbox">
+            <div class="descL scbar">
+                <!-- 중제목 -->
+                <h3>HTML이란 무엇입니까?</h3>
+                <!-- 소제목 -->
+                <h4>HTML은 웹 페이지를 만들기위한 표준 마크업 언어입니다.</h4>
+                <!-- 세부항목리스트 -->
+                <ul>
+                    <li>HTML은 Hyper Text Markup Language를 나타냅니다.</li>
+                    <li>HTML은 웹 페이지를 만들기위한 표준 마크 업 언어입니다.</li>
+                    <li>HTML은 웹 페이지의 구조를 설명합니다.</li>
+                    <li>HTML은 일련의 요소로 구성됩니다.</li>
+                    <li>HTML 요소는 콘텐츠를 표시하는 방법을 브라우저에 알려줍니다.</li>
+                    <li>HTML 요소는 "이것은 제목입니다", "이것은 단락입니다", "이것은 링크입니다"등과 같은 콘텐츠 조각에 레이블을 지정합니다.</li>
+                </ul>
+            </div>
+            <div class="descR scbar">
+                <!-- 중제목 -->
+                <h3>What is HTML?</h3>
+                <!-- 소제목 -->
+                <h4>HTML is the standard markup language for creating Web pages.</h4>
+                <!-- 세부항목리스트 -->
+                <ul>
+                    <li>HTML stands for Hyper Text Markup Language</li>
+                    <li>HTML is the standard markup language for creating Web pages</li>
+                    <li>HTML describes the structure of a Web page</li>
+                    <li>HTML consists of a series of elements</li>
+                    <li>HTML elements tell the browser how to display the content</li>
+                    <li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this
+                        is a link", etc.</li>
+                </ul>
+            </div>
+        </article>
+    </section>
+    <!-- 3-3.CSS소개 -->
+    <section id="css" class="page">
+        <h2 class="pgtit">CSS</h2>
+        <!-- 내용박스 -->
+        <article class="inbox">
+            <div class="descL scbar">
+                <!-- 중제목 -->
+                <h3>CSS 란 무엇입니까?</h3>
+                <!-- 소제목 -->
+                <h4>CSS는 의미 Cascading Style Sheets이다.</h4>
+                <!-- 세부항목리스트 -->
+                <ul>
+                    <li>CSS는 HTML 요소가 화면, 종이 또는 기타 미디어에 표시되는 방법을 설명 합니다.</li>
+                    <li>CSS 는 많은 작업을 절약합니다 . 한 번에 여러 웹 페이지의 레이아웃을 제어 할 수 있습니다.</li>
+                    <li>외부 스타일 시트는 CSS 파일에 저장됩니다.</li>
+                </ul>
+            </div>
+            <div class="descR scbar">
+                <!-- 중제목 -->
+                <h3>What is CSS?</h3>
+                <!-- 소제목 -->
+                <h4>CSS stands for Cascading Style Sheets</h4>
+                <!-- 세부항목리스트 -->
+                <ul>
+                    <li>CSS describes how HTML elements are to be displayed on screen, paper, or in other media</li>
+                    <li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
+                    <li>External stylesheets are stored in CSS files</li>
+                </ul>
+            </div>
+        </article>
+    </section>
+    <!-- 3-4.JS소개 -->
+    <section id="js" class="page">
+        <h2 class="pgtit">Javascript</h2>
+        <!-- 내용박스 -->
+        <article class="inbox">
+            <div class="descL scbar">
+                <!-- 중제목 -->
+                <h3>자바스크립트란 무엇입니까?</h3>
+                <!-- 소제목 -->
+                <h4>JavaScript는 세계에서 가장 널리 사용되는 프로그래밍 언어입니다.</h4>
+                <!-- 세부항목리스트 -->
+                <ul>
+                    <li>JavaScript는 웹의 프로그래밍 언어입니다.</li>
+                    <li>JavaScript는 배우기 쉽습니다.</li>
+                    <li>JavaScript와 Java 는 개념과 디자인면에서 완전히 다른 언어입니다.</li>
+                    <li>JavaScript는 1995 년 Brendan Eich에 의해 발명되었으며 1997 년 ECMA 표준이되었습니다.</li>
+                    <li>ECMA-262는 표준의 공식 이름입니다. ECMAScript는 언어의 공식 이름입니다.</li>
+                </ul>
+            </div>
+            <div class="descR scbar">
+                <!-- 중제목 -->
+                <h3>What is Javascript?</h3>
+                <!-- 소제목 -->
+                <h4>JavaScript is the world's most popular programming language.</h4>
+                <!-- 세부항목리스트 -->
+                <ul>
+                    <li>JavaScript is the programming language of the Web.</li>
+                    <li>JavaScript is easy to learn.</li>
+                    <li>JavaScript and Java are completely different languages, both in concept and design.</li>
+                    <li>JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997.</li>
+                    <li>ECMA-262 is the official name of the standard. ECMAScript is the official name of the language.
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </section>
+</body>
+
+</html>
