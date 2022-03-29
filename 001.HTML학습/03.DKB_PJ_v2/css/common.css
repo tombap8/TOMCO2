@@ -95,6 +95,11 @@ body {
     background-position: -60px -30px;
 }
 .sns a{   
+    /* a요소 확장! */
+    display: block;
+    width: 100%;
+    height: 100%;
+
     color: #222;
     text-decoration: none;
 
