@@ -7,14 +7,14 @@
 @import url(common.css);
 
 /* 컨텐츠 영역 최소높이 설정 */
-.cont{
+.cont {
     min-height: 600px;
-    font-size: 16px;
+    padding: 0 15px;
 }
 
 
 /* 1. 서브타이틀 */
-.stit{
+.stit {
     font-family: 'Pistilli', sans-serif;
     font-size: 50px;
     padding: 40px 0 20px;
@@ -35,16 +35,17 @@
     color: #f00;
     white-space: nowrap;
 }
+
 /* 메시지 글자색변경 */
-.msg.on{
+.msg.on {
     color: green;
 }
 
 
 /* 회원가입박스 */
 #meminfo {
-    width: 700px;
-    height: 464px;
+    max-width: 700px;
+    min-height: 464px;
     margin: 0 auto;
     margin-top: 20px;
     border: 2px solid #737373;
@@ -58,7 +59,7 @@
 #meminfo ul {
     width: 100%;
     height: 100%;
-    font-size: 1.25rem;
+    font-size: 2rem;
     /* 20px */
     font-weight: bold;
     color: #373737;
@@ -91,7 +92,7 @@ select:focus {
 #meminfo input[type=password] {
     width: 340px;
     height: 36px;
-    font-size: 1.125rem;
+    font-size: 2rem;
     /* 18px */
     border: 1px solid #737373;
     border-radius: 5px;
@@ -116,14 +117,15 @@ select:focus {
     height: 40px;
     border: 1px solid #737373;
     border-radius: 5px;
-    font-size: 1.125rem;
+    font-size: 2rem;
 }
 
 /* 이메일 직접입력창 */
 #meminfo #email2 {
     width: 139px;
     margin-left: 201px;
-    display: none;/* 처음에 안보임 */
+    display: none;
+    /* 처음에 안보임 */
 }
 
 /* 가입하기 버튼 */
@@ -134,7 +136,8 @@ select:focus {
     border-radius: 5px;
     color: #fff;
     background-image: linear-gradient(to bottom, #ddd, #555);
-    float: right;/* 오른쪽 위치! */    
+    float: right;
+    /* 오른쪽 위치! */
     margin-right: 40px;
     margin-top: 6px;
     font: bold 16px 'ng';
@@ -160,6 +163,7 @@ select:focus {
 .YNbox {
     text-align: center;
 }
+
 /* 버튼공통 */
 .YNbox button {
     width: 113px;
@@ -173,3 +177,37 @@ select:focus {
     margin: 0 20px;
     cursor: pointer;
 }
+
+
+/* 미디어쿼리 690px이하 */
+@media screen and (max-width: 690px) {
+
+    /* 리스트 li */
+    #meminfo li {
+        height: auto;
+    }
+
+    /* 입력박스공통 */
+    #meminfo input[type=text],
+    #meminfo input[type=password] {
+        width: 100%;
+    }
+
+    /* 라벨공통 */
+    #meminfo label {
+        display: block;
+    }
+
+    /* 가입하기 버튼 */
+    #btnj {
+        float: none;
+        margin-right: 0;
+    }
+
+    /* 가입하기 버튼 부모 li박스 */
+    #meminfo ul li:last-child{
+        text-align: center;
+    }
+}
+
+/* 미디어쿼리 690px이하 끝*/
