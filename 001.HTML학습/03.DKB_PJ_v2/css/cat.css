@@ -6,7 +6,19 @@
 @import url(core.css);
 @import url(common.css);
 
+/* 컨텐츠 영역 겉박스 */
+#cont{
+    background-color: #ececec;
+}
 /* 컨텐츠 영역 최소높이 설정 */
 .cont{
     min-height: 600px;
+    text-align: center;
+}
+/* 컨텐츠 이미지 가로크기 자동변경 */
+.cont img{
+    max-width: 100%;
+    /* 최대가로크기 100%의 의미는?
+    자신의 크기보다 부모가 작아지면
+    자신의 가로크기를 100%로 채운다! */
 }
