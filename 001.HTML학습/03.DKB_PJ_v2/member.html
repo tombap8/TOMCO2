@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- 메타태그 뷰포트 필수! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta태그에 사이트 설명넣기 -->
+    <meta name="description" content="드라마 도깨비의 캐릭터를 소개하는 tvN 서브소개 페이지입니다!">
+    <title>
+        쓸쓸하고 찬란하신(神) 도깨비 - 회원가입 페이지
+    </title>
+    <link rel="stylesheet" href="css/member.css">
+    <!-- 미디어쿼리 CSS -->
+    <link rel="stylesheet" href="css/media.css">
+    <!-- 자바스크립트 구역 -->    
+    <script src="js/common.js"></script>
+</head>
+
+<body class="scbar">
+    <!-- 레이아웃: 기본적으로 이중박스구조
+        1. 겉박스 : width가 auto인 끝까지 가는 블록박스
+        2. 속박스 : width가 특정 px을 가지는 중앙정렬 블록박스
+    -->
+
+    <!-- 1. 상단영역 -->
+    <div id="top">
+        <header class="ibx top">
+            <!-- 메인로고 -->
+            <h1 id="logo">
+                <img src="images/tvnlogo2.png" alt="tvN로고">
+            </h1>
+            <!-- sns메뉴 -->
+            <div class="snsbx ibx">
+                <nav class="sns">
+                    <ul>
+                        <li>
+                            <a href="#">로그인</a>
+                        </li>
+                        <li>
+                            <a href="#">회원가입</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="ir">
+                                    트위터 바로가기
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="ir">
+                                    페이스북 바로가기
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="ir">
+                                    인스타그램 바로가기
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- GNB메뉴 -->
+            <nav class="gnb">
+                <ul>
+                    <li class="sm sm1">
+                        <a href="#">프로그램소개</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">프로그램 소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">인물소개</a>
+                                </li>
+                                <li>
+                                    <a href="#">인물관계도</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">미리보기</a>
+                    </li>
+                    <li class="sm sm2">
+                        <a href="#">동영상</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">클립영상</a>
+                                </li>
+                                <li>
+                                    <a href="#">다시보기</a>
+                                </li>
+                                <li>
+                                    <a href="#">예고편</a>
+                                </li>
+                                <li>
+                                    <a href="#">스페셜</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="sm sm3">
+                        <a href="#">사진첩</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">현장 포토</a>
+                                </li>
+                                <li>
+                                    <a href="#">대표 포스터</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">OST</a>
+                    </li>
+                    <li>
+                        <a href="#">시청자 게시판</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- 모바일용 햄버거버튼 : 햄버거모양(ㄷ한자키) -->
+            <button class="ham" onclick="바꿔()"></button>
+        </header>
+    </div>
+    <!-- 2. 메인영역 -->
+    <div>
+        <main class="ibx cont">
+
+        </main>
+    </div>
+    <!-- 3. 하단영역 -->
+    <div id="info">
+        <footer class="ibx info">
+            <!-- 하단링크 -->
+            <div class="blink">
+                <ul>
+                    <li>
+                        <a href="#">법적고지</a>
+                    </li>
+                    <li>
+                        <a href="#">영상정보처리기기운영/관리방침</a>
+                    </li>
+                    <li>
+                        <a href="#">이메일무단수집거부</a>
+                    </li>
+                    <li>
+                        <a href="#">사이버감사실</a>
+                    </li>
+                    <li>
+                        <a href="#">찾아오시는길</a>
+                    </li>
+                    <li>
+                        <a href="#">개인정보처리방침</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 회사주소 -->
+            <address class="addr">
+                (주)씨제이이엔엠 CJ ENM 대표이사 강호성, 허민호 <br>
+                주소 (03926) 서울시 마포구 상암산로 66 사업자 등록번호 106-81-51510 개인정보보호책임자 김재환 <br>
+                © CJ ENM. All Rights Reserved.
+            </address>
+            <!-- 하단로고 -->
+            <div class="blogo">
+                <img src="images/blogo.png" alt="하단로고">
+            </div>
+            <!-- 브랜드 바로가기 : 셀렉트박스 -->
+            <select name="sel" id="sel">
+                <option value="opt">브랜드 바로가기</option>
+                <option value="tvn">tvN</option>
+                <option value="ocn">OCN</option>
+                <option value="mnet">MNET</option>
+            </select>
+        </footer>
+    </div>
+
+</body>
+
+</html>
