@@ -61,26 +61,31 @@
         ****************************************************/
 
         // 일반적인 할당형 함수 /////
-        
+        // let x = function (a,b) {
+        //     return a*b;
+        // }; ///// 함수 ///////
 
         // 축약형
+        // let x = (a,b) => {return a*b};
         
         // 좀더 축약!
-        
+        let x = (a,b) => a*b;
 
         // 함수호출하기
-        
+        console.log("x(100,20)함수호출:",x(100,20));
 
         // 일반적인 함수할당
-        
+        // let my = function (x) {
+        //     console.log(`나는 ${x}다!`);
+        // }; //////// 함수 ////////
 
         // 축약형 
         // - 전달변수가 하나일때 소괄호() 생략가능!
         // - 실행문이 하나일때도 중괄호{} 생략가능!
+        let my = x => console.log(`나는 ${x}다!`);
         
-
         // 함수호출하기
-        
+        my('프론트엔드 개발자');
 
         /// 로딩구역 ////////////////////////
         window.addEventListener("load",()=>{
@@ -88,9 +93,21 @@
             // 버튼요소 클릭시 글자 바꾸기 //////
 
             // 기존방식 /////
-            
+            // document.querySelector("#btn")
+            // .onclick = function(){
+            //     // 클릭된 요소 자신은 this키워드로!
+            //     this.innerText = "너는 누구니?";
+            // }; //////// click함수 ////////
 
             // 새로운 방식 ////
+            document.querySelector("#btn")
+            .onclick = ()=>{
+
+                // this대신 event.currentTarget
+                event.currentTarget.innerText =
+                "나는 화살표함수야!";
+
+            }; //////// click함수 ////////
             
 
             /************************************ 
@@ -98,6 +115,11 @@
                 this 키워드의 의미는 다르다!!!
 
                 화살표함수에서 this는 window객체를 의미!
+                (자신을 생성한 객체를 가리킨다!
+                즉, 여기서는 window로딩구역안에 생성되어서
+                window객체를 가리키고 만약 이것이 어떤
+                Object안에 메서드라면 그 Object를 가리킴!)
+
                 this 키워드 대신
                 event.currentTarget 을 사용하여
                 현재요소 자신을 의미하도록
@@ -110,10 +132,12 @@
 
             
     </script>
+    
 </head>
 <body>
 
-    <button id="btn">나는 버튼이다!</button>
+    <button id="btn" style="font-size:40px">
+        나는 버튼이다!</button>
     
 </body>
 </html>
