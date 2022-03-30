@@ -294,7 +294,8 @@ h1.tit{
 }
 /* 각 리스트 */
 .mlist ul>li{
-    margin: 0 9px;
+    margin: 0 min(1vw,9px);
+    /* 양쪽마진만 9px과 1vw중 작은것! */
 }
 
 .mlist img{
