@@ -16,12 +16,31 @@
         /* 
             [ 비율유지 박스를 만드는 원리 ]
 
+            1. 가로크기는 %에 준하는 유동적 셋팅
+            2. 세로크기는 셋팅하지 않는다!(auto)
+            3. 가상요소 before 자식요소로 패딩탑 %설정
+            4. 앱솔루트 속박스를 만들어 컨텐츠공간 확보
+            (비율유지박스에 부모자격필수!)
+
+            ________________________________
+
+            -> 가로크기에 대한 세로크기는 유동적이어야함!
+            -> 높이값 없이 어떻게 높이값을 만들지?
+            _________________________________
+
+            박스에 패딩을 주면 박스가 커진다!
+            패딩탑값으로 높이를 만든다!
+            패딩탑값을 %로 주면?
+            -> 가로크기에 대한 비율이 생성된다!!!
+            정확한 비율은 자식요소에 패딩탑을 줄때 생김!
             
 
         */ 
 
         /* 비율유지 박스 */
         .rbx{
+            position: relative;
+            /* 속박스 .rbxIn의 부모자격 필수! */
             width: 50%;
             /* height: 400px; */
             /* height: 50%; */
@@ -63,6 +82,17 @@
                 x = 52.47
             */
         }
+
+        /* 비율유지속박스 - 부모는? .rbx */
+        .rbxIn{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            /* 모든위치값을 0으로 주면
+            부모박스에 밀착하여 붙는다! */
+        }
         
 
         
@@ -71,11 +101,31 @@
 
         
         /* 내용셋팅 */
+        .cat {
+            position: absolute;
+            bottom: 2%;
+            left: 5%;
+            /* 부모는? .rbxIn */
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-size: 1.5vw;
+            font-weight: bold;
+            line-height: 2;
+            text-shadow: 2px 2px 2px #000;
+        }
         
         
 
         /* 800px이하 미디어쿼리 */
-        
+        @media screen and (max-width:800px) {
+            .rbx{
+                width: 100%;
+            }
+            .cat{
+                font-size: 3vw;
+            }
+        }
         /* 미디어쿼리 */
 
        
@@ -83,16 +133,22 @@
 </head>
 
 <body>
+    <!-- 비율유지박스 -->
     <div class="rbx">
-
-        <dl class="cat">
-            <dt>출연진</dt>
-            <dd>이제훈(김도기역)</dd>
-            <dd>이솜(강하나역)</dd>
-            <dd>김의성(장성철역)</dd>
-        </dl>
-        <!-- <div class="temp"></div> -->
-    </div>
+        <!-- 비율유지속박스 -->
+        <div class="rbxIn">
+            <dl class="cat">
+                <dt>출연진</dt>
+                <dd>이제훈(김도기역)</dd>
+                <dd>이솜(강하나역)</dd>
+                <dd>김의성(장성철역)</dd>
+            </dl>
+        </div><!-- .rbxIn -->
+    </div><!-- .rbx -->
+    
+    <!-- <div class="rbx">
+        <div class="temp"></div>
+    </div> -->
 
 
 </body>
