@@ -51,7 +51,7 @@ html,body{
     transform: translate(-50%,-50%);
     /* 트랜스폼 정중앙 이동하기 */
 
-    outline: 4px dotted lime;
+    /* outline: 4px dotted lime; */
 }
 
 /* Click Here! 글자박스 */
@@ -69,7 +69,8 @@ html,body{
 }
 /* 엔터박스 마우스 오버시 글자박스 변경 */
 #enter:hover span{
-
+    transform: scale(2);
+    color: chartreuse;
 }
 
 /* 엔터박스 로고 이미지 */
@@ -79,5 +80,5 @@ html,body{
 }
 /* 엔터박스 오버시 로고 이미지 */
 #enter:hover img{
-    
+    transform: rotate(-15deg) scale(1.5);
 }
