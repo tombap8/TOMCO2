@@ -167,11 +167,25 @@
                             // 문구 데이터를 for of로 하나씩 나누기
                             for(let m of txt){
                                 console.log("한글자씩:",m);
-                                newtxt += `<span>${m}</span>`;
+                                if(m===" ") // 스페이스일 경우
+                                    newtxt += "&nbsp;&nbsp;&nbsp;";
+                                else // 그 밖에 문자일 경우
+                                    newtxt += `<span>${m}</span>`;
                             } //////// for of //////////
 
+                            // &nbsp; 는 띄어쓰기 특수문자처리
+                            // 특수문자는 엔퍼센드와 세미콜론 사이에
+                            // 표현함-> &...;
+                            // nbsp 
+                            // -> No-Break Space(줄바꿈없는 공백)
+
                             // 문구데이터를 넣을 대상에 출력!
-                            document.querySelector
+                            document.querySelector(".show")
+                            .innerHTML = newtxt;
+
+                            // 영화 한마디 타이틀 보이기
+                            document.querySelector(".showtit")
+                            .style.display = "block";
 
 
 
