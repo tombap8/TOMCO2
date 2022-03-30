@@ -111,12 +111,83 @@
                     let data = mvi[btxt]; // 객체명[속성명]
                     console.log("할당객체:",data);
 
+                    // 3. 해당요소에 데이터 넣어주기
+                    // for in문 사용!!!
+                    for(let z in data){
+                        // z변수는 객체의 속성명이다!
+                        // 속성값은 객체변수[속성명] -> data[z]
+                        // console.log("변수z:",z);
+                        // console.log("객체값:",data[z]);
+
+                        // 각 속성명에 해당하는 데이터 셋팅
+                        switch (z){
+                            // 1. 포스터 넣기
+                            case "포스터":
+                                document.querySelector(".photo")
+                                .innerHTML =
+                                `<img src="${data[z]}" alt="포스터">`;
+                                break;
+                            // 2. 제목 넣기
+                            case "제목":
+                                document.querySelector(".tit")
+                                .innerText =
+                                `영화명: ${data[z]}`;
+                                break;
+                            // 3. 장르 넣기
+                            case "개요":
+                                document.querySelector(".sum")
+                                .innerText =
+                                `장르: ${data[z]}`;
+                                break;
+                            // 4. 감독 넣기
+                            case "감독":
+                                document.querySelector(".dir")
+                                .innerText =
+                                `감독: ${data[z]}`;
+                                break;
+                            // 5. 배우 넣기
+                            case "출연":
+                                document.querySelector(".act")
+                                .innerText =
+                                `배우: ${data[z]}`;
+                                break;
+
+                        } ///////// switch case ////////
+
+                        // 영화 한마디 넣기 /////
+                        // for of문으로 문자데이터 잘라넣기
+                        // 한글자씩 span태그로 싸서 해당요소에 넣음!
+                        if(z==="문구"){
+                            // 문구데이터 담기
+                            let txt = data[z];
+                            console.log("문구데이터:",txt);
+                        } /////////// if ///////////
+
+
+                    } /////// for in ///////////
+
                 }; ////////////// click함수 //////////////
 
             } ////////// for of /////////
 
 
         }); ///////////////// 로드구역 /////////////////////
+
+        /*************************************************** 
+            [ 객체를 위한 for in 문 ]
+
+            - 구문:
+            for(변수 in 객체){코드}
+
+            - 작동원리:
+            객체의 개수만큼 순서대로 속성명과 속성값을 가져옴
+
+            - 변수는 객체의 속성명이다!
+
+            - 객체의 값을 사용하려면 for in문 안에 
+                객체[변수] 로 쓰면 됨!
+
+        ***************************************************/
         
     </script>
 </head>
