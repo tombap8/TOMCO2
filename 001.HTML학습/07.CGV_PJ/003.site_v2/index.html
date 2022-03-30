@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGV에 오신것을 환영합니다!</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <!-- 1. 상단영역 -->
+    <div>
+        <header id="top" class="part">
+            <!-- 1-1. 페이지 타이틀 -->
+            <h1 class="tit">CGV 예고편 상영관</h1>
+            <!-- 1-2. 전체메뉴(GNB) -->
+            <nav class="gnb">
+                <ul class="glist">
+                    <li>
+                        <a href="#">영화</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">무비차트</a>
+                                </li>
+                                <li>
+                                    <a href="#">HD 트레일러</a>
+                                </li>
+                                <li>
+                                    <a href="#">무비파인더</a>
+                                </li>
+                                <li class="bdt">
+                                    <a href="#">CGV아트하우스</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">예매</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">빠른예매</a>
+                                </li>
+                                <li>
+                                    <a href="#">상영시간표</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">극장</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">CGV 극장</a>
+                                </li>
+                                <li>
+                                    <a href="#">특별관</a>
+                                </li>
+                                <li class="bdt">
+                                    <a href="#">CLUB 서비스</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">이벤트&amp;컬처</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">이벤트</a>
+                                </li>
+                                <li>
+                                    <a href="#">기프트샵</a>
+                                </li>
+                                <li>
+                                    <a href="#">매거진</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </li>
+                </ul>
+                <!-- 영사기박스 -->
+                <!-- aside는 서브내용을 담는 div와 같은요소 -->
+                <aside id="cam">
+                    <!-- 영사기 이미지 -->
+                    <img src="./images/gnb.png" alt="영사기">
+                    <!-- 빔표시박스 -->
+                    <div class="beam"></div>
+                </aside>
+            </nav>
+        </header>
+    </div>
+    <!-- 2. 메인영역 -->
+    <div>
+        <main id="cont" class="part">
+            <!-- 2-1.스크린 박스 -->
+            <div id="screen">
+                <!-- 유튜브 아이프레임 -->
+                <iframe
+                    src="https://www.youtube.com/embed/2hnkUpo_2yg?autoplay=1&mute=1&loop=1&playlist=2hnkUpo_2yg&playsinline=1"
+                    allow="autoplay"></iframe>
+                <!-- 
+                    유튜브 src 값 구성
+                    https://www.youtube.com/embed/동영상ID?옵션
+
+                    [ 물음표 뒤에 옵션설명 ]
+                    ?
+                    autoplay=1 자동플레이
+                    &
+                    mute=1 소리없앰
+                    &
+                    loop=1 반복재생
+                    &
+                    playlist=동영상ID -> 반복재생할 영상ID
+                    &
+                    playsinline=1 ->  아이폰에서 인라인재생
+
+                 -->
+            </div>
+            <!-- 2-2. 예고편 선택메뉴 -->
+            <nav class="mlist">
+                <ul>
+                    <li>
+                        <a href="#" onclick="chgMV('-5Dc8EMVYBo')">
+                            <img src="./images/m1.jpg" alt="듄">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>듄</li>
+                                <li>티모시 샬라메</li>
+                                <li>모험,드라마,SF</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="chgMV('_fuaoomS7zs')">
+                            <img src="./images/m2.jpg" alt="유체이탈자">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>유체이탈자</li>
+                                <li>윤계상,임지연</li>
+                                <li>액션</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="chgMV('BdkSkI61aGo')">
+                            <img src="./images/m3.jpg" alt="이터널스">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>이터널스</li>
+                                <li>안젤리나졸리,마동석</li>
+                                <li>액션,판타지</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="chgMV('dWEQjU3GCE0')">
+                            <img src="./images/m4.jpg" alt="연애 빠진 로맨스">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>연애 빠진 로맨스</li>
+                                <li>전종서, 손석구</li>
+                                <li>멜로/로맨스,코미디</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="chgMV('Y1_Ujpsn1Jc')">
+                            <img src="./images/m5.jpg" alt="프렌치 디스패치">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>프렌치 디스패치</li>
+                                <li>틸다 스윈튼</li>
+                                <li>코미디,드라마</li>
+                            </ol>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="chgMV('yFZh-Wqi7RI')">
+                            <img src="./images/m6.jpg" alt="스파이더맨:노웨이홈">
+                            <!-- 영화정보 -->
+                            <ol class="movtxt">
+                                <li>스파이더맨:노웨이홈</li>
+                                <li>톰 홀랜드</li>
+                                <li>액션,모험</li>
+                            </ol>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </main>
+    </div>
+    <!-- 3. 하단영역 -->
+    <div>
+        <footer id="info" class="part">
+            <!-- 3-1. 회사정보 -->
+            <address>
+                <img src="./images/blogo.png" alt="하단로고">
+                <span>
+                    (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)  <br>
+                    대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662 <br>
+                    개인정보보호 책임자 : 정종민대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
+                </span>
+            </address>
+            <!-- 3-2. sns박스 -->
+            <ul class="sns">
+                <li>
+                    <a href="#" title="페이스북 바로가기" target="_blank">
+                        <span class="ir">
+                            페이스북 바로가기
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="트위터 바로가기" target="_blank">
+                        <span class="ir">
+                            트위터 바로가기
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="인스타그램 바로가기" target="_blank">
+                        <span class="ir">
+                            인스타그램 바로가기
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+</body>
+
+</html>

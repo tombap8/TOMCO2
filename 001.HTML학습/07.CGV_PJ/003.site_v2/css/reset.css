@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CGV PJ 리셋 CSS - reset.css */
+/* 요소의 초기화 */
+
+/* 1. 마진,패딩 없애기 */
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,dt,dd,p{
+    margin: 0;
+    padding: 0;
+}
+
+/* 가로스크롤 생김 방지!(특히 모바일) */
+html,body{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* 2. a요소 리셋 */
+a{
+    color: #fff;
+    /* 글자색 흰색 */
+    text-decoration: none;
+    /* 밑줄없앰 */
+}
+
+/* 3. ul,ol 리셋 */
+ul,ol{
+    list-style: none;
+    /* 블릿/숫자 제거 */
+}
+
+/* 4. h요소 글자크기 리셋 */
+h1,h2,h3,h4,h5,h6{
+    font-size: 100%;
+    /* html의 기본글자크기(16px)와 일치 초기화 */
+}
