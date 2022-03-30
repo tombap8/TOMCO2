@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>객체를 위한 for문</title>
     <style>
+        
+        button{
+            font-size: 30px;
+        }
+
         .minfo {
             display: flex;
             /* 자식요소 박스 옆으로 흐르게! */
@@ -68,6 +73,50 @@
         }; ///////////////// mvi 객체 //////////////////////
 
         /////// 로드구역 ////////////////////////////////
+        window.addEventListener("DOMContentLoaded", ()=>{
+
+            console.log("로딩완료");
+
+            /***************************************************** 
+                [ 구현내용 ]
+                - 버튼을 클릭하면 해당 영화의 정보를 화면에 보여준다!
+                - 이벤트대상: button
+                - 이벤트종류: click
+                - 이벤트대상 구분: 클릭된 버튼의 글자데이터
+                - 변경대상: .tit, .sum, .dir, .act
+                - 변경내용: 대상의 각 내용에 맞게 객체로부터 정보를
+                            셋팅함!
+            *****************************************************/
+
+            // 대상변수 할당하기
+            // 이벤트 대상: button
+            let btn  = document.querySelectorAll("button");
+            console.log("버튼개수:",btn.length);
+
+            // 대상변수 click설정하기 ////
+            // for of문 사용!
+            for(let x of btn){
+                // x는 버튼요소 자신
+                // ((중요)) for문에서 let으로 선언된 지역변수는
+                // for문 내부의 익명함수 내부로 전달된다!
+                // 반면 var 로 선언하면 전역변수로 마지막 값이 덮어씀
+
+                // 버튼에 click이벤트 속성설정하기
+                x.onclick = ()=>{
+                    // console.log("버튼텍스트:",x.innerText);
+                    // 1. 버튼 텍스트 읽어오기
+                    let btxt = x.innerText;
+
+                    // 2. 버튼 텍스트에 해당하는 객체할당하기!
+                    let data = mvi[btxt]; // 객체명[속성명]
+                    console.log("할당객체:",data);
+
+                }; ////////////// click함수 //////////////
+
+            } ////////// for of /////////
+
+
+        }); ///////////////// 로드구역 /////////////////////
         
     </script>
 </head>
