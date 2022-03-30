@@ -17,6 +17,64 @@
         ];
 
         //////// 로드구역 ////////////////////////////////
+        window.addEventListener("load",()=>{
+
+            console.log("로딩완료!");
+
+            // 이벤트 대상선정: .btngo
+            let btngo = document.querySelectorAll(".btngo");
+            console.log("버튼개수:",btngo.length);
+
+            // 출력 대상선정: .minfo
+            let minfo = document.querySelectorAll(".minfo");
+            console.log("출력박스개수:",minfo.length);
+
+            // 버튼 개수만큼 click이벤트 속성 셋팅을 하고 싶다~!
+            // 일반 for문으로 셋팅이 가능하다... 그러나...
+            // 항상 이런경우 너무 뻔하다~~~~!
+            /* 
+                for of문으로 간단하게 셋팅!
+                ____________________________
+
+                for(변수 of 배열/컬렉션){실행문}
+                -> 시;한;증 이 필요없다!!!
+                -> 배열/컬렉션 개수만큼 알아서 돌아줌!
+                -> ES6에서 새롭게 등장함!
+            */
+           for(let x of btngo) {
+                // 변수x에 버튼요소 개수만큼 하나씩 들어옴
+                // x는 각각의 요소자신!
+                console.log("버튼텍스트:",x.innerText);
+
+                // 클릭이벤트 속성 셋팅하기!
+                x.onclick = () => {
+
+                    // 데이터 타겟변수 : 배열변수 매칭함!
+                    let data;
+
+                    // 1. 버튼별로 구분하여 배열변수 할당!
+                    switch(x.innerText){
+                        case "조제": data = mv1; break;
+                        case "원더 우먼 1984": data = mv2; break;
+                        case "도굴": data = mv3; break;
+                    } //////// switch case //////
+
+                    // 선택된 배열값은?
+                    console.log("선택배열:",data);
+
+                    // 2. 해당요소(.minfo)에 배열값 넣기
+                    let idx = 0;
+                    for(let y of data){
+                        minfo[idx].innerText = y;
+                        idx++;//1씩증가
+                    } ////// for of ///////
+
+
+                }; ////// click 함수 ///////
+
+           } /////////// for of문 ////////////////
+
+        }); ///////////////// load //////////////////////
         
     </script>
     <style>
