@@ -257,13 +257,15 @@ h1.tit{
     */
 }
 /* 2-1. 스크린 박스 */
+/* 비율유지박스 자식으로 위치와 크기를 %로 설정하면
+부모를 따라 자연스럽게 비율유지가 된다!!! */
 #screen{
     position: absolute;
-    top: 136px;
-    left: 257px;
+    top: 17.2%;
+    left: 21.3%;
     /* 부모는? #cont */
-    width: 701px;
-    height: 398px;
+    width: 58.6%;
+    height: 50.7%;
     background-color: #000;
 }
 /* 스크린 아이프레임 */
