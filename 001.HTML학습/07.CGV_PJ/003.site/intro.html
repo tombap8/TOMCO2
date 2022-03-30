@@ -8,7 +8,11 @@
 </head>
 <body>
     <!-- 1. 배경 비디오 넣기 -->
+    <video id="myvid" src="images/cgv.mp4" autoplay muted loop playsinline></video>
 
+    
+    <!-- object-fit 옵션 적용이 이미지도 동일한지 테스트! -->
+    <!-- <img src="images/poster.png" alt="포스터" id="myvid"> -->
 
 
     <!-- 동영상 자동재생루프옵션 -->
@@ -46,7 +50,7 @@
         source요소 맨 하단의 쓴 글자가 화면에 출력된다!
         
         예시코드)
-        
+
         <video autoplay muted loop>
             <source src="images/cgv.mp4" type="video/mp4">
             <source src="images/cgv.ogg" type="video/ogg">
@@ -54,9 +58,18 @@
             당신의 브라우저는 본 비디오를 재생할 수 없습니다!
         </video>
 
+        _________________________________________
 
+        [ 비디오 압축형식 ]
+        1. mp4 - 최신 브라우저에서 지원하는 가장 보편적인
+            비디오 압축형식(오디오 전용은 mp3)        
+        2. ogg - 오픈 표준파일 형식 Xiph.org 재단에서 개발
+        3. webm - 개방형 미디어 컨테이너. 높은 비디오 재생품질
 
-
+        -> mkv, mov, avi 등과 같이 기존에 사용하던 일반
+        압축형식은 브라우저에서 지원하지 않는 경우가 많다.
+        따라서 비디오를 mp4형식으로 변환하여 올리게 좋다!
+        (유튜브 동영상은 모두 mp4로 변환하여 서비스중이다!)
 
      -->
     
