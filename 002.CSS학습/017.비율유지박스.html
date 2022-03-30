@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비율유지박스(Ratio Box)</title>
+    <title>017.비율유지박스(Ratio Box)</title>
     <style>
         html,body{
             margin: 0;  
@@ -20,7 +20,49 @@
 
         */ 
 
-        
+        /* 비율유지 박스 */
+        .rbx{
+            width: 50%;
+            /* height: 400px; */
+            /* height: 50%; */
+            /* padding-top: 50%; */
+
+            background: url(./images/mobum.jpg) no-repeat center/cover;
+            margin: 0 auto;
+            /* 마영오! */
+        }
+
+        /* .rbx 자식요소 .temp에 패딩탑을 %로 준다! */
+        .temp{
+            padding-top: 100%;
+        }
+
+        /* 
+            [ 패딩탑에 의한 비율높이값 원리 ]
+            블록자식요소에게
+            패딩탑값을 퍼센트로 줄경우
+            부모요소의 가로에 대한 비율이 성립한다!
+
+            -> 자식요소를 직접 만들경우 
+            지워질 수 있으므로
+            이것을 대신하여 가상요소 ::before를
+            사용하여 이것을 구현한다!!!
+        */
+
+        .rbx::before{
+            content: '';
+            display: block;/* div와 유사! */
+            padding-top: 52.47%;
+            /* 
+                비율 계산법
+                가로 : 세로 = 100 : x
+                x = 세로 * 100 / 가로
+                ______________________
+
+                x = 614 * 100 / 1170
+                x = 52.47
+            */
+        }
         
 
         
@@ -42,16 +84,17 @@
 
 <body>
     <div class="rbx">
-        
+
+        <dl class="cat">
+            <dt>출연진</dt>
+            <dd>이제훈(김도기역)</dd>
+            <dd>이솜(강하나역)</dd>
+            <dd>김의성(장성철역)</dd>
+        </dl>
+        <!-- <div class="temp"></div> -->
     </div>
 
 
-<!-- <dl class="cat">
-    <dt>출연진</dt>
-    <dd>이제훈(김도기역)</dd>
-    <dd>이솜(강하나역)</dd>
-    <dd>김의성(장성철역)</dd>
-</dl> -->
 </body>
 
 </html>
