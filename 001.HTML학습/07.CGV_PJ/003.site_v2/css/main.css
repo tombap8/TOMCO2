@@ -240,8 +240,21 @@ h1.tit{
 #cont{
     position: relative;
     /* 부모자격 */
-    height: 788px;
-    background: url(../images/bg.jpg) no-repeat;
+    /* height: 788px; 
+    -> 비율유지위해 높이값을 없앰! */
+    background: url(../images/bg.jpg) no-repeat 0/cover;
+}
+/* 메인 상영관 이미지와 같은 비율로 패딩탑밀기 설정 */
+/* #cont는 이미 .rbx때문에 가상요소 before가 있음! */
+#cont::before{
+    padding-top: 65.66%;
+    /* 패딩탑 비율만 셋팅함! 
+        비율계산:
+        가로 : 세로 = 100 : x
+        x = 세로 * 100 / 가로
+        x = 788 * 100 / 1200
+        x = 65.66
+    */
 }
 /* 2-1. 스크린 박스 */
 #screen{
