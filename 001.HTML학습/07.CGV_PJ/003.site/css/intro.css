@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* CGV PJ 인트로 페이지 CSS - intro.css */
+
+/* 외부CSS합치기 */
+@import url(reset.css);
+@import url(core.css);
+
