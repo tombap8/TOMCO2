@@ -166,11 +166,15 @@
                 let tg = document.querySelector("#mbox img");
                 // console.log("이미지경로:",tg.src);
 
+                // 글자출력박스 : .imgtxt ////////////
+                let imgtxt = document.querySelector(".imgtxt");
+
 
                 //////////////////////////////////////////////
 
                 // 첫번째 이미지 설명 넣기
                 // 대상: .imgtxt -> imgtxt변수
+                imgtxt.innerText = itxt[0];
 
 
 
@@ -182,18 +186,43 @@
                     // gubun - 구분값 전달변수(1-오른쪽,0-왼쪽)
 
                     // 1. 호출 및 전달값확인
-                    console.log("나야나!",gubun);
+                    console.log("나야나!", gubun);
 
                     // 2. 변경대상:
                     // 중앙이미지 : #mbox img -> tg변수
 
                     // 3. 이미지번호 증감
-                    if(gubun===1){
+                    // 값이 1이면 조건문에서 true
+                    // 값이 0이면 조건문에서 false
 
-                    }
+                    // 3-1. 오른쪽 버튼일때 /////
+                    if (gubun) {
+                        num++; // 1씩증가
+                        if (num === 8) num = 1; //한계값
+                    } ////////// if //////////
+
+                    // 3-2. 왼쪽 버튼일때 ////////
+                    else {
+                        num--; //1씩감소
+                        if (num === 0) num = 7; //한계값
+                    } ///////// else /////////
+
+                    console.log("이미지번호:", num);
 
                     // 4. 이미지 src변경하기
-                    tg.setAttribute("src","./images/img2.jpg");
+                    tg.src = `./images/img${num}.jpg`;
+                    // tg.setAttribute("src", "./images/img2.jpg");
+
+                    // 속성셋팅 방법 2가지:
+                    // (1) 선택요소.속성명 = 값
+                    // (2) 선택요소.setAttribute(속성명,속성값)
+
+                    // 5. 이미지 설명 배열에서 읽어와서 넣기
+                    // 배열번호 = 이미지번호(num) - 1
+                    imgtxt.innerText = itxt[num - 1];
+
+                    // 6. 이미지 설명 글자색 변경하기
+                    imgtxt.style.color = tcolor[num - 1];
 
                 }; ////////// chgImg 함수 ////////////
 
