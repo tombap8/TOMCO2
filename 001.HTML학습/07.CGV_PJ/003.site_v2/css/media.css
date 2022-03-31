@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CGV PJ 미디어쿼리 CSS - media.css */
+
+/************** 1300px 이하 시작 **************/
+@media screen and (max-width:1300px) {
+
+    /* GNB 메뉴 */
+    .gnb {
+        right: 60px;
+    }
+}
+
+/************** 1300px 이하 끝 **************/
+
+
+/************** 1050px 이하 시작 **************/
+@media screen and (max-width:1050px) {
+
+    /* GNB ul */
+    .glist {
+        flex-direction: column;
+        /* 수직방향 */
+        align-items: flex-end;
+        /* 진행방향 수직으로 아래쪽(오른쪽) */
+    }
+}
+
+/************** 1050px 이하 끝 **************/
