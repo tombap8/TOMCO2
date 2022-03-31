@@ -266,7 +266,7 @@
                 // console.log("자동넘김버튼개수:",abtn.length);
 
                 // 인터발용 변수
-
+                let autoI;
 
                 // 자동넘김버튼 클릭시
                 abtn[0].onclick = () => {
@@ -280,13 +280,26 @@
                     abtn[1].style.display = "inline-block";
 
                     // 인터발함수 호출!
-                    setInterval(()=>chgImg(1),1000);
+                    autoI = setInterval(() => chgImg(1), 1000);
                     // setInterval(함수,시간);
                     // 함수호출시 전달값이 없다면 함수명만 쓸 수 있음
                 }; //////// click함수 /////////
 
 
                 // 멈춤버튼 클릭시 인터발지우기!
+                abtn[1].onclick = () => {
+
+                    // 자기자신 숨기기
+                    event.currentTarget
+                        .style.display = "none";
+
+                    // 자동넘김 버튼 보이기
+                    abtn[0].style.display = "inline-block";
+
+                    // 인터발지우기
+                    // 반드시 변수에 담긴 인터발을 지울 수 있다!
+                    clearInterval(autoI);
+                }; //////// click함수 /////////
 
 
                 /// 타임아웃 함수로 미니언즈 애니하기! ///////
