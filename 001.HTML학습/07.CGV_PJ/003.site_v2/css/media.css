@@ -46,6 +46,7 @@
 
 /************** 780px 이하 시작 **************/
 @media screen and (max-width:780px) {
+
     /* 하단영역 */
     #info {
         height: auto;
@@ -57,7 +58,7 @@
     }
 
     /* 회사정보 */
-    #info address span{
+    #info address span {
         display: block;
     }
 

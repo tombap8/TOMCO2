@@ -291,11 +291,25 @@ h1.tit{
 /* ul 플렉스박스 */
 .mlist ul{
     display: flex;
+    perspective: 480px;
+    /* 원근설정-적용할 요소의 부모박스에 설정 */
 }
 /* 각 리스트 */
 .mlist ul>li{
     margin: 0 min(1vw,9px);
     /* 양쪽마진만 9px과 1vw중 작은것! */
+    transform: rotateX(40deg);
+    /* x축회전 */
+    transform-origin: bottom;
+    /* 회전축 세로방향 하단으로 변경 */
+
+    /* 트랜지션: 속시이지 */
+    transition: .4s ease-out;
+}
+/* li에 마우스 오버시 x축회전 일어남! */
+.mlist ul>li:hover{
+    transform: rotateX(0deg);
+    z-index: 1;
 }
 
 .mlist img{
@@ -323,8 +337,8 @@ h1.tit{
     line-height: 2;
     text-align: center;
 
-    /* 트랜지션: 속시이지 */
-    transition: top .4s ease-out;
+    /* 트랜지션: 속시이지 - 지연시간 0.3초 */
+    transition: top .4s ease-out .3s;
 }
 /* 부모li에 마우스 오버시 설명박스 올라오기 */
 .mlist ul>li:hover .movtxt{
