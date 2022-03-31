@@ -11,7 +11,10 @@ html,body,h1,h2,h3,h4,h5,h6,ul,ol,dt,dd,p{
 /* 가로스크롤 생김 방지!(특히 모바일) */
 html,body{
     width: 100vw;
+}
+body{
     overflow-x: hidden;
+    /* 가로스크롤 없앰은 body만 준다! */
 }
 
 /* 2. a요소 리셋 */
