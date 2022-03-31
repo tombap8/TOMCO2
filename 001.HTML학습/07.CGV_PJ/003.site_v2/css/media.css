@@ -81,12 +81,14 @@
 
 /************** 600px 이하 시작 **************/
 @media screen and (max-width:600px) {
+
     /* 메인영역 비율변경 */
     #cont.rbx::before {
         padding-top: 150%;
     }
+
     /* 메인 배경 속성변경 */
-    #cont{
+    #cont {
         background-position: top;
         /* 배경위치 top만 쓰면 가로는 자동 center */
         background-size: 130%;
@@ -100,6 +102,23 @@
         left: 12.8%;
         width: 76%;
         height: 28.8%;
+    }
+
+    /* 예고편 선택메뉴 */
+    .mlist {
+        width: 90vw;
+        /* 가로크기지정 */
+    }
+
+    /* ul 플렉스박스 */
+    .mlist ul {
+        flex-wrap: wrap;
+        /* 줄바꿈 */
+    }
+
+    .mlist img {
+        width: 28vw;
+        /* 한줄에 3개 오도록 크기조정 */
     }
 
 }

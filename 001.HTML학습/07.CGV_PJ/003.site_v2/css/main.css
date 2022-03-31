@@ -284,9 +284,6 @@ h1.tit{
     transform: translateX(-50%);
     /* x축 중앙이동 -> 정중앙 */
 
-    overflow: hidden;
-    /* 영화설명 숨기기 
-    - 부모자격이 있는 요소가 숨길수 있음! */
 }
 /* ul 플렉스박스 */
 .mlist ul{
@@ -296,6 +293,11 @@ h1.tit{
 }
 /* 각 리스트 */
 .mlist ul>li{
+    position: relative;
+    /* 부모자격 */
+    overflow: hidden;
+    /* 영화설명 숨기기 
+    - 부모자격이 있는 요소가 숨길수 있음! */
     margin: 0 min(1vw,9px);
     /* 양쪽마진만 9px과 1vw중 작은것! */
     transform: rotateX(40deg);
@@ -324,7 +326,7 @@ h1.tit{
 .movtxt{
     position: absolute;
     top: 100%;/* 부모의 높이값 만큼 */
-    /* 부모는? .mlist */
+    /* 부모는? .mlist ul>li*/
     width: min(8vw,99px);
     /* 이미지 가로크기와 똑같이 잡는다! */
     height: 100%;
