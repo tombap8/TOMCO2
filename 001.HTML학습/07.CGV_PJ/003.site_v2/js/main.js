@@ -23,6 +23,35 @@ function chgMV(mvid){ // mvid - 영화아이디값 전달변수
 window.addEventListener("load",() => {
 
     console.log("로딩완료!");
+    
+    
+    // 영화예고편 동영상 코드 객체 ///
+    const mcode = {
+        "듄":"-5Dc8EMVYBo",
+        "유체이탈자":"_fuaoomS7zs",
+        "이터널스":"BdkSkI61aGo",
+        "연애 빠진 로맨스":"dWEQjU3GCE0",
+        "프렌치 디스패치":"Y1_Ujpsn1Jc",
+        "스파이더맨:노웨이홈":"yFZh-Wqi7RI"
+    }; ///// mcode객체 ///////
+
+    // 포스터 a요소 클릭시 영화 변경하기
+    // 대상: .mlist a
+    let mlink = document.querySelectorAll(".mlist a");
+    console.log("a링크개수:",mlink.length);
+
+    // 클릭이벤트 속성 셋팅하기
+    for(let x of mlink){
+
+        x.onclick = () => {
+            // 각 a요소를 구분해주는 것
+            // -> 자식요소 중 img 의 alt속성에 영화제목있음!
+            let mtit =  x.querySelector("img")
+            .getAttribute("alt");
+            console.log("영화제목:",mtit);
+        }; ///// click 함수 ////
+
+    } //////// for of ///////////
 
     // 포스터 메뉴 li 클릭시 li에 클래스 on넣기
     // 대상: .mlist ul>li
