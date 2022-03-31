@@ -18,10 +18,23 @@
 
     /* GNB ul */
     .glist {
+        top: 139px;
+        left: 54px;
+        padding-top: 6px;
         flex-direction: column;
         /* 수직방향 */
         align-items: flex-end;
         /* 진행방향 수직으로 아래쪽(오른쪽) */
+        display: none;
+    }
+    /* GNB에 마우스 오버시 .glist보이기 */
+    .gnb:hover .glist{
+        display: flex;/* 원본 display로감! */
+    }
+
+    /* 마우스 오버시 서브메뉴 숨기기 */
+    .glist>li:hover .smenu {
+        display: none;
     }
 }
 
