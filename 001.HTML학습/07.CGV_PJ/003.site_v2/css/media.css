@@ -55,11 +55,14 @@
     /* 회사정보 */
     #info address {
         text-align: center;
+        padding: 0;
+        /* 기존 패딩 위,왼쪽 없앰 */
     }
 
     /* 회사정보 */
     #info address span {
         display: block;
+        padding: 5vw;
     }
 
     /* 하단로고 이미지 */
@@ -108,6 +111,7 @@
     .mlist {
         width: 90vw;
         /* 가로크기지정 */
+        bottom: 3%;
     }
 
     /* ul 플렉스박스 */
