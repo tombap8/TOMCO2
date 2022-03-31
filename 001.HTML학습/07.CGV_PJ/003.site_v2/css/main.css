@@ -308,10 +308,13 @@ h1.tit{
     /* 트랜지션: 속시이지 */
     transition: transform .4s ease-out;
 }
-/* li에 마우스 오버시 x축회전 일어남! */
-.mlist ul>li:hover{
+/* li에 마우스 오버시 x축회전 일어남!
++ 클래스 on을 주면 일어남! */
+.mlist ul>li:hover,
+.mlist ul>li.on{
     transform: rotateX(0deg);
     z-index: 1;
+    outline: 1px solid aquamarine;
 }
 
 .mlist img{

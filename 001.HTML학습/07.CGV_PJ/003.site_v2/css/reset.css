@@ -36,3 +36,12 @@ h1,h2,h3,h4,h5,h6{
     font-size: 100%;
     /* html의 기본글자크기(16px)와 일치 초기화 */
 }
+
+/* 5. 이미지 리셋 */
+img{
+    border: none;
+    /* 링크시 보더없앰 */
+    vertical-align: bottom;
+    /* 박스안에 이미지 하단간극 없앰
+    - 값은 bottom, middle, top 상관없음! */
+}
