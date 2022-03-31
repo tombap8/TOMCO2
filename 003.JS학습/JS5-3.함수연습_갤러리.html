@@ -306,6 +306,30 @@
                 // 원리: 미리셋팅된 클래스를 미니언즈요소에
                 // 일정시간 후 넣고/빼고/넣기를 해준다!!!
                 // 변경대상: #mini
+                let mini = document.querySelector("#mini");
+
+                // 2초후에 미니언즈에 class "on1"넣기
+                setTimeout(
+                    ()=>mini.classList.add("on1")
+                ,2000);
+
+                // 4초후에 미니언즈에 class "on1"빼기
+                setTimeout(
+                    ()=>mini.classList.remove("on1")
+                ,4000);
+
+                // 6초후에 미니언즈에 class "on2"넣기
+                setTimeout(
+                    ()=>mini.classList.add("on2")
+                ,6000);
+
+                // 8초후에 미니언즈에 class "on2"빼기 / "on1"넣기
+                setTimeout(
+                    ()=>{
+                        mini.classList.toggle("on1");
+                        mini.classList.toggle("on2");
+                    }
+                ,8000);
 
 
             }); //////// 로드구역 ////////////////
