@@ -44,11 +44,19 @@ window.addEventListener("load",() => {
     for(let x of mlink){
 
         x.onclick = () => {
-            // 각 a요소를 구분해주는 것
+
+            // 1. 각 a요소를 구분해주는 것 읽어오기
             // -> 자식요소 중 img 의 alt속성에 영화제목있음!
             let mtit =  x.querySelector("img")
             .getAttribute("alt");
-            console.log("영화제목:",mtit);
+            // console.log("영화제목:",mtit);
+
+            // 2. 영화코드객체에서 값을 읽어와서 chgMV 함수 호출
+            chgMV(mcode[mtit]);
+
+            // 3. a요소 #으로 인한 상단 튐 방지하기!
+            return false; // 돌아갈때 아무것도 하지마!
+
         }; ///// click 함수 ////
 
     } //////// for of ///////////
