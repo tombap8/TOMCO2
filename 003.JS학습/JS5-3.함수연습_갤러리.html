@@ -261,12 +261,29 @@
 
                 /// 자동넘김 버튼 클릭시 인터발함수 셋팅하기! ////
                 // 이벤트 대상: .abtn button
-
+                let abtn = document
+                    .querySelectorAll(".abtn button");
+                // console.log("자동넘김버튼개수:",abtn.length);
 
                 // 인터발용 변수
 
 
                 // 자동넘김버튼 클릭시
+                abtn[0].onclick = () => {
+                    // console.log("자동넘김!");
+
+                    // 자동넘김 버튼 없애기
+                    event.currentTarget.style.display = "none";
+                    // 화살표함에서는 this대신 event.currentTarget
+
+                    // 멈춤버튼 보이기
+                    abtn[1].style.display = "inline-block";
+
+                    // 인터발함수 호출!
+                    setInterval(()=>chgImg(1),1000);
+                    // setInterval(함수,시간);
+                    // 함수호출시 전달값이 없다면 함수명만 쓸 수 있음
+                }; //////// click함수 /////////
 
 
                 // 멈춤버튼 클릭시 인터발지우기!
