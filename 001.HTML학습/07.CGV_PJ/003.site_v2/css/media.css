@@ -116,9 +116,19 @@
         /* 줄바꿈 */
     }
 
+    /* 포스터 이미지크기 */
     .mlist img {
         width: 28vw;
         /* 한줄에 3개 오도록 크기조정 */
+    }
+    /* 이미지설명박스 */
+    .movtxt {
+        width: 28vw;
+        /* 한줄에 3개 오도록 크기조정 */
+        font-size: 4vw;
+    }
+    .movtxt li:first-child{
+        font-size: 4.2vw;
     }
 
 }

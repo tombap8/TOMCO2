@@ -306,7 +306,7 @@ h1.tit{
     /* 회전축 세로방향 하단으로 변경 */
 
     /* 트랜지션: 속시이지 */
-    transition: .4s ease-out;
+    transition: transform .4s ease-out;
 }
 /* li에 마우스 오버시 x축회전 일어남! */
 .mlist ul>li:hover{
