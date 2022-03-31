@@ -27,9 +27,11 @@
         /* 진행방향 수직으로 아래쪽(오른쪽) */
         display: none;
     }
+
     /* GNB에 마우스 오버시 .glist보이기 */
-    .gnb:hover .glist{
-        display: flex;/* 원본 display로감! */
+    .gnb:hover .glist {
+        display: flex;
+        /* 원본 display로감! */
     }
 
     /* 마우스 오버시 서브메뉴 숨기기 */
@@ -39,3 +41,38 @@
 }
 
 /************** 1050px 이하 끝 **************/
+
+
+
+/************** 780px 이하 시작 **************/
+@media screen and (max-width:780px) {
+    /* 하단영역 */
+    #info {
+        height: auto;
+    }
+
+    /* 회사정보 */
+    #info address {
+        text-align: center;
+    }
+
+    /* 회사정보 */
+    #info address span{
+        display: block;
+    }
+
+    /* 하단로고 이미지 */
+    #info img {
+        float: none;
+        margin-right: 0;
+    }
+
+    /* sns박스 */
+    ul.sns {
+        position: static;
+        justify-content: center;
+        padding: 20px 0;
+    }
+}
+
+/************** 780px 이하 끝 **************/
