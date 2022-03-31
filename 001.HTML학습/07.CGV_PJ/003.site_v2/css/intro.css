@@ -82,3 +82,14 @@ html,body{
 #enter:hover img{
     transform: rotate(-15deg) scale(1.5);
 }
+
+/* 미디어쿼리 - 600px이하 시작 */
+@media screen and (max-width:600px) {
+    /* Click Here 글자박스 */
+    #enter span {
+        white-space: nowrap;
+        /* 줄바꿈방지 */
+        font-size: 6vw;
+    }
+}
+/* 미디어쿼리 - 600px이하 끝 */
