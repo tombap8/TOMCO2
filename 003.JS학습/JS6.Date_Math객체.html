@@ -45,6 +45,43 @@
 
                     console.log("시간찍어!");
 
+                    // 날짜 객체로 시간찍기
+                    // Date객체: 날짜, 시간을 표현하는 객체
+                    // - 객체 생성법 : new 키워드로 생성!
+
+                     let today = new Date();
+                     // Date객체를 메모리에 생성함!
+
+                     // 1. 년도 찍기 : tt[0]
+                     tt[0].innerText = today.getFullYear();
+                     // getFullYear() 전체년도
+                     // 참고) getYear() 는 1900년을 뺀 년도
+
+                     // 2. 월 찍기 : tt[1]
+                     tt[1].innerText = today.getMonth()+1;
+                     // getMonth() -> 0부터 시작하는 월의 순번
+                     // 왜 순번을 리턴하나?
+                     // 각 나라별로 부르는 월의 이름이 다르기때문!
+                     // 이 이름을 배열에 넣고 출력할 수 있게
+                     // 0부터 시작하는 순번으로 리턴함!
+                     // 예) ["Jan","Feb",...] 해당순번의 달을 호출
+                     // 월을 숫자로 찍고 싶으면 +1한다!
+
+                     // 3. 일 찍기 : tt[2]
+                     tt[2].innerText = today.getDate();
+                     // getDate()는 날짜를 리턴함
+
+                     // 4. 요일 찍기 : tt[3]
+                     let week = ["일","월","화","수","목","금","토"];
+                     tt[3].innerText = week[today.getDay()];
+                     // getDay() 는 요일의 순번을 리턴함
+                     // 7개의 정해진 나라별 이름을 배열로 셋팅함!
+                     // 0부터 시작하고 일요일부터 시작!
+
+
+
+
+
                }; /////////// showTime 함수 ///////////
 
                // 익명함수는 생성후 아래쪽에서 호출!
@@ -61,21 +98,21 @@
     <!-- 시간표시박스 -->
     <div class="time">
         <!-- 년도 -->
-        <span class="year tt">1999</span>.
+        <span class="year tt"></span>.
         <!-- 월 -->
-        <span class="month tt">10</span>.
+        <span class="month tt"></span>.
         <!-- 일 -->
-        <span class="date tt">12</span>.
+        <span class="date tt"></span>.
         <!-- 요일 -->
-        (<span class="day tt">화</span>) <br>
+        (<span class="day tt"></span>) <br>
         <!-- 오전/오후 -->
-        <span class="noon tt">오전</span>
+        <span class="noon tt"></span>
         <!-- 시간 -->
-        <span class="hour tt">07</span> :
+        <span class="hour tt"></span> :
         <!-- 분 -->
-        <span class="minute tt">08</span> :
+        <span class="minute tt"></span> :
         <!-- 초 -->
-        <span class="second tt">03</span>
+        <span class="second tt"></span>
     </div>
 
     <!-- 이미지박스 -->
