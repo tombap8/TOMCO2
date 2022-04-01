@@ -43,7 +43,7 @@
                 ************************************/
                 const showTime = () => {
 
-                    console.log("시간찍어!");
+                    // console.log("시간찍어!");
 
                     // 날짜 객체로 시간찍기
                     // Date객체: 날짜, 시간을 표현하는 객체
@@ -156,13 +156,14 @@
 
                 // 난수 발생시키기
                 let rdm = Math.random();
-                console.log("난수:",rdm);
+                // console.log("난수:",rdm);
                 // 난수 * 7
                 rdm *= 7;
-                console.log("난수*7:",rdm);
+                // console.log("난수*7:",rdm);
                 // 난수 * 7 -> 소수점아래 올림
                 rdm = Math.ceil(rdm);
-                console.log("난수*7->올림:",rdm);
+                // console.log("난수*7->올림:",rdm);
+
                 /********************************** 
                     [ 내가 원하는 난수 발생시키기 ]
 
@@ -196,8 +197,8 @@
                 **********************************/
 
                 // 예시난수
-                console.log("4~9 사이의 난수:",
-                Math.ceil(Math.random()*6)+3);
+                // console.log("4~9 사이의 난수:",
+                // Math.ceil(Math.random()*6)+3);
 
                 // 랜덤 이미지 웹경로 배열 //
                 const rimg = [
@@ -207,6 +208,51 @@
                     "https://image.ytn.co.kr/general/jpg/2021/0925/202109251350012465_d.jpg"
                 ];
 
+                // 배열이 4개이므로 0~3까지의 랜덤수 필요!
+
+                // 변경대상: 랜덤 이미지 박스 -> .imbx
+                let imbx = document.querySelector(".imbx");
+
+
+                // 직전랜덤수 담을변수
+                let bnum = 1000;
+                // 처음엔 0~3이 아닌 아무수나 넣는다!
+
+                /*********************************** 
+                    함수명: insImg
+                    기능: 박스에 랜덤 이미지 넣기
+                ***********************************/
+               const insImg = () => {
+
+                    // 1. 랜덤수 만들기 : 0~3 사이의 난수
+                    let rnum = Math.floor(Math.random()*4);
+
+                    console.log("랜덤수:",rnum);
+
+                    // 2. 랜덤수가 바로직전수와 같으면 다시발생하기
+                    // 직전 랜덤수를 담을 변수를 함수 바깥에 생성
+                    // while(조건){코드}
+                    // 조건: 현재 발생한 랜덤수가 직전랜덤수와 같은가?
+                    // 만약 true이면 다시발생!
+                    while(rnum === bnum){
+                        // 다시 랜덤수 만들기!
+                        rnum = Math.floor(Math.random()*4);
+                        console.log("다시난수:",rnum);
+                    } //////// while문 ////////////
+
+                    /// >>>>> 중요 <<<<<< ////
+                    // -> while문을 통과후 bnum에 rnum을 저장함!
+                    bnum = rnum;
+                    // 다음번 비교를 위한 직전 랜덤수 저장!
+
+                    // 3. 랜덤 이미지 넣기
+                    // 대상: .imbx -> imbx변수
+                    imbx.innerHTML = 
+                    `<img src="${rimg[rnum]}" alt="랜덤이미지">`;
+
+               }; /////////// insImg 함수 ////////////
+
+               insImg();
 
                 
 
