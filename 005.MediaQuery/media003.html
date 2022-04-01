@@ -129,18 +129,67 @@
         /* 크기별 미디어쿼리 */
 
         /************** 1024px 이하 **************/
-        
+        @media only screen and (max-width:1024px) {
+
+            /* 1.상단영역 2,1 */
+            .top>.pbx {
+                /* 기존선택자 */
+                width: 50%;
+            }
+
+            .top>.top3 {
+                /* 새로선택 */
+                width: 100%;
+            }
+
+            /* 2. 컨텐츠 영역 3,1 */
+            .cont>.pbx {
+                width: 33.33%;
+            }
+
+            .cont>.cont4 {
+                width: 100%;
+            }
+
+        }
 
         /* 1024px 이하 */
 
         /*************** 800px 이하 ***************/
-        
+        @media only screen and (max-width:800px) {
+
+            /* 2. 컨텐츠 영역 3,1 */
+            .cont>.pbx {
+                width: 50%;
+            }
+
+            .cont>.cont4 {
+                width: 50%;
+            }
+
+
+            /* 하단비율변경 */
+            .rbx2::before {
+                padding-top: 50%;
+            }
+        }
 
         /* 800px 이하 */
 
 
         /**************** 500px 이하 ****************/
-        
+        @media only screen and (max-width:500px) {
+
+            /* 전체 레이아웃 하나씩 */
+            .ibx .pbx {
+                width: 100%;
+            }
+
+            /* 전체 비율 높이값 변경! */
+            .rbx::before {
+                padding-top: 100%;
+            }
+        }
 
         /* 500px 이하 */
     </style>

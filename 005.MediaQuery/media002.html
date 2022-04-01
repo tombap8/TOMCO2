@@ -98,14 +98,48 @@
         /* 크기별 미디어쿼리 */
 
         /************** 1024px 이하 **************/   
-         /* 1024px 이하 */
+        @media only screen and (max-width:1024px){
+            /* 1.상단영역 2,1 */
+            .top>.pbx{/* 기존선택자 */
+                width: 50%;
+                height: 180px;
+            }
+            .top>.top3{/* 새로선택 */
+                width: 100%;
+                height: 250px;
+            }
+            /* 2. 컨텐츠 영역 3,1 */
+            .cont>.pbx{
+                width: 33.33%;
+            }
+            .cont>.cont4{
+                width: 100%;
+                height: 600px;
+            }
+
+        } /* 1024px 이하 */
 
         /*************** 800px 이하 ***************/  
-       /* 800px 이하 */
+        @media only screen and (max-width:800px){
+            /* 2. 컨텐츠 영역 3,1 */
+            .cont>.pbx{
+                width: 50%;
+            }
+            .cont>.cont4{
+                width: 50%;
+                height: 300px;
+            }
+        } /* 800px 이하 */
         
 
         /**************** 500px 이하 ****************/  
-        /* 500px 이하 */
+        @media only screen and (max-width:500px){
+            /* 전체 레이아웃 하나씩 */
+            .ibx .pbx{
+                width: 100%;
+                height: 400px;
+            }
+        } /* 500px 이하 */
         
     </style>
 </head>
