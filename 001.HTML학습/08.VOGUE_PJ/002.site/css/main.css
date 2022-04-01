@@ -1,2 +1,30 @@
 @charset "utf-8";
 /* 보그 PJ 메인 페이지 CSS - main.css */
+
+/* 외부파일 합치기 */
+ @import url(reset.css);
+ @import url(core.css);
+ @import url(common.css);
+
+ /* 박스표시 */
+ body *{
+     outline: 1px dashed gray;
+ }
+
+ /* 1. 상단영역 */
+ .top{
+     height: 206px;
+ }
+ /* 2. 메인영역 */
+ /* 컨텐츠 유형1 */
+ .pt1{
+     height: 724px;
+ }
+ /* 컨텐츠 유형2 */
+ .pt2{
+     height: 650px;
+ }
+ /* 3. 하단영역 */
+.info{
+    height: 285px;
+}
