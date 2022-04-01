@@ -11,20 +11,18 @@
      outline: 1px dashed gray;
  }
 
- /* 1. 상단영역 */
- .top{
-     height: 206px;
+ /**************** 2. 메인영역 ****************/
+ 
+ /* 개별 배경이미지 */
+ .bg1{
+     background-image: url(../images/cont1a.jpg);
  }
- /* 2. 메인영역 */
- /* 컨텐츠 유형1 */
- .pt1{
-     /* height: 724px; */
+ .bg2{
+     background-image: url(../images/cont2-1.jpg);
  }
- /* 컨텐츠 유형2 */
- .pt3{
-     /* height: 650px; */
+ .bg3{
+     background-image: url(../images/cont2-2.jpeg);
  }
- /* 3. 하단영역 */
-.info{
-    height: 285px;
-}
+ .bg4{
+     background-image: url(../images/cont2-3.jpg);
+ }
