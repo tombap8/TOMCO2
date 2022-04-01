@@ -71,31 +71,79 @@
         }
         /* 1. 앞면 */
         .cube>span:first-child{
-            background-color: red;
-
+            /* background-color: red; */
+            background: url(images/newyorkCity.jpg) no-repeat right/cover;
             /* 화면방향(Z축)으로 이동하기 */
             transform: rotateY(0deg) translateZ(150px);
         }
         /* 2. 오른쪽면 */
         .cube>span:nth-child(2){
-            background-color: green;
-
+            /* background-color: green; */
+            background: url(images/seoulCity.jpg) no-repeat center/cover;
             /* 화면방향(Z축)으로 이동하기 */
             transform: rotateY(90deg) translateZ(150px);
         }
         /* 3. 뒷면 */
         .cube>span:nth-child(3){
-            background-color: orange;
+            /* background-color: orange; */            
+            background: url(images/parisCity.jpg) no-repeat center/cover;
 
             /* 화면방향(Z축)으로 이동하기 */
             transform: rotateY(180deg) translateZ(150px);
         }
         /* 4. 왼쪽면 */
         .cube>span:nth-child(4){
-            background-color: yellow;
+            background-color: yellow;        
+            background: url(images/cityMain.jpg) no-repeat center/cover;
 
             /* 화면방향(Z축)으로 이동하기 */
             transform: rotateY(-90deg) translateZ(150px);
+        }
+        /* 5. 왼쪽면 */
+        .cube>span:nth-child(5){
+            background-color: blue;   
+            background: url(images/citys.jpg) no-repeat center/cover;
+
+            /* 화면방향(Z축)으로 이동하기 */
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        /* 6. 아랫면 */
+        .cube>span:last-child{
+            background-color: purple;   
+            background: url(images/img2.jpg) no-repeat center/cover;
+
+            /* 화면방향(Z축)으로 이동하기 */
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        /* 큐브회전 애니메이션 클래스 */
+        .cube-ani{
+            /* 애니메이션: 이시이지반방마 */
+            animation: rolling 5s linear infinite;
+            /* 처음에 애니메이션 멈춰있기 */
+            animation-play-state: paused;
+        }
+        /* 클래스 on추가시 애니메이션 작동! */
+        .cube-ani.on{
+            animation-play-state: running;
+        }
+
+        /* 큐브회전 키프레임 */
+        @keyframes rolling {
+            to{
+                transform: rotateX(370deg) rotateY(-330deg);
+                /* 
+                    Y축 양의 방향으로 30도만큼 더해야
+                    처음 위치로 한바퀴 돈것이다!
+                    360도 + 30도 = 390도
+                    반대방향이면
+                    -360도 + 30도 = -330도
+
+                    X축 양의 방향으로 10도만큼 더해야
+                    처음 위치로 한바퀴 돈것이다!
+                    360도 + 10도 = 370도
+                */
+            }
         }
     </style>
 </head>
@@ -109,7 +157,7 @@
     </div>
 
     <!-- 큐브 -->
-    <div class="cube">
+    <div class="cube cube-ani">
         <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
 
