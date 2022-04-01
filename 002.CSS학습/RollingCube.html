@@ -72,8 +72,30 @@
         /* 1. 앞면 */
         .cube>span:first-child{
             background-color: red;
-            
 
+            /* 화면방향(Z축)으로 이동하기 */
+            transform: rotateY(0deg) translateZ(150px);
+        }
+        /* 2. 오른쪽면 */
+        .cube>span:nth-child(2){
+            background-color: green;
+
+            /* 화면방향(Z축)으로 이동하기 */
+            transform: rotateY(90deg) translateZ(150px);
+        }
+        /* 3. 뒷면 */
+        .cube>span:nth-child(3){
+            background-color: orange;
+
+            /* 화면방향(Z축)으로 이동하기 */
+            transform: rotateY(180deg) translateZ(150px);
+        }
+        /* 4. 왼쪽면 */
+        .cube>span:nth-child(4){
+            background-color: yellow;
+
+            /* 화면방향(Z축)으로 이동하기 */
+            transform: rotateY(-90deg) translateZ(150px);
         }
     </style>
 </head>
