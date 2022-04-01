@@ -131,7 +131,7 @@
         /* 큐브회전 키프레임 */
         @keyframes rolling {
             to{
-                transform: rotateX(370deg) rotateY(-330deg);
+                transform: rotateX(370deg) rotateY(-330deg) rotateZ(360deg);
                 /* 
                     Y축 양의 방향으로 30도만큼 더해야
                     처음 위치로 한바퀴 돈것이다!
@@ -142,10 +142,37 @@
                     X축 양의 방향으로 10도만큼 더해야
                     처음 위치로 한바퀴 돈것이다!
                     360도 + 10도 = 370도
+
+                    Z축 방향 회전은 기본값이 0도이므로
+                    360도를 설정할 수 있다!
                 */
             }
         }
     </style>
+    <script>
+        //////////// 로드구역 /////////////////
+        window.addEventListener("load",()=>{
+            // 버튼 대상: .btns button
+            let btns = 
+            document.querySelectorAll(".btns button");
+
+            // 변경 대상: .cube
+            let cube = document.querySelector(".cube");
+
+            // 돌아! 버튼 클릭시 ///////////
+            btns[0].onclick = ()=>{
+                cube.classList.add("on");
+            }; /////// click 함수 /////////
+            
+            // 멈춰! 버튼 클릭시 ///////////
+            btns[1].onclick = ()=>{
+                cube.classList.remove("on");
+            }; /////// click 함수 /////////
+
+
+
+        }); /////////// 로드구역 ///////////////
+    </script>
 </head>
 
 <body>
