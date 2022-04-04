@@ -136,7 +136,24 @@
             }
         }; ///////// lang 객체 ///////
 
-        //// 로드구역 //////////
+        ////////////// 로드구역 ////////////////////////
+        window.addEventListener("load",()=>{
+
+            console.log("로딩완료!");
+
+            // 대상선정
+            // (1) 이벤트 대상: .sel
+            let sel = document.querySelector(".sel"); 
+            // (2) 변경 대상: GNB메뉴 -> #gnb a
+            let gnb = document.querySelectorAll("#gnb a");
+            // (3) 변경 대상: 메인 이미지 -> #cont img
+            let mimg = document.querySelector("#cont img");
+            // (4) 변경 대상: 하단 회사정보 -> #info address
+            let addr = document.querySelector("#info address");
+
+
+
+        }); ////////// 로드구역 ////////////////////////
         
         
     </script>
