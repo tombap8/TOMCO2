@@ -35,7 +35,7 @@
             calc(50% - 크기절반) */
             width: 200px;
             height: 400px;
-            outline: 2px solid #000;
+            /* outline: 2px solid #000; */
 
             transform-style: preserve-3d;
             /* 입체 변형설정하기! */
@@ -48,31 +48,30 @@
             position: absolute;
             width: 200px;
             height: 400px;
-            /* background-color: #fff; */
+            background-color: #fff;
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            outline: 1px dashed red;
+            outline: 1px solid #ffda7b;
         }
 
         /* 1. 앞면 */
         .phone>span:nth-child(1){
             background-image: url(images/ip01.png);
             transform: translateZ(10px);
-            display: none;
         }
         /* 2. 오른쪽면 */
         .phone>span:nth-child(2){
             background-image: url(images/ip03.png);
             width: 20px;
             right: -10px;
-            transform: rotateY(-90deg);
+            transform: rotateY(90deg);
         }
         /* 3. 왼쪽면 */
         .phone>span:nth-child(3){
             background-image: url(images/ip04.png);
             width: 20px;
             left: -10px;
-            transform: rotateY(90deg);
+            transform: rotateY(-90deg);
         }
         /* 4. 아랫면 */
         .phone>span:nth-child(4){
@@ -80,6 +79,19 @@
             height: 20px;
             bottom: -10px;
             transform: rotateX(90deg);
+        }
+        /* 5. 윗면 */
+        .phone>span:nth-child(5){
+            background-image: url(images/ip06.png);
+            height: 20px;
+            top: -10px;
+            transform: rotateX(90deg);
+        }
+        /* 6. 뒷면 */
+        .phone>span:nth-child(6){
+            background-image: url(images/ip02.png);
+            transform: translateZ(-10px) rotateY(180deg);
+            /* 뒤쪽으로 밀고 뒤집는다! */
         }
 
 
