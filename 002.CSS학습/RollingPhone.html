@@ -112,6 +112,42 @@
             }
         } /* 키프레임 */
 
+        /* 흘러가는 글자박스 */
+        .fbx{
+            position: absolute;
+            top: 10%;
+            width: 100vw;
+
+        }
+        /* 텍스트박스(움직일 박스) */
+        .tbx{
+            position: relative;
+            left: 0;
+            /* left값이 -100%까지 애니메이션 됨! */
+            width: 200vw;
+            /* 보이는 화면의 2배 */
+            display: flex;
+            /* 직계자식 ul이 옆으로 흐른다! */
+        }
+        .tbx ul{
+            display: flex;
+            /* 직계자식 li가 옆으로 흐름 */
+            flex: 1;
+            /* 등분할! */
+
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .tbx li{
+            flex: 1;
+            /* 등분할 */
+            text-align: center;
+            font-family: 'Anton';
+            font-size: 4vw;
+            color: #d3d3d3;
+            outline: 1px dashed red;
+        }
 
         
 
