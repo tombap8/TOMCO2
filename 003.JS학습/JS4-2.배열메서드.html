@@ -277,7 +277,7 @@
                 fruit.forEach((val,idx)=>{
                     // 두번째 전달값 idx -> 배열순번
                     temp += 
-                    `<option>${idx}</option>`;
+                    `<option value="${idx}">${val}</option>`;
                 }); ///// forEach ////
 
                 // 값출력
@@ -297,13 +297,42 @@
 
                 // 중간배열 삭제하기 -> splice(순번,지울개수)
                 // splice(순번) -> 순번부터 뒤를 모두지움
-                // 순번은 순번선택박스 : anum 변수
+
+                // 순번은 선택과일 : anum 변수
                 // 지울개수는 지울개수입력박스 : delnum 변수
+
                 if(delnum.value!="") // 지울값이 빈값이 아니면
                     fruit.splice(anum.value,delnum.value);
                 else // 지울값이 빈값이면 순번하나만씀!
                     fruit.splice(anum.value);
                     // 순번부터 뒤쪽배열 모두지움!
+
+                // 배열정보 화면출력하기
+                arrShow();
+                
+                // 배열선택번호 업데이트하기
+                makeNum();
+                
+
+            }; ///////// click ///////////////
+
+
+            // 11. 중간배열 삽입! 버튼 
+            // 대상: mbtn[6]
+            mbtn[6].onclick = () => {
+
+                // 호출확인!
+                console.log("중간배열삽입!");
+
+                // 중간배열 삽입하기 
+                // -> splice(순번,0,넣을값,...)
+                // 지울개수를 0으로 하고 뒤에 넣을값을 콤마로
+                // 여러개 넣을 수 있다!
+
+                // 순번은 선택과일 : anum 변수
+                // 추가할 과일은 #sel에서 선택한다!
+
+                fruit.splice(anum.value,0,sel.value);
 
                 // 배열정보 화면출력하기
                 arrShow();
@@ -339,7 +368,7 @@
         <button class="mbtn">앞배열삭제요~!</button> <br>
 
         <button class="mbtn">중간배열삭제</button>
-        <label for="anum">선택번호:</label>
+        <label for="anum">선택과일:</label>
         <select name="anum" id="anum">
             <option>0</option>
         </select>
