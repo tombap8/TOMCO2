@@ -151,6 +151,22 @@
             // (4) 변경 대상: 하단 회사정보 -> #info address
             let addr = document.querySelector("#info address");
 
+            ////////////////////////////////////////////////
+            // 1. 선택박스 선택변경시 change이벤트에 따라 변경
+            // 이벤트 대상: .sel
+            // 이벤트 종류: change
+            // 변경대상: 메뉴, 메인이미지, 하단정보
+            /////////////////////////////////////////////////
+            sel.onchange = () => {
+
+                // 1. 선택 option value 값 읽어오기
+                // 화살표함수에서는 this대신 event.currentTarget
+                let opt = event.currentTarget.value;
+                console.log("변경!",opt);
+
+            }; ///////// change 함수 /////////////////
+
+
 
 
         }); ////////// 로드구역 ////////////////////////
