@@ -101,9 +101,13 @@
             let sel = document.querySelector("#sel");
 
             // 4. 처음 배열 출력하기 ///////
+            const arrShow = () =>
             showit.innerText = fruit.join("*");
             // join(구분자) 
             // -> 배열사이에 구분자를 넣고 문자로 변환
+
+            // 처음출력호출!
+            arrShow();
 
             // 5. 과일 주세요~! 버튼 클릭시 배열정보로 과일
             // 박스 만들고 이미지 출력하기!
@@ -170,9 +174,19 @@
             // -> 현재 선택된 #sel과일을 맨뒤에 추가함!
             // 대상: mbtn[1]
             mbtn[1].onclick = ()=>{
-                
+
                 // 호출확인!
                 console.log("뒷배열추가!");
+
+                // 선택대상: #sel 인 선택박스의 값
+                // 배열에 맨뒤 값추가는 -> push() 
+                fruit.push(sel.value);
+                // sel.value는 선택된 option값
+                // -> option에 value속성이 있으면 그값
+                // 없으면 데이터값을 가져간다!
+
+                // 배열정보 화면출력하기
+                arrShow();
 
             }; //////// click ///////////////
 
