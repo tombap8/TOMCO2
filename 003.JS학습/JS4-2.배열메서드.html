@@ -89,7 +89,7 @@
                 "체리":"fruits_05"
             }; /// frObj 객체 ////////
 
-            // 3. 대상요소
+            // 3. 대상요소 ////////////////////////////
             // (1) 배열정보출력 : .showit
             let showit = document.querySelector(".showit");
             // (2) 배열로 이미지 출력 : .cont
@@ -98,6 +98,44 @@
             let mbtn = document.querySelectorAll(".mbtn");
             // (4) 선택박스 : #sel
             let sel = document.querySelector("#sel");
+
+            // 4. 처음 배열 출력하기 ///////
+            showit.innerText = fruit.join("*");
+            // join(구분자) 
+            // -> 배열사이에 구분자를 넣고 문자로 변환
+
+            // 5. 과일 주세요~! 버튼 클릭시 배열정보로 과일
+            // 박스 만들고 이미지 출력하기!
+            // 대상: .mbtn 중 1번째 -> mbtn[0]
+            mbtn[0].onclick = ()=>{
+
+                // 1. 호출확인
+                console.log("과일주세요~!");
+
+                // 2. 변경내용: 배열의 과일만큼 ul>li을
+                // 만들어서 html로 .cont에 출력하기!
+                let temp = "<ul>";
+
+                // forEach() 배열전용 메서드 사용!
+                // forEach((값,순번,객체)=>{})
+                // 대상: fruit 배열변수
+                fruit.forEach((val)=>{
+                    // 배열값 확인
+                    console.log("배열값:",val);
+                    temp += `
+                    <li style="background:url(./addimg/${frObj[val]}.png) no-repeat center/cover">${val}</li>
+                    `;
+                }); ///// forEach /////////
+
+                // temp 변수 마무리
+                temp += "</ul>";
+
+                // 화면출력
+                cont.innerHTML = temp;
+
+            }; ////////// click /////////////
+
+
 
 
         }); ////////// 로드구역 ////////////////////////
