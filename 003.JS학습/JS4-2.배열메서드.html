@@ -240,6 +240,41 @@
 
             }; //////// click ///////////////
 
+            /// 중간 배열 지우기 또는 넣기를 위해
+            // 현재 배열번호 선택박스와 지울개수를 요소를 셋업
+
+            // 배열번호 select박스 : #anum
+            let anum = document.querySelector("#anum");
+
+            // 지울개수 input박스 : #delnum
+            let delnum = document.querySelector("#delnum");
+
+            // 현재배열개수만큼 선택순번을 select박스 #anum에
+            // 셋팅하는 함수를 만들자!
+            const makeNum = () => {
+                // 호출확인!
+                console.log("배열순번 선택박스셋팅!");
+
+                // 임시변수
+                let temp = "";//초기화
+
+                // 데이터 대상: fruit배열
+                // 출력 대상: #anum -> anum변수
+                fruit.forEach((val,idx)=>{
+                    // 두번째 전달값 idx -> 배열순번
+                    temp += 
+                    `<option>${idx}</option>`;
+                }); ///// forEach ////
+
+                // 값출력
+                anum.innerHTML = temp;
+
+            }; /////// makeNum 함수 ///////////
+
+            // 배열순번 최초호출
+            makeNum();
+
+
 
 
 
