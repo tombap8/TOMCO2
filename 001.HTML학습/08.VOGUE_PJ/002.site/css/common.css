@@ -7,6 +7,19 @@
     min-height: 206px;
 }
 /* 1-1. 상단메뉴 */
+.tmenu{
+   display: flex;
+   /* 플렉스박스 */
+   max-width: 970px;
+   height: 44px;
+   margin: 0 auto;
+}
+/* 플렉스 박스 직계 자식div */
+.tmenu>div{
+   flex: 1;
+   /* 옆으로 흐르는 등분할 박스 */
+   /* 높이값 100%도 자동! */
+}
 
 /* 1-1-1. sns박스 */
 .sns a{
@@ -19,8 +32,28 @@
    line-height: 16px;
 
    /* 위치조정 */
-   margin-top: 0;
-   margin-right: 0;
+   margin-top: 14px;
+   margin-right: 17px;
+
+   /* 트랜지션: 속시이지 */
+   transition: opacity .2s;
+}
+/* a요소 오버시 */
+.sns a:hover{
+   opacity: 0.8;
+}
+
+/* 트위터 아이콘 조정 */
+.sns a.fi-twitter{
+   font-size: 13px;
+}
+/* 유튜브 아이콘 조정 */
+.sns a.fi-youtube-play{
+   font-size: 11px;
+}
+/* sns 마지막 a요소에 카스이미지 배경이미지로 넣기! */
+.sns a:last-child{
+   background: url(../images/sns_kakao.png) no-repeat center/auto 100%;
 }
 
 /* 1-1-2. 사이드메뉴 */
