@@ -23,7 +23,7 @@
         body {
             background-image:
                 linear-gradient(to bottom, #fff 20%, #c1e1ff 40%, #fff);
-            /* overflow: hidden; */
+            overflow: hidden;
         }
 
         /* 폰박스 부모 */
@@ -112,23 +112,41 @@
             }
         } /* 키프레임 */
 
+
         /* 흘러가는 글자박스 */
         .fbx{
             position: absolute;
-            top: 10%;
             width: 100vw;
 
         }
+
+        /* 2개 흘러가는 박스 위치 따로 셋팅 */
+        .f1{
+            top: 10%;
+        }
+        .f2{
+            bottom: 10%;
+        }
+
         /* 텍스트박스(움직일 박스) */
         .tbx{
             position: relative;
-            left: 0;
-            /* left값이 -100%까지 애니메이션 됨! */
             width: 200vw;
             /* 보이는 화면의 2배 */
             display: flex;
             /* 직계자식 ul이 옆으로 흐른다! */
         }
+
+        /* 텍스트박스 셋업 서로 다르게! */
+        .f1 .tbx{ /* 왼쪽방향으로 */
+            left: 0;
+            /* left값이 -100%까지 애니메이션 됨! */
+        }
+        .f2 .tbx{/* 오른쪽방향으로 */
+            left: -100%;
+            /* left값이 0까지 애니메이션 됨! */
+        }
+
         .tbx ul{
             display: flex;
             /* 직계자식 li가 옆으로 흐름 */
@@ -146,8 +164,34 @@
             font-family: 'Anton';
             font-size: 4vw;
             color: #d3d3d3;
-            outline: 1px dashed red;
+            /* outline: 1px dashed red; */
         }
+
+        /* 키프레임 호츨 클래스1 */
+        .f1 .tbx{
+            /* 이시이지반방마 */
+            animation: txtFlow1 7s linear infinite;
+        }
+
+        /* 글자흐르기 키프레임1 */
+        @keyframes txtFlow1 {
+            to{
+                left: -100%;
+            }
+        } /* 키프레임 */
+
+        /* 키프레임 호츨 클래스2 */
+        .f2 .tbx{
+            /* 이시이지반방마 */
+            animation: txtFlow2 7s linear infinite;
+        }
+
+        /* 글자흐르기 키프레임2 */
+        @keyframes txtFlow2 {
+            to{
+                left: 0;
+            }
+        } /* 키프레임 */
 
         
 
@@ -157,7 +201,25 @@
 <body>
 
     <!-- 흘러가는 글자박스1 -->
-    <div class="fbx">
+    <div class="fbx f1">
+        <div class="tbx">
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 흘러가는 글자박스2 -->
+    <div class="fbx f2">
         <div class="tbx">
             <ul>
                 <li>iPhone 2022</li>
