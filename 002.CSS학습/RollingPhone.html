@@ -94,6 +94,24 @@
             /* 뒤쪽으로 밀고 뒤집는다! */
         }
 
+        /* 폰 회전 애니메이션 클래스 */
+        .phone-ani{
+            /* 애니메이션: 이시이지반방마 */
+            animation: rolling 2s ease-in-out 1s 2 alternate;
+            /* 2회반복, 반대경로애니(alternate) */
+        }
+
+        /* 폰 회전 키프레임 */
+        @keyframes rolling {
+            to{
+                transform: rotateX(370deg) rotateY(-330deg);
+                /* 
+                    x축 : 360도 + 10도 = 370도
+                    y축 : -360도 + 30도 = -330도
+                */
+            }
+        } /* 키프레임 */
+
 
         
 
@@ -102,8 +120,26 @@
 
 <body>
 
+    <!-- 흘러가는 글자박스1 -->
+    <div class="fbx">
+        <div class="tbx">
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+            <ul>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+                <li>iPhone 2022</li>
+            </ul>
+        </div>
+    </div>
+
     <!-- 폰박스 -->
-    <div class="phone">
+    <div class="phone phone-ani">
         <span></span>
         <span></span>
         <span></span>
