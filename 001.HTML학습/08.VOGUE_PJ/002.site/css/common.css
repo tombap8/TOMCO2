@@ -6,6 +6,35 @@
  .top{
     min-height: 206px;
 }
+/* 1-1. 상단메뉴 */
+
+/* 1-1-1. sns박스 */
+.sns a{
+   width: 16px;
+   height: 16px;
+   /* .fi 설정에 inline-block되어 있음(크기적용됨!) */
+   font-size: 16px;
+   text-align: center;
+   vertical-align: top;
+   line-height: 16px;
+
+   /* 위치조정 */
+   margin-top: 0;
+   margin-right: 0;
+}
+
+/* 1-1-2. 사이드메뉴 */
+
+/* 1-2. 로고박스 */
+.logo{
+   display: none;
+}
+
+/* 1-3. GNB박스 */
+.gnb{
+   display: none;
+}
+
 /*************** 3. 하단영역 ***************/
 .info{
    min-height: 285px;
