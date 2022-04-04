@@ -29,9 +29,10 @@
         /* 폰박스 부모 */
         .phone{
             position: absolute;
-            top: calc(50% - 100px);
-            left: calc(50% - 200px);
-            /* 중앙이동 계산! */
+            top: calc(50% - 200px);
+            left: calc(50% - 100px);
+            /* 중앙이동 계산! 
+            calc(50% - 크기절반) */
             width: 200px;
             height: 400px;
             outline: 2px solid #000;
@@ -41,6 +42,46 @@
             transform: rotateX(10deg) rotateY(30deg);
             /* 입체를 잘보이게 약간회전함 */
         }
+
+        /* 폰 각면 공통 */
+        .phone>span{
+            position: absolute;
+            width: 200px;
+            height: 400px;
+            /* background-color: #fff; */
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            outline: 1px dashed red;
+        }
+
+        /* 1. 앞면 */
+        .phone>span:nth-child(1){
+            background-image: url(images/ip01.png);
+            transform: translateZ(10px);
+            display: none;
+        }
+        /* 2. 오른쪽면 */
+        .phone>span:nth-child(2){
+            background-image: url(images/ip03.png);
+            width: 20px;
+            right: -10px;
+            transform: rotateY(-90deg);
+        }
+        /* 3. 왼쪽면 */
+        .phone>span:nth-child(3){
+            background-image: url(images/ip04.png);
+            width: 20px;
+            left: -10px;
+            transform: rotateY(90deg);
+        }
+        /* 4. 아랫면 */
+        .phone>span:nth-child(4){
+            background-image: url(images/ip05.png);
+            height: 20px;
+            bottom: -10px;
+            transform: rotateX(90deg);
+        }
+
 
         
 
