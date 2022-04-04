@@ -51,6 +51,12 @@
 .sns a.fi-youtube-play{
    font-size: 11px;
 }
+/* 유튜브 가상요소 크기조정!(x축만) */
+.sns a.fi-youtube-play::before{ 
+   transform: scaleY(1.2);
+   display: inline-block;
+   /* inline은 트랜스폼이 적용안됨! */
+}
 /* sns 마지막 a요소에 카스이미지 배경이미지로 넣기! */
 .sns a:last-child{
    background: url(../images/sns_kakao.png) no-repeat center/auto 100%;
