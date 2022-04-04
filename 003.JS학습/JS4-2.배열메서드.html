@@ -135,6 +135,30 @@
 
             }; ////////// click /////////////
 
+            // 6. 과일이미지명 셋팅의 객체 속성명으로
+            // 과일 선택박스(#sel) 옵션 셋팅하기!
+            // 대상: #sel -> sel변수
+            // 바로실행하는 함수만들기!
+            // (함수)() -> 자기자신이 바로실행됨!
+            // 재귀호출함수라고도 함!
+            // 재귀호출함수는 한번만 생성후에 바로 실행할
+            // 코드를 만들때 이름없이 코드를 묶어서
+            // 구현후 바로 실행할때 많이 사용한다!!!
+            (()=>{ ///// 과일선택박스 바인딩 /////
+
+                console.log("바로실행?");
+                let temp = "";
+
+                // 객체를 위한 for문 -> for in문 사용!
+                // 객체대상: frObj
+                // 변수x는 객체속성명이다!
+                for(let x in frObj)
+                    temp+=`<option>${x}</option>`;
+                    // console.log(x);
+
+                sel.innerHTML = temp;
+            })(); ///// 과일선택박스 바인딩 끝 /////
+
 
 
 
@@ -169,16 +193,7 @@
         위의 선택번호사용+과일은 리스트에서 선택!
         <!-- 과일선택박스 -->
         <select name="sel" id="sel">
-            <option>사과</option>
-            <option>배</option>
-            <option>용과</option>
-            <option>딸기</option>
-            <option>바나나</option>
-            <option>수박</option>
-            <option>파인애플</option>
-            <option>망고</option>
-            <option>오렌지</option>
-            <option>체리</option>
+            <option>과일</option>
         </select>
     </div>
     <!-- 출력박스 -->
