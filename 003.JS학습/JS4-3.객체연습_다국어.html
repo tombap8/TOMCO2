@@ -185,9 +185,12 @@
                 // 변경내용: src속성값 변경하기!
                 // 변경할 이미지는 코드명과 같다!
                 // images/코드명.jpg
+                mimg.src = `images/${opt}.jpg`;
 
-
-
+                // 5. 주소변경하기
+                // 대상: #info address -> addr변수
+                // 변경내용: data["주소"] 로 텍스트변경
+                addr.innerText = data["주소"];
 
             }; ///////// change 함수 /////////////////
 
