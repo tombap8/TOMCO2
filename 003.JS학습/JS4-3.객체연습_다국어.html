@@ -164,6 +164,25 @@
                 let opt = event.currentTarget.value;
                 console.log("변경!",opt);
 
+                // 2. 언어코드에 따른 객체 데이터 읽어오기
+                let data  = lang[opt];
+                console.log("데이터:",data);
+
+                // 3. "메뉴" 데이터에 따른 메뉴 셋팅하기
+                // 배열값이므로 forEach문 사용!
+                // 배열값 대상: data["메뉴"]
+                data["메뉴"].forEach((val,idx)=>{
+                    console.log(idx,val);
+                    // 각 메뉴 a요소에 메뉴 텍스트 넣기
+                    // 메뉴 대상 : #gnb a -> gnb변수
+                    // gnb변수는 querySelectorAll() 즉 컬렉션!
+                    gnb[idx].innerText = val;
+                    // 배열순번 === 컬렉션순번 === idx
+
+                }); //////// forEach /////////
+
+
+
             }; ///////// change 함수 /////////////////
 
 
