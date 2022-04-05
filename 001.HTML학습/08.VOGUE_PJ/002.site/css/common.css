@@ -87,6 +87,7 @@
 .smsub{
    position: absolute;
    margin-left: -1px;
+   /* 젠틀앱솔루트 상태에서 위치이동은 마진으로! */
    border: 1px solid #e5e5e5;
 }
 /* 서브메뉴 a요소 */
@@ -95,6 +96,14 @@
    padding: 7px 10px;
    padding-right: 20px;
    color: #747474;
+
+   /* 트랜지션 */
+   transition: .2s ease-in-out;
+}
+/* 서브메뉴 a요소에 마우스 오버시 */
+.smsub a:hover{
+   background-color: #fafafa;
+   color: #333;
 }
 
 
