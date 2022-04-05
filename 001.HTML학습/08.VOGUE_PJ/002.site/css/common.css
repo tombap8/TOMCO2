@@ -83,12 +83,33 @@
    line-height: 44px;
    color: #747474;
 }
+/* 첫번째 사이드 메뉴 마우스 오버시 커서모양 변경 */
+.smbx>li:first-child>a{
+
+   /* 참고) CSS커서모양종류
+   https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
+}
 /* 사이드 메뉴 서브박스 */
 .smsub{
    position: absolute;
    margin-left: -1px;
    /* 젠틀앱솔루트 상태에서 위치이동은 마진으로! */
    border: 1px solid #e5e5e5;
+
+   /* 숨기기 */
+   opacity: 0;
+   height: 0;
+   overflow: hidden;
+   /* 높이값 0에 넘치는 요소 숨기기! */
+}
+/* 상위메뉴 li에 오버시 하위메뉴 보이기 */
+.smbx>li:hover .smsub{
+   opacity: 1;
+   height: auto;
+   /* 원래 height값 복원! */
+
+   /* 트랜지션 -> 오버시에만 주면 오버시에만 적용됨! */
+   transition: opacity .4s ease-in-out;
 }
 /* 서브메뉴 a요소 */
 .smsub a{
