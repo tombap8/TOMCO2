@@ -172,7 +172,83 @@
    color: red;
 }
 
+/* 슬림상단 영역 디자인 클래스 */
+/* 상단영역 최상위부모 */
+#top.on{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: #fff;
+   z-index: 9999;
+}
+/* 상단영역 중앙속박스 */
+#top.on .top{
+   min-height: auto;
+   /* 최소높이 없앰 */
+}
+/* 상단메뉴 없애기 */
+#top.on .tmenu {
+   display: none;
+}
+/* 로고 박스 변경 */
+#top.on .logo{
+   position: absolute;
+   top: 10px;
+   left: 10px;
+}
+/* 로고 이미지 */
+#top.on .logo img{
+   width: 100px;
+}
+/* GNB */
+#top.on .gnb{
+   font-size: 14px;
+}
+/* GNB a요소 */
+#top.on .gnb a{
+   color: #333;
+}
+#top.on{
+
+}
+
 /*************** 3. 하단영역 ***************/
 .info{
    min-height: 285px;
+   background-color: #000;
+   padding: 70px;
+   box-sizing: border-box;
+   /* 보더,패딩 포함 크기유지! */
+   font-family: 'Roboto', nbg;
+}
+/* 3-1.하단로고 */
+.blogo{
+   text-align: center;
+}
+/* 3-2. 회사주소 */
+.addr{
+   color: #747474;
+   text-align: center;
+   font-size: 11px;
+   font-style: normal;
+   /* 이탤릭해제 */
+   margin: 20px 0 10px;
+   /* 마진: 위 양쪽 아래 */
+}
+/* 3-2. 하단링크 */
+.blink{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   /* 자동줄바꿈 */
+}
+.blink a{
+   color: #747474;
+   font-size: 13px;
+   margin: 0 6px;
+}
+/* 마지막 li만 글자 두껍게 */
+.blink li:last-child a{
+   font-weight: bold;
 }
