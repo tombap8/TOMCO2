@@ -10,7 +10,7 @@
             function () {
 
                 // 로드구역 확인
-                console.log("로딩완료!");
+                // console.log("로딩완료!");
 
                 ////////////////////////////////////////////////////////
                 //// #div01의 각 메뉴에 마우스 오버시 하위메뉴 보이기 ////
@@ -19,7 +19,7 @@
                 // 이벤트 대상: .smenu
                 let smenu = document.querySelectorAll(".smenu");
 
-                console.log("메뉴개수:", smenu.length);
+                // console.log("메뉴개수:", smenu.length);
 
                 // 이벤트종류: mouseover / mouseout
                 // 변경대상: .smenu > div
@@ -42,7 +42,7 @@
 
                         // 2. 서브메뉴 ol요소의 높이값 읽어오기
                         let hv = tg.querySelector("ol").offsetHeight;
-                        console.log("ol높이값:", hv);
+                        // console.log("ol높이값:", hv);
 
                         // 3. 서브메뉴 열리기 (보정값 +10)
                         tg.style.height = (hv + 10) + "px";
@@ -52,7 +52,7 @@
 
                     // 2. 마우스 아웃시
                     x.onmouseout = () => {
-                        
+
                         // 1. 하위 div요소(서브메뉴박스) 변수할당
                         let tg = x.querySelector("div");
 
@@ -78,9 +78,111 @@
                 /////////////////////////////////////////////////////////
 
                 // 이벤트 대상: .smenu ol a
+                let link = document.querySelectorAll(".smenu ol a");
+                // console.log("서브링크개수:",link.length);
 
                 // 이벤트 종류: click
                 // 변경내용: 클릭시 새창으로 사이트열기
+                for (let x of link) {
+                    // 클릭 이벤트 설정하기
+                    x.onclick = () => {
+
+                        // 1. a요소의 텍스트 읽어오기
+                        let txt = x.innerText;
+                        // console.log("링크텍스트:", txt);
+
+                        // 2. 각 이동할 url주소 셋팅하기
+                        // url주소 변수
+                        let url;
+                        // 분기를 switch case문으로!
+                        switch (txt) {
+                            case "Google":
+                                url = "http://www.google.com";
+                                break;
+                            case "Naver":
+                                url = "http://www.naver.com";
+                                break;
+                            case "Daum":
+                                url = "http://www.daum.net";
+                                break;
+                            case "Nate":
+                                url = "http://www.nate.com";
+                                break;
+                            case "SK":
+                                url = "http://www.sktelecom.com";
+                                break;
+                            case "KT":
+                                url = "http://www.kt.com";
+                                break;
+                            case "Uplus":
+                                url = "http://www.uplus.co.kr";
+                                break;
+                            case "CGV":
+                                url = "http://www.cgv.co.kr";
+                                break;
+                            case "MEGABOX":
+                                url = "http://www.megabox.co.kr";
+                                break;
+                            case "LOTTE CINEMA":
+                                url = "https://www.lottecinema.co.kr/NLCHS";
+                                break;
+                            case "GMARKET":
+                                url = "http://www.gmarket.co.kr";
+                                break;
+                            case "11번가":
+                                url = "http://www.11st.co.kr";
+                                break;
+                            case "Auction":
+                                url = "http://www.auction.co.kr";
+                                break;
+                            case "스토어팜":
+                                url = "https://shopping.naver.com/";
+                                break;
+                            case "인터파크":
+                                url = "http://www.interpark.co.kr";
+                                break;
+                            case "쿠팡":
+                                url = "http://www.coopang.co.kr";
+                                break;
+                            case "Apple":
+                                url = "http://www.apple.com";
+                                break;
+                            case "Samsung":
+                                url = "http://www.samsung.com";
+                                break;
+                            case "넷마블":
+                                url = "http://www.netmarble.net";
+                                break;
+                            case "넥슨":
+                                url = "https://www.nexon.com";
+                                break;
+                            case "IMC":
+                                url = "http://www.imc.co.kr";
+                                break;
+                        } //////// switch case /////
+
+                        // console.log(url);
+
+                        // 3. 페이지 이동하기
+                        window.open().location.href = url;
+                        // location.href = 주소 -> 현재창 페이지 이동
+                        // window.open() -> 새창열기
+
+                        // 4. a요소 기본이동속성 막기
+                        return false;
+                        // return 키워드는 함수에서 사용할 경우
+                        // 만나는 순간 함수를 빠져나가고
+                        // return 아래쪽 코드는 실행하지 않는다!
+                        // return 뒤의 값으로 함수를 호출한 
+                        // 곳으로 돌아감. false를 쓰면 a요소에서
+                        // 호출했으므로 a가 이동하려는 기본속성을
+                        // 막을 수 있다!
+                        // false는 0 즉 불꺼! 아무것도 하지마!
+
+
+                    }; ////// click 함수 ////////
+
+                } /////////// for  of ////////////////
 
 
 
@@ -195,73 +297,6 @@
 
             }); ///////// 로드구역 //////////////////////////////////////
         //////////////////////////////////////////////////////////
-
-        /* 
-         case "Google":
-                                url = "http://www.google.com";
-                                break;
-                            case "Naver":
-                                url = "http://www.naver.com";
-                                break;
-                            case "Daum":
-                                url = "http://www.daum.net";
-                                break;
-                            case "Nate":
-                                url = "http://www.nate.com";
-                                break;
-                            case "SK":
-                                url = "http://www.sktelecom.com";
-                                break;
-                            case "KT":
-                                url = "http://www.kt.com";
-                                break;
-                            case "Uplus":
-                                url = "http://www.uplus.co.kr";
-                                break;
-                            case "CGV":
-                                url = "http://www.cgv.co.kr";
-                                break;
-                            case "MEGABOX":
-                                url = "http://www.megabox.co.kr";
-                                break;
-                            case "LOTTE CINEMA":
-                                url = "https://www.lottecinema.co.kr/NLCHS";
-                                break;
-                            case "GMARKET":
-                                url = "http://www.gmarket.co.kr";
-                                break;
-                            case "11번가":
-                                url = "http://www.11st.co.kr";
-                                break;
-                            case "Auction":
-                                url = "http://www.auction.co.kr";
-                                break;
-                            case "스토어팜":
-                                url = "https://shopping.naver.com/";
-                                break;
-                            case "인터파크":
-                                url = "http://www.interpark.co.kr";
-                                break;
-                            case "쿠팡":
-                                url = "http://www.coopang.co.kr";
-                                break;
-                            case "Apple":
-                                url = "http://www.apple.com";
-                                break;
-                            case "Samsung":
-                                url = "http://www.samsung.com";
-                                break;
-                            case "넷마블":
-                                url = "http://www.netmarble.net";
-                                break;
-                            case "넥슨":
-                                url = "https://www.nexon.com";
-                                break;
-                            case "IMC":
-                                url = "http://www.imc.co.kr";
-                                break;
-
-        */
     </script>
     <style>
         body>div {
