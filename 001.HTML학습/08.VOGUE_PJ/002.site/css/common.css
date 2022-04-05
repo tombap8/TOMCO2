@@ -63,6 +63,27 @@
 }
 
 /* 1-1-2. 사이드메뉴 */
+.smbx{
+   display: flex;
+   justify-content: flex-end;
+   /* 플렉스박스 수평방향 오른쪽 정렬 */
+}
+/* 사이드 메뉴 상위 a요소 */
+.smbx>li>a{
+   display: block;
+   padding: 0 13px;
+   line-height: 44px;
+
+   /* 글자셋팅 */
+   font-family: 'Roboto', sans-serif;
+   font-size: 12px;
+   color: #747474;
+}
+/* 사이드 메뉴 서브박스 */
+.smsub{
+   position: absolute;
+   display: none;
+}
 
 /* 1-2. 로고박스 */
 .logo{
