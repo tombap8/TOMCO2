@@ -155,6 +155,11 @@
 .gnb li:last-child{
    padding-right: 0;
 }
+/* 마지막 li의 a 돋보기 */
+.gnb li:last-child a{
+   font-weight: bold;
+   padding-top: 10px;
+}
 
 /*************** 3. 하단영역 ***************/
 .info{
