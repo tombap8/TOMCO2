@@ -256,10 +256,10 @@
                             `<img src="images/ab${rnum}.jpg" alt="${ialt[rnum-1]}">`;
 
                         // 5. 새로운 li요소 title속성으로 툴팁넣기
-                        ne.querySelector("img").title  = 
-                        ialt[rnum-1]+
-                        (rnum===1?"을":"를")
-                        +" 클릭하면 삭제됩니다~!";
+                        ne.querySelector("img").title =
+                            ialt[rnum - 1] +
+                            (rnum === 1 ? "을" : "를") +
+                            " 클릭하면 삭제됩니다~!";
 
                         // 6. 새로운 li클릭시 지우기 셋팅
                         ne.onclick = () => ne.remove();
@@ -285,22 +285,19 @@
                 let del = ctg.querySelectorAll("li");
 
                 // 대상에 클릭 삭제 셋팅하기
-                for(let x of del){
+                for (let x of del) {
                     // 1. 대상 내부의 img요소
                     let ximg = x.querySelector("img");
 
                     // 2. 기존 img에 title 속성 넣기
-                    ximg.title = ximg.alt + 
-                    (ximg.alt==="아이언맨"?"을":"를")+
-                    " 클릭하면 삭제됩니다!";
+                    ximg.title = ximg.alt +
+                        (ximg.alt === "아이언맨" ? "을" : "를") +
+                        " 클릭하면 삭제됩니다!";
 
                     // 3. 기존 li를 클릭시 지우기 셋팅
                     x.onclick = () => x.remove();
 
                 } /////////// for of ////////////
-
-
-
 
 
 
@@ -315,6 +312,19 @@
                 // 사용 메서드: appendChild(요소)
                 // -> 기존요소를 선택하면 이동이 됨!
                 /////////////////////////////////////////////////
+                document.querySelector(".mvl").onclick = () => {
+
+                    // 1. 호출확인
+                    console.log("맨뒤로가!");
+
+                    // 2. 이동대상: 변수 ctg 아래 li중 첫번째요소
+                    let fele = ctg.querySelectorAll("li")[0];
+                    // fele -> first element
+
+                    // 3. 맨뒤로 이동 : appendChild(요소)
+                    ctg.appendChild(fele);
+
+                }; ///////////// click 함수 //////////////////////
 
 
 
