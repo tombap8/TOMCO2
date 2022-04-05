@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>JS - DOM(Document Object Model)</title>
+    <title>JS8. DOM(Document Object Model)</title>
     <script>
         //////////// 로드구역 ///////////////////////////
         window.addEventListener("DOMContentLoaded",
@@ -17,8 +17,9 @@
                 ////////////////////////////////////////////////////////
 
                 // 이벤트 대상: .smenu
+                let smenu = document.querySelectorAll(".smenu");
                 
-                // console.log("메뉴개수:",smenu.length);
+                console.log("메뉴개수:",smenu.length);
 
                 // 이벤트종류: mouseover / mouseout
                 // 변경대상: .smenu > div
@@ -26,6 +27,17 @@
                 // 특이사항: 각 서브메뉴의 높이 만큼 높이값 트랜지션주기!
 
                 // 마우스 오버/아웃시 이벤트를 for of문으로 걸어보자!
+                for (let x of smenu){
+                    // x는 li.smenu 각 요소
+
+                    // 1. 마우스 오버시
+                    x.onmouseover = () => {
+                        // 오버시 a요소 텍스트찍기
+                        console.log("오버시!",
+                        x.querySelector("a").innerText);
+                    }; // mouseover 함수 ////////
+
+                } //////////// for of ////////////////
                 
               
 
