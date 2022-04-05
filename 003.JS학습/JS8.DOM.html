@@ -339,6 +339,28 @@
                 // 넣을놈전놈 - 맨처음 li요소
                 //////////////////////////////////////////////////
 
+                document.querySelector(".mvf").onclick = () => {
+
+                    // 1. 호출확인
+                    console.log("맨앞으로!");
+
+                    // 2. 이동대상: 변수 ctg 아래 li요소들
+                    let eles = ctg.querySelectorAll("li");
+
+                    // 3. 맨앞으로 이동
+                    // -> insertBefore(넣을놈,넣을놈전놈)
+                    // insertBefore(맨뒤li,맨앞li)
+                    ctg.insertBefore(eles[eles.length-1],eles[0]);
+                    // 맨뒤li eles[마지막번호] 
+                    // -> eles[개수-1]
+                    // -> eles[eles.length-1]
+                    // ※ 배열과 객체의 마지막번호는 항상 [개수-1] 이다!
+
+                    // 맨앞li -> eles[0]
+
+
+                }; //////////// click 함수 ////////////////////////
+
 
 
 
