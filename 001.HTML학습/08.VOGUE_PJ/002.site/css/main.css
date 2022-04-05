@@ -7,9 +7,9 @@
  @import url(common.css);
 
  /* 박스표시 */
- body *{
+ /* body *{
      outline: 1px dashed gray;
- }
+ } */
 
  /**************** 2. 메인영역 ****************/
  

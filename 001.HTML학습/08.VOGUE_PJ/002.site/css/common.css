@@ -86,12 +86,14 @@
 /* 사이드 메뉴 서브박스 */
 .smsub{
    position: absolute;
+   margin-left: -1px;
    border: 1px solid #e5e5e5;
 }
 /* 서브메뉴 a요소 */
 .smsub a{
    display: block;
    padding: 7px 10px;
+   padding-right: 20px;
    color: #747474;
 }
 
