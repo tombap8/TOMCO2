@@ -68,6 +68,10 @@
    justify-content: flex-end;
    /* 플렉스박스 수평방향 오른쪽 정렬 */
 }
+/* 메뉴 사이 구분선 넣기 */
+.smbx>li:first-child{
+   border-right: 1px solid #e5e5e5;
+}
 /* 사이드 메뉴 상위 a요소 */
 .smbx>li>a{
    display: block;
