@@ -81,11 +81,11 @@
         
         // "공유"만 추출
         console.log(sub1.substr(15,2));
-        console.log(sub1.substring(15,17));      
-        
+        console.log(sub1.substring(15,17));   
         
         // "도깨비, 공유씨!" 도깨비부터 마지막까지 출력
-        
+        console.log(sub1.substr(10));
+        console.log(sub1.substring(10));        
         // substr, substring 모두 시작번호만 쓰면됨!
         
         
@@ -93,16 +93,21 @@
             3. 문자 자르기 함수 : split(자를기준문자열)
             -> 문자열을 기준문자로 split하여 자르면 배열이 된다!
         ***********************************************************/
+       let sp1 = "나는^월요일^화요일^수요일^목요일^금요일^까지^학원^에서^공부^한다";
+       console.log(sp1);
 
-        
         // 특수문자(^)로 잘라서 변수에 할당!
-        
+        let arr = sp1.split("^");
+        console.log(arr);        
 
         // "목요일"을 선택하여 출력
+        console.log(arr[4]);        
         
 
         // 배열에서 데이터를 선택하여 다른말로 변경하시오.
         // "나는 학원에서까지 공부한다"
+        console.log(
+            `${arr[0]} ${arr[7]}${arr[8]}${arr[6]} ${arr[9]}${arr[10]}`);
         
         
         /************************************** 
