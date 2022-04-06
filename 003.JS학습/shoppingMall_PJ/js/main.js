@@ -33,6 +33,8 @@ window.addEventListener("load", () => {
 
         // 이벤트 대상: .abtn
         let abtn = document.querySelectorAll(".abtn");
+        // 변경 대상: #slide
+        let slide = document.querySelector("#slide");
 
         /************************************** 
             함수명: goSlide
@@ -40,8 +42,39 @@ window.addEventListener("load", () => {
         **************************************/
        const goSlide = dir => { // dir - 이동방향(1:오른쪽,0:왼쪽)
 
-            // 전달값 및 호출확인
+            // 1. 전달값 및 호출확인
             console.log("이동!",dir);
+
+            // 2. 방향분기   /////////////
+            // 2-1. 오른쪽버튼
+            if(dir){ // dir===1 이면 true
+
+                // (1) 슬라이드박스의 left값을 -100%로 이동
+                slide.style.left = "-100%";
+                slide.style.transition = ".6s ease-out";
+
+                // (2) 이동후 첫번째 슬라이드li를 잘라서 맨뒤로 보낸다!
+                // 일정시간 후 한번실행하는 타이밍함수는? setTimeout
+                setTimeout(()=>{
+                    // appendChild(요소) - 선택요소 맨뒤이동
+                    slide.appendChild(
+                        slide.querySelectorAll("li")[0]);
+
+                        // (3) 동시에 left값을 0으로 변경함!
+                        slide.style.left = "0";
+                        slide.style.transition = "none";
+                        // 트랜지션 없어야 안보임!
+                    
+
+                },600); /// 타임아웃 ///
+
+
+
+            } //////////// if ///////////
+            // 2-2. 왼쪽버튼
+            else {
+
+            } /////////// else //////////
              
        }; ////////////// goSlide함수 ///////////////
 
