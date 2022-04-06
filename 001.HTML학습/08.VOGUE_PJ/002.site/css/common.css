@@ -211,14 +211,16 @@
 #top.on .gnb{
    line-height: 50px;
    font-size: 14px;
+   padding-left: 122px;
 }
 /* GNB a요소 */
 #top.on .gnb a{
    color: #333;
 }
-/* #top.on{
-
-} */
+/* GNB li 오른쪽패딩 */
+#top.on .gnb li {
+   padding-right: 35px;
+}
 
 /*************** 3. 하단영역 ***************/
 .info{
