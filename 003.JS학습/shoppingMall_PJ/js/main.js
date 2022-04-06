@@ -33,8 +33,11 @@ window.addEventListener("load", () => {
 
         // 이벤트 대상: .abtn
         let abtn = document.querySelectorAll(".abtn");
-        // 변경 대상: #slide
+        // 변경 대상: 슬라이드 -> #slide
         let slide = document.querySelector("#slide");
+        // 변경 대상: 블릿 -> .indic li
+        let indic = document.querySelectorAll(".indic li");
+        console.log("블릿개수:",indic.length);
 
         // 슬라이드 li에 순번 속성 주기! //////
         // 주는 이유: li가 잘려서 이동하므로 순서가 항상 바뀌므로
@@ -110,6 +113,18 @@ window.addEventListener("load", () => {
                 },10); /// 0.01초 시차! ////
 
             } /////////// else //////////
+
+            // 3. 슬라이드 순번과 동일한 순번의 블릿변경하기
+            // 변경방법: 슬라이드 li의 data-seq의 숫자를 읽어서
+            // 블릿li의 나머지 블릿은 모두 on을 없애고
+            // 해당순번에 class="on"을 준다!
+
+            // 초기화!(class="on"지우기)
+            for(let x of indic) x.classList.remove("on");
+
+            // 해당순번에 class="on" 넣기
+            indic[1].classList.add("on");
+
              
        }; ////////////// goSlide함수 ///////////////
 
