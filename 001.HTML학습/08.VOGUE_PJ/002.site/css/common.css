@@ -209,6 +209,7 @@
 }
 /* GNB */
 #top.on .gnb{
+   line-height: 50px;
    font-size: 14px;
 }
 /* GNB a요소 */
