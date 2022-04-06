@@ -209,9 +209,8 @@
 }
 /* GNB */
 #top.on .gnb{
-   line-height: 50px;
    font-size: 14px;
-   padding-left: 122px;
+   padding: 5px 30px 5px 155px;
 }
 /* GNB a요소 */
 #top.on .gnb a{
