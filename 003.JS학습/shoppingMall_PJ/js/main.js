@@ -53,18 +53,18 @@ window.addEventListener("load", () => {
                 slide.style.left = "-100%";
                 slide.style.transition = ".6s ease-out";
 
-                // (2) 이동후 첫번째 슬라이드li를 잘라서 맨뒤로 보낸다!
+                // 슬라이드 이동 후 (2),(3) 실행함!
                 // 일정시간 후 한번실행하는 타이밍함수는? setTimeout
                 setTimeout(()=>{
-                    // appendChild(요소) - 선택요소 맨뒤이동
+                    // (2) 첫번째 슬라이드li를 잘라서 맨뒤로 보낸다!
                     slide.appendChild(
                         slide.querySelectorAll("li")[0]);
+                    // appendChild(요소) - 선택요소 맨뒤이동
 
-                        // (3) 동시에 left값을 0으로 변경함!
-                        slide.style.left = "0";
-                        slide.style.transition = "none";
-                        // 트랜지션 없어야 안보임!
-                    
+                    // (3) 동시에 left값을 0으로 변경함!
+                    slide.style.left = "0";
+                    slide.style.transition = "none";
+                    // 트랜지션 없어야 애니메이션 안보임!
 
                 },600); /// 타임아웃 ///
 
