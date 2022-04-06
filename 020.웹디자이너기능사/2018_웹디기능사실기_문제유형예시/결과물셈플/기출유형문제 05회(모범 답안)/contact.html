@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CONTACT</title>
+</head>
+
+<body>
+<form>
+<table>
+  <tr>
+   <td>이름</td>
+    <td><input type="text" name="name"/></td>
+  </tr>
+  <tr>
+    <td>이메일</td>
+    <td><input type="email" name="email"/></td>
+  </tr>
+  <tr>
+    <td>보내실 말씀</td>
+    <td><textarea name="message" rows="5" cols="40">메세지를 입력해주세요.</textarea></td>
+  </tr>
+  <tr>
+    <td>관심있는 사진</td>      
+    <td><input type="text" name="photo" list="photo"/>
+          <datalist id="photo">
+            <option value="풍경"></option>
+            <option value="인물"></option>
+            <option value="사물"></option>
+          </datalist> 
+    </td>
+  </tr> 
+  <tr>
+    <td><input type="submit"/></td>
+  </tr> 
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+@charset "utf-8";
+/*팝업 css*/
+*{
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/*팝업창*/
+#popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+/*  height: 270px;*/
+  z-index: 999;
+  border: 3px ridge #5b9bd5;
+  padding: 15px;
+  background-color: #fff;
+}
+#popup h4{
+  padding: 15px;
+}
+#popup p{
+  padding: 15px;
+  padding-bottom: 40px;
+}
+#popup button{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 5px 10px;
+}
+

@@ -1,0 +1,320 @@
+@charset "utf-8";
+/* 메인 CSS - main.css */
+
+html,body,h1,h2{
+    margin: 0;
+    padding: 0;
+}
+/* body *{
+    outline: 2px dashed blue;
+} */
+body{
+    color: #333;
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
+ul,ol{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+li{
+    float: left;
+}
+
+
+/* 공통 class */
+.pbx{
+    float: left;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 전체박스 */
+.wrap{
+    width: 1000px;
+    height: 650px;/* 꼭줘라! */
+}
+/* 왼쪽박스 */
+/* A */
+.lbox{
+    width: 200px;
+    padding: 0;
+    background-color: #d6ecff;
+}
+/* 로고 */
+.logo{
+    height: 100px;
+}
+.logo img{
+    margin-top: 30px;
+}
+
+/* GNB메뉴박스 */
+#gnb{
+    height: 530px;
+    padding-top: 20px;
+}
+/* 메뉴 */
+.gnb{
+    width: 180px;
+    margin-left: 10px;
+    background-color: rgb(117, 188, 255);
+}
+.gnb li{
+    float: none;/* float해제 */
+    width: 180px;
+    /* height: 50px; */
+    /* li의 높이값을 안주면 a에 설정된 줄간격이 높이값이됨! */
+}
+.gnb a{
+    display: block;
+    width: 100%;
+
+    /* 글자설정 */
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+}
+.gnb>li{
+    position: relative;
+    /* 서브메뉴 ol의 부모자격 */
+    z-index: 999;
+}
+/* 서브메뉴 */
+.gnb ol{
+    position: absolute;
+    top: -40px;
+    left: 100%;
+    /* 앱솔루트로 옆으로 빠져나와보임! */
+    /* 부모는? 싸고 있는 li */
+    height: 0;/* 200px; */
+    background-color: rgb(159 196 251 / 90%);
+    overflow: hidden;/* 숨기기 */
+    transition: height .4s;
+}
+/* .gnb의 상위메뉴 li에 마우스 오버시 서브메뉴 각각 나타나기 */
+.gnb>li:hover ol{
+    height: 170px;
+    /* 줄간격 40px * 4 = 160px + 여유공간*/
+}
+/* 서브메뉴 a */
+.gnb ol a{
+    font-size: 16px;
+    line-height: 40px;
+}
+
+/* 하이라이트 설정 */
+/* 상위,하위메뉴 */
+.gnb li:hover>a{
+    color: #fff;
+}
+/* 상위메뉴 배경색 */
+.gnb>li:hover>a{    
+    background-color: rgb(159 196 251 / 90%);
+}
+/* 하위메뉴 */
+.gnb ol li:hover a{
+    background-color: rgb(0, 54, 233);
+}
+
+
+
+/* 오른쪽박스 */
+.rbox{
+    width: 800px;
+    padding: 0;
+    background-color: #fff;
+}
+/* 슬라이드 */
+.ban{
+    height: 350px;
+}
+
+.slide{
+    position: relative;
+    height: 350px;
+}
+.slide li{
+    position: absolute;/* 겹쳐지게 */
+    opacity: 0;
+    transition: .6s;
+}
+/* 선택 슬라이드 클래스 */
+ .slide li.on{
+    opacity: 1;/* 보이게 */
+    z-index: 1;/* 맨위로 */
+ }
+.slide li img{
+    width: 800px;
+    height: 350px;
+    /* 이미지를 크기에 맞춰 제작시엔 
+    크기설정이 필요없다! */
+}
+
+
+
+/* 컨텐츠 */
+.cont{
+    height: 200px;
+    background-color: rgb(179, 218, 255);
+}
+.cont1{
+    width: 300px;
+}
+.cont2{
+    width: 225px;
+}
+.cont3{
+    width: 275px;
+}
+
+
+/* 탭메뉴 */
+.tm{
+    width: 200px;
+    height: 40px;
+}
+.tm li a{
+    display: block;
+    width: 100px;
+    text-align: center;
+    line-height: 40px;
+    background-color: rgb(94, 169, 255);
+}
+/* 선택된 탭class */
+.tm li.on a{
+    background-color: #fff;
+}
+
+/* 탭내용박스 */
+.tc{
+    height: 146px;
+    background-color: #fff;
+}
+/* 탭내용박스 li - 2개 */
+.tc>li{
+    width: 100%;
+    height: 100%;
+    display: none;/* 모두안보임 */
+}
+/* 선택된 탭내용박스 li 클래스 */
+.tc>li.on{
+    display: block;
+}
+
+/* 공지사항 리스트박스 */
+.gong{    
+    width: 100%;
+    padding-top: 12px;
+}
+.gong li{
+    float: none;
+    line-height: 24px;
+}
+.gong a{
+    display: inline-block;
+    /* 줄안바뀌면서 width디자인 적용위해 */
+    width: 179px;
+    padding-left: 5px;
+
+    /* 아래 3가지로 한줄짜리 말줄임표시하기 */
+    white-space: nowrap;
+    /* 1.줄바꿈방지 */
+    overflow: hidden;
+    /* 2.넘치는 글자숨기기 */
+    text-overflow: ellipsis;
+    /* 3.텍스트 말줄임표시 */
+}
+
+/* 날짜표시 오른쪽끝으로 */
+.gong span{
+    float: right;
+    padding-right: 5px;
+}
+
+/* 갤러리 리스트박스 */
+.gal li{
+    margin: 37px 12px;
+}
+.gal img{
+    width: 67px;
+    border: 1px solid #777;
+}
+
+/* 팝업창 */
+.pop{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    padding: 15px;
+    z-index: 999;
+    background-color: #fff;
+    border: 3px solid #888;
+    display: none;/* 처음에 안보임! */
+}
+.pop h1{/* 팝업제목 */
+    font-size: 24px;
+    text-align: center;
+}
+.pop p{/* 팝업내용문단 */
+    line-height: 30px;
+}
+/* 닫기버튼박스 */
+.bbx{
+    text-align: right;
+    /* button요소는 inline-block이므로 
+    인라인처럼 텍스트정렬이 적용된다! */
+}
+
+/* 배너, 바로가기 이미지 공통 */
+.im{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* 하단영역 */
+.info{
+    height: 100px;
+    background-color: #ccc;
+}
+.info1{
+    width: 200px;
+}
+.info2{/* 하단메뉴 */
+    width: 600px;
+    text-align: center;
+    line-height: 50px;
+    padding: 0;
+}
+
+.info2>.pbxIn{
+    height: 50px;
+}
+
+/* 하단로고 */
+.logoi{
+    margin-left: -10px;
+}
+.logoi img{
+    margin-top: 20px;
+}
+
+/* 하단메뉴 */
+.bmenu img{
+    width: 35px;
+    margin-top: 7px;
+}
+/* 카피라잇 */
+.copy{
+    font-weight: bold;
+}
+

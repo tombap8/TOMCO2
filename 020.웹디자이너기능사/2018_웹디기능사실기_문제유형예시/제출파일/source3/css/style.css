@@ -1,0 +1,199 @@
+@charset "utf-8";
+*{
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+ul,ol{
+  list-style: none;
+}
+ul::after,ol::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+li{
+  float: left;
+}
+.part{
+  position: relative;
+  width:1200px;
+  margin: 0 auto;
+/*  outline: 1px solid green;*/
+}
+/*공통추가(a,img)*/
+a{  
+  text-decoration: none;
+  color: #333;
+}
+img{
+  border: none;
+}
+
+.bg{  
+  background-color: #f2f2f2;
+}
+/*상단영역*/
+.top{
+  height: 100px;
+  background-color: #f2f2f2;
+}
+.top img{
+  width: 120px;
+  margin: 10px;
+}
+/*메뉴공통링크(마우스오버이전에)*/
+.top nav a{
+  display: block;
+  width: 100%;
+  height: 100%;
+/* 공통에 있으니 뺌
+  text-decoration: none;
+  color: #333;
+*/
+  line-height: 40px;/*중요! 높이값역할!*/
+  transition: all .4s;
+}
+
+.top nav ul{/*상위메뉴박스*/
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 999;/*맨위!*/
+}
+/*상위메뉴 li*/
+.top nav ul>li{
+  width: 150px;
+  text-align: center;
+}
+/*상위메뉴마우스 오버시*/
+.top nav ul>li:hover>a{
+  color: #fff;
+  background-color: #ff5050;
+}
+
+.top nav ol{/*하위메뉴박스*/
+  width: 100%;
+  display: none;/*숨기기*/
+}
+
+.top nav ol li{
+  width: 100%;
+}
+/*하위메뉴 마우스오버시*/
+.top nav ol li:hover a{
+  color: #fff;
+  background-color: #ffc000;
+}
+
+/*메뉴배경박스*/
+.menubg{
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  z-index: 99;/*메뉴보다 아래*/
+  background-color: rgba(255,255,255,.8);/*흰색반투명배경*/
+  display: none;/*처음에 안보*/
+}
+
+
+
+/*배너영역*/
+.ban{
+  position: relative;
+  height: 300px;
+}
+.ban img{
+  position: absolute;/*이미지겹침*/
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.ban img:first-child{/*첫번째 이미지 보이게*/
+  display: block;
+}
+
+/*컨텐츠영역*/
+.cont{
+  height: 200px;
+  overflow: hidden;/*float해제*/
+}
+.cont dl{
+  float: left;
+  width: 33.333%;
+  height: 100%;
+/*  outline: 1px solid red;*/
+  box-sizing: border-box;/*크기유지(패딩때문)*/
+  padding: 10px;
+}
+.cont dl dt{/*큰제목*/
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 0 10px 0;
+}
+/*공지사항*/
+.cont dl:first-child li a{
+  font-size: 12px;
+  line-height: 20px;
+  text-decoration: none;
+}
+/*갤러리*/
+.cont dl:nth-child(2) li{
+  width: 33.333%;
+  text-align: center;
+}
+.cont dl:nth-child(2) li img{
+  width: 70%;
+  height: 100px;
+}
+
+.cont dl:nth-child(2) li img:hover{/*요구사항*/
+  opacity: .6;
+}
+
+/*바로가기*/
+.cont dl:last-child img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/*하단영역*/
+.info{
+  position: relative;/*부모자격*/
+  height: 100px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+/*하단메뉴,카피라이트*/
+.info ul{
+  width: 80%;
+  height: 100%;
+}
+.info ul li{
+  width: 100%;
+  line-height: 50px;
+  font-size: 14px;
+}
+.info address{
+  font-style: normal;  
+}
+
+/*패밀리사이트*/
+.info aside{
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 20%;
+}
+.info aside a{
+  display: block;
+  line-height: 25px;
+  font-size: 12px;
+}
+

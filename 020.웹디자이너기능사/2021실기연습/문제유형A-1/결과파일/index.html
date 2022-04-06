@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>유형A-1 실기연습</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <!-- A -->
+    <header class="ibx top">
+        <div class="pbx top1">
+            <h1 class="logo">
+                <a href="#">
+                    <img src="./images/logo.png" alt="로고">
+                </a>
+            </h1>
+        </div>        
+        <div class="pbx top2 prt">
+            <ul class="gnb">
+                <li>
+                    <a href="#">탑</a>
+                    <ol>
+                        <li><a href="#">블라우스</a></li>
+                        <li><a href="#">티</a></li>
+                        <li><a href="#">셔츠</a></li>
+                        <li><a href="#">니트</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">아우터</a>
+                    <ol>
+                        <li><a href="#">자켓</a></li>
+                        <li><a href="#">코트</a></li>
+                        <li><a href="#">가디건</a></li>
+                        <li><a href="#">머플러</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">팬츠</a>
+                    <ol>
+                        <li><a href="#">청바지</a></li>
+                        <li><a href="#">짧은바지</a></li>
+                        <li><a href="#">긴바지</a></li>
+                        <li><a href="#">레깅스</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">악세사리</a>
+                    <ol>
+                        <li><a href="#">귀고리</a></li>
+                        <li><a href="#">목걸이</a></li>
+                        <li><a href="#">반지</a></li>
+                        <li><a href="#">팔찌</a></li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- B -->
+    <section class="ibx ban">
+        <!-- 슬라이드 -->
+        <ul class="slide">
+            <li>
+                <a href="#">
+                    <img src="./images/slide_01.png" alt="슬라이드1">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/slide_02.png" alt="슬라이드2">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/slide_03.png" alt="슬라이드3">
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- C -->
+    <main class="ibx cont">
+        <div class="pbx">
+            <!-- 탭메뉴 -->
+            <ol class="tm">
+                <li class="on" onclick="chgTab(0,1)">
+                    <a href="#">공지사항</a>
+                </li>
+                <li onclick="chgTab(1,0)">
+                    <a href="#">갤러리</a>
+                </li>
+            </ol>
+            <!-- 탭내용 -->
+            <ol class="tc">
+                <!-- 공지사항 -->
+                <li class="on">
+                    <ul class="gong">
+                        <li>
+                            <a href="#" onclick="popup('block')">
+                                [발표]『장사의 신동 X 설화수』 이벤트 당첨자
+                            </a>
+                            <span>2021. 06. 07</span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                [주의] 국표원, 유모차, LED등기구, 가정용 서랍장 등 66개 제품 리콜 안내
+                            </a>
+                            <span>2021. 06. 01</span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                [발표]『빅스마일데이 조지아 크래프트 경품』 이벤트 당첨자
+                            </a>
+                            <span>2021. 05. 31</span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                [발표]『빅스마일데이 코카콜라 경품』 이벤트 당첨자
+                            </a>
+                            <span>2021. 05. 31</span>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 갤러리 -->
+                <li>
+                    <ul class="gal">
+                        <li>
+                            <a href="#">
+                                <img src="./images/gal1.png" alt="갤러리이미지">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/gal2.png" alt="갤러리이미지">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./images/gal3.png" alt="갤러리이미지">
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="pbx">
+            <!-- 배너 -->
+            <a href="#">
+                <img class="im" src="./images/contents_01.png" alt="배너이미지">
+            </a>
+        </div>
+        <div class="pbx">
+            <!-- 바로가기 -->
+            <a href="#">
+                <img class="im" src="./images/contents_02.png" alt="고객센타">
+            </a>
+        </div>
+    </main>
+    <!-- D -->
+    <footer class="ibx info">
+        <div class="pbx info1">
+            <h2 class="logo">
+                <a href="#">
+                    <img src="./images/logoB.png" alt="하단로고">
+                </a>
+            </h2>
+        </div>
+        <div class="pbx info2">
+            <!-- 카피라잇 -->
+            Copyright JUST Shopping Mall All rights reserved.
+        </div>
+        <div class="pbx info3">
+            <!-- sns -->
+            <a href="#">
+                <img src="./images/sns1.png" alt="페이스북">
+            </a>
+            <a href="#">
+                <img src="./images/sns2.png" alt="트위터">
+            </a>
+            <a href="#">
+                <img src="./images/sns3.png" alt="카카오톡">
+            </a>
+        </div>
+    </footer>
+
+    <!-- 팝업창 -->
+    <div class="pop">
+        <!-- 제목 -->
+        <h1>
+            『장사의 신동 X 설화수』
+            <br>이벤트 당첨자
+        </h1>
+        <!-- 내용 -->
+        <p>
+            안녕하세요. JUST 쇼핑몰입니다. 
+            <br><br>
+            5월 17일 진행된 '장사의 신동 설화수편' 구매이벤트에 참여해주신 여러분의 관심과 성원에 감사드리며, 당첨자를 아래와 같이 안내드립니다.
+            각 상품 별 당첨자에게는 별도 안내를 통해 경품이 지급될 예정입니다.
+            <br><br>
+            ■ 당첨 경품 : 윤조에센스 90ml(5명) , 자음생 앰플 20g(2명) , 자음생 에센스 30ml(3명)
+            <br>
+            ■ 당첨 대상 : 장사의 신동 설화수 라이브방송 구매 고객 대상 추첨
+            <br>
+            ■ 지급 방식 : 6/7~6/11 이전 별도 개별 안내 후 지급
+        </p>
+        <!-- 버튼박스 -->
+        <div class="bbx">
+            <button onclick="popup('none')">닫기</button>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

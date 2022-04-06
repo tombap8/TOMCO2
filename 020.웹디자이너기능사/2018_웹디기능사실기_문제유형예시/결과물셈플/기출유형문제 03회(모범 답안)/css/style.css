@@ -1,0 +1,288 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin: 0 auto;
+	list-style: none;
+	font-family: "맑은 고딕";
+	padding: 0;
+}
+body,html{
+	min-width: 1000px
+}
+img{
+	max-width: 100%;
+}
+.all{
+	width: 100%;
+	float: left;
+}
+.wrap{
+	width: 1000px;
+}
+.content{
+	width: 1000px;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+.clear{clear:both;position:inherit;}
+
+header{
+	height: 180px;
+}
+#header_logo{
+	padding-top: 20px;
+}
+.logo{
+	height: 100px;
+	overflow: hidden;
+	float: left
+}
+.logo>a>img{
+	width: 300px;
+}
+nav{
+	float: right;
+	margin-top: 10px;
+	padding: 10px;
+}
+.nav{
+	width: 600px;
+	height: 20px
+}
+.nav>li{
+	float: left;
+	width: 200px;
+	text-align: center;
+	position: relative;
+	transition: all 0.4s;
+	padding: 5px 0
+}
+.nav>li:after{
+	clear: both;
+}
+.nav>li:hover{
+	background-color: #996699;
+	color: #FFFFFF
+}
+.submenu{
+	display: none;
+	background-color: rgba(255,255,255,0.8);
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	margin-top: 5px
+}
+.submenu>li{
+	padding: 5px 0 0 0;
+	transition: all 0.4s;
+	color: #000
+}
+.submenu>li:hover{
+	background-color: #CC9999;
+	color: inherit
+}
+
+#imgslide{
+	height: 350px;
+}
+.imgs{
+	position: relative;
+	overflow: hidden;
+	height: 350px
+}
+.imgs>img{
+	width: 100%;
+	position: absolute;
+}
+
+.welcome{
+   height: 40px;
+   width: 300px;
+   position: absolute;
+   margin: -50px 0 0 0px !important;
+   text-align: center;
+   line-height: 50px;
+   background-color: rgba(255,255,255,0.2);
+   left: 40%;
+   top: 50px;
+}
+.welcome h2 span{
+   color: #CCCCCC;
+   font-family: "Times New Roman", Times, serif;
+}
+#slides {
+	width: 1000px;
+	height: 300px;
+	margin: 0 auto;
+	padding: 0;
+}
+#slides li {
+	display: none;
+}
+#slides li:first-child {
+	display: block;
+}
+#slides li img {
+	width: 1000px;
+	height: 350px;
+}
+
+#btn_slides {
+	text-align: center;
+}
+#btn_slides a.off {
+	cursor: default;
+	opacity: 0.5;
+}
+
+#contents{
+	height: 500px;
+}
+.notice{
+	width: 480px;
+	margin-top: 20px;
+	float: left
+}
+.notice h2{
+	color: #666666;
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #666
+}
+.table{
+	border-collapse: collapse;
+	font-size: 0.9em;
+	color: #666666;
+	width: 430px;
+}
+.table tr>th{
+	padding-top: 10px;
+}
+.table tr>td{
+	padding-top: 5px;
+	padding: 5px;
+}
+.table tr:nth-child(2n){
+	background-color: #D1B59D
+}
+.partner{
+	margin-top: 20px;
+	float: right;
+	width: 480px;
+}
+.partner h2{
+	color: #666666;
+	text-align: center
+}
+.partner_info{
+	margin-top: 10px;
+	padding-left: 20%;
+}
+.partner_info img:nth-child(1){
+	width: 60%;
+	cursor: pointer;
+}
+.partner_info img:nth-child(2){
+	width: 50%;
+	cursor: pointer;
+}
+#modal{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0, 0.6);
+	z-index: 1;
+	display: none;
+	opacity: 0;
+}
+#modal .body{
+	padding: 20px;
+	position: fixed;
+	left: 50%;
+	top: -20%;
+	opacity: 0;
+	transform: translate(-50%, -50%);
+	background: white;
+}
+#modal.active{
+	display: block;
+	opacity: 1;
+}
+#modal.active .body{
+	top: 30%;
+	opacity: 1;
+}
+#modal .body img{
+	display: block;
+	margin-bottom: 20px;
+}
+#modal .body .button{
+	margin-top: 20px;
+	text-align: center;
+}
+#modal .body .button button{
+	padding: 6px 12px;
+	border: none;
+	border-radius: 6px;
+	color: white;
+	background-color: #996699;
+}
+.icon{
+	margin-top: 20px
+}
+.icons{
+	text-align: center
+}
+.btn{
+	width: 160px;
+	margin: 20px;
+	display: inline-block;
+}
+.btn>button:hover{
+	background-color: #939
+}
+.btn button{
+	padding: 10px;
+	background-color: #CC9999;
+	color: #FFF;
+	border: none;
+	border-radius: 10px;
+	font-size: 20px
+}
+
+footer{
+	height: 150px;
+	width: 1000px;
+	background-color: #969;
+	max-width: 100%;
+	color: #FFFFFF;
+	overflow: hidden;
+	margin-top: 30px;
+}
+footer .wrap{
+	padding: 10px 20px;
+}
+footer ul{
+	width: 50%;
+	float: left
+}
+footer ul>li{
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px
+}
+footer p{
+	width: 50%;
+	font-size: 12px;
+	float: right;
+	color: #ffffff;
+	margin-top: 10px;
+}
+
+
+

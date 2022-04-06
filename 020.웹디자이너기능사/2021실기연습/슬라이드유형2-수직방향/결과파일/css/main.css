@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* 메인 CSS - main.css */
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: #333;
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
+
+
+body *{
+    outline: 2px dashed blue;
+    /* background-color: red; 연결확인 */
+}
+ul,ol{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+li{
+    float: left;
+}
+
+/* 공통 CSS */
+
+/* 중앙정렬박스 */
+.ibx{
+    width: 1200px;
+    margin: 0 auto;/* 마영오 */
+}
+/* 파티션박스 */
+.pbx{
+    float: left;
+    height: 100%;/* 부모높이채움! */
+    padding: 10px;
+    box-sizing: border-box;
+    /* 박스가 패딩때문에 커지는 것을 방지! */
+}
+/* 부모자격 */
+.prt{
+    position: relative;
+}
+
+/****************** A ******************/
+.top{
+    height: 100px;
+}
+/* 파티션가로값 */
+.top1{
+    width: 200px;
+}
+.top2{
+    width: 1000px;
+}
+/* 로고 */
+.logo{
+    margin-left: -10px;
+}
+
+/* 메뉴 */
+.gnb{
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    /* 부모는? 싸고있는 .pbx.prt */
+    width: 800px;
+    height: 50px;
+    background-color: rgb(117, 188, 255);
+}
+.gnb li{
+    width: 200px;
+    /* height: 50px; */
+    /* li의 높이값을 안주면 a에 설정된 줄간격이 높이값이됨! */
+}
+.gnb a{
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    /* 글자설정 */
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+}
+/* 서브메뉴 */
+.gnb ol{
+    height: 0;/* 200px; */
+    background-color: rgba(218, 238, 255, 0.74);
+    overflow: hidden;/* 숨기기 */
+    transition: height .4s;
+}
+/* .gnb에 마우스 오버시 서브메뉴 모두 나타나기 */
+.gnb:hover ol{
+    height: 160px;
+    /* 줄간격 40px * 4 = 160px */
+}
+/* 서브메뉴 a */
+.gnb ol a{
+    font-size: 16px;
+    line-height: 40px;
+}
+
+/* 하이라이트 설정 */
+/* 상위,하위메뉴 */
+.gnb li:hover>a{
+    color: #fff;
+}
+/* 하위메뉴 */
+.gnb ol li:hover a{
+    background-color: rgb(0, 54, 233);
+}
+
+
+
+
+
+/******************* B *******************/
+.ban{
+    height: 300px;
+    overflow: hidden;/* 넘치는 슬라이드 숨기기 */
+}
+/* 슬라이드 */
+.slide{
+    position: relative;
+    top: 0;
+}
+
+/********************** C **********************/
+.cont{
+    height: 200px;
+}
+/* 파티션가로값 (한꺼번에 등분할!) */
+.cont>.pbx{
+    width: 400px;
+}
+
+
+/******************** D ********************/
+.info{
+    height: 100px;
+}
+/* 파티션가로값 */
+.info1{
+    width: 200px;
+}
+.info2{
+    width: 800px;
+}
+.info3{
+    width: 200px;
+}
+
