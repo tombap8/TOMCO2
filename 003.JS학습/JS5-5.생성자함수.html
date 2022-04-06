@@ -40,7 +40,54 @@
             그냥 return 키워드만 쓰면 자동으로 this가 반환됨)
 
         */
-        
+
+        function MovieInfo(tit,sum,dir,act,des){
+            this.제목 = tit;
+            this.개요 = sum;
+            this.감독 = dir;
+            this.출연 = act;
+            this.문구 = des;
+
+            this.함수 = () =>
+                `영화 ${this.제목}의 감독님 이름은 ${this.감독}`;
+
+
+        } /////// MovieInfo함수 ///////////
+
+        document.write("<h1>JS5-5. 생성자 함수</h1>");
+
+        // 생성자함수로 객체만들기!
+        const mi1 = new MovieInfo("조제","멜로/로맨스, 드라마","김종관","한지민, 남주혁","조제 보러 오세요");
+
+        // 생성자함수로 만든게 객체인지 확인
+        console.log("mi1이 객체인지 확인:",mi1);
+
+        // 만들어진 객체 화면출력 : 객체니까 for in 사용!
+        for(let x in mi1){
+            document.write(`<h2>${mi1[x]}</h2>`);
+        } //// for in /////
+
+        // 객체 메서드 호출!
+        document.write(mi1.함수());
+
+        // 구분선
+        document.write("<hr>");
+
+        // 객체를 하나더 만들어 본다!!!
+        const mi2 = new MovieInfo("이웃사촌","드라마, 코미디","이환경","정우, 김희원","이웃을 사랑합시다");
+
+        // 생성자함수로 만든게 객체인지 확인
+        console.log("mi2이 객체인지 확인:",mi2);
+
+        // 만들어진 객체 화면출력 : 객체니까 for in 사용!
+        for(let x in mi2){
+            document.write(`<h2>${mi2[x]}</h2>`);
+        } //// for in /////
+
+        // 객체 메서드 호출!
+        document.write(mi2.함수());
+
+
     </script>
 </head>
 <body>
