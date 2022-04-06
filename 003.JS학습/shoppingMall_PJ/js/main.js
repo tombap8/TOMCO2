@@ -122,8 +122,16 @@ window.addEventListener("load", () => {
             // 초기화!(class="on"지우기)
             for(let x of indic) x.classList.remove("on");
 
+            // 슬라이드의 data-seq의 값을 읽어옴!
+            // 오른쪽버튼이동일 경우 두번째 슬라이드[1]
+            // 왼쪽버튼이동일 경우 첫번째 슬라이드[0]
+            // 버튼 구분번호가 오른쪽 1, 왼쪽 0 -> dir변수
+            let seq = sli[dir].getAttribute("data-seq");
+            // getAttribute(속성명) -> 속성값읽어오기
+            // setAttribute(속성명,속성값) -> 속성값 넣기
+
             // 해당순번에 class="on" 넣기
-            indic[1].classList.add("on");
+            indic[seq].classList.add("on");
 
              
        }; ////////////// goSlide함수 ///////////////
