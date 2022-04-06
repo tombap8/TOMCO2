@@ -1,4 +1,4 @@
-// 쇼핑몰 배너 JS //
+// 쇼핑몰 배너 JS - 세로방향 //
 // 로드구역 ////////////
 window.addEventListener("load", () => {
 
