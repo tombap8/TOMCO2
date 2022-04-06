@@ -122,6 +122,9 @@ window.addEventListener("load", () => {
             // 초기화!(class="on"지우기)
             for(let x of indic) x.classList.remove("on");
 
+            // 갱신된 li읽어오기!(오른쪽,왼쪽이동후)
+            sli = slide.querySelectorAll("li");
+
             // 슬라이드의 data-seq의 값을 읽어옴!
             // 오른쪽버튼이동일 경우 두번째 슬라이드[1]
             // 왼쪽버튼이동일 경우 첫번째 슬라이드[0]
