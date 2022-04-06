@@ -12,7 +12,7 @@
             JS 클래스는 JS 객체용 템플릿이다
             JS 클래스는 객체가 아니다! 함수의 일종이다!
             JS 객체를 위한 템플릿이다
-            클래스는 엄격모드(use "strict")에서 사용된다
+            클래스는 엄격모드("use strict")에서 사용된다
             (만약 엄격모드를 설정하지 않으면 class를 사용하는 JS는
             자동으로 엄격모드로 적용된다!)
 
@@ -44,6 +44,59 @@
             constructor() 메서드 아래에 하나씩 생성한다!
 
         */
+
+        class MovieInfo {
+            // 생성자 메서드 : 주로 속성만 셋팅함!
+            constructor(tit, sum, dir, act, des) {
+                this.제목 = tit;
+                this.개요 = sum;
+                this.감독 = dir;
+                this.출연 = act;
+                this.문구 = des;
+            }
+            // 내가 만들고자 하는 메서드는 아래에 따로생성
+            함수(msg){
+                return `영화 ${this.제목}의 감독님 이름은 ${this.감독}, 나의 응원은 ${msg}`;
+            }
+        } /////////// class //////////////////////
+
+        // 클래스의 데이터형은 뭐지?
+        // typeof 변수 -> 변수(객체,클래스)의 데이터형을 리턴
+        console.log("클래스는 뭐지? ",typeof MovieInfo);
+
+        document.write("<h1>JS5-6. JS 클래스</h1>");
+
+        // 클래스로 객체만들기!
+        const mi1 = new MovieInfo("조제","멜로/로맨스, 드라마","김종관","한지민, 남주혁","조제 보러 오세요");
+
+        // 클래스로 만든게 객체인지 확인
+        console.log("mi1이 객체인지 확인:",mi1);
+
+        // 만들어진 객체 화면출력 : 객체니까 for in 사용!
+        for(let x in mi1){
+            document.write(`<h2>${mi1[x]}</h2>`);
+        } //// for in /////
+
+        // 객체 메서드 호출!
+        document.write(mi1.함수("굉장허네!"));
+
+        // 구분선
+        document.write("<hr>");
+
+        // 객체를 하나더 만들어 본다!!!
+        const mi2 = new MovieInfo("이웃사촌","드라마, 코미디","이환경","정우, 김희원","이웃을 사랑합시다");
+
+        // 클래스로 만든게 객체인지 확인
+        console.log("mi2이 객체인지 확인:",mi2);
+
+        // 만들어진 객체 화면출력 : 객체니까 for in 사용!
+        for(let x in mi2){
+            document.write(`<h2>${mi2[x]}</h2>`);
+        } //// for in /////
+
+        // 객체 메서드 호출!
+        document.write(mi2.함수("만만세유~~!"));
+
         
     </script>
 </head>
