@@ -7,6 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 스크롤값 변수
     let scTop;
+    // 상단영역 - #top
+    let topA = document.querySelector("#top");
 
     /********************************** 
         [ 윈도우 스크롤 이벤트 함수 ]
@@ -21,11 +23,19 @@ window.addEventListener("DOMContentLoaded", () => {
         // this는 화살표함수에서 window객체임!
         console.log("스위:", scTop);
 
+        // 1. 스크롤 위치가 100px 이상일때 
+        // 변경사항: #top에 클래스 on넣기
+        if(scTop >= 100) topA.classList.add("on");
+
+        // 2. 스크롤 위치가 100px 미만일때(else)
+        // 변경사항: #top에 클래스 on제거
+        else topA.classList.remove("on");
+
     }); ////////////// scroll //////////////
 
     /************************************************** 
         [윈도우 세로 스크롤 위치값 가져오는 방법]
-        
+
         1. this.scrollY (this키워드가 window의미)
         2. window.scrollY
         3. document.scrollingElement.scrollTop
