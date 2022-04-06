@@ -5,11 +5,17 @@
     <title>JS - Slide Images 세로방향</title>
     <link rel="stylesheet" href="css/main.css">
     <!-- 외부JS삽입 -->
-    <script src="js/main2.js"></script>
+    <script src="js/main3.js"></script>
     <style>
-        /* 플렉스 방향 변경 덮어쓰기 */
+        /* 슬라이드 변경 */
         #slide{
-            flex-direction: column;
+            display: block;
+        }
+        #slide li{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* 모든 슬라이드 겹치기 */
         }
     </style>
 </head>
