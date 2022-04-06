@@ -27,18 +27,7 @@
             list-style: none;
         }
 
-        ul::after,
-        ol::after {
-            content: "";
-            display: block;
-            clear: both;
-            /*float해제*/
-        }
-
-        li {
-            float: left;
-            /*옆으로 흐르게*/
-        }
+        
 
         /**************************************/
 
@@ -69,20 +58,24 @@
         }
 
         #slide {
+            display: flex;
+            /* 플렉스박스!!! */
+
             /*사진을 싸고 있는 슬라이드*/
             position: absolute;
             top: 0;
             left: 0;
-            /*모든 슬라이드 5장이 옆으로 나열되도록 
-            width 크기를 확보해야한다!!!*/
-            width: 500%;/*5배크기*/
+            width: 100%;
             height: 100%;
         }
 
         #slide li {
-            /*부모가 5배되었으므로 5등분함!*/
-            width: 20%;
-            height: 100%;
+            flex-shrink: 0;
+            /* 부모박스크기만큼 줄어들지 않음 -> 0 */
+            flex-basis: 100%;
+            /* 가로크기를 부모박스 크기에 맞춤! */
+            /* height 값은 flex박스 자식요소에서
+            등분할시 자동 100%임! */
         }
 
         #slide li img {
@@ -113,6 +106,8 @@
 
         /*블릿버튼*/
         .indic {
+            display: flex;
+            /* 플렉스박스 */
             position: absolute;
             bottom: 50px;
             left: 80px;
