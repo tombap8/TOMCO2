@@ -45,8 +45,12 @@ window.addEventListener("load", () => {
             // 1. 전달값 및 호출확인
             console.log("이동!",dir);
 
+            // 1.5. 슬라이드 li요소들 변수할당!
+            let sli = slide.querySelectorAll("li");
+
             // 2. 방향분기   /////////////
-            // 2-1. 오른쪽버튼
+
+            // 2-1. 오른쪽버튼 ///////////
             if(dir){ // dir===1 이면 true
 
                 // (1) 슬라이드박스의 left값을 -100%로 이동
@@ -57,8 +61,7 @@ window.addEventListener("load", () => {
                 // 일정시간 후 한번실행하는 타이밍함수는? setTimeout
                 setTimeout(()=>{
                     // (2) 첫번째 슬라이드li를 잘라서 맨뒤로 보낸다!
-                    slide.appendChild(
-                        slide.querySelectorAll("li")[0]);
+                    slide.appendChild(sli[0]);
                     // appendChild(요소) - 선택요소 맨뒤이동
 
                     // (3) 동시에 left값을 0으로 변경함!
@@ -71,8 +74,26 @@ window.addEventListener("load", () => {
 
 
             } //////////// if ///////////
-            // 2-2. 왼쪽버튼
+
+            // 2-2. 왼쪽버튼 //////////////
             else {
+                // li요소 대상
+                // (1) 먼저 맨뒤의 슬라이드 li를 맨앞으로 이동
+                slide.insertBefore(sli[sli.length-1],sli[0]);
+                // insertBefore(넣을놈,넣을놈전놈)
+                // sli.length-1 -> 컬렉션 마지막번호는 [개수-1]
+
+                // (2) 이때 left -100%로 변경한다!(트랜지션없음!)
+                slide.style.left = "-100%";
+                slide.style.transition = "none";
+
+                // (3) 이후 left값을 0으로 변경하며 애니메이션함
+                // 주의: 위의 설정코드와 분리를 위해 setTimeout으로
+                // 약간의 시차를 줌!
+                setTimeout(()=>{
+                    slide.style.left = "0";
+                    slide.style.transition = ".6s ease-out";
+                },10); /// 0.01초 시차! ////
 
             } /////////// else //////////
              
