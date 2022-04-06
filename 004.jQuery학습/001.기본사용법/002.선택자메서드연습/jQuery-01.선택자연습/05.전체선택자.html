@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> 전체 선택자 (*) </title>
+<!-- jQuery library -->
+<script src="jquery-1.7.2.min.js"></script>
+<script>
+$(function() {// jQB //////////////////////////
+    // 미션: body를 클릭하면 모든 요소를 선택하여(*) 
+	// 인터넷으로 검색한 이미지 주소를 배경이미지로 설정하여 width: 200px, height: 200px 로 설정하시오.
+	
+  $("body").click(function(){
+    // 확인
+    console.log("요기!");
+    // 미션수행
+    $("*").css({
+      background:"url(https://upload.wikimedia.org/wikipedia/ko/4/47/%EB%AF%B8%EB%8B%88%EC%96%B8%EC%A6%88_2_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg) no-repeat center/cover",
+      width: "200px",
+      height:"200px"
+    });//// css ///////
+
+  });///////// click /////////////
+	
+	
+});//jQuery실행구역
+</script>
+</head>
+  
+<body>
+
+<div id="container">
+
+ <header>
+   <h2> Welcome mySite </h2>
+ </header>
+
+ <nav>
+   <ul class="list">
+   <li id="first">One</li>
+   <li id="second">Two</li>
+   <li id="third">Three</li>
+  </ul>
+ </nav>
+
+</div>
+
+<!---------- jQuery code Start ---------->
+<script>
+
+</script>
+
+</body>
+</html>

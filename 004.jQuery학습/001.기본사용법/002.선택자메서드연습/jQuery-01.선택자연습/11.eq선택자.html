@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title> eq 선택자 </title>
+	<!-- jQuery library -->
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<script src="jquery-1.7.2.min.js"></script>
+	<script>
+		$(document).ready(function (e) {
+
+			// 1차 미션: .nav1 아래 li를 클릭시 클릭된 li의 글자크기를 5px씩 커지게 하시오. 동시에 글자색을 무지개색 순서로 차례로 변경되게 하시오.
+
+			// 무지개색상명
+			let fcolor = ["red", "orange", "yellow", "green", "blue",
+				"indigo", "purple"
+			];
+
+			// 무지개순번
+			let fnum = 0;
+
+			// 변경, 이벤트대상: .nav1 li
+			$(".nav1 li") //주인공!
+				.css({
+					fontSize: "42px",
+					textShadow: "0 0 10px #333",
+					cursor: "pointer", //손가락모양
+					width: "300px",
+					whiteSpace: "nowrap" //줄바꿈방지
+				})
+				// 계속이어서 click메서드 셋팅함!
+				.click(e => { //e-이벤트전달값
+					console.log("나야나!");
+
+					// 클릭된 나자신은? this -> 축약형일땐 e.currentTarget
+					// 글자크기가 기존크기에 5px씩 커짐
+					// += 대입연산자사용!
+					$(e.currentTarget).css({
+						fontSize: "+=5px", //기존크기에 더함!
+						color: fcolor[fnum] //배열에서 색상가져옴
+					});
+
+					// 무지개색 순번 증가
+					fnum++;
+					if (fnum === 7) fnum = 0; //한계수
+
+				}); /////// click ////////////
+
+
+			//// 2차미션 : 선택박스의 선택을 변경하는 순간 선택된 이름의 배경색을 무지개색 순번으로 변경하시오. 동시에 배경이미지를 body에 해당이름과 매칭하여 넣으시오.
+
+			// 이벤트대상: #selnum
+			$("#selnum")
+				.css({
+					fontSize: "42px",
+					height: "60px"
+				})
+				/// 이어서코딩
+				.change(function () {
+					// 선택된 option요소의 value값 읽어오기!
+					let optval = $(this).val();
+					// this키워드로 val() 메서드 사용하여 값을 읽어옴!
+					console.log("바뀌나?" + optval);
+
+					// option값이 "tt"일때 돌아가!
+					if(optval==="tt") return;
+
+					// 배경색 초기화 (for문없이 모두 초기화함!) ///
+					$(".nav1 li").css({
+						background: "transparent"
+					}); //////// css ///////////
+
+					// 선택된 순번(optval)의 li배경색을
+					// 무지개색으로 넣기
+					// 변경대상: .nav1 li
+					// [ eq선택자 ] -> 제이쿼리 전용 선택자
+					// -> :eq(순번) - 순번은 0부터
+					// eq는 seqence에서 나온말!
+					$(".nav1 li:eq(" + optval + ")").css({
+						background: fcolor[fnum]
+					}); /////// css //////////
+
+					// 무지개색 순번 증가
+					fnum++;
+					if (fnum === 7) fnum = 0; //한계수
+
+					// 배경넣기
+					$("body").css({
+						background: "url(img/" + optval +
+							".jpg) no-repeat top/cover"
+					}); //////////// css ////////////////////
+
+
+				}); ////// change ///////////////
+
+
+
+		}); //jQuery실행구역
+	</script>
+
+</head>
+
+<body>
+
+	<div id="container">
+		<select id="selnum">
+			<option value="tt">이름을 선택하세요</option>
+			<option value="0">김수현</option>
+			<option value="1">정우성</option>
+			<option value="2">유아인</option>
+			<option value="3">아이유</option>
+			<option value="4">박보검</option>
+			<option value="5">송중기</option>
+			<option value="6">김혜수</option>
+			<option value="7">전지현</option>
+			<option value="8">손예진</option>
+		</select>
+
+		<ul class="nav1">
+			<li>김수현</li>
+			<li>정우성</li>
+			<li>유아인</li>
+			<li>아이유</li>
+			<li>박보검</li>
+			<li>송중기</li>
+			<li>김혜수</li>
+			<li>전지현</li>
+			<li>손예진</li>
+		</ul>
+
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+
+	</script>
+</body>
+
+</html>

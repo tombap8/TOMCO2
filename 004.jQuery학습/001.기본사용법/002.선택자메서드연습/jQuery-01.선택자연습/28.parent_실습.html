@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title> parent </title>
+  <!-- jQuery library -->
+  <script src="jquery-1.7.2.min.js"></script>
+  <script src="jquery-ui-1.8.23.custom.min.js"></script>
+  <script>
+    $(document).ready(function (e) {
+      /* 
+        [ parent() 메서드 ]
+        - 선택요소를 싸고 있는 부모요소를 선택함
+        -> 만약 parent() 를 여러번쓰면 쓴 횟수만큼 위의 부모로 올라감!
+        예) div>p>a>span 이런 구조면 
+            $("span").parent().parent() -> 부모들 중 p태그임
+        비교) :parent 필터는 내용이 있는 요소를 선택함(많이 다름!!!)
+      */
+
+      // 미션: p태그를 클릭하면 부모요소의 배경색을 빨간색으로 변경하시오.
+      
+
+
+      // parents(요소명) -> 부모들 중 특정 부모를 선택함!
+
+      // 미션: a를 클릭하면 부모들 중 p태그는 배경색을 노란색, 
+      // div태그는 배경색을 녹색으로 지정하시오.
+
+      
+
+      // 주의사항: a를 클릭하면 클릭이벤트가 부모요소로 전달되어
+      // p태크를 클릭하는 효과가 나타나게 된다!(이벤트버블링)
+      // 이것을 막으려면 코드 최하단에 return false를 써준다!
+
+
+
+    }); //jQuery실행구역
+  </script>
+
+  <style>
+    #container {
+      border: 3px ridge blue;
+    }
+
+    div,
+    p,
+    a {
+      float: left;
+      margin: 10px;
+      background-color: #FFF;
+      display: block;
+    }
+
+    div#sub {
+      width: 180px;
+      height: 180px;
+      border: #000 thin solid;
+    }
+
+    p {
+      width: 150px;
+      height: 150px;
+      border: #000 thin solid;
+    }
+
+    a {
+      width: 130px;
+      height: 100px;
+      border: #000 thin solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+
+    <div id="sub">
+      <p>div p
+        <a href="#">
+          div p a
+        </a>
+      </p>
+    </div>
+    <p id="part1">p</p>
+    <p>p</p>
+    <p>p</p>
+
+  </div>
+  <!---------- jQuery code Start ---------->
+  <script>
+
+  </script>
+
+</body>
+
+</html>

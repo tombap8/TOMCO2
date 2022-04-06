@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>위치정보 알아내기</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*전체페이지*/
+        .page {
+            position: relative;
+            /*부모*/
+            width: 100%;
+            height: 3000px;
+            background-image: linear-gradient(to bottom, #6af3f8, #eaf755, #a3b5ff, #ffb0fc);
+        }
+
+        /*정보표시박스*/
+        #info {
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            width: 350px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, .7);
+        }
+
+        /*벌새*/
+        #bird {
+            position: absolute;
+            top: 10%;
+            left: 40%;
+            animation: bird 20s ease-in-out infinite alternate;
+        }
+        
+        /*내부박스*/
+        .inbox{
+            position: relative;/*부모자*/
+            top: 500px;
+            width: 800px;
+            height: 1000px;
+            margin: 0 auto;
+            outline: 2px dotted red;
+        }
+
+        /*벌새위치변경 애니메이션*/
+        @keyframes bird {
+            0% {
+                top: 10%;
+                left: 40%;
+            }
+
+            40% {
+                top: 30%;
+                left: 20%;
+            }
+
+            60% {
+                top: 50%;
+                left: 80%;
+            }
+
+            100% {
+                top: 80%;
+                left: 30%;
+            }
+        }
+
+        /*키프레임*/
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() { /// jQB //////////////////////////
+            var offtop, offleft, postop, posleft;
+            setInterval(function() {
+                // offset() 메서드의 top, left
+                // 기준: document 전체
+                // position() 메서드의 top, left
+                // 기준: 부모박스
+                offtop = Math.floor($("#bird").offset().top);
+                offleft = Math.floor($("#bird").offset().left);
+                postop = Math.floor($("#bird").position().top);
+                posleft = Math.floor($("#bird").position().left);
+
+                /// 화면표시 ////
+                $(".i1").text(offtop);
+                $(".i2").text(offleft);
+                $(".i3").text(postop);
+                $(".i4").text(posleft);
+
+
+
+
+
+            }, 100); ///// setInterval //////
+            
+            $(".page").click(function(e){
+                console.log(e.screenX);
+                console.log(e.clientX);
+                console.log(e.pageX);
+            })
+
+
+
+
+        }); //////// jQB ////////////////////////////////
+        /////////////////////////////////////////////////
+        /////////////////////////////////////////////////
+    </script>
+
+
+</head>
+
+<body>
+    <div class="page">
+
+        <div class="inbox">
+            <!--날아다니는 새-->
+            <img id="bird" src="bird.gif" alt="벌새">
+        </div>
+
+        <!--위치정보표시-->
+        <div id="info">
+            <h2>offset().top 값 : <span class="i1"></span>px</h2>
+            <h2>offset().left 값 : <span class="i2"></span>px</h2>
+            <h2>position().top 값 : <span class="i3"></span>px</h2>
+            <h2>position().left 값 : <span class="i4"></span>px</h2>
+        </div>
+
+
+
+    </div>
+
+</body></html>
