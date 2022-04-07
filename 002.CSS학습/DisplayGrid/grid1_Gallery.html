@@ -46,6 +46,11 @@
         justify-items -> 가로방향 다중 정렬 (flex에 없음!)
         align-items -> 세로방향 다중 정렬
 
+        ___________________________________
+
+        그리드 사용 예시 사이트: 매치 리스트
+        https://www.matchroomboxing.com/
+
     ****************************************************/
         /* 타이틀 */
         .tit {
@@ -54,18 +59,62 @@
         }
 
         /* 그리드 박스 */
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            /* grid-template-columns: 100px 200px 300px; */
+            /* grid-template-columns: 1fr 3fr 5fr 2fr; */
+            /* grid-template-rows: 100px 200px 300px; */
+            /* grid-template-rows: 1fr 2fr; */
+
+            /* 수평방향 사이간격 */
+            grid-column-gap: 1vw;
+
+            /* 수직방향 사이간격 */
+            grid-row-gap: 1.5vw;
+
+            max-width: 1200px;
+            margin: 0 auto;
+
+        }
         
 
         /* 그리드 각박스 */
+        .grid>div{
+            position: relative;
+            /* 부모자격 */
+            border: 2px solid #ccc;
+        }
         
 
         /* 가상요소before로 패딩탑 사용 비율만들기 */
+        .grid>div::before{
+            content: '';
+            display: block;
+            padding-top: 150%;
+        }
         
 
         /* 내용 이미지 */
-        
+        .grid>div>img{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 비디오,이미지 요소
+            비율유지하며 배경처럼 채우기 */
+        }
 
         /* 상품설명박스 */
+        .grid aside{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.505);
+        }
         
 
 
