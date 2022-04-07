@@ -110,6 +110,9 @@
                 차지하던 설정이 변경된다!
                 세로방향의 영역을 설정함!
             */
+            line-height: calc(var(--ht1) + var(--ht2));
+            /* 줄간격 계산
+            calc(높이변수1 + 높이변수2) */
         }
 
         /* 4.배너 */
@@ -121,22 +124,30 @@
 
         /* 5.배너 사이드 */
         .bnside {
-            grid-column: 11 / 13;
+            grid-column: 4 / 13;
+            /* 세번째줄에 내려가 있는 곳에서
+            가로방향 영역 조정 */
+            line-height: var(--ht3);
         }
 
         /* 6.하단 좌측 */
         .bleft {
             grid-column: 1 / 4;
+            grid-row: 3 / 4;
+            /* 세로방향 3번째 줄로 위치이동됨! */
         }
 
         /* 7.하단정보 */
         .binfo {
-            grid-column: 4 / 10;
+            grid-column: 1 / 10;
+            /* 마지막줄 가로방향 조정 */
+            line-height: var(--ht4);
         }
 
         /* 8.하단 우측 */
         .bright {
             grid-column: 10 / 13;
+            line-height: var(--ht4);
         }
 
         /* 
