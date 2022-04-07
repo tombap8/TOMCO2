@@ -265,7 +265,7 @@
 /* 위로가기버튼 */
 .tbtn{
    position: fixed;
-   bottom: 0;
+   bottom: -35px;/* 아래쪽에 나가있음 */
    right: 75px;
    width: 48px;
    height: 35px;
@@ -276,6 +276,20 @@
    color: #fff;
    z-index: 9999;
    font-size: 12px;
+   opacity: 0;/* 투명 */
+
+   /* 트랜지션: 속시이지 */
+   transition: background-color .3s,
+   opacity .3s;
+}
+/* 탑메뉴 클래스on상태 */
+.tbtn.on{
+   opacity: 1;/* 나타나기 */
+   bottom: 0;/* 올라옴! */
+}
+/* 탑메뉴 마우스 오버시 */
+.tbtn:hover{
+   background-color: #f00;
 }
 
 
