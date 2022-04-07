@@ -188,14 +188,26 @@ window.addEventListener("load", () => {
         // 인터발 호출함수 최초호출!
         autoCall();
 
+        // 타임아웃용 변수
+        let autoT;
+
         ////////////////////
         // 인터발 삭제함수 //
         ////////////////////
         // -> 슬라이드 이동버튼 클릭시 호출됨!
         const clearAuto = () => {
 
-            // 1. 인터발지우기
+            console.log("인터발지우기!");
+
+            // 1. 인터발지우기 + 타임아웃지우기
             clearInterval(autoI);
+            clearTimeout(autoT);
+            // 한번씩 셋팅되는 타임아웃을 안지우면
+            // 여러개가 작동하여 실행쓰나미가 발행함!
+
+            // 2. 일정시간후 다시 인터발호출하기!
+            autoT = setTimeout(autoCall,4000);
+            // 4초후 autoCall()함수 호출!
 
         }; ////// clearAuto함수 ///////////
 
