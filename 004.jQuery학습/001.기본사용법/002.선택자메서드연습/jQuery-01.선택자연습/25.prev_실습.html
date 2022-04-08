@@ -48,6 +48,17 @@ $(document).ready(function(e) {
   // 이전 p태그 모두를 배경색 yellow, 가로,세로 크기 100px로
   // 애니메이션 하시오!
   // prevAll() 사용!
+  $(".sub").find("p").last()
+  .click(function(){
+      $(this)// 마지막 p태그
+      .prevAll() // 이전형제 p태그요소들
+      .animate({
+        backgroundColor:"yellow",
+        width:"100px",
+        height:"100px",
+        borderRadius:"50%"
+      },1000); /// animate ///
+  }); /////////// click ////////////
 
   
 
