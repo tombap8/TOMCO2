@@ -42,6 +42,24 @@
       //    미니언즈 중 하나를 클릭하면 클릭된 이미지만 
       //    width를 200px로 변경, 나머지는 모두 50px로 
       //    변경되도록 애니메이션 하시오.
+      tg.find("img").click(function(){
+
+        // this는 클릭된 img
+        $(this).animate({width:"200px"},800)
+        .siblings().animate({width:"50px"},800);
+
+        // siblings(필터) 를 활용한 테두리주기!
+        // class가 "my"인 클릭된 요소 이외에 형제요소를
+        // 선택하여 테두리주기!
+        $(this).css({
+          border: "none"
+        }) //// css ////
+        .siblings(".my") // -> 형제중 ".my"인요소들
+        .css({
+          border:"5px dotted orange"
+        }); /////// css ///////
+
+      }); ////////// click /////////////////
 
 
 
