@@ -54,6 +54,12 @@ window.addEventListener("DOMContentLoaded", () => {
         //////// 등장액션 클래스 주기 ///////
         ////////////////////////////////////
 
+        // 현재 스크롤위치가 등장할 요소의 위치범위에
+        // 있다면 등장해라!
+        if(scTop > scPos[0]-winH && scTop < scPos[0]){
+            scAct[0].classList.add("on");
+        }
+
 
 
 
@@ -76,7 +82,7 @@ window.addEventListener("DOMContentLoaded", () => {
    // 스크롤 등장 대상요소
     let scAct = document.querySelectorAll(".scAct");
     // 스크롤 등장 대상위치 배열
-    let scPos = [];
+    const scPos = [];
     // 대상요소만큼 for문 돌기
     for(let i=0; i<scAct.length;i++){
         scPos[i] = scAct[i].offsetTop;
@@ -84,6 +90,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     console.log(scPos);
 
+    // 스크롤 등장위치 조정값 : 윈도우화면크기의 2 / 3
+    const winH = (window.innerHeight / 3) * 2;
+    console.log("윈도우높이절반:",winH);
 
 
 
