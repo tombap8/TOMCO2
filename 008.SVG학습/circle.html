@@ -49,9 +49,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            /* width: 40%; */
+            /* width: 300px;
+            height: 300px; */
+            width: 40%;
             /* 가로크기 유동적변경! */
             min-width: 150px;
             background: url(images/man.jpg) no-repeat top/cover;
@@ -60,11 +60,11 @@
         }
 
         /* 비율밀기 */
-        /* .btns::before {
+        .btns::before {
             content: '';
             display: block;
             padding-top: 100%;
-        } */
+        }
 
         /* svg셋팅 */
         .btns svg {
@@ -72,19 +72,58 @@
             top: 0;
             width: 100%;
             height: 100%;
+            transform: rotate(-90deg);
+            /* circle요소에 트랜스폼 안됨! */
         }
 
 
         /* circle 설정 */
         .c1 {
+            fill: none;
+            /* 채우기 - 기본색은 검정
+            투명(transparent), none(없음) */
+            stroke: red;
+            /* 선색(안쓰면 안나옴) */
+            stroke-width: 20;
+            /* 선두께 안쓰면 1px, 
+            단위없으면 기본px단위임! */
+            stroke-linecap: round;
+            /* 선끝 둥글게 */
+
+            stroke-dasharray: 310%;
+            /* 선공백 셋팅 속성
+            값: 선 공백 선 공백 
             
+            [ 선공백 셋팅을 이용해서 svg
+            선그리기 애니메이션 하기 ]
+            1. 선 공백 셋팅에서 선이 선이
+            모두 차이하도록 값을 찾는다!
+            -> 쉽게 찾는 방법: 50%를 줘본다
+            -> 몇 조각남? 6조각
+            -> 모두 선으로 채우려면? 6배함
+            50% * 6 = 300%
+            -> 약간 모자라면 조금 더 준다!
+            -> 왜 선이 모두 채워지게 했지?
+            -> 이유는 다음에 있는 공백을
+            밀어서 선을 숨기기 위해서!
+            -> 어떻게 밀지?
+            ->>>> stroke-dashoffset 속성
+            -> 이 속성은 선공백의 시작점을
+            셋팅할 수 있는데 선으로 채워진
+            선공백값을 넣으면 공백부터 시작함
+            -> 이값을 0으로 만들면서
+             애니메이션한다!!!
+            */
+            stroke-dashoffset: 310%;
+            /* 트랜지션: 속시이지 */
+            transition: stroke-dashoffset .7s ease-in-out;
 
         }
 
         /* .c1에 마우스 오버시 
         선부터 시작하는 위치로 변경함! */
         .btns:hover .c1 {
-            
+            stroke-dashoffset: 0;
         }
 
         /* 두번째 원 */
@@ -94,7 +133,7 @@
 
         .btns2 .c1 {
             stroke: black;
-            stroke-dasharray: 20;
+            stroke-dasharray: 40;
         }
 
         .btns2:hover .c1 {
@@ -105,11 +144,17 @@
         .btns3 {
             background-image: url(images/doc.jpg);
         }
-
         /* 네번째 원 */
         .btns4 {
-            width: 150px;
+            width: 20%;
+            min-width: 75px;
             background-image: url(images/wan.jpg);
+        }
+
+        /* 완다 svg */
+        .btns4 svg{
+            width: 200%;
+            transform: rotate(0);
         }
 
         .btns4::before {
@@ -159,23 +204,65 @@
     <!-- 4등분박스 -->
     <ul class="cbx">
         <li>
+            <!-- 아이언맨 박스 -->
             <div class="btns">
-                
+                <svg viewBox="0 0 300 300">
+                    <!-- 
+                        viewBox 속성을 셋팅해야 크기가 자유롭게
+                        축소, 확대 변경된다!!!
+                        viewBox="x축 y축 가로크기 세로크기"
+                        원본크기를 써준다!
+                        viewBox 속성은 대소문자를 구분한다!!!
+                        (그런데 브라우저가 소문자로 써도 자동변환함!)
+                     -->
+                    <circle class="c1" cx="150" cy="150" r="140"></circle>
+                </svg>
             </div>
         </li>
         <li>
+            <!-- 블랙위도우 -->
             <div class="btns btns2">
-                
+                <svg viewBox="0 0 300 300">
+                    <circle class="c1" cx="150" cy="150" r="140"></circle>
+                </svg>
             </div>
         </li>
         <li>
+            <!-- 닥스 -->
             <div class="btns btns3">
-                
+                <svg viewBox="0 0 300 300">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stop-color="red" />
+                          <stop offset="30%" stop-color="pink" />
+                          <stop offset="60%" stop-color="orange" />
+                          <stop offset="100%" stop-color="blue" />
+                          
+                        </linearGradient>
+                      </defs>
+                    <circle class="c1" cx="150" cy="150" r="140" style="stroke:url(#grad1)"></circle>
+                    <!-- circle에 스타일 적용으로 
+                    stroke:url(#그라데이션아이디) 
+                    선에 그라데이션이 적용됨!
+                    면에 적용하고 싶으면 fill에 적용함-->
+                </svg>
             </div>
         </li>
         <li>
+            <!-- 완다 -->
             <div class="btns btns4">
-                
+                <svg viewBox="0 0 300 300">
+                    <defs>
+                        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="green" />
+                          <stop offset="30%" stop-color="purple" />
+                          <stop offset="60%" stop-color="yellow" />
+                          <stop offset="100%" stop-color="lightgreen" />
+                          
+                        </linearGradient>
+                      </defs>
+                    <ellipse class="c1" cx="75" cy="150" rx="140" ry="65" transform="rotate(-90,75,150)" style="stroke:url(#grad2)"></ellipse>
+                </svg>
             </div>
         </li>
     </ul>
@@ -259,6 +346,29 @@
             </symbol>
         </svg>
         
+
+        [ svg  축소확대용 속성 ]
+        viewBox 속성: 
+        (주의! 속성명 B대문자 필수! 대소문자구분!)
+        - 형식 : viewBox="x축위치 y축위치 width크기 height크기"
+        - 위의 형식의 값은 4가지이고 각 값은 띄어쓰기로 구분한다!
+        - 각 속성값의 특성
+            1) x축위치, y축위치는 양수값은 스테이지 바깥쪽방향이동
+            음수값은 스테이지 안쪽방향이동
+            -> 스테이지 보다 큰 svg 이미지가 있다면 위치를 이동해서
+            특정 이미지만 보이게 하는데 사용한다!!!
+
+            2) width크기, height크기는 svg원본 크기를 지정하는 부분이다.(현재 보이는 영역의 스테이지 크기설정)
+            -> 이 값의 width크기를 실제크기와 다르게 조정할 경우
+            값이 원본보다 커지면 보이는 벡터이미지는 작게 표현된다!
+            (값이 작아지면 크게표현됨)
+            -> height 크기는 벡터 그래픽의 세로영역을 확장하는데 사용
+
+            [ viewBox의 가장 일반적인 셋팅은? ]
+            viewBox="0 0 원래가로크기 원래세로크기"
+            -> 이 셋팅을 하면 스테이지가 크기 변경을 할때 svg의
+            크기를 비율을 유지하여 축소확대를 하게된다!
+
 
 
      -->
