@@ -16,10 +16,26 @@ $(document).ready(function(e) {
 	// 미션: #part1 을 클릭하면 다음형제요소의 
   // 크기를 width: 200px, height: 200px로 애니메이션 하시오.
   // 내부의 글자를 "안녕하세요~!"라고 변경하시오.
+  $("#part1").click(function(){
+
+    $(this).next()
+    .animate({
+      width:"200px",
+      height:"200px"
+    },500) //// animate ////
+    .text("안녕하세요~!");
+
+  });///////// click ///////////////
   
 
   // 추가미션: #sub를 클릭하면 
   // 다음의 형제 요소모두를 빨간배경색변경
+  $("#sub").click(function(){
+    $(this).nextAll()
+    .animate({
+        backgroundColor:"red"
+    },1000);//// animate ///
+  });/////////// click ////////////////
   
 
 

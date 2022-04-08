@@ -18,6 +18,33 @@
 
       */
 
+      // 전체박스
+      let tg = $("#container");
+
+      // 요소 추가 메서드는? append(추가요소)
+
+      // 미니언즈 50개 셋팅하기
+      // for(시;한;증){}
+      for(let i=0; i<50; i++){
+        tg.append('<img src="mini.jpg" alt="미니언즈">');
+      } ////////// for ////////////
+
+      // 미니언즈 크기 변경하기
+      tg.find("img").css({
+        width:"100px"
+      }); /// css /////
+
+      // 미니언즈 중 7n+1번째 이미지에 클래스 my넣기
+      // class넣는 메서드는? addClass(클래스명)
+      tg.find("img:nth-child(7n+1)").addClass("my");
+
+      // 미션: 미니언즈 이미지 300개를 셋팅하고 
+      //    미니언즈 중 하나를 클릭하면 클릭된 이미지만 
+      //    width를 200px로 변경, 나머지는 모두 50px로 
+      //    변경되도록 애니메이션 하시오.
+
+
+
      
 
 
@@ -57,7 +84,7 @@
 
 <body>
   <div id="container">
-
+    
 
 
 
