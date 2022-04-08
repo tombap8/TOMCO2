@@ -177,6 +177,20 @@
             
             width: 20%;
         }
+        .marvel2{
+            position: fixed;
+            top:2%;
+            right: 2%;
+            z-index: 1;
+            
+            width: 5%;
+        }
+        /* 마블M로고 */
+        .marvel2 svg {
+            position: absolute;
+            top: -2%;
+            width: 100%;
+        }
 
         /* svg text 박스 */
         .svgtxt{
@@ -197,7 +211,15 @@
 <body>
     <!-- svg 마블로고 -->
     <div class="marvel">
-        
+        <svg>
+            <use xlink:href="#mvlogo"></use>
+        </svg>        
+    </div>
+    <!-- svg 마블M로고 -->
+    <div class="marvel2">
+        <svg>
+            <use xlink:href="#mlogo"></use>
+        </svg>        
     </div>
 
 
@@ -269,7 +291,39 @@
 
     <!-- svg text -->
     <div class="svgtxt">
-        
+        <svg viewBox="0 0 300 150">
+            <defs>
+                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="purple" />
+                  <stop offset="40%" stop-color="blue" />
+                  <stop offset="80%" stop-color="red" />
+                  <stop offset="100%" stop-color="orange" />
+                  
+                </linearGradient>
+              </defs>
+            <text style="fill:url(#grad3)">
+                <tspan font-size="50" x="0" y="40">
+                    Avengers
+                </tspan>
+                <tspan font-size="60" x="10" dy="80">
+                    End Game
+                </tspan>
+            </text>
+        </svg>
+    </div>
+
+    <!-- svg 요소를 symbol요소로 셋업 -->
+    <!-- 본 박스는 안보이게 처리함 -->
+    <div class="svgitem" style="display: none;">
+        <svg>
+            <!-- 마블로고 -->
+            <symbol viewBox="0 0 130 52" id="mvlogo">
+                <rect fill="#EC1D24" width="100%" height="100%"></rect><path fill="#FEFEFE" d="M126.222 40.059v7.906H111.58V4h7.885v36.059h6.757zm-62.564-14.5c-.61.294-1.248.44-1.87.442v-14.14h.04c.622-.005 5.264.184 5.264 6.993 0 3.559-1.58 5.804-3.434 6.705zM40.55 34.24l2.183-18.799 2.265 18.799H40.55zm69.655-22.215V4.007H87.879l-3.675 26.779-3.63-26.78h-8.052l.901 7.15c-.928-1.832-4.224-7.15-11.48-7.15-.047-.002-8.06 0-8.06 0l-.031 39.032-5.868-39.031-10.545-.005-6.072 40.44.002-40.435H21.278L17.64 26.724 14.096 4.006H4v43.966h7.95V26.78l3.618 21.192h4.226l3.565-21.192v21.192h15.327l.928-6.762h6.17l.927 6.762 15.047.008h.01v-.008h.02V33.702l1.845-.27 3.817 14.55h7.784l-.002-.01h.022l-5.011-17.048c2.538-1.88 5.406-6.644 4.643-11.203v-.002C74.894 19.777 79.615 48 79.615 48l9.256-.027 6.327-39.85v39.85h15.007v-7.908h-7.124v-10.08h7.124v-8.03h-7.124v-9.931h7.124z"></path><path fill="#EC1D24" d="M0 0h30v52H0z"></path><path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+            </symbol>
+
+            <!-- 마블M로고 -->
+            <symbol viewBox="0 0 36 52" id="mlogo"><rect fill="#EC1D24" width="100%" height="100%"></rect><path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path></symbol>
+        </svg>
     </div>
 
     <!-- 
@@ -335,9 +389,13 @@
         2. 싸고 있는 박스의 가로크기만 지정하면 자동으로
         그 크기를 변경할 수 있다!!!
         
-        [ svg코드가 복잡하므로 아래쪽에 별도의 공간에 분리 후 호출하는 코드 ]
+        [ svg코드가 복잡하므로 아래쪽에 
+        별도의 공간에 분리 후 호출하는 코드 ]
+
         1. 본 svg 태그 안에 이렇게 코딩:
-        <use xlink:href="#아이디명"></use>
+        <svg>
+           <use xlink:href="#아이디명"></use>
+        </svg>
 
         2. 아랫쪽 별도의 태그 안에 실제 svg 코드
         <svg>
