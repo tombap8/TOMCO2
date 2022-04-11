@@ -16,6 +16,28 @@
 		//미션: #main>p 중 첫번째p를 클릭하면 두번째 p태그 내부에 
 		// img태그를 5개 만들고 css설정을 absolute로 하여 
 		// 차례대로 left이동 애니메이션을 하시오.
+		$("#main>p").first().click(function(){
+
+			// 호출확인
+			console.log("나야나!");
+
+			// this는 첫번째 p태그
+			$(this) // 출발!
+			.next() // 두번째 p태그
+			.html(`
+				<img src="pic1.jpg" alt="이미지">
+				<img src="pic2.jpg" alt="이미지">
+				<img src="pic3.jpg" alt="이미지">
+				<img src="pic4.jpg" alt="이미지">
+				<img src="pic5.jpg" alt="이미지">
+			`)
+			.find("img") // 5개의 이미지로 주인공변경!
+			.css({
+				position:"absolute",
+				left:"0"
+			})
+
+		}); ////////////// click ////////////////
 		
 		
 	
