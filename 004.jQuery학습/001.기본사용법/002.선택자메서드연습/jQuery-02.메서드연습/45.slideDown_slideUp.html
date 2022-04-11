@@ -24,8 +24,8 @@
 				2. overflow:hidden 설정 불필요!
 				(slideUp 했을때 애니메이션 후 display:none으로 변경됨!)
 
-				※ slidUp(), slideDown() 에 시간을 안쓰면
-				show(), hide() 와 같이 display:none 상태를 전환함!
+				참고) slideUp()/slideDown()/slideToggle()에 시간을
+				안쓰면 기본시간 400이 들어간다!
 			*/
 
 
@@ -34,12 +34,12 @@
 			
 			// slideUp ///
 			$("#up").click(function(){
-				$("div").slideUp(700);
+				$("div").slideUp();
 			});//////////// click ////////////
 
 			// slideDown ///
 			$("#down").click(function(){
-				$("div").slideDown(700);
+				$("div").slideDown();
 			});//////////// click ////////////
 
 			// slideToggle ///
