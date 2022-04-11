@@ -69,6 +69,18 @@
 			.delay(2000) // 위의 총액션 시간 + 2초 기다림
 			.animate({top:"200px"},500) // 아래로이동 액션!
 
+			// 추가 홀수 이동 애니메이션
+			.parent().find("img:odd").first() // 홀수번째 중 첫번째
+			.delay(2000) // 2초 기다림
+			.animate({top:"-50px"},500) // 위로이동 액션!
+			
+			.parent().find("img:odd").last() // 홀수번째 중 마지막째
+			.delay(2000) // 2초 기다림
+			.animate({top:"50px"},500); // 위로이동 액션! (마무리!)
+
+			///// html 태그 찍어보기 //////
+			console.log("현재html:",$("#main").html());
+
 		}); ////////////// click ////////////////
 		
 		
