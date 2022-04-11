@@ -42,6 +42,11 @@
         .addClass("type"+rdm()); // 랜덤 class넣기!
       }); ////////// click /////////
 
+      // 추가미션: .my 박스를 클릭하면 .pos를 넣기/빼기
+      // .pos가 없으면 넣고 있으면 뺀다! -> toggleClass()를 사용!
+      $(".my").click(function(){
+        $(this).toggleClass("pos");
+      }); ///////// click ////////////
 
 
 
