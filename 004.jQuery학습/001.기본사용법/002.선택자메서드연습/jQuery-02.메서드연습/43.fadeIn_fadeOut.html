@@ -21,6 +21,9 @@
 				fadeToggle(시간,이징,함수) 메서드
 				-> display:none 상태를 판단하여 
 					fadeIn()/fadeOut() 상태를 전환함
+
+				참고) fadeIn()/fadeOut()/fadeToggle()에 시간을
+				안쓰면 기본시간 400이 들어간다!
 			*/
 
 			// 미션: 각 버튼을 클릭하면 이름에 맞게 
@@ -28,12 +31,12 @@
 
 			// fadeOut
 			$("#fadeOut").click(function(){
-				$("img").fadeOut(1000);
+				$("img").fadeOut(10000);
 			});/////////// click ////////////////
 
 			// fadeIn
 			$("#fadeIn").click(function(){
-				$("img").fadeIn(1000);
+				$("img").fadeIn(10000);
 			});/////////// click ////////////////
 
 			// fadeToggle
