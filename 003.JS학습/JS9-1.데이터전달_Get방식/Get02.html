@@ -37,6 +37,20 @@
     </style>
     <script>
         // Get방식으로 넘어온 값 받기!
+        // location.href로 받는다!!!
+        let pm  = location.href;
+        // console.log("파라미터:",pm);
+
+        // 넘어온 파라미터를 분리하여 얻어낸다!
+        // url?키=값 -> 물음표로 잘라서 배열에 담는다!
+        // 변수.split("?") -> 물음표로 자른 값의 뒤엣것! -> [1]
+        // 변수.split("=") -> 이퀄로 자른 값의 뒤엣것! -> [1]
+        pm = pm.split("?")[1].split("=")[1];
+        // console.log("파라미터:",pm);
+
+        pm = unescape(pm);
+        console.log("파라미터복원:",pm);
+
         
         /// 데이터 셋업하기! //////
         let sdata = {
@@ -69,6 +83,17 @@
        
             // 로딩구역 확인
             console.log("로딩완료!!!");
+
+            // 타이틀박스
+            let tit = document.querySelector("#title");
+            // 메인 박스
+            let main = document.querySelector("#main");
+
+            // 1. 타이틀 넣기
+            tit.innerText = pm;
+
+            // 2. 타이틀 배경색
+            tit.style.backgroundColor = sdata[pm]["배경색"];
 
 
 
