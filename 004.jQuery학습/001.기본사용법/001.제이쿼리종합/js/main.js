@@ -318,10 +318,14 @@ $(() => { ///////// jQB /////////////////////////
                     .fadeIn(200, ()=>{
                         // 2. 좀비 달려오기
                         // -> 7번방 좀비: bd.eq(7).find(".mz")
+                        let tg = bd.eq(7).find(".mz");
                         // 2-1. 윗층으로 올라오기
-                        bd.eq(7).find(".mz")
-                        .animate({bottom:bd.eq(7).height()+"px"}
+                        tg.find(".mz")
+                        .animate({bottom:tg.height()+"px"}
                         ,500,"easeOutElastic")
+                        // 2-2. 주인공에게 달려오기
+                        .animate({right:tg.width() *1.2+"px"},
+                        2000, "easeOutBounce")
                     });
 
                 // 2. 다음버튼 보이기
