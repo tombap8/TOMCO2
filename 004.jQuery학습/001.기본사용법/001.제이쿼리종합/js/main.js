@@ -23,6 +23,13 @@ $(() => { ///////// jQB /////////////////////////
     // 삽입이미지 변수 셋팅 //////
     // 좀비 이미지 태그
     let mz1 = 
-        ``;
+        `<img src="images/mz1.png" alt="좀비1" class="mz">`;
+    let mz2 = 
+        `<img src="images/mz2.png" alt="좀비2" class="mz">`;
+    let zom = 
+        `<img src="images/zom.png" alt="좀비들" class="mz">`;
+    // 주사기 이미지
+    let inj =
+        `<img src="images/inj.png" alt="주사기" class="inj">`;
 
 }); ///////////// jQB /////////////////////////
