@@ -264,14 +264,14 @@ $(() => { ///////// jQB /////////////////////////
                 // 1. 메시지 변경
                 msg
                     .text("여긴 없겠지?...")
-                    .fadeIn(200)// 메시지 나타나기
+                    .fadeIn(200) // 메시지 나타나기
                     .delay(1000)
-                    .fadeOut(100,()=>{
+                    .fadeOut(100, () => {
 
                         // 2. 메시지 다시 변경
                         msg
-                        .html("그래도 무서우니까<br>윗층으로 가자!")
-                        .fadeIn(200);
+                            .html("그래도 무서우니까<br>윗층으로 가자!")
+                            .fadeIn(200);
 
                         // 3. 다음버튼 보이기
                         $(this).next() // 클릭된버튼 다음버튼
@@ -299,33 +299,51 @@ $(() => { ///////// jQB /////////////////////////
                 // 1. 메시지 변경
                 msg
                     .empty() // 선택요소 텍스트 지우기
-                    .fadeIn(200,()=>{msg.text("무")})
+                    .fadeIn(200, () => {
+                        msg.text("무")
+                    })
                     .delay(500)
-                    .fadeIn(200,()=>{msg.text("무.")})
+                    .fadeIn(200, () => {
+                        msg.text("무.")
+                    })
                     .delay(500)
-                    .fadeIn(200,()=>{msg.text("무.서")})
+                    .fadeIn(200, () => {
+                        msg.text("무.서")
+                    })
                     .delay(500)
-                    .fadeIn(200,()=>{msg.text("무.서.")})
+                    .fadeIn(200, () => {
+                        msg.text("무.서.")
+                    })
                     .delay(500)
-                    .fadeIn(200,()=>{msg.text("무.서.워")})
+                    .fadeIn(200, () => {
+                        msg.text("무.서.워")
+                    })
                     .delay(500)
-                    .fadeIn(200,()=>{msg.text("무.서.워.")})
+                    .fadeIn(200, () => {
+                        msg.text("무.서.워.")
+                    })
                     .delay(500)
-                    .fadeIn(200,()=>{msg.text("무.서.워..")})
+                    .fadeIn(200, () => {
+                        msg.text("무.서.워..")
+                    })
                     .delay(500)
-                    .fadeIn(200,()=>{msg.text("무.서.워...")})
+                    .fadeIn(200, () => {
+                        msg.text("무.서.워...")
+                    })
                     .delay(500)
-                    .fadeIn(200, ()=>{
+                    .fadeIn(200, () => {
                         // 2. 좀비 달려오기
                         // -> 7번방 좀비: bd.eq(7).find(".mz")
                         let tg = bd.eq(7).find(".mz");
                         // 2-1. 윗층으로 올라오기
-                        tg.find(".mz")
-                        .animate({bottom:tg.height()+"px"}
-                        ,500,"easeOutElastic")
-                        // 2-2. 주인공에게 달려오기
-                        .animate({right:tg.width() *1.2+"px"},
-                        2000, "easeOutBounce")
+                        tg.animate({
+                                bottom: tg.height() + "px"
+                            }, 500, "easeOutElastic")
+                            // 2-2. 주인공에게 달려오기
+                            .animate({
+                                    right: tg.width() * 1.2 + "px"
+                                },
+                                2000, "easeOutBounce")
                     });
 
                 // 2. 다음버튼 보이기
