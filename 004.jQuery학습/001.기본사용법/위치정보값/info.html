@@ -76,7 +76,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function() { /// jQB //////////////////////////
-            var offtop, offleft, postop, posleft;
+            var offtop, offleft, postop, posleft,js1,js2,js3,js4;
             setInterval(function() {
                 // offset() 메서드의 top, left
                 // 기준: document 전체
@@ -87,15 +87,24 @@
                 postop = Math.floor($("#bird").position().top);
                 posleft = Math.floor($("#bird").position().left);
 
+
+                let bird = document.querySelector("#bird");
+
+                js1 = bird.offsetTop;
+                js2 = bird.offsetLeft;
+                js3 = bird.getBoundingClientRect().top;
+                js4 = bird.getBoundingClientRect().left;
+
+
                 /// 화면표시 ////
                 $(".i1").text(offtop);
                 $(".i2").text(offleft);
                 $(".i3").text(postop);
                 $(".i4").text(posleft);
-
-
-
-
+                $(".i5").text(js1);
+                $(".i6").text(js2);
+                $(".i7").text(js3);
+                $(".i8").text(js4);
 
             }, 100); ///// setInterval //////
             
@@ -126,10 +135,16 @@
 
         <!--위치정보표시-->
         <div id="info">
+            <h2>제이쿼리</h2>
             <h2>offset().top 값 : <span class="i1"></span>px</h2>
             <h2>offset().left 값 : <span class="i2"></span>px</h2>
             <h2>position().top 값 : <span class="i3"></span>px</h2>
             <h2>position().left 값 : <span class="i4"></span>px</h2>
+            <h2>(JS 비교)</h2>
+            <h2>JS의 offsetTop 값 : <span class="i5"></span>px</h2>
+            <h2>JS의 offsetLeft 값 : <span class="i6"></span>px</h2>
+            <h2>JS의 getBoundingClientRect().top 값 : <span class="i7"></span>px</h2>
+            <h2>JS의 getBoundingClientRect().left 값 : <span class="i8"></span>px</h2>
         </div>
 
 
