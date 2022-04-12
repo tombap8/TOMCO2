@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* 보그 PJ 미디어쿼리 CSS - media.css */
+
+/* 모바일 미디어쿼리 - 500px이하 시작 */
+@media screen and (max-width:500px) {
+    /* 1. 상단영역 요소 없앰 */
+    .tmenu, .gnb{
+        display: none;
+    }
+    /* 2. 로고 줄이기 */
+    .logo{
+        margin-bottom: 0;
+    }
+    .logo img{
+        width: 130px;
+    }
+    /* 3. 상단중앙박스 */
+    .top{
+        padding: 10px;
+        min-height: auto;
+    }
+    /* 4. 등장액션 클래스 보이게함 */
+    .scAct{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    /* 5. 3등분 컨텐츠 박스 마지막요소 없앰 */
+    .fbx .cbx:last-child{
+        display: none;
+    }
+    /* 6. 배경이미지 변경하기: 한개짜리 배경 모바일용 */
+    .bg1{
+        background-image: url(../images/cont1b.jpg);
+    }
+    .bg5{
+        background-image: url(../images/cont3b.jpg);
+    }
+    .bg9{
+        background-image: url(../images/cont5b.jpg);
+    }
+}
+/* 모바일 미디어쿼리 - 500px이하 끝  */
