@@ -341,24 +341,45 @@ $(() => { ///////// jQB /////////////////////////
                             }, 500, "easeOutElastic")
                             // 2-2. 주인공에게 달려오기
                             .animate({
-                                right: tg.width() * 1.2 + "px"
-                            },
-                            2000, "easeOutBounce",
-                            ()=>{ // 콜백함수 - 물린후...
-                                // 3. 주인공 사색되기(흑백처리)
-                                mi.css({
-                                    filter:"grayscale(100%)"
-                                });
-                                // 4. 메시지 지우기
-                                msg.hide();
-                            })
-                    });
+                                    right: tg.width() * 1.2 + "px"
+                                },
+                                2000, "easeOutBounce",
+                                () => { // 콜백함수 - 물린후...
+                                    // 3. 주인공 사색되기(흑백처리)
+                                    mi.css({
+                                        filter: "grayscale(100%)"
+                                    });
+                                    // 4. 메시지 지우기
+                                    msg.hide();
 
-                // 2. 다음버튼 보이기
-                $(this).next() // 클릭된버튼 다음버튼
-                    .delay(1000).slideDown(300);
-                // delay(시간) 
-                // -> 애니메이션 메서드 앞에 사용!
+                                    // 5. 2초뒤에 좀비되기
+                                    setTimeout(() => {
+                                        // 5-1. 좀비 이미지변경
+                                        mi.find("img")
+                                            .attr("src", "images/mz1.png");
+                                        // attr(속성명, 속성값)
+                                        // -> 속성값 변경 메서드
+                                        // 비교) JS의 setAttribute()
+                                        // 참고) 속성값 가져오기는
+                                        // -> attr(속성명)
+                                        // 비교) JS의 getAttribute()
+
+                                        // 5-2. 좀비 메시지
+                                        msg.html("나도좀비!;;;<br>어서치료주사를!")
+                                            .css({
+                                                left: "100%"
+                                            }) // 위치변경
+                                            .fadeIn(400); // 메시지보이기
+
+                                        // 6. 다음버튼 보이기
+                                        $(this).next() // 클릭된버튼 다음버튼
+                                            .delay(1000).slideDown(300);
+                                        // delay(시간) 
+                                        // -> 애니메이션 메서드 앞에 사용!
+
+                                    }, 2000); //// setTimout ///
+                                }); ////// animate ///////
+                    }); ///////// fadeIn /////////////
 
 
             }; /////// 콜백함수 끝 ///////
