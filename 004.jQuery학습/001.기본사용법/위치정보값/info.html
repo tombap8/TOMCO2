@@ -95,6 +95,26 @@
                 js3 = bird.getBoundingClientRect().top;
                 js4 = bird.getBoundingClientRect().left;
 
+                /* 
+                    [제이쿼리:]
+
+                    1) offset() 
+                    -> 보이는 화면 기준 맨위와 왼쪽끝기준 절대값
+                    
+                    2) position() 
+                    -> 부모자격 박스 기준 절대값
+
+                    [자바스크립트:]
+
+                    1) offsetTop, offsetLeft 
+                    -> 제이쿼리 position()과 같음
+
+                    2) getBoundingClientRect() 
+                    -> 스크롤위치를 뺀 화면 기준
+                    -> 제이쿼리의 offset() 과 같은 절대값을 구하려면
+                    스크롤위치값을 본 값에 더해야함!
+                */
+
 
                 /// 화면표시 ////
                 $(".i1").text(offtop);
