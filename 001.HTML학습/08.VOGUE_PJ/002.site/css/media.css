@@ -38,5 +38,25 @@
     .bg9{
         background-image: url(../images/cont5b.jpg);
     }
+    /* 7. .pt1 비율변경 */
+    .pt1.rbx::before {
+        padding-top: 150%;
+    }
+    /* 8. .pt3 비율변경 */
+    .pt3.rbx::before {
+        padding-top: 75%;
+    }
+    /* 9. 컨텐츠 타이틀 */
+    .cbx h2{
+        font-size: 5vw;
+        padding: 10vw;
+    }
+    /* 10. 컨텐츠 박스 오버시 빨간보더 */
+    .cbx:hover::after{
+        border-width: 4vw;
+    }
+    .cbx::after{
+        transition: none;
+    }
 }
 /* 모바일 미디어쿼리 - 500px이하 끝  */
