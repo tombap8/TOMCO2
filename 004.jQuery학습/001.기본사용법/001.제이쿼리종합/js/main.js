@@ -334,9 +334,9 @@ $(() => { ///////// jQB /////////////////////////
                     .fadeIn(200, () => {
                         // 2. 좀비 달려오기
                         // -> 7번방 좀비: bd.eq(7).find(".mz")
-                        let tg = bd.eq(7).find(".mz");
+                        let tg = bd.eq(7);
                         // 2-1. 윗층으로 올라오기
-                        tg.animate({
+                        tg.find(".mz").animate({
                                 bottom: tg.height() + "px"
                             }, 500, "easeOutElastic")
                             // 2-2. 주인공에게 달려오기
