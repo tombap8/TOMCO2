@@ -341,9 +341,17 @@ $(() => { ///////// jQB /////////////////////////
                             }, 500, "easeOutElastic")
                             // 2-2. 주인공에게 달려오기
                             .animate({
-                                    right: tg.width() * 1.2 + "px"
-                                },
-                                2000, "easeOutBounce")
+                                right: tg.width() * 1.2 + "px"
+                            },
+                            2000, "easeOutBounce",
+                            ()=>{ // 콜백함수 - 물린후...
+                                // 3. 주인공 사색되기(흑백처리)
+                                mi.css({
+                                    filter:"grayscale(100%)"
+                                });
+                                // 4. 메시지 지우기
+                                msg.hide();
+                            })
                     });
 
                 // 2. 다음버튼 보이기
