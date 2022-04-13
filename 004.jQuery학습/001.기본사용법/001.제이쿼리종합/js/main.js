@@ -511,6 +511,10 @@ $(() => { ///////// jQB /////////////////////////
                 bd.eq(1).find(".mz")
                 .fadeIn(200,function(){
                     // 2-1. 좀비들 움직이기
+                    $(this)
+                    .animate({ // li가로크기보다 조금더 이동
+                        right: bd.eq(1).width()*1.3+"px"
+                    },5000,"easeInOutQuint")
                 })
 
 
