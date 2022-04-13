@@ -514,7 +514,18 @@ $(() => { ///////// jQB /////////////////////////
                     $(this)
                     .animate({ // li가로크기보다 조금더 이동
                         right: bd.eq(1).width()*1.3+"px"
-                    },5000,"easeInOutQuint")
+                    },5000,"easeInOutQuint");
+
+                    // 2-2. 헬기등장
+                    $(".heli").animate({
+                        left:"20%"
+                    },3000,"easeOutBack",
+                    function(){ // 콜백함수
+                        // 3. 주인공이 탄 이미지로 변경
+                        $(this).attr("src","images/heli2.png");
+                        // 4. 주인공 지우기(헬기에 탔으니까!)
+                        mi.hide(); // display:none처리
+                    }) ///////// animate ///////
                 })
 
 
