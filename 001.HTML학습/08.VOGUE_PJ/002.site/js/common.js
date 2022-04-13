@@ -34,12 +34,23 @@ window.addEventListener("DOMContentLoaded", () => {
     let tbtn = document.querySelector(".tbtn");
 
     /// 위로가기버튼 클릭시 맨위로 이동하기 ////
+    // 모바일에서 스크롤없이 스와이퍼 이동시 무작동해결!
+    $(".tbtn").click(()=>{
+        // 제이쿼리 스크롤 애니메이션
+        $("html,body").animate({
+            scrollTop:"0"
+        },300);
+        // 스크롤 위치값 업데이트
+        pos=0;
+    }); /////// click ////////////
+
+
     // 부드러운 스크롤 위치변수 pos값을 0주면됨!
-    tbtn.onclick = () => {
-        pos = 0; // 맨위로 가기!
-        return false; 
-        // a요소 기본이동 막기
-    }; /////// click //////////
+    // tbtn.onclick = () => {
+    //     pos = 0; // 맨위로 가기!
+    //     return false; 
+    //     // a요소 기본이동 막기
+    // }; /////// click //////////
 
     /********************************** 
         [ 윈도우 스크롤 이벤트 함수 ]
