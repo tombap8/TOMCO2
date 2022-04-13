@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* 보그 PJ 로그인 페이지 CSS - login.css */
+
+/* 외부파일 합치기 */
+ @import url(reset.css);
+ @import url(core.css);
+ @import url(common.css);
+
+/* 1-1.서브타이틀 */
+.stit{
+    font-family: pist;
+    font-size: 50px;
+    padding: 40px 0 20px;
+    text-align: center;
+    font-weight: normal;
+}
