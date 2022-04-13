@@ -108,5 +108,17 @@
         border-radius: 4px;
     }
 
+    /* 서브페이지 글자크기 조정 */
+    .stit{
+        font-size: 30px;
+        padding: 20px 0 10px;
+    }
+    .lnb{
+        padding: 15px;
+    }
+    .lnb a{
+        font-size: 14px;
+    }
+
 }
 /* 모바일 미디어쿼리 - 500px이하 끝  */
