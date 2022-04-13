@@ -44,6 +44,7 @@ $(() => { //////////// jQB /////////////////////////
         $(this).attr("title",$(this).text().trim());
     }) ///// each //////
     .last().before(htcode);
+    // 마지막a요소 앞에 코드삽입함!
 
     // 모바일에 요소 추가!
     $(".mosns a").last().before(htcode)
