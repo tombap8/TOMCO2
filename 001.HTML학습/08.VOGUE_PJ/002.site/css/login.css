@@ -14,3 +14,7 @@
     text-align: center;
     font-weight: normal;
 }
+/* 서브 컨텐츠 영역 */
+.scont{
+    min-height: 600px;
+}
