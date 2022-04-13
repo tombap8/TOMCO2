@@ -8,8 +8,10 @@ $(()=>{ //////////// jQB /////////////////////////
     $(".logo a").click(()=>location.href="index.html");
 
     // GNB메뉴 a요소 클릭시 링크 연결하기
+    // 그룹선택으로 모바일 메뉴도 동시에 처리!
+    // .gnb a  + .mognb a
 
-    $(".gnb a").click(function(e){
+    $(".gnb a,.mognb a").click(function(e){
 
         // a요소 기본이동기능 막기
         e.preventDefault();

@@ -3,6 +3,12 @@
 
 /* 모바일 미디어쿼리 - 500px이하 시작 */
 @media screen and (max-width:500px) {
+
+    /* 가로스크롤 안생김 셋팅 */
+    html,body{
+        overflow-x: hidden;
+    }
+
     /* 1. 상단영역 요소 없앰 */
     .tmenu, .gnb{
         display: none;
@@ -75,6 +81,31 @@
     /* 11. 모바일용 버튼 보이기 */
     .mobtn{
         display: block;
+    }
+
+    /* 12. 하단로고 */
+    .blogo img{
+        width: 200px;
+    }
+
+    /* 13. 하단부모박스 */
+    .info{
+        min-height: auto;
+        padding: 40px;
+    }
+
+    /* 14. 회사주소 */
+    .addr{
+        line-height: 1.5;
+    }
+
+    /* 15. 위로가기버튼 */
+    .tbtn.on{
+        bottom: 100px;
+        right: 15px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 4px;
     }
 
 }
