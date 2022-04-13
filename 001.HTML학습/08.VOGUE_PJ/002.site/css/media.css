@@ -14,6 +14,19 @@
     .logo img{
         width: 130px;
     }
+    /* 2.5. 상단 부모박스 */
+    #top{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 57px;
+        background-color: #fff;
+        box-shadow: none;
+    }
+    /* body상단밀기 - #top때문에 첫번째 박스밀기 */
+    body{
+        padding-top: 57px;
+    }
     /* 3. 상단중앙박스 */
     .top{
         padding: 10px;
@@ -58,5 +71,11 @@
     .cbx::after{
         transition: none;
     }
+
+    /* 11. 모바일용 버튼 보이기 */
+    .mobtn{
+        display: block;
+    }
+
 }
 /* 모바일 미디어쿼리 - 500px이하 끝  */
