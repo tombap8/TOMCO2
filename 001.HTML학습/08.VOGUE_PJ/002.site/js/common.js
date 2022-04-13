@@ -1,18 +1,41 @@
 // 보그 PJ 공통 JS - common.js
 
-$(()=>{ //////////// jQB /////////////////////////
+$(() => { //////////// jQB /////////////////////////
 
     // 햄버거 버튼 클릭시 모바일 메뉴 보이기
     // 햄버거 버튼 -> .hbtn
     // 모바일 메뉴 -> #mobx
     $(".hbtn").click(
-        ()=>$("#mobx").slideToggle(300));
+        () => $("#mobx").slideToggle(300));
 
     // 검색 버튼 클릭시 검색창 보이기
     // 검색 버튼 -> .sbtn
     // 검색창 -> .mos
     $(".sbtn").click(
-        ()=>$(".mos").slideToggle(300));
+        () => $(".mos").slideToggle(300));
+
+    // 로그인, 회원가입, 갤러리 아이콘 넣기
+    // 대상: .sns a:last-child 
+    // 변경: 대상요소 앞에 a요소 삽입하기
+    // 메서드: before(요소) -> 선택요소 앞에 형제삽입
+    // -> 참고비교) after(요소) -> 선택요소 뒤에 형제삽입
+    $(".sns a").last().before(`        
+        <a href="#" class="fi fi-laptop" title="로그인">
+            <span class="ir">
+                로그인
+            </span>
+        </a>
+        <a href="#" class="fi fi-user-secret" title="회원가입">
+            <span class="ir">
+                회원가입
+            </span>
+        </a>
+        <a href="#" class="fi fi-camera" title="갤러리">
+            <span class="ir">
+                갤러리
+            </span>
+        </a>
+    `); 
 
 }); ///////////////// jQB ////////////////////////
 
@@ -24,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     /// 부드러운 스크롤 호출!
     startSS();
-        
+
 
     // 스크롤값 변수
     let scTop;
@@ -35,13 +58,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     /// 위로가기버튼 클릭시 맨위로 이동하기 ////
     // 모바일에서 스크롤없이 스와이퍼 이동시 무작동해결!
-    $(".tbtn").click(()=>{
+    $(".tbtn").click(() => {
         // 제이쿼리 스크롤 애니메이션
         $("html,body").animate({
-            scrollTop:"0"
-        },300);
+            scrollTop: "0"
+        }, 300);
         // 스크롤 위치값 업데이트
-        pos=0;
+        pos = 0;
     }); /////// click ////////////
 
 
@@ -98,7 +121,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // 있다면 등장해라!
 
         // 등장요소 위치값 배열만큼 체크함수 호출!
-        scPos.forEach((val,idx)=>scAction(idx));
+        scPos.forEach((val, idx) => scAction(idx));
 
 
 
@@ -116,12 +139,12 @@ window.addEventListener("DOMContentLoaded", () => {
         함수로 체크한다!
 
     ********************************************/
-   // 스크롤 등장 대상요소
+    // 스크롤 등장 대상요소
     let scAct = document.querySelectorAll(".scAct");
     // 스크롤 등장 대상위치 배열
     const scPos = [];
     // 대상요소만큼 for문 돌기
-    for(let i=0; i<scAct.length;i++){
+    for (let i = 0; i < scAct.length; i++) {
         scPos[i] = scAct[i].offsetTop;
     } //////////// for ///////////////
 
@@ -129,25 +152,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 스크롤 등장위치 조정값 : 윈도우화면크기의 2 / 3
     const winH = (window.innerHeight / 3) * 2;
-    console.log("윈도우높이2/3:",winH);
+    console.log("윈도우높이2/3:", winH);
 
     /******************************************** 
         함수명: scAction
         기능: 스크롤 위치값이 설정범위에 들어가면
             해당순번의 요소가 등장한다!
     ********************************************/
-   const scAction = seq => { // seq는 순번
+    const scAction = seq => { // seq는 순번
         // console.log("순번:",seq);
 
         // 조건: 스크롤위치가 포지션위치이전 보다 크고
         // 스크롤위치가 포지션위치보다 작으면 실행!
-        if(scTop > scPos[seq]-winH && 
-            scTop < scPos[seq]){
+        if (scTop > scPos[seq] - winH &&
+            scTop < scPos[seq]) {
             // 해당순번요소에 클래스 on넣기!
             scAct[seq].classList.add("on");
         } ///////////// if //////////////////
 
-   }; ////////// scAction 함수 ///////////////////
+    }; ////////// scAction 함수 ///////////////////
 
 
 
