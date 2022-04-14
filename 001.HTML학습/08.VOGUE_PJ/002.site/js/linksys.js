@@ -2,7 +2,7 @@
 
 $(()=>{ //////////// jQB /////////////////////////
 
-    console.log("로딩완료!");
+    // console.log("로딩완료!");
 
     // 메인 로고 클릭시 첫페이지로 이동하기
     $(".logo a").click(()=>location.href="index.html");
@@ -20,7 +20,7 @@ $(()=>{ //////////// jQB /////////////////////////
         // trim() - 앞뒤공백 제거!
         // toLowerCase() - 소문자로 변환!
         // 참고) toUpperCase() - 대문자로 변환
-        console.log("메뉴글자:",txt);
+        // console.log("메뉴글자:",txt);
 
         // "search" 만 아니면 카테고리 페이지로 보냄
         if(txt!=="search")

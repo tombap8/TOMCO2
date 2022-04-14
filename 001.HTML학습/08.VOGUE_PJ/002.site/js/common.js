@@ -61,7 +61,7 @@ $(() => { //////////// jQB /////////////////////////
 
         // 2. 내부 텍스트 읽어오기
         let txt = $(this).text().trim();
-        console.log("sns텍스트:",txt);
+        // console.log("sns텍스트:",txt);
 
         // 3. 분기하기
         let url;
@@ -86,7 +86,7 @@ $(() => { //////////// jQB /////////////////////////
 ///////////////// 로드구역 ///////////////////////
 window.addEventListener("DOMContentLoaded", () => {
 
-    console.log("로딩완료");
+    // console.log("로딩완료");
 
     /// 부드러운 스크롤 호출!
     startSS();
@@ -191,11 +191,11 @@ window.addEventListener("DOMContentLoaded", () => {
         scPos[i] = scAct[i].offsetTop;
     } //////////// for ///////////////
 
-    console.log(scPos);
+    // console.log(scPos);
 
     // 스크롤 등장위치 조정값 : 윈도우화면크기의 2 / 3
     const winH = (window.innerHeight / 3) * 2;
-    console.log("윈도우높이2/3:", winH);
+    // console.log("윈도우높이2/3:", winH);
 
     /******************************************** 
         함수명: scAction
