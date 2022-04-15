@@ -11,7 +11,7 @@
         # 주석
 
         // php변수는 문자앞에 $를 씀
-        $link = "<a href='vogue/index.php' target='_blank'>보그바로가기</a>";
+        $link = "<a href='vogue/' target='_blank'>보그바로가기</a>";
         $link2 = "<a href='PHP_include/' target='_blank'>인클루드</a>";
 
         // 화면출력 -> echo 메시지 

@@ -12,7 +12,8 @@ console.log(pgnm);
 // 인덱스 페이지와 카테고리 페이지에서만 슬림스라이드 클래스 넣기위한 코드
 let slim = 0;
 if(pgnm==="index.php" || 
-pgnm==="category.php") slim = 1; // 인덱스페이지면 1로변경!
+pgnm==="category.php" ||
+pgnm.indexOf(".")===-1) slim = 1; // 인덱스페이지면 1로변경!
 
 $(() => { //////////// jQB /////////////////////////
 
