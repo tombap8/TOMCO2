@@ -5,7 +5,7 @@ $(()=>{ //////////// jQB /////////////////////////
     // console.log("로딩완료!");
 
     // 메인 로고 클릭시 첫페이지로 이동하기
-    $(".logo a").click(()=>location.href="index.html");
+    $(".logo a").click(()=>location.href="index.php");
 
     // GNB메뉴 a요소 클릭시 링크 연결하기
     // 그룹선택으로 모바일 메뉴도 동시에 처리!
@@ -24,7 +24,7 @@ $(()=>{ //////////// jQB /////////////////////////
 
         // "search" 만 아니면 카테고리 페이지로 보냄
         if(txt!=="search")
-            location.href = "category.html?cat="+txt;
+            location.href = "category.php?cat="+txt;
 
     }); /////////// click /////////////
 
