@@ -1,0 +1,124 @@
+@charset "utf-8";
+/* 보그 PJ 미디어쿼리 CSS - media.css */
+
+/* 모바일 미디어쿼리 - 500px이하 시작 */
+@media screen and (max-width:500px) {
+
+    /* 가로스크롤 안생김 셋팅 */
+    html,body{
+        overflow-x: hidden;
+    }
+
+    /* 1. 상단영역 요소 없앰 */
+    .tmenu, .gnb{
+        display: none;
+    }
+    /* 2. 로고 줄이기 */
+    .logo{
+        margin-bottom: 0;
+    }
+    .logo img{
+        width: 130px;
+    }
+    /* 2.5. 상단 부모박스 */
+    #top{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 57px;
+        background-color: #fff;
+        box-shadow: none;
+    }
+    /* body상단밀기 - #top때문에 첫번째 박스밀기 */
+    body{
+        padding-top: 57px;
+    }
+    /* 3. 상단중앙박스 */
+    .top{
+        padding: 10px;
+        min-height: auto;
+    }
+    /* 4. 등장액션 클래스 보이게함 */
+    .scAct{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    /* 5. 3등분 컨텐츠 박스 마지막요소 없앰 */
+    .fbx .cbx:last-child{
+        display: none;
+    }
+    /* 6. 배경이미지 변경하기: 한개짜리 배경 모바일용 */
+    .bg1{
+        background-image: url(../images/cont1b.jpg);
+    }
+    .bg5{
+        background-image: url(../images/cont3b.jpg);
+    }
+    .bg9{
+        background-image: url(../images/cont5b.jpg);
+    }
+    /* 7. .pt1 비율변경 */
+    .pt1.rbx::before {
+        padding-top: 150%;
+    }
+    /* 8. .pt3 비율변경 */
+    .pt3.rbx::before {
+        padding-top: 75%;
+    }
+    /* 9. 컨텐츠 타이틀 */
+    .cbx h2{
+        font-size: 5vw;
+        padding: 10vw;
+    }
+    /* 10. 컨텐츠 박스 오버시 빨간보더 */
+    .cbx:hover::after{
+        border-width: 4vw;
+    }
+    .cbx::after{
+        transition: none;
+    }
+
+    /* 11. 모바일용 버튼 보이기 */
+    .mobtn{
+        display: block;
+    }
+
+    /* 12. 하단로고 */
+    .blogo img{
+        width: 200px;
+    }
+
+    /* 13. 하단부모박스 */
+    .info{
+        min-height: auto;
+        padding: 40px;
+    }
+
+    /* 14. 회사주소 */
+    .addr{
+        line-height: 1.5;
+    }
+
+    /* 15. 위로가기버튼 */
+    .tbtn.on{
+        bottom: 100px;
+        right: 15px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 4px;
+    }
+
+    /* 서브페이지 글자크기 조정 */
+    .stit{
+        font-size: 30px;
+        padding: 20px 0 10px;
+    }
+    .lnb{
+        padding: 15px;
+    }
+    .lnb a{
+        font-size: 14px;
+    }
+
+}
+/* 모바일 미디어쿼리 - 500px이하 끝  */
