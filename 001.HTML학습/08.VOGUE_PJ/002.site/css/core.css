@@ -190,3 +190,12 @@ font-family: 'Roboto Condensed', sans-serif;
     opacity: 1;
 }
 
+
+/* 드래그 선택 안되게 하는 CSS */
+.disel{
+    /* 선택안되게함 */
+    user-select: none;
+    /* 드래그안되게함 */
+    -webkit-user-drag: none;
+}
+
