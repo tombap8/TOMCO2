@@ -1,5 +1,19 @@
 // 보그 PJ 공통 JS - common.js
 
+// 현재 페이지 이름 알아내기
+let pgnm = $(location).attr("pathname");
+// 슬래쉬로 자르기
+pgnm = pgnm.split("/");
+// 마지막 배열값 읽기(페이지이름)
+pgnm = pgnm[pgnm.length-1];
+console.log(pgnm);
+// JS방식: window.location.pathname -> host제외한 경로
+
+// 인덱스 페이지와 카테고리 페이지에서만 슬림스라이드 클래스 넣기위한 코드
+let slim = 0;
+if(pgnm==="index.html" || 
+pgnm==="category.html") slim = 1; // 인덱스페이지면 1로변경!
+
 $(() => { //////////// jQB /////////////////////////
 
     // 햄버거 버튼 클릭시 모바일 메뉴 보이기
@@ -137,7 +151,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // 1. 스크롤 위치가 100px 이상일때 
         // 변경사항: #top에 클래스 on넣기
-        if (scTop >= 100) topA.classList.add("on");
+        // 조건추가: slim 이 true일때 즉, 1일때
+        if (scTop >= 100 && slim) topA.classList.add("on");
 
         // 2. 스크롤 위치가 100px 미만일때(else)
         // 변경사항: #top에 클래스 on제거
