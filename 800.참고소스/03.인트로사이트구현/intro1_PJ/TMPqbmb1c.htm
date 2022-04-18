@@ -1,0 +1,462 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WEH_portfolio</title>
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: css/index.css" type="text/css">
+<style type="text/css">
+
+
+@font-face{
+	font-family:NanumBrush;
+	src:url(font/NanumBrush.ttf) format("ttf"),url(font/NanumBrush.eot) format("eot"),url(font/NanumBrush.woff) format("woff")
+
+}
+@font-face{
+	font-family:KittenSlantMonoline;
+	src:url(font/KittenSlantMonoline.ttf) format("ttf"),url(font/KittenSlantMonoline.eot) format("eot"),url(font/KittenSlantMonoline.woff) format("woff")
+
+}
+@font-face{
+	font-family:NanumBarunGothic;
+	src:url(font/NanumBarunGothic.ttf) format("ttf"),url(font/NanumBarunGothic.eot) format("eot"),url(font/NanumBarunGothic.woff) format("woff")
+
+}
+
+
+html,body{
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,abbr,address,cite,code,del,dfn,em,img,
+ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,
+menu,nav,section,summary,time,mark,audio,video{margin:0; padding:0;}
+img{
+	border:none;/*이미지 링크시 테두리 제거*/
+}
+a{
+	display:block;/*a링크로 블록요소를 감싸주기 위한 설정*/
+	text-decoration:none;
+	color:#666;
+	widht:100%;
+	height:100%;	
+}
+ul{
+	margin:0;
+	padding:0;
+	list-style:none;	
+}
+/*공통디자인 끝*/
+
+/*큐브로고*/
+#logo{
+	position:relative;
+	width:100%;
+	height:140px;
+	/*border:1px solid red;*/
+}
+#cube{/*큐브*/ /*3d나 원근감이나 그부모에다가 효과를 적용시켜야 자식들이 들음*/
+	position:relative;
+	width:70px;
+	height:70px;
+	top:70px;
+	margin:0 auto;
+	text-align:center;
+	transform-style:preserve-3d;/*3D transform을 적용*/
+	transition:all 0.5s ease-out;
+	font:bold 2.5em/70px JosefinSlab;
+	text-align:center;
+	color:#fff;
+}
+.face{/*각면*/
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+div.face:first-child{/*첫번째 면*/
+	background-color:#9F8D76;
+	transform:rotateY(0deg) translateZ(35px);
+}
+div.face:nth-child(2){
+	background-color:#F1AF63;
+	transform:rotateY(90deg) translateZ(35px);
+}
+div.face:nth-child(3){
+	background-color:#90B774;
+	transform:rotateY(180deg) translateZ(35px);
+}
+div.face:nth-child(4){
+	background-color:#81C9D1;
+	transform:rotateY(270deg) translateZ(35px);
+}
+div.face:nth-child(5){
+	background-color:#dac077;
+	transform:rotateX(90deg) translateZ(35px);
+}
+div.face:nth-child(6){
+	background-color:#f2e9dd;
+	color:#000;
+	transform:rotateX(-90deg) translateZ(35px);
+}
+.show-front  { transform: translateZ( -100px ) rotateY(    0deg ); }
+.show-back   { transform: translateZ( -100px ) rotateX( -180deg ); }
+.show-right  { transform: translateZ( -100px ) rotateY(  -90deg ); }
+.show-left   { transform: translateZ( -100px ) rotateY(   90deg ); }
+.show-top    { transform: translateZ( -100px ) rotateX(  -90deg ); }
+.show-bottom { transform: translateZ( -100px ) rotateX(   90deg ); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header{
+	position:fixed;
+	left:20px;
+	width:170px;
+	height:100%;
+	z-index:999;
+	/*box-shadow:inset 0 0 5px #888;*/
+}
+header nav{
+	position:relative;
+	width:100%;
+	height:100%;
+	/*background-color: rgba( 255, 255, 255, 0.7 );*/
+}
+
+
+
+header nav ul{
+	position:relative;
+	top:10%;
+	height:500px;
+	/*right:20px;*/
+}
+header nav li{
+	/*float:left;*/
+	/*margin:0 20px;*/
+	height:80px;
+	text-align:center;
+	font:1.3em/80px KittenSlantMonoline;/*transform:rotate(-90deg);*/
+}
+header nav a{
+	color:#000;
+}
+
+header nav li:first-child a{
+	opacity:0;
+}
+header nav li:hover{
+	opacity:0;
+}
+
+
+
+
+#wrap{
+	height:100%;
+	width:100%;
+}
+
+.white{/*가운데 하얀색 부분 공통*/
+	position:relative;
+	top:50%;
+	transform:translateY(-50%);
+	width:96%;
+	height:92%;
+	margin:0 auto;
+	background:#fff;
+}
+
+/***** 홈 CSS *******/
+#Home{
+	position:relative;
+	height:100%;
+	width:100%;
+	background:#E4B4B6;
+	overflow:hidden;
+	line-height:100%;
+}
+#half{/*반토막 색배경*/
+	position:absolute;
+	left:50%;
+	top:-200px;
+	width:70%;
+	height:130%;
+	transform:rotate(5deg) /*translateX(-50%)*/;
+	background-color:#4B8B70;
+}
+#center{
+ 	position:relative;
+	width:800px;
+	height:100%;
+	margin:0 auto;
+	vertical-align:middle;
+}
+#center aside{/*WON EUNHYE를 감싸고 있는 그림자박스*/
+	position:relative;
+	width:800px;
+	height:300px;
+	top:-350px;/*원래 150, -350*/
+	border:3px solid #000;
+	box-shadow: 15px 15px 0px -3px #666;
+	text-align:center;
+	line-height:300px;
+	
+}
+#center aside>img{/*WON EUNHYE 이미지*/
+	position:relative;
+	width:700px;
+	vertical-align:middle;
+}
+#center p{
+	position:relative;
+	font:1.2em NanumBarunGothic;
+	top:270px;
+	text-align:center;
+	/*border:1px solid red;*/
+} 
+#center h3{
+	position:relative;
+	font:1.2em NanumBrush;
+	top:430px;
+	text-align:center;
+	/*border:1px solid red;*/
+} 
+#center>div{
+	position:relative;
+	top:450px;
+	width:40px;
+	height:40px;
+	margin:0 auto;
+	text-align:center;
+}
+#center>div>img{/*SCROLL DOWN*/
+	position:relative;
+	width:40px;
+	cursor:pointer;
+	transform:rotate(0deg);
+}
+/*#center>div>img:hover{
+	transform:rotate(360deg);
+	transition:all 0.5s ease;
+}*/
+
+
+/*************about css************/
+#About{
+	position:relative;
+	height:100%;
+	width:100%;
+	background-color:#627CB8;
+	overflow:hidden;
+}
+#half1{
+	position:absolute;
+	top:50%;
+	left:-200px;
+	height:70%;
+	width:130%;
+	transform:rotate(5deg) /*translateX(-50%)*/;
+	background-color:#C78A97;
+}
+#About .white aside{
+	position:absolute;
+	top:20%;
+	right:-850px;
+	height:300px;
+}
+#About section aside>img{
+	position:relative;
+}
+#About section table{
+	position:relative;
+	top:50%;
+	transform:translateY(-50%);
+	left:20%;
+	font:1.1em/2em NanumBarunGothic;
+	word-spacing:3px;
+	
+}
+#About section table th{
+	text-align:left;padding:10px 20px;
+}
+
+
+
+
+
+
+
+
+#Skill{
+	position:relative;
+	height:100%;
+	width:100%;
+	background-color:#349565;
+	overflow:hidden;
+}
+#half2{
+	position:absolute;
+	left:50%;
+	top:-200px;
+	width:70%;
+	height:130%;
+	transform:rotate(-5deg) /*translateX(-50%)*/;
+	background-color:#7BCAAF;
+}
+#Portfolio{
+	position:relative;
+	height:100%;
+	width:100%;
+	background-color:#7296C1;
+	overflow:hidden;
+}
+#half3{
+	position:absolute;
+	top:50%;
+	left:-200px;
+	height:70%;
+	width:130%;
+	transform:rotate(-5deg) /*translateX(-50%)*/;
+	background-color:#FFFADC;
+}
+#Contact{
+	position:relative;
+	height:100%;
+	width:100%;
+	background-color:#F39F9E;
+	overflow:hidden;
+}
+#half4{
+	position:absolute;
+	top:50%;
+	left:-200px;
+	height:70%;
+	width:130%;
+	transform:rotate(5deg) /*translateX(-50%)*/;
+	background-color:#C14550;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<script src="JS/jquery-1.7.2.min.js"></script>
+<script src="JS/jquery-ui.min.js"></script>
+<script src="JS/index.js"></script>
+</head>
+
+<body>
+<header>
+    <nav>
+    	<aside id="logo">
+                <div id="cube">
+                    <div class="face">E</div>
+                    <div class="face">U</div>
+                    <div class="face">N</div>
+                    <div class="face">H</div>
+                    <div class="face">Y</div>
+                    <div class="face">E</div>
+                </div>
+        </aside>
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Skill">Skill</a></li>
+            <li><a href="#Portfolio">Portfolio</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<section id="wrap">
+	<article id="Home">
+    	<aside id="half"></aside>
+    	<section class="white">
+        	<article id="center"><!--가운데 정렬을 위한 알티클-->
+                <aside><img src="images/logo.png"></aside>
+                <p>안녕하세요. 창의적인 퍼블리셔, 원은혜의 웹 포트폴리오 입니다. 방문해주셔서 감사합니다.</p>
+                <h3>SCROLL DOWN FOR MORE</h3><div><img src="images/scrolldown.png" alt="scrollDown"></div>
+            </article>
+		</section>
+    </article><!--HOME-->
+    
+	<article id="About">
+    	<aside id="half1"></aside>
+    	<section class="white">
+        	<aside><img src="#"></aside>
+            <table>
+            	<tbody>
+                    <tr>
+                        <th>이름</th>
+                        <th>원은혜 (元 恩惠)</th>
+                    </tr>
+                     <tr>
+                        <th>생년월일</th>
+                        <th>1994년 08월 10일</th>
+                    </tr>
+                     <tr>
+                        <th>교육사항</th>
+                        <th>2016년 06월 ~ 2016년 10월 [NCS기반]디지털 웹 디자인(웹퍼블리셔)<br>
+                                             2016년 4월 ~ 2016년 5월 그래픽디자인(포토샵/일러스트레이터)</th>
+                    </tr>
+                     <tr>
+                        <th>경력사항</th>
+                        <th>2015년 08월 ~ 2015년 11월 ㈜믹스엑스믹스<br>
+                                       2015년 01월 ~ 2015년 06월 나우웨드</th>
+                    </tr>
+                     <tr>
+                        <th>자격증</th>
+                        <th>2종보통 자동차 운전면허증 -경기지방경찰청<br>
+                                    GTQ 1급 -한국생산성본부</th>
+                    </tr>
+           	 	</tbody>
+            </table>
+		</section>
+    </article><!--ABOUT-->
+	<article id="Skill">
+    	<aside id="half2"></aside>
+    	<section class="white">
+        </section>
+	</article>
+	<article id="Portfolio">
+    	<aside id="half3"></aside>
+    	<section class="white">
+        </section>
+    </article>
+	<article id="Contact">
+    	<aside id="half4"></aside>
+    	<section class="white">
+        </section>
+    </article>
+</section>
+    
+
+
+
+
+</body>
+</html>
