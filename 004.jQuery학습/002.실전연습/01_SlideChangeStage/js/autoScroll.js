@@ -167,6 +167,14 @@ $(() => { //////////////// jQB /////////////////////////
                 scrollTop: pgpos + "px"
             }, dur_sc, easing_sc);
 
+            /******************************************** 
+                4. 현재 메뉴 표시하기 : GNB + 사이드표시자
+            ********************************************/
+            $(".gnb li").eq(pno).addClass("on")
+                .siblings().removeClass("on");
+            $(".indic li").eq(pno).addClass("on")
+                .siblings().removeClass("on");
+
 
         }); ////////////// mousewheel /////////////////
 
@@ -196,6 +204,7 @@ $(() => { //////////////// jQB /////////////////////////
         }, dur_sc, easing_sc);
 
         // 4. 현재 페이지 메뉴 클래스 on넣기!
+        // GNB메뉴 + 사이드 표시메뉴
         $(".gnb li").eq(pno).addClass("on")
             .siblings().removeClass("on");
         $(".indic li").eq(pno).addClass("on")
