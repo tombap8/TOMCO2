@@ -55,22 +55,22 @@
             padding: 0;
             font-size: 100%;
         }
+        
+        /* 페이지 부보박스 */
+        .wrap{
+            display: flex;
+        }
 
         /* 공통 class */
-
-        /* 페이지 최상위부모 */
-        .wrap{
-            width: 700%;/* 7개 페이지크기만큼 */
-            height: 100%;
-        }
 
         /* 페이지 공통 class */
         .page {
             /* 한페이지 보이는 화면 채우기 */
-            width: 14.285%;/* 100vw; */
-            /* 보이는 화면크기만큼 - %일 경우 1/7등분인 14.285%임 */
-            height: 100%;
-            float: left;/* 옆으로 흐르게 */
+            width: 100vw;
+            height: 100vh;
+            flex-shrink: 0;
+            /* 기본값이 1 -> 부모크기만큼 등분할함 
+            즉, 줄어든다는 뜻! 0 은 아니!라는 말: 크기확장! */
             /* 
                 width: 100vw;
                 height: 100vh;
@@ -227,11 +227,11 @@
             display: none;
         }
     </style>
-    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="js/autoScroll_Horizontal.js"></script>
+    <script src="js/autoScroll_HR.js"></script>
     <script>
-        
+       
     </script>
 </head>
 
