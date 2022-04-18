@@ -8,7 +8,7 @@ const totnum = 7;
 // 3. 광스크롤 상태변수
 let prot_sc = 0; //0-허용,1-불허용
 // 4. 스크롤 애니메이션 시간
-const dur_sc = 1000;
+const dur_sc = 700;
 // 광스크롤 금지시간 === 스크롤 애니메이션 시간
 // 5. 스크롤 이징
 const easing_sc = "easeOutQuint";
@@ -18,6 +18,10 @@ const easing_sc = "easeOutQuint";
 $(() => { //////////////// jQB /////////////////////////
 
     console.log("로딩완료!");
+
+    /// 새로고침 시 스크롤위치 캐싱이 있으므로
+    // 강제 상단 이동을 코딩하여 제어한다!
+    $("html,body").stop().animate({scrollTop:"0"},100);
 
     /************************************************** 
         [ 자동스크롤 구현! ]
@@ -162,10 +166,37 @@ $(() => { //////////////// jQB /////////////////////////
             }, dur_sc, easing_sc);
 
 
-
-
-
         }); ////////////// mousewheel /////////////////
+
+
+        /////// 메뉴 클릭시 스크롤 이동 애니메이션 /////
+        // 대상: .gnb a
+        $(".gnb a").click(function(e){
+
+            // 기본이동막기
+            e.preventDefault();
+
+            // 1. 순번 알아내기(부모인 li의 순번)
+            let idx = $(this).parent().index();
+            console.log("메뉴순번:",idx);
+
+            // 2. idx순번을 pno 전역 페이지번호에 넣기!
+            pno = idx;
+
+            // 3. 페이지 이동하기
+            // 이동할 위치 -> 윈도우 높이값*페이지번호
+            let pgpos = $(window).height() * pno;
+
+            $("html,body").stop().animate({
+                scrollTop: pgpos + "px"
+            }, dur_sc, easing_sc);
+
+            // 4. 현재 페이지 메뉴 클래스 on넣기!
+            $(".gnb li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
+
+        }); ///////////// click //////////////
 
 
 
