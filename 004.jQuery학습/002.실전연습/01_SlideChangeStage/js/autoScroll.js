@@ -117,8 +117,21 @@ $(() => { //////////////// jQB /////////////////////////
                 -> 현재브라우저가 파이어폭스인지 어떻게 알지?
                 navigator.userAgent 이 값을 찍으면
                 브라우저 정보가 표시됨
+                -> 브라우저 정보에 "firerfox"라는 문자가
+                있으면 파이어폭스 브라우저다!
+                -> 정규식으로 문자 있는 여부 구분하기
+                /문자/i -> 대소문자 관계없이 찾으라!
+                -> 정규식.test(값) -> 값에 정규식문자가 있으면 true
+
+                -> /firefox/i.text(navigator.userAgent)
+                : 브라우저 정보에 "firefox"문자가 있으면 true
+
             ******************************************/
-           console.log("브라우저정보:",navigator.userAgent);
+            //    console.log("브라우저정보:",navigator.userAgent);
+
+            // 파이어폭스 브라우저면 delta의 부모가 반대가 됨!
+            if (/firefox/i.test(navigator.userAgent)) delta = -delta;
+
 
 
 
