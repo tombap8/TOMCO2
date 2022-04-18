@@ -79,6 +79,14 @@ $(() => { //////////////// jQB /////////////////////////
     /////////// 자동스크롤 구현 ////////////////////
     $(document).on("mousewheel DOMMouseScroll",
         function (e) {
+
+            //////////// 광스크롤 막기 ////////////
+            if (prot_sc) return;
+            prot_sc = 1; // 막기
+            setTimeout(() => prot_sc = 0, dur_sc);
+            //////////////////////////////////////
+
+
             // e.preventDefault();
 
             // console.log("스크롤링~~~");
