@@ -64,11 +64,10 @@ $(()=>{ //////////////// jQB /////////////////////////
     /////////// 자동스크롤 구현 ////////////////////
     $("#pg1").on("mousewheel DOMMouseScroll",
     function(e){
-        e.preventDefault();
+        // e.preventDefault();
+        
 
         console.log("스크롤링~~~");
-
-        // return false;
     }); ////////////// mousewheel /////////////////
 
 
