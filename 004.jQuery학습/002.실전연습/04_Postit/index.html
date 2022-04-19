@@ -64,9 +64,20 @@
 	<script>
 		$(() => { /////////// jQB ////////////////////////
 
+			// 대상변수할당
+			let dg = $(".draggable");
+
 			// [ 드래그 기능 적용하기 ]
 			// 제이쿼리 UI의 draggable() 메서드를 호출함
 			// 대상: .draggable
+			dg.draggable({
+				cursor:"move",
+				// 커서모양이 "이동중"표시로 변경
+				stack: ".draggable",
+				// 드래그 대상 상위처리(선택요소명씀)
+				opacity: 0.7
+				// 이동중 투명도 설정
+			}); ////// draggable //////////
 			
 
 			/// 1. 드래그가 시작될때 배경이미지 class로 변경하기
