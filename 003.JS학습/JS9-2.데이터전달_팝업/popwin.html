@@ -7,6 +7,15 @@
     <script>
         function wClose(){
 
+            // window.opener -> 팝업을 연 부모창 윈도우
+
+            // 부모창 요소 글자바꾸기!
+            window.opener
+            .document.querySelector("#my").innerText =
+            "으하하하!졸리다~~~!";
+
+            // 현재창 닫기
+            window.close();
             
         } //////// wClose함수 //////
     </script>
