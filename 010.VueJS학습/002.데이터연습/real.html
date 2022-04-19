@@ -10,16 +10,27 @@
     <!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
     <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
     <script>
-
         //////////// 로딩구역 /////////////////////
-        window.addEventListener("DOMContentLoaded",()=>{
+        window.addEventListener("DOMContentLoaded", () => {
 
             console.log("로딩완료");
 
-           
+            //// 데이터 바인딩 Vue 인스턴스 생성하기 ///
+            new Vue({
+                el: "#app",
+                data: {
+                    vals: {}
+                    // json 데이터가 객체임!
+                }, //// data ///////
+                mounted: function () {
+                    axios.get("real.json")
+                        .then(x => this.vals = x);
+                } ////// mounted //////
+            }); ////////////// Vue //////////////
+
+
         }); ///////////// 로딩구역 ////////////////////////
         //////////////////////////////////////////////////
-        
     </script>
 
 
@@ -33,29 +44,38 @@
             데이터 for문을 돌릴때
             각 변수의 의미는
 
-            [ 객체일때 ]
-            (값,속성명) in 변수.data
-
             [ 배열일때 ]
             (값,순번) in 변수.data
 
+            [ 객체일때 ]
+            (값,속성명) in 변수.data
+
             v-if 디렉티브를 사용하여 조건에 맞을때만 출력!
-            쌍따옴표 안에 조건문을 쓴다!
+            쌍따옴표안에 조건문을 쓴다!
 
             v-if="value.메뉴!=='없음'"
-            해석: 메뉴의 값이 '없음'이 아니면 출력함!
+            해석: 제이슨 데이터의 속성 
+            "메뉴"의 값이 '없음'이 아니면 출력함!
 
          -->
-        <li v-for="(value,name) in vals.data">
-            <h2>{{value.제목}}</h2>
-            <!-- 
-                속성명은 문자형이지만 아래 두가지로 사용가능 
-                value.제목 or value["제목"]
-            -->
+        <li v-for="(v,n) in vals.data">
+            <h2>{{v.제목}}</h2>
 
-            <ol v-if="value.메뉴!=='없음'">
-                <li v-for="(v,i) in value.메뉴">{{v}}</li>
+            <!-- 
+                    속성명은 문자형이지만 아래 두가지로 사용가능
+                    v.제목 or v["제목"]
+                 -->
+
+            <!-- 메뉴의 값이 "없음"이 아니면 출력! -->
+            <ol v-if="v.메뉴!=='없음'">
+                <li v-for="(v2,i) in v.메뉴">{{v2}}</li>
             </ol>
+            <!-- 
+                v-for에서
+                데이터 값이 배열이 아닌 문자일 경우
+                문자를 하나씩 잘라서 배열로 만들어
+                반복시킴!
+            -->
         </li>
     </ul>
 </body>
