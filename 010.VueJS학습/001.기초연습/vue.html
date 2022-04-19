@@ -45,6 +45,24 @@
                         e.target.innerText = "놀랐지?";
                         e.target.style.fontSize = "60px";
                         e.target.style.transition = "2s";
+
+                        // 4초후에 새로운 요소 추가하기
+                        setTimeout(()=>{
+                            this.$el.innerHTML +=
+                            '<div id="my">하하하</div>';
+                        },4000);
+                        /* 
+                            Vue 의 methods 속성 내부의 함수에서 this는?
+                            this는 Vue로 생성된 인스턴스 자신을 말한다!
+                            (인스턴스: instance란? new 키워드로 생성된 메모리상의 객체를 말한다!)
+                            하위 속성 선택요소인 element를 선택하려면 $el 이라고 표현한다!
+                            -> 여기서는 선택된 부모요소인 "#app3"를 말함
+                            ______________________________
+
+                            [ 인스턴스 속성 : Instance Properties ]
+                            - $el : Vue 인스턴스가 관리하는 컴포넌트 인스턴스인 루트 DOM요소
+                            - $data : 컴포넌트 인스턴스의 데이터 객체
+                        */
                     }
                 }
                 // methods 속성은 함수기능을 구현하여 할당함
