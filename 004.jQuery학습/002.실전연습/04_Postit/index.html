@@ -85,6 +85,9 @@
 			// 이벤트와 함수를 묶어주는 메서드를 사용함!
 			// -> on(이벤트명,함수)
 			// 대상: .draggable
+			dg.on("dragstart",function(){
+				$(this).addClass("invert");
+			}); ////////// dragstart /////////////
 			
 
 			/// 2. 드래그가 끝날때 배경이미지 class로 변경하기
@@ -92,6 +95,9 @@
 			// 이벤트와 함수를 묶어주는 메서드를 사용함!
 			// -> on(이벤트명,함수)
 			// 대상: .draggable
+			dg.on("dragstop",function(){
+				$(this).removeClass("invert");
+			}); ////////// dragstop /////////////
 			
 
 
