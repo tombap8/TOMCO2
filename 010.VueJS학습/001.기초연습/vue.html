@@ -41,6 +41,9 @@
                     myClick: function(e){
                         console.log("마이클릭!");
                         // 함수 전달변수 e
+                        // 함수 호출시 아무것도 안보내고
+                        // 변수를 하나만쓰면 이것이 이벤트
+                        // 전달변수다!
                         // e.target 은 호출한 요소자신!
                         e.target.innerText = "놀랐지?";
                         e.target.style.fontSize = "60px";
@@ -63,7 +66,23 @@
                             - $el : Vue 인스턴스가 관리하는 컴포넌트 인스턴스인 루트 DOM요소
                             - $data : 컴포넌트 인스턴스의 데이터 객체
                         */
-                    }
+                    }, //// myClick //////
+                    myOver:function(){
+                        // 함수 전달변수 e를 쓰지 않아도
+                        // event라는 키워드는 이벤트전달값을 셋팅함!
+                        // event.target 으로 쓰면 이 함수를 호출한 이벤트가 발생한 요소자신이 된다!
+                        event.target.innerText="오버하지마!";
+                        // 나를 불러줘 div#call에 글자바꾸기
+                        this.$el.querySelector("#call")
+                        .innerText = "지금 너를 불렀어!!!";
+
+                    }, ////// myOver /////////
+                    myClick2: function(txt){
+                        // txt는 함수호출시 전달값 받는 변수
+                        event.target.innerText = 
+                        `내가 ${txt}야!`;
+
+                    } ///////// myClick2 ///////
                 }
                 // methods 속성은 함수기능을 구현하여 할당함
             }); /////////// Vue /////////////////////
@@ -125,6 +144,8 @@
     <div id="app3">
        <!-- <button v-on:click="myClick">Click</button> -->
        <button @click="myClick">Click</button>
+       <button @mouseover="myOver" @click="myClick2('후계자')">오버해봐!</button>
+       <div id="call">나를 불러줘!</div>
        <!-- 
            v-on:이벤트명 (v-on:을 줄여서 @)
            이벤트와 함수를 연결해주는 뷰JS 속성
