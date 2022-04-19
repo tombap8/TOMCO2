@@ -35,6 +35,20 @@
             
 
             // 3. 이벤트 사용하기 /////////////////////
+            new Vue({
+                el:"#app3",
+                methods:{
+                    myClick: function(e){
+                        console.log("마이클릭!");
+                        // 함수 전달변수 e
+                        // e.target 은 호출한 요소자신!
+                        e.target.innerText = "놀랐지?";
+                        e.target.style.fontSize = "60px";
+                        e.target.style.transition = "2s";
+                    }
+                }
+                // methods 속성은 함수기능을 구현하여 할당함
+            }); /////////// Vue /////////////////////
             
 
             // 4. 입력 양식과 동기화하기 /////////
@@ -91,7 +105,13 @@
 
     <h2>3. 이벤트 사용하기</h2>
     <div id="app3">
-       
+       <!-- <button v-on:click="myClick">Click</button> -->
+       <button @click="myClick">Click</button>
+       <!-- 
+           v-on:이벤트명 (v-on:을 줄여서 @)
+           이벤트와 함수를 연결해주는 뷰JS 속성
+           값은 내가 만든 methods 안의 함수명을 써준다!
+        -->
     </div>
 
     <hr>
