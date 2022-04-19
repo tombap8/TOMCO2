@@ -125,7 +125,7 @@
 			$("body").mousemove((e) => { // e-이벤트전달변수
 
 				// 0. 메뉴가 열린 상태면 아래코드 실행안함!
-				if(!mw) return;
+				if (!mw) return;
 				// !mw 는 mw가 false날때 true로 바꿔서 실행!
 				// mw가 false인 경우는 0일때임!
 
@@ -162,7 +162,7 @@
 				// 토글구현: 한번은 660 한번은 0
 				mw === 660 ? mw = 0 : mw = 660;
 				// 비 ? 집 : 놀이동산;
-				console.log("mw값:",mw);
+				console.log("mw값:", mw);
 
 			}); /////////// click ////////////
 
@@ -171,30 +171,56 @@
 			// 사용 메서드 : hover(함수1,함수2)
 			// -> 오버시 함수1, 아웃시 함수2 실행
 			menu.find("li")
-			.hover(
-				function(){ // over
-					// 자기자신(li)의 opacity를 1로변경
-					$(this).stop().fadeTo(200,1);
-					// fadeTo(시간,오파,이징,함수)
-					// 자기자신 아래 span태그 글자보이기 애니
-					$("span",this).stop().delay(100).fadeIn(200);
-					// $(this).find("span") === $("span",this)
-					// $(this).children("span") === $(">span",this)
-				},
-				function(){ // out
-					// 자기자신(li)의 opacity를 0.7로변경
-					$(this).stop().fadeTo(200,.7);
-					// 자기자신 아래 span태그 글자숨기기 애니
-					$("span",this).stop().delay(100).fadeOut(200);
-				}) //////// hover //////////////
+				.hover(
+					function () { // over
+						// 자기자신(li)의 opacity를 1로변경
+						$(this).stop().fadeTo(200, 1);
+						// fadeTo(시간,오파,이징,함수)
+						// 자기자신 아래 span태그 글자보이기 애니
+						$("span", this).stop().delay(100).fadeIn(200);
+						// $(this).find("span") === $("span",this)
+						// $(this).children("span") === $(">span",this)
+					},
+					function () { // out
+						// 자기자신(li)의 opacity를 0.7로변경
+						$(this).stop().fadeTo(200, .7);
+						// 자기자신 아래 span태그 글자숨기기 애니
+						$("span", this).stop().delay(100).fadeOut(200);
+					}) //////// hover //////////////
 
 				// 이어서 click 설정하기
-				.click(function(e){
+				.click(function (e) {
+
+					e.stopPropagation();
+					// li클릭시 상위 요소로 클릭 이벤트가 올라간다!
+					// 이런현상을 이벤트버블링! 이라고함
+					// 막는 방법: jQuery에서는 e.stopPropagation()
+					// JS방법은 하단에 return false로 처리!
 
 					// span텍스트 읽어오기
-					let txt = $("span",this).text();
-					console.log("링크:",txt);
-					
+					let txt = $("span", this).text();
+					console.log("링크:", txt);
+
+					// 이동할 주소
+					let url;
+
+					switch (txt) {
+						case "Google":
+							url = "https://www.google.com/";
+							break;
+						case "Naver":
+							url = "https://www.naver.com/";
+							break;
+						case "Daum":
+							url = "https://www.daum.net/";
+							break;
+					} //////// switch case //////
+
+					// url 새창열기
+					window.open().location.href = url;
+					// window.open() -> 새창열기
+					// location.href = 주소 -> 페이지 이동하기
+
 				}); /////////// click //////////
 
 
