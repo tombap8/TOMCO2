@@ -50,6 +50,8 @@
 			/* 줄바꿈방지 */
 			z-index: 2;
 			cursor: pointer;
+			user-select: none;
+			/* 더블클릭으로 선택안되게함! */
 		}
 
 		#menu {
@@ -117,17 +119,86 @@
 			***********************************************/
 			let mbx = $("#mbx");
 
-			$("body").mousemove((e)=>{ // e-이벤트전달변수
+			// #mbx박스 크기의 절반(가로,세로동일)
+			let hz = mbx.width() / 2;
 
-				// 1. 마우스 위치값 정보 알아내기
+			$("body").mousemove((e) => { // e-이벤트전달변수
+
+				// 0. 메뉴가 열린 상태면 아래코드 실행안함!
+				if(!mw) return;
+				// !mw 는 mw가 false날때 true로 바꿔서 실행!
+				// mw가 false인 경우는 0일때임!
+
+				// 1. 마우스 위치값 정보 알아내기(hz보정값 뺌!)
 				// x좌표: e.pageX / Y좌표: e.pageY
-				let posx = e.pageX;
-				let posy = e.pageY;
+				let posx = e.pageX - hz;
+				let posy = e.pageY - hz;
 				console.log(`x:${posx}/y:${posy}`);
 
+				// 2. 변경대상이 마우스 포인터 위치로 이동하기
+				mbx.css({
+					top: posy + "px",
+					left: posx + "px"
+				}); ///////// css /////////
+
+				// 트랜지션이징 설정시 ease-out으로 설정할것!
+				// ease-in 설정이 되면 시작할때 느려서 속터짐!
 
 			}); /////////// mousemove ///////////
-			
+
+			// #mbx 클릭시 메뉴 보이기 /////////
+			// 변경대상: #menu
+			let menu = $("#menu");
+			// 변경값: 최대사이즈 660px
+			let mw = 660;
+
+			mbx.click(() => {
+				// 메뉴 펼치기/숨기기
+				// 애니앞에 stop()으로 큐정리!
+				menu.stop().animate({
+					width: mw + "px"
+				}, 400, "easeOutExpo");
+
+				// 토글구현: 한번은 660 한번은 0
+				mw === 660 ? mw = 0 : mw = 660;
+				// 비 ? 집 : 놀이동산;
+				console.log("mw값:",mw);
+
+			}); /////////// click ////////////
+
+			// [ 메뉴 li마우스 오버시 opacity:1로 만들기 ]
+			// 이벤트 대상 : #menu li
+			// 사용 메서드 : hover(함수1,함수2)
+			// -> 오버시 함수1, 아웃시 함수2 실행
+			menu.find("li")
+			.hover(
+				function(){ // over
+					// 자기자신(li)의 opacity를 1로변경
+					$(this).stop().fadeTo(200,1);
+					// fadeTo(시간,오파,이징,함수)
+					// 자기자신 아래 span태그 글자보이기 애니
+					$("span",this).stop().delay(100).fadeIn(200);
+					// $(this).find("span") === $("span",this)
+					// $(this).children("span") === $(">span",this)
+				},
+				function(){ // out
+					// 자기자신(li)의 opacity를 0.7로변경
+					$(this).stop().fadeTo(200,.7);
+					// 자기자신 아래 span태그 글자숨기기 애니
+					$("span",this).stop().delay(100).fadeOut(200);
+				}) //////// hover //////////////
+
+				// 이어서 click 설정하기
+				.click(function(e){
+
+					// span텍스트 읽어오기
+					let txt = $("span",this).text();
+					console.log("링크:",txt);
+					
+				}); /////////// click //////////
+
+
+
 
 
 		}); //////////////////////////// jQB /////////////////////
