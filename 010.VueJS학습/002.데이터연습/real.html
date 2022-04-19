@@ -53,11 +53,26 @@
             v-if 디렉티브를 사용하여 조건에 맞을때만 출력!
             쌍따옴표안에 조건문을 쓴다!
 
+            [ 조건 디렉티브 풀 셋트! ]
+            v-if="조건"
+            v-else-if="조건"
+            v-else
+            __________________
+
+            예)
+            <div v-if="v.num===3">출력1</div>
+            <div v-else-if="v.num===4">출력2</div>
+            <div v-else>출력3</div>
+
+
             v-if="value.메뉴!=='없음'"
             해석: 제이슨 데이터의 속성 
             "메뉴"의 값이 '없음'이 아니면 출력함!
 
          -->
+        <!-- 
+            조건에 맞는 것만 나오게 할 수도 있다!
+            <li v-for="(v,n) in vals.data" v-if="n==='living'"> -->
         <li v-for="(v,n) in vals.data">
             <h2>{{v.제목}}</h2>
 
