@@ -1,0 +1,581 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> 슬라이딩 내비게이션(무한이동) </title>
+	<script src="jquery-3.6.0.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<script>
+		$(function () { ///// jQB ///////////////////////////
+
+			/// 광클금지
+			let sprot = 0; //0-허용,1-불허용
+
+			/// 등장글자 배열
+			let stxt = [
+				"What a Wonderful!",
+				"You are a Good Guy!",
+				"What's Up!",
+				"Check it Out!"
+			];
+
+			/************************************* 
+				함수명: showTxt
+				기능: 배너이동후 글자보이기
+			*************************************/
+			const showTxt = ()=>{
+
+				console.log("글자등장!");
+
+				// 기존에 만들어졌을 수 있는 .sldtit를 지운다!
+				$(".sldtit").remove();
+
+
+				// 대상: 첫번째 슬라이드!
+				let tg = sbx.find("li").first();
+
+				// 슬라이드 순번
+				let snum = tg.attr("data-seq");
+
+				// 글자태그만들기
+				let txt = `<h2 class="sldtit">${stxt[snum]}</h2>`;
+
+				// 글자태그 넣기: 기존 이미지 다음에 추가!
+				tg.append(txt);
+
+				// 글자디자인잡기
+				$(".sldtit").css({
+					position: "absolute",
+					top: "60%",
+					left: "50%",
+					transform: "translate(-50%,-50%)",
+					whiteSpace: "nowrap",
+					color:"#fff",
+					textShadow: "1px 1px 1px #000",
+					fontSize:"min(3vw,30px)",
+					opacity: "0"
+				}) /////// css //////////
+				.animate({
+					top:"50%",
+					opacity: "1"
+				},400);
+
+
+
+			}; /////////// showTxt함수 ///////////////
+
+			// 최초호출
+			setTimeout(showTxt, 1000);
+
+			// 글자등장함수 호출함수! 이동시간후!
+			let callT;
+			const callShow = () => {
+				// console.log("콜쇼우~!!");
+				clearTimeout(callT);//기존설정지우기!
+				callT = setTimeout(showTxt, 700);
+			}; ////// callShow함수 //////////
+
+
+			// 변경 대상: #viewer ul
+			let sbx = $("#viewer ul");
+
+			////////////// 블릿변경함수 /////////////
+			// 대상: #indic li
+			////////////////////////////////////////
+			let indic = $("#indic li");
+			/************************************** 
+						블릿변경함수
+			**************************************/
+			const chgIndic = seq => { // seq - 슬라이드순번
+				indic.eq(seq).addClass("on")
+					.siblings().removeClass("on");
+			}; //////// chgIndic 함수 /////////////
+
+			/************************************** 
+				블릿순번을 위한 슬라이드 속성셋팅
+				- 사용자 속성사용
+				-> data-내가지은이름
+				-> data- 로 만들어야 w3c규칙에 맞는것!
+				예) data-seq="0"
+			**************************************/
+			// each() 메서드는 요소개수 만큼 돌아줌!
+			sbx.find("li").each((idx, ele) => {
+				// idx-순번, ele-요소자신
+				$(ele).attr("data-seq", idx);
+			}); /////// each /////////////////
+
+
+
+			//////////////////////[    1    ]///////////////////
+			// 오른쪽 이동버튼 클릭시 슬라이드박스 왼쪽으로 이동
+			// 이벤트 대상: .rb
+			// 이벤트: click
+			// 변경 대상: #viewer ul -> sbx변수
+			// 변경 내용: 슬라이드 박스의 left값을 -100%로 이동 후
+			//			첫번째 슬라이드를 맨끝으로 이동 + left:0
+			///////////////////////////////////////////////////
+			$(".rb").click(function () {
+
+				////////// 광클금지 /////////
+				if (sprot) return; //돌아가
+				sprot = 1; // 잠금
+				setTimeout(() => sprot = 0, 600);
+				// 0.6초후 다시 해제! ///////
+				////////////////////////////
+
+				// 변경대상 left값 -100%로 변경하기
+				sbx.animate({
+						left: "-100%"
+					}, 600, "easeOutQuint",
+					function () { // 콜백함수
+
+						// 1. 첫번째 슬라이드 맨뒤로이동
+						// this는 sbx변수의 요소
+						$(this).append($("li", this).first())
+
+						// 2. 이때 동시에 left값 0
+						.css({
+							left: "0"
+						});
+						// 맨뒤이동 메서드 : append()
+
+					}); ///// animate //////
+
+				// 블릿변경하기 : 슬라이드 순번 2번째가 주인공!
+				// 주인공 슬라이드의 data-seq값을 읽어와서
+				// 블릿변경함수를 호출함!
+				let num = sbx.find("li").eq(1).attr("data-seq");
+				console.log("슬순번:", num);
+				chgIndic(num);
+
+				// 글자등장함수 호출함수
+				callShow();
+
+			}); //////////// click ////////////////////////////
+
+
+			//////////////////////[    2    ]///////////////////
+			// 왼쪽 이동버튼 클릭시 슬라이드박스 오른쪽으로 이동
+			// 이벤트 대상: .lb
+			// 이벤트: click
+			// 변경 대상: #viewer ul
+			// 변경 내용: 
+			// 		마지막 슬라이드를 맨앞으로 이동 + left:-100%
+			//			슬라이드 박스 left:0으로 애니메이션!
+			///////////////////////////////////////////////////
+			$(".lb").click(function () {
+
+				////////// 광클금지 /////////
+				if (sprot) return; //돌아가
+				sprot = 1; // 잠금
+				setTimeout(() => sprot = 0, 600);
+				// 0.6초후 다시 해제! ///////
+				////////////////////////////
+
+				// 1. 마지막 슬라이드를 맨앞으로 이동 + left:-100%
+				sbx.prepend(sbx.find("li").last())
+					.css({
+						left: "-100%"
+					})
+					// prepend() 맨앞이동/추가 메서드
+
+					// 2. 슬라이드 박스 left:0으로 애니메이션!
+					.animate({
+						left: "0"
+					}, 600, "easeOutQuint");
+					// 이동후 바로 글자등장함수를 호출
+					// (전달값없으면 이름만써도 된다!)
+
+				// 블릿변경하기 : 슬라이드 순번 1번째가 주인공!
+				// 주인공 슬라이드의 data-seq값을 읽어와서
+				// 블릿변경함수를 호출함!
+				let num = sbx.find("li").eq(0).attr("data-seq");
+				console.log("슬순번:", num);
+				chgIndic(num);
+
+				// 글자등장함수 호출함수
+				callShow();
+
+			}); ///////////////// click ///////////////////////
+
+
+			/////////////////////////////////////////////////
+			///////// 블릿 클릭시 슬라이드 이동하기 ///////////
+			/////////////////////////////////////////////////
+			// 원리: 슬라이드 항상 현재 슬라이드가 맨앞이므로
+			// 슬라이드의 절대위치는 블릿li중 on이 있는 순번이다!
+			// 이때 블릿을 클릭하면 그 블릿순번과 
+			//	블릿li중 on이 있는 순번을
+			//	비교하여 슬라이드 이동방향을 결정한다!!!
+			//////////////////////////////////////////////////
+			// 이벤트 대상: #indic li -> indic변수
+			// 이벤트 종류: click 
+			/////////////////////////////////////////////////
+			indic.click(function () {
+
+				////////// 광클금지 /////////
+				if (sprot) return; //돌아가
+				sprot = 1; // 잠금
+				setTimeout(() => sprot = 0, 600);
+				// 0.6초후 다시 해제! ///////
+				////////////////////////////
+
+				/****************************
+				 	1. 현재 클릭된 블릿순번 
+				 ****************************/
+				let cseq = $(this).index();
+				// current sequence(현재 클릭된순번)
+				// index() 메서드는 클릭된 li의 순번
+				console.log("클순:", cseq);
+
+				/***************************************
+						 2. 슬라이드 순번 
+						-> on이 들어간 블릿순번 
+				 ***************************************/
+				let oseq = indic.filter(".on").index();
+				// filter(선택요소) - 선택요소 중 다시선택
+				console.log("온순:", oseq);
+
+				/******************************************** 
+					3. 슬라이드 이동방향 결정하기!
+					_____________________________
+
+					원리: 클순 - 온순
+					만약 클릭된 순번이 온순번보다 크면 양수
+					클릭된 순번이 온순보다 작으면 음수
+
+					양수 -> 슬라이드 오른쪽에서 들어옴!
+					->>> 그대로 순번만큼 이동후 잘라서 뒤로보내기!
+
+					음수 -> 슬라이드 왼쪽에서 들어옴!
+					->>> 먼저 순서대로 앞에 쌓은후 들어오기! 
+				********************************************/
+				// 차이수 = 클순 - 온순 (방향을 알기위함)
+				let diff = cseq - oseq;
+				// difference(차이)
+				console.log("차이수:", diff);
+
+				// 순수한 차이수
+				let av = Math.abs(diff);
+				// abs() 절대값 -> 무조건 양수!
+
+				/*********************************** 
+						4. 방향별 분기하기
+				***********************************/
+				// 4-1. 오른쪽에서 슬라이드 들어옴 ////
+				if (diff > 0) { // 양수 -> 오른쪽버튼 모델
+
+					// 변경대상 left값을 -100에 순수차이수(av)만큼
+					// 곱하여 %로 변경하여 이동한다!
+					sbx.animate({
+							left: (-100 * av) + "%"
+						}, 600, "easeOutQuint",
+						function () { // 콜백함수
+
+							// 차이수 만큼 for문으로 반복! ///
+							// 임시변수 사용(left값 변경위해!)
+							let temp = av;
+
+							for (let i = 0; i < av; i++) {
+
+								// 임시변수 1씩감소!
+								temp--;
+
+								// 1. 첫번째 슬라이드 맨뒤로이동
+								// this는 sbx변수의 요소
+								$(this)
+									.append($("li", this).first())
+									// 2. 이때 동시에 left값 0
+									.css({
+										left: (temp * -100) + "%"
+									});
+								// 맨뒤이동 메서드 : append()
+
+							} ///////// for문 /////////////
+
+						}); ///// animate //////
+
+				} ////////////// if /////////////////
+
+				// 4-1. 왼쪽에서 슬라이드 들어옴 //////
+				else if (diff < 0) { // 음수 -> 왼쪽버튼 모델
+
+					// 기본모델 -> 왼쪽이동버튼
+					// 임시변수(left값 변경위해)
+					let temp = 0;
+
+					for (let i = 0; i < av; i++) {
+
+						// 임시변수 1씩증가(left값 증가위해)
+						temp++;
+
+						// 1. 마지막 슬라이드를 맨앞으로 이동
+						sbx.prepend(sbx.find("li").last())
+							.css({
+								left: (temp * -100) + "%"
+							});
+						// prepend() 맨앞이동/추가 메서드
+
+					} ////////// for /////////////////
+
+					// 2. 슬라이드 박스 left:0으로 애니메이션!
+					sbx.animate({
+						left: "0"
+					}, 600, "easeOutQuint");
+
+				} ////////////// if /////////////////
+
+
+				/************************************** 
+					5. 블릿변경하기 : 클릭된순번 보내기
+				**************************************/
+				chgIndic(cseq);
+
+				// 글자등장함수 호출함수
+				callShow();
+
+			}); ////////////////// click ////////////////////
+
+
+
+			////////////////////////////////////////
+			////////// 드래그 기능 추가하기 //////////
+			////////////////////////////////////////
+			// 대상: #view ul -> sbx변수!
+			// 드래그 설정하기 - 제이쿼리UI를 추가!
+
+
+
+		}); //////////// jQB //////////////////////////////
+	</script>
+
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		body {
+			background-color: #05184D;
+		}
+
+		/* 공통class */
+		.bld {
+			/* 숨김클래스 */
+			display: none;
+		}
+
+		.ir {
+			/* IR클래스 */
+			display: block;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+		}
+
+		/* 슬라이드 전체박스 */
+		#slider {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			/* 세로중앙이동 */
+			width: 600px;
+			max-width: 90%;
+			/* 양쪽에 여백있게 */
+			margin: 0 auto;
+			/* 가로중앙 마영오! */
+			background-color: #FFF;
+			border: 2px solid #FDF6DD;
+		}
+
+		/* 가상요소로 비율밀기! */
+		#slider::before {
+			content: '';
+			display: block;
+			margin-top: 60%;
+		}
+
+		/* 비율유지속박스 */
+		#viewer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		/* 슬라이드 이동박스 */
+		#viewer ul {
+			position: relative;
+			/* 위치이동포지션 */
+			left: 0;
+			/* 기준위치값 */
+			display: flex;
+			/* 플랙스박스 */
+			width: 400%;
+			/* 사진4장 */
+			height: 100%;
+
+			/* 3無 */
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		#viewer li {
+			position: relative;
+			/* 부모자격 - 등장글자! */
+			flex: 1;
+		}
+
+		/* 각 슬라이드 공통 이미지 셋팅 */
+		#viewer li img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			/* 이미지 비율유지 맞춤 */
+		}
+
+
+		/* 블릿표시자 */
+		#indic {
+			position: absolute;
+			bottom: 5px;
+			right: 5px;
+
+			display: flex;
+			/* 플랙스박스 */
+
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		#indic li {
+			width: 16px;
+			height: 16px;
+			margin-right: 6px;
+			background-color: #fff;
+			border-radius: 50%;
+			box-shadow: 0 0 5px #000;
+			box-sizing: border-box;
+			/* 크기유지 */
+		}
+
+		/* 마우스 오버시 + 선택메뉴 class="on" */
+		#indic li:hover,
+		#indic li.on {
+			background-color: #222;
+			border: 2px solid lightgoldenrodyellow;
+		}
+
+		#indic li a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		/* 양쪽이동버튼 */
+		.abtn {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 25px;
+			height: 49px;
+		}
+
+		/* 마우스 오버시 배경이미지 위치변경 */
+		.abtn:hover {
+			background-position-y: -49px;
+		}
+
+		/* 왼쪽버튼 */
+		.lb {
+			left: -50px;
+			background: url(image/btn_shop_bn_left.png) no-repeat;
+		}
+
+		/* 오른쪽버튼 */
+		.rb {
+			right: -50px;
+			background: url(image/btn_shop_bn_right.png) no-repeat;
+		}
+
+		/* 미디어쿼리 */
+		@media only screen and (max-width:800px) {
+
+			/* 이동버튼 위치변경하기 */
+			.lb {
+				left: 20px;
+			}
+
+			.rb {
+				right: 20px;
+			}
+
+		}
+
+		/* 미디어쿼리 800px 이하 */
+	</style>
+
+</head>
+
+
+<body>
+
+	<div id="slider">
+
+		<!-- 슬라이드 속박스 -->
+		<div id="viewer">
+			<!-- 슬라이드 이동박스 -->
+			<ul>
+				<li>
+					<img src="image/slide1.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/slide2.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/slide3.jpg" alt="슬라이드">
+				</li>
+				<li>
+					<img src="image/slide4.jpg" alt="슬라이드">
+				</li>
+			</ul>
+		</div>
+
+		<!-- 블릿표시자 -->
+		<ul id="indic">
+			<li class="on"><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+			<li><a href="#"><span class="bld">블릿</span></a></li>
+		</ul>
+
+		<!-- 양쪽이동버튼 -->
+		<a href="#" class="abtn lb">
+			<span class="ir">왼쪽이동버튼</span>
+		</a>
+		<a href="#" class="abtn rb">
+			<span class="ir">오른쪽이동버튼</span>
+		</a>
+
+
+
+	</div>
+
+	<!---------- jQuery code Start ---------->
+	<script>
+
+
+	</script>
+</body>
+
+</html>

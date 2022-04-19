@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Drag view</title>
+    <style>
+        /* 자동차박스 */
+        .cbx {
+            position: relative;
+            /* 가상요소의 부모자격 */
+            width: 1200px;
+            height: 720px;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+
+            user-select: none;
+            /* 선택안되게함 */
+            -webkit-user-drag: none;
+            /* 드래그안되게함 */
+
+            cursor: grab;
+            /* 손바닥 */
+        }
+
+        /* 이미지와 분리커버 가상요소로 만들기! */
+        .cbx::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+
+        .cbx img {
+            position: absolute;
+            /* 앱솔은 모두 block으로 변환됨! */
+
+        }
+    </style>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+
+        // 미리보기 //
+        // https://tombap8.github.io/KITA-FED212/004.jQuery%ED%95%99%EC%8A%B5/002.%EC%8B%A4%EC%A0%84%EC%97%B0%EC%8A%B5/05_DragGallery/car.html
+
+        $(() => { /////////// jQB ////////////////////////
+
+            // 대상: .cbx
+            
+
+            // 이미지 셋업
+            
+
+
+            // 이미지 모두 숨기고 첫번째 이미지만 보이게하기
+            
+
+            /************************************** 
+            박스에 드래그 하여 이미지 변경하기
+            ________________________________
+            원리: 마우스 포인터 위치를 처음찍은
+            위치와 드래그 되는 위치를 비교하여
+            방향을 결정한 후 이전/다음이미지로
+            이미지를 순서대로 넘겨서 보여준다!
+            **************************************/
+            // 드래그 상태값(0-드래그아님,1-드래그중)
+            
+            // 클릭시 위치값(드래그 시작점-실제값 할당예정)
+            
+            // 이벤트횟수 조절 막기 변수
+            
+
+            // 드래그 이벤트 함수 설정하기
+            // 이벤트종류: mousemove touchmove -> DT & Mobile
+            
+
+            // 드래그 상태값 변경하기 ///////
+            // 마우스버튼을 눌렀을때!
+            
+
+            // 마우스버튼이 올라왔을때+마우스가 나갔을때
+            
+
+
+            //이미지 순번(eq번호 0부터!)
+
+            /***************************************** 
+             함수명: rotCar
+             기능: 자동차 이미지를 순서대로변경함!
+            *****************************************/
+            
+
+
+
+        }); ///////////////// jQB ////////////////////
+    </script>
+</head>
+
+<body>
+    <div class="cbx"></div>
+
+</body>
+
+</html>
