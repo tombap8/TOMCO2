@@ -52,14 +52,17 @@
         $(() => { /////////// jQB ////////////////////////
 
             // 대상: .cbx
-            
+            let cbx = $(".cbx");
 
             // 이미지 셋업
-            
+            for(let i = 1; i <= 50; i++){
+                cbx.append(
+                    `<img src="360view/country${i}.jpg" alt="car">`);
+            } //////////// for //////////////
 
 
             // 이미지 모두 숨기고 첫번째 이미지만 보이게하기
-            
+            cbx.find("img").hide().first().show();
 
             /************************************** 
             박스에 드래그 하여 이미지 변경하기
@@ -70,18 +73,39 @@
             이미지를 순서대로 넘겨서 보여준다!
             **************************************/
             // 드래그 상태값(0-드래그아님,1-드래그중)
+            let drag = 0;
             
             // 클릭시 위치값(드래그 시작점-실제값 할당예정)
+            let point = 0;
             
             // 이벤트횟수 조절 막기 변수
             
 
             // 드래그 이벤트 함수 설정하기
-            // 이벤트종류: mousemove touchmove -> DT & Mobile
+            // 이벤트종류: mousemove touchmove 
+            // -> DT & Mobile
+            cbx.on("mousemove touchmove",function(e){
+
+                // 우리가 사용할 방향은 x축뿐임!
+                let pos = e.pageX;
+                console.log("x축:",pos,"/상태:",drag);
+
+            }); ///////////// mousemove //////////////
             
 
             // 드래그 상태값 변경하기 ///////
-            // 마우스버튼을 눌렀을때!
+            // 마우스버튼을 눌렀을때! -> mousedown이벤트
+            cbx.mousedown(function(e){
+                // 드래그 상태변경
+                drag = 1;
+                // x축 위치값 담기
+                point = e.pageX;
+                // 커서 주먹
+                cbx.css({
+                    cursor: "grabbing"
+                }); /// css ////////
+
+            }); /////////// mousedown ///////////
             
 
             // 마우스버튼이 올라왔을때+마우스가 나갔을때
