@@ -40,6 +40,34 @@
     color: red;
 }
 
+/* 뷰JS용 GNB */
+.VueGnb{
+    position: fixed;
+    top: 20vh;
+    right: 5vw;
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.725);
+    z-index: 9999;
+}
+.VueGnb h2{
+    font-family: nbg;
+    text-align: center;
+    font-size: 4vw;
+    padding: 2vw 0;
+}
+.VueGnb ul{
+    display: flex;
+}
+
+.VueGnb a{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 3vw;
+    display: block;
+    padding: 2vw;
+    color: #222;
+}
+
+
 /************************ fashion ************************/
 .fashion .bg1-1{
     background-image: url(../images/fashion/cont1-1a.jpg);
