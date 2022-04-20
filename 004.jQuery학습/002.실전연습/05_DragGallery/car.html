@@ -45,7 +45,6 @@
     <script src="jquery-3.6.0.min.js"></script>
     <script src="jquery-ui.min.js"></script>
     <script>
-
         // 미리보기 //
         // https://tombap8.github.io/KITA-FED212/004.jQuery%ED%95%99%EC%8A%B5/002.%EC%8B%A4%EC%A0%84%EC%97%B0%EC%8A%B5/05_DragGallery/car.html
 
@@ -55,7 +54,7 @@
             let cbx = $(".cbx");
 
             // 이미지 셋업
-            for(let i = 1; i <= 50; i++){
+            for (let i = 1; i <= 50; i++) {
                 cbx.append(
                     `<img src="360view/country${i}.jpg" alt="car">`);
             } //////////// for //////////////
@@ -74,17 +73,24 @@
             **************************************/
             // 드래그 상태값(0-드래그아님,1-드래그중)
             let drag = 0;
-            
+
             // 클릭시 위치값(드래그 시작점-실제값 할당예정)
             let point = 0;
-            
+
             // 이벤트횟수 조절 막기 변수
-            
+            let prot = 0; // 0-허용, 1-불허용
+
 
             // 드래그 이벤트 함수 설정하기
             // 이벤트종류: mousemove touchmove 
             // -> DT & Mobile
-            cbx.on("mousemove touchmove",function(e){
+            cbx.on("mousemove touchmove", function (e) {
+
+                /////// 이벤트 횟수 조절 //////
+                if (prot) return;
+                prot = 1; //막기
+                setTimeout(() => prot = 0, 40);
+                ///////////////////////////////
 
                 // 우리가 사용할 방향은 x축뿐임!
                 let pos = e.pageX;
@@ -95,7 +101,7 @@
                 // point변수 - pos변수
 
                 // 드래그 상태일때(drag===1)만 계산
-                if(drag){
+                if (drag) {
                     // 방향변수
                     let dir;
                     point - pos < 0 ? dir = 0 : dir = 1;
@@ -110,11 +116,11 @@
                 } /////// if /////////////
 
             }); ///////////// mousemove //////////////
-            
+
 
             // 드래그 상태값 변경하기 ///////
             // 마우스버튼을 눌렀을때! -> mousedown이벤트
-            cbx.mousedown(function(e){
+            cbx.mousedown(function (e) {
                 // 드래그 상태변경
                 drag = 1;
                 // x축 위치값 담기
@@ -125,10 +131,10 @@
                 }); /// css ////////
 
             }); /////////// mousedown ///////////
-            
+
 
             // 마우스버튼이 올라왔을때+마우스가 나갔을때
-            cbx.on("mouseup mouseout",function(){
+            cbx.on("mouseup mouseout", function () {
                 // 드래그 상태변경
                 drag = 0;
                 // 커서 손바닥
@@ -137,16 +143,37 @@
                 }); //// css ////
 
             }); ///////////// mouseup ////////////////
-            
+
 
 
             //이미지 순번(eq번호 0부터!)
-
+            let fnum = 0;
             /***************************************** 
              함수명: rotCar
              기능: 자동차 이미지를 순서대로변경함!
             *****************************************/
-            
+            const rotCar = dir => {
+                // dir 전달변수 : 1 - 왼쪽, 0 - 오른쪽
+                // console.log("방향:",dir);
+
+                if (dir) { // 1이면 왼쪽(이미지순번 증가!)
+                    fnum++;
+                    if (fnum === 50) fnum = 0; // 한계값
+                } ////////// if ////////
+                else {
+                    fnum--;
+                    if (fnum === -1) fnum = 49; // 한계값
+                } ////////// else /////////
+
+                console.log("순번:", fnum);
+
+                // 이미지 순서대로 보이기
+                cbx.find("img:visible").hide();
+                // :visible 보이는요소 선택(display:none아닌요소)
+                cbx.find("img").eq(fnum).show();
+                // 이미지 중 해당순서(eq(fnum)) 이미지는 보여라!(show())
+
+            }; //////////// rotCar 함수 ///////////////
 
 
 
