@@ -20,14 +20,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //// 데이터 바인딩 Vue 인스턴스 생성하기 ///
     new Vue({
-        el: "#app",
+        el: "#cont", 
+        // 바인딩할 대상(변경요소를 포함하는 부모요소)->아이디만 적용됨!
         data: {
             vals: {}
             // json 데이터가 객체임!
         }, //// data ///////
         mounted: function () {
-            axios.get("real.json")
-                .then(x => this.vals = x);
+            axios // 엑시오스 객체
+            .get("js/real.json") // 파일읽기
+            .then(x => this.vals = x); // 할당(x변수로 전달!)
         } ////// mounted //////
     }); ////////////// Vue //////////////
 
