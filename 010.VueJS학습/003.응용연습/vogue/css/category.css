@@ -44,24 +44,28 @@
 .VueGnb{
     position: fixed;
     top: 20vh;
-    right: 5vw;
+    right: 0;
     padding: 2vw;
     background-color: rgba(255, 255, 255, 0.725);
     z-index: 9999;
+    width: 15vw;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 .VueGnb h2{
     font-family: nbg;
     text-align: center;
-    font-size: 4vw;
-    padding: 2vw 0;
+    font-size: 2vw;
+    padding: 1vw 0;
 }
 .VueGnb ul{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .VueGnb a{
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 3vw;
+    font-size: 1vw;
     display: block;
     padding: 2vw;
     color: #222;
