@@ -88,7 +88,26 @@
 
                 // 우리가 사용할 방향은 x축뿐임!
                 let pos = e.pageX;
-                console.log("x축:",pos,"/상태:",drag);
+                // console.log("x축:",pos,"/상태:",drag);
+
+                // 방향알아내기!
+                // 클릭시 위치값 - 현재위치
+                // point변수 - pos변수
+
+                // 드래그 상태일때(drag===1)만 계산
+                if(drag){
+                    // 방향변수
+                    let dir;
+                    point - pos < 0 ? dir = 0 : dir = 1;
+                    // 비?집:놀이동산 (삼항연산자)
+                    // 왼쪽방향 양수 : dir = 1
+                    // 오른쪽방향 음수 : dir = 0
+                    // console.log("빼기:",point-pos);
+
+                    // 이미지변경함수 호출!
+                    rotCar(dir);
+
+                } /////// if /////////////
 
             }); ///////////// mousemove //////////////
             
@@ -109,6 +128,15 @@
             
 
             // 마우스버튼이 올라왔을때+마우스가 나갔을때
+            cbx.on("mouseup mouseout",function(){
+                // 드래그 상태변경
+                drag = 0;
+                // 커서 손바닥
+                cbx.css({
+                    cursor: "grab"
+                }); //// css ////
+
+            }); ///////////// mouseup ////////////////
             
 
 
