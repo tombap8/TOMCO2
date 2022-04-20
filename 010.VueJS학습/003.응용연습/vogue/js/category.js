@@ -13,6 +13,7 @@ if (pm.indexOf("?") === -1) {
 pm = pm.split("?")[1].split("=")[1];
 console.log("카테고리:", pm);
 
+
 //////////// 로딩구역 /////////////////////
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -23,8 +24,10 @@ window.addEventListener("DOMContentLoaded", () => {
         el: "#cont", 
         // 바인딩할 대상(변경요소를 포함하는 부모요소)->아이디만 적용됨!
         data: {
-            vals: {}
+            vals: {},
             // json 데이터가 객체임!
+            catName: pm
+            // 파라미터로 넘어온 값을 Vue 데이터변수에 넣기!
         }, //// data ///////
         mounted: function () {
             axios // 엑시오스 객체

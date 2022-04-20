@@ -231,21 +231,58 @@
     <!-- 2. 메인영역 -->
     <!-- 메인영역 최상위 부모요소인 #cont가 Vue JS의 대상! -->
     <div id="cont" class="bgc">
-        <main class="cont ibx">
+        <main class="cont ibx" v-for="(v,n) in vals.data" v-if="v.경로===catName" v-bind:class="catName">
+
+            <!-- ****************************************
+
+                v-for="(v,n) in vals.data"
+                해석: 제이슨 데이터 만큼 for문을 돌아준다!
+                v-속성값, n-속성명
+                __________________________
+
+                v-if="v.경로===catName"
+                해석: 데이터중 "경로"값이
+                카테고리 전달값(pm)과 같으면 출력
+                ____________________________
+
+                [ 클래스 추가 디렉티브 ]
+                v-bind:class="클래스명"
+                -> 데이터 바인드 할때 클래스명을 추가함!
+                -> 클래스명은 pm 값과 동일 -> catName
+
+            ******************************************* -->
+
             <!-- 1. 카테고리 페이지 탑영역 -->
             <header class="ctop">
                 <!-- 1-1.서브타이틀 -->
-                <h2 class="stit"></h2>
+                <h2 class="stit">{{v.제목}}</h2>
                 <!-- 1-2.서브메뉴
                     (LNB-Local Navigation Bar) -->
-                <nav class="lnb"></nav>
+                <nav class="lnb" v-if="v.메뉴!=='없음'">
+                    <!-- 
+                        v-if="v.메뉴!=='없음'"
+                        해석: v.메뉴 의 값이 '없음'이 아니면
+                        nav태그를 출력하고 아니면 출력안함!
+                     -->
+                    <ul>
+                        <li v-for="(m,i) in v.메뉴">
+                            <a href="#">{{m}}</a>
+                            <!-- 
+                                v-for="(m,i) in v.메뉴"
+                                해석: v.메뉴 배열 데이터가
+                                있는 동안 돌아준다!
+                                m - 배열값, i - 배열순번
+                             -->
+                        </li>
+                    </ul>
+                </nav>
             </header>
 
             <!-- 컨텐츠 유형2 -->
             <div class="pt3 rbx">
                 <div class="rbxIn fbx">
                     <div class="cbx bgi bg1-1">
-                        <h2></h2>
+                        <h2>{{v.타이틀[0]}}</h2>
                     </div>
                     <div class="cbx bgi bg1-2">
                         <h2></h2>
