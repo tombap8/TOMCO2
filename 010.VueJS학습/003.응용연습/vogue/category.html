@@ -282,13 +282,22 @@
             <div class="pt3 rbx">
                 <div class="rbxIn fbx">
                     <div class="cbx bgi bg1-1">
-                        <h2>{{v.타이틀[0]}}</h2>
+                        <!-- <h2>{{v.타이틀[0]}}</h2> -->
+                        <h2 v-html="v.타이틀[0]"></h2>
+                        <!-- 
+                            [ html태그 출력 디렉티브 ]
+                            v-html="태그코드"
+                            콧수염 표시자로 넣으면
+                            html 특수문자, 태그가 처리안되고
+                            그대로 출력된다! 따라서 html
+                            넣기는 v-html 디렉티브를 쓴다!
+                         -->
                     </div>
                     <div class="cbx bgi bg1-2">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[1]"></h2>
                     </div>
                     <div class="cbx bgi bg1-3">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[2]"></h2>
                     </div>
                 </div>
             </div>
@@ -296,13 +305,13 @@
             <div class="pt3 rbx">
                 <div class="rbxIn fbx">
                     <div class="cbx bgi bg2-1">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[3]"></h2>
                     </div>
                     <div class="cbx bgi bg2-2">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[4]"></h2>
                     </div>
                     <div class="cbx bgi bg2-3">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[5]"></h2>
                     </div>
                 </div>
             </div>
