@@ -33,7 +33,16 @@ window.addEventListener("DOMContentLoaded", () => {
             axios // 엑시오스 객체
             .get("js/real.json") // 파일읽기
             .then(x => this.vals = x); // 할당(x변수로 전달!)
-        } ////// mounted //////
+        }, ////// mounted //////
+        methods: {
+            // 탭 타이틀 변경 메서드
+            chgTit: function(tit){ // tit - 제목전달!
+                // document.querySelector("title").innerText=
+                // tit+" | 보그 코리아 (Vogue Korea)";
+                $("title").text(tit+" | 보그 코리아 (Vogue Korea)")
+            } ////// chgTit 메서드 ////
+        } ///////// methods //////////
+
     }); ////////////// Vue //////////////
 
 
