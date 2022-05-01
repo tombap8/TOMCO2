@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Mask Effect</title>
+  <title>Mask Effect2</title>
   <style>
     html,body{
       margin: 0;
@@ -12,18 +12,17 @@
     }
     #wrap{/*아래 깔리는 배경이미지를 가진 부모박스*/
       position: relative;
-      width: 1007px;
-      height: 455px;
-      background: url(images/main2.jpg) no-repeat;
+      width: 590px;
+      height: 500px;
+      background: url(images/Avatar.jpg) no-repeat;
       margin: 0 auto;/*가로중앙*/
     }
     #mask{/*마스크 효과 box*/
       position: absolute;
-      left: -550px;/*중앙위치*/
-      width: 1007px;
-      height: 455px;
-      background: url(images/main1.jpg) no-repeat fixed;/*배경이미지를 fixed로 고정하여 박스가 이동해도 배경은 그대로 위치함(fixed의 기준은 보이는 윈도우화면)*/
-      transition: left .4s ease-out;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: url(images/man.jpg) no-repeat fixed center top;
     }
     #over{/*mosemove 이벤트가 적용되는 투명 box*/
       position: absolute;
@@ -41,27 +40,37 @@
   <script src="js/jquery-ui-1.10.4.min.js"></script>
   <script>
   $(function(){//// jQB //////////
-    var bgpos = Math.floor($("#wrap").offset().left);
-    // Math.floor()는 소수점 버리기(그래야 화면 울림현상이 없음)
-    console.log(bgpos);
-    $("#mask").css({
-      backgroundPosition:bgpos+"px 0px"});
-    
-    
   // 마우스가 #over박스위에서 움직일때 마다 #mask이동하기
     $("#over").mousemove(function(e){
-      var posx = e.pageX - $(this).offset().left;
+      var point = $("#mask").width()/2;//크기의절반
+      var posx = 
+          e.pageX - $(this).offset().left -point;
+      var posy = e.pageY - point;
       //박스위에서의 위치 
       // = 마우스포인터 x축위치값-박스left값
       //console.log("x좌표: "+posx);
       
       /// #mask박스 left값 변경하기
-      posx = -posx-80;//값보정
-      $("#mask").css({left:posx+"px"});
-      
+      $("#mask").css({
+        top:posy+"px",left:posx+"px"});
       
     });/////////////  mosemove ////////////
     ///////////////////////////////////////
+    
+    
+
+    /// 처음에 원안보이게
+    $("#mask").hide();
+    /// 마우스 오버시에만 보이게하기
+    $("#over").hover(
+      function(){// over
+        $("#mask").show();
+      },
+      function(){// out
+        $("#mask").hide();
+      });///// hover /////
+    //////////////////////
+
     
     
     
