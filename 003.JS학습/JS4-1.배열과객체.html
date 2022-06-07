@@ -200,31 +200,35 @@
 
             *****************************************************/
 
-            const SHK = new Object({
-                "너의 이름은?": "김수현",
-                "생일": "1988년 2월 16일",
-                "키": "180cm",
-                "몸무게": "65kg",
+            const SSG = new Object({
+                "너의 이름은?": "손석구",
+                "생일": "1983년 2월 7일",
+                "출생지": "대전광역시 유성구 전민동",
+                "키": "178cm",
+                "몸무게": "80kg",
+                "혈액형": "B형",
                 "성별": "남자",
+                "대표작": "나의 해방일지,범죄도시2",
+                "소속사": "샛별당엔터",
                 "비밀번호": 7777,
                 "팬레터": function () {
                     // 1. 메시지 띄우기
-                    alert("오빠, 지금뭐해?");
+                    alert("상남자 오빠, 지금뭐해?");
                     // 2. 배경이미지 넣기
                     txt4.style.background =
-                        "url(https://file2.nocutnews.co.kr/newsroom/image/2020/01/01/20200101093641185867_0_786_786.jpg) repeat-x top/auto 100%";
+                        "url(https://file.mk.co.kr/meet/neds/2022/05/image_readtop_2022_456627_16533579475052374.jpeg) repeat-x top/auto 100%";
                     // 3. 글자색
                     txt4.style.color = "#fff";
                     // 4. 글자그림자
                     txt4.style.textShadow = "0 0 5px #000";
                     // 5. 글자내용변경하기
-                    txt4.innerText = "김수현 최고 멋쟁이! 승승장구! 화이팅!";
+                    txt4.innerText = "손석구 최고 멋쟁이! 승승장구! 화이팅!";
                     // 6. 트랜지션
                     txt4.style.transition = "1s ease-out 1s";
                     // 7. 박스크게하기
                     txt4.style.transform = "scale(1.2)";
                 }
-            }); ////// SHK객체 /////////
+            }); ////// SSG객체 /////////
 
             // 객체출력하기
             // 대상: txt4
@@ -232,16 +236,16 @@
             let txt4 = document.querySelector("#txt4");
 
             txt4.innerText =
-                `당신이 좋아하는 남자배우는? ${SHK["너의 이름은?"]}`;
+                `당신이 좋아하는 남자배우는? ${SSG["너의 이름은?"]}`;
             txt4.innerText +=
-                ` / 몸무게를 아세요? ${SHK["몸무게"]}`;
+                ` / 몸무게를 아세요? ${SSG["몸무게"]}`;
 
             // 객체에 셋팅된 함수를 보통 "메서드"라고 부른다!
             // 이 메서드를 호출해 보자!
-            txt4.onclick = SHK["팬레터"];
+            txt4.onclick = SSG["팬레터"];
 
             // title속성 넣기
-            txt4.title = `여기를 클릭하여 ${SHK["너의 이름은?"]} 팬레터를 확인하세요!`;
+            txt4.title = `여기를 클릭하여 ${SSG["너의 이름은?"]} 팬레터를 확인하세요!`;
 
             // 손가락 표시
             txt4.style.cursor = "pointer";
