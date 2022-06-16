@@ -467,7 +467,7 @@
    /* 마진: 위 양쪽 아래 */
 }
 
-/* 3-2. 하단링크 */
+/* 3-3. 하단링크 */
 .blink {
    display: flex;
    justify-content: center;
