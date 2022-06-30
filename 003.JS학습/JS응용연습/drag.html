@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .area {
+            width: 1200px;
+            height: 800px;
+            background-color: rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .area__box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", loadFn);
+
+        function loadFn() {
+            const container = document.querySelector(".area");
+            const box = container.querySelector(".area__box");
+
+            const {
+                width: containerWidth,
+                height: containerHeight
+            } = container.getBoundingClientRect();
+            const {
+                width: boxWidth,
+                height: boxHeight
+            } = box.getBoundingClientRect();
+            let isDragging = null;
+            let originLeft = null;
+            let originTop = null;
+            let originX = null;
+            let originY = null;
+
+            box.addEventListener("mousedown", (e) => {
+                isDragging = true;
+                originX = e.clientX;
+                originY = e.clientY;
+                originLeft = box.offsetLeft;
+                originTop = box.offsetTop;
+            });
+
+            document.addEventListener("mouseup", (e) => {
+                isDragging = false;
+            });
+
+            document.addEventListener("mousemove", (e) => {
+                if (isDragging) {
+                    const diffX = e.clientX - originX;
+                    const diffY = e.clientY - originY;
+                    const endOfXPoint = containerWidth - boxWidth;
+                    const endOfYPoint = containerHeight - boxHeight;
+                    box.style.left = `${Math.min(Math.max(0, originLeft+diffX), endOfXPoint)}px`;
+                    box.style.top = `${Math.min(Math.max(0, originTop + diffY), endOfYPoint)}px`;
+                }
+            });
+        } //////////// loadFn함수 ////////////
+    </script>
+</head>
+
+<body>
+    <div class="area">
+        <div class="area__box"></div>
+    </div>
+
+</body>
+
+</html>
