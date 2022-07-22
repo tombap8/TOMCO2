@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .stage{
+            border: 3px dotted blue;
+            padding: 20px;
+        }
+        .stage ul{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .stage li{
+            width: 50px;
+            height: 50px;
+            border: 5px dashed red;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+        .stage li.on{
+            background: lime url(images/num/num_05.png) no-repeat center/cover;
+        }
+    </style>
+    <script>
+        window.addEventListener("load",()=>{
+            let tgs = document.querySelectorAll(".stage li");
+            let btns = document.querySelectorAll(".btns button");
+            btns.forEach((ele)=>{
+                ele.onclick = ()=>{
+                    console.log(ele.innerText);
+                    let txt = ele.innerText;
+                    switch(txt){
+                        case "앞으로":
+                            tgs.forEach(
+                                (ele)=>{
+                                if(ele.classList.contains("on")){
+                                    ele.classList.remove("on");
+                                    ele.nextElementSibling.classList.add("on");
+                                    return;
+                                }
+                                });
+                            break;
+                    } ////// switch ////
+                }; //////// click /////
+            }); ///// forEach //////////
+        }); /////////// load ///////////////////
+    </script>
+</head>
+<body>
+    <div class="stage">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+    </div>
+    <div class="btns">
+        <button>앞으로</button>
+        <button>뒤로</button>
+    </div>
+
+
+</body>
+</html>
