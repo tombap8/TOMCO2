@@ -250,3 +250,51 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 }); //////////// 로드구역 ////////////////////////
+
+
+
+//////////////////////////////////////////////
+// 제이쿼리 스크롤 멈춤체크 플러그인 메서드 ///
+//////////////////////////////////////////////
+
+$.fn.scrollStopped = function (callback) { // callback은 전달받은 함수
+    
+    // console.log(this);
+    // this는 window객체임!
+    $(this).scroll(function () {
+        // 1. 먼저 타임아웃을 지운다! - 아래서 설정된 data()지움
+        clearTimeout($(this).data('scrollTimeout'));
+        // 2. 타임아웃 설정을 한다!
+        $(this).data('scrollTimeout', setTimeout(callback, 80));
+        // 타임아웃 시간은 부드러운 스크롤에 설정된 speed, smooth값을 더한 값으로 설정함
+        // 예컨데) new SmoothScroll(document, 60, 20) 일경우
+        // 이동시간은 60, 나머지 이동시간은 20 이니까 둘을 더하여 80을 설정하면됨!
+        // 80은 1/1000초임 (0.08초)
+    });
+};
+
+
+// 윈도운객체를 제이쿼리로 플러그인 호출!
+// 이때 실행할 함수전달!
+$(window).scrollStopped(function () {
+    // 마지막 스크롤 위치값
+    let scTop = $(this).scrollTop();
+    // 콘솔에 확인!
+    console.log(scTop,'scroll stopped');
+    // 부드러운 스크롤 위치값에 일치!
+    pos = scTop;
+});
+
+
+$(()=>{
+
+    
+    // 제이쿼리 data(키,값)연습
+    
+    let dwin = $("#top");
+    dwin.data('헐','고양이');
+    dwin.data('힘','강아지');
+    
+    console.log('data()메서드값:',dwin.data('헐'),'/',dwin.data('힘'));
+
+})
