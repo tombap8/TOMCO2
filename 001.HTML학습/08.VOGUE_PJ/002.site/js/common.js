@@ -323,8 +323,13 @@ console.log(
     keyval.get('중국배우')
 );
 
-// 3. 값삭제 : delete(키)
-keyval.delete('중국배우')
+// 3. 키존재여부 : has(키)
+console.log('성룡있나? 지금? ',keyval.has('중국배우'));
+
+// 4. 값삭제 : delete(키)
+keyval.delete('중국배우');
+
+console.log('성룡있나? 지금? ',keyval.has('중국배우'));
 
 console.log(
     keyval.get('한국배우'),'/',
