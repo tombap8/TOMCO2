@@ -297,4 +297,37 @@ $(()=>{
     
     console.log('data()메서드값:',dwin.data('헐'),'/',dwin.data('힘'));
 
+    // data() 삭제는 removeData(키)
+    dwin.removeData('헐');
+
+    console.log('data()메서드값:',dwin.data('헐'),'/',dwin.data('힘'));
+
 })
+
+
+/////////// 비교 JS Map() 메서드 /////////
+// -> 키,값으로 저장하는 메모리공간 생성 메서드
+// 1. 메모리공간 생성 : Map() -> new 키워드로!
+const keyval = new Map();
+
+// 2. 값셋팅 : set(키,값)
+keyval.set('한국배우','손승우');
+keyval.set('미국배우','탐크루즈');
+keyval.set('중국배우','성룡');
+
+// 3. 값호출 : get(키)
+console.log(
+    'JS Map() 메서드 : set()/get()/delete() \n',
+    keyval.get('한국배우'),'/',
+    keyval.get('미국배우'),'/',
+    keyval.get('중국배우')
+);
+
+// 3. 값삭제 : delete(키)
+keyval.delete('중국배우')
+
+console.log(
+    keyval.get('한국배우'),'/',
+    keyval.get('미국배우'),'/',
+    keyval.get('중국배우')
+);
