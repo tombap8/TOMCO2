@@ -291,16 +291,16 @@ $(()=>{
     
     // 제이쿼리 data(키,값)연습
     
-    let dwin = $("#top");
-    dwin.data('헐','고양이');
-    dwin.data('힘','강아지');
+    let mykey = $("#top");
+    mykey.data('헐','고양이');
+    mykey.data('힘','강아지');
     
-    console.log('data()메서드값:',dwin.data('헐'),'/',dwin.data('힘'));
+    console.log('data()메서드값:',mykey.data('헐'),'/',mykey.data('힘'));
 
     // data() 삭제는 removeData(키)
-    dwin.removeData('헐');
+    mykey.removeData('헐');
 
-    console.log('data()메서드값:',dwin.data('헐'),'/',dwin.data('힘'));
+    console.log('data()메서드값:',mykey.data('헐'),'/',mykey.data('힘'));
 
 })
 
@@ -317,7 +317,7 @@ keyval.set('중국배우','성룡');
 
 // 3. 값호출 : get(키)
 console.log(
-    'JS Map() 메서드 : set()/get()/delete() \n',
+    'JS Map() 메서드 : set(),get(),delete() \n',
     keyval.get('한국배우'),'/',
     keyval.get('미국배우'),'/',
     keyval.get('중국배우')
