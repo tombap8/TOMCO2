@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>어디서나 펼쳐지는 내비게이션</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+			/* 보이는 화면에 맞춤! */
+			overflow: hidden;
+		}
+
+		body {
+			background-color: #000;
+		}
+
+		div#mbx {
+			position: absolute;
+			top: 40%;
+			left: 40%;
+			width: 220px;
+			height: 220px;
+			transition: .6s ease-out;
+			/* 애니메이션을 위해 트랜지션을 줄때 이징설정이 매우중요함!
+			ease-out으로 주면 시작할때 가속도가 빠르게 되므로 자연스럽다! */
+		}
+
+		div#home {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 200px;
+			height: 200px;
+			background: #99ff9e;
+			border-radius: 50%;
+			border: 10px solid darkgreen;
+			text-align: center;
+			font-size: 40px;
+			line-height: 200px;
+			white-space: nowrap;
+			/* 줄바꿈방지 */
+			z-index: 2;
+			cursor: pointer;
+			user-select: none;
+			/* 더블클릭으로 선택안되게함! */
+		}
+
+		#menu {
+			position: absolute;
+			top: 0px;
+			left: 100px;
+			display: flex;
+			/* 플랙스박스 */
+			width: 0;
+			height: 220px;
+			padding-left: 120px;
+			list-style: none;
+			z-index: 1;
+			overflow: hidden;
+			/* 자식요소숨김 */
+		}
+
+		#menu li {
+			position: relative;
+			/* 부모자격 */
+			width: 220px;
+			height: 220px;
+			opacity: 0.7;
+			border-radius: 50%;
+			overflow: hidden;
+			cursor: pointer;
+		}
+
+		#menu img {
+			width: 220px;
+		}
+
+		/* 글자박스 */
+		#menu li span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			font-size: 30px;
+			color: #fff;
+			text-align: center;
+			line-height: 220px;
+			display: none;
+		}
+	</style>
+	<!-- 미리보기: 
+		https://tombap8.github.io/FED211/004.jQuery학습/jQuery-02.실전연습/02.jQuery_naviation/02_FollowingMenu/ready.html 
+	-->
+	<script src="jquery-3.6.0.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<script>
+		window.addEventListener('load',()=>{
+
+			let mbx = document.querySelector('#mbx');
+			let hz = mbx.offsetWidth/2;
+
+			document.body.onmousemove = () => {
+				let posx = event.pageX-hz;
+				let posy = event.pageY-hz;
+				console.log(`x:${posx}/y:${posy}`);
+
+				mbx.style.top = posy+"px";
+				mbx.style.left = posx+"px";
+
+			}; ////////// onmousemove ///////
+
+			
+		}); /////////// load ////////////////
+	</script>
+</head>
+
+<body>
+
+
+
+	<div id="mbx">
+		<div id="home">눌러봐!</div>
+
+		<ul id="menu">
+			<li>
+				<img src="th_bg1.jpg" alt="메뉴배경">
+				<span>Google</span>
+			</li>
+			<li>
+				<img src="th_bg2.jpg" alt="메뉴배경">
+				<span>Naver</span>
+			</li>
+			<li>
+				<img src="th_bg3.jpg" alt="메뉴배경">
+				<span>Daum</span>
+			</li>
+		</ul>
+	</div>
+
+
+</body>
+
+</html>
