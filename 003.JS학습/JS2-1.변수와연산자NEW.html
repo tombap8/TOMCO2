@@ -120,12 +120,10 @@
         const desc = document.querySelector(".desc");
         const code = document.querySelector(".code");
 
-        const showCode = (pre)=>{
-            code.innerHTML += `<pre>${pre}</pre>`;
+        const showCode = (hdata)=>{
+            code.innerHTML += hdata;
         };///////// showCode ////////////
 
-
-        document.get
 
 
         // 변수의 선언과 할당
@@ -137,28 +135,13 @@
         var E = "ZZI"; // 문자형
         var 와라와라 = "흠칫뿡"; // 문자형
 
-        showCode(
-        `
-<pre>
-    // 변수의 선언과 할당
-    var A = "삐"; // 문자형
-    var B = true; // 불린형
-    var C = 7; // 숫자형
-    var D = "끼"; // 문자형
-    var E = "ZZI"; // 문자형
-    var 와라와라 = "흠칫뿡"; // 문자형
-
-</pre>
-        `);
-
-
         // 변수값의 출력
-        // desc.innerHTML += (메시지)
-        desc.innerHTML += ("<h1>" + A + "소리와 함께 도착한 택배, 이거슨 " + B + " 내 받아본 " + C + "번째 득템! 나의 " + D + "를 발산 시켜주는 나의 보물 " +
+        // showCode(메시지)
+        showCode("<h1>" + A + "소리와 함께 도착한 택배, 이거슨 " + B + " 내 받아본 " + C + "번째 득템! 나의 " + D + "를 발산 시켜주는 나의 보물 " +
             E + ", 이거 없으면 " + 와라와라 + "!</h1>");
 
         // ES6방식의 변수출력법
-        desc.innerHTML += (`<h1>${A}소리와 함께 도착한
+        showCode(`<h1>${A}소리와 함께 도착한
              택배, 이거슨 ${B} 내 받아본 ${C}번째 득템!
               나의 ${D}를 발산 시켜주는 나의 보물 ${E},
                이거 없으면 ${와라와라}!</h1>`);
@@ -175,7 +158,7 @@
         var message = "쿨하게 멋지게 자신있게!";
 
         // 화면출력1
-        desc.innerHTML += (`
+        showCode(`
             <h1>${usr_name}님, 안녕하세요!</h1>
             <h1>오늘의 날씨는 ${today_weather}입니다!</h1>
             <h1>${message}</h1>        
@@ -187,7 +170,7 @@
         message = "나는 소중하니까!";
 
         // 화면출력2
-        desc.innerHTML += (`
+        showCode(`
             <h1>${usr_name}님, 안녕하세요!</h1>
             <h1>오늘의 날씨는 ${today_weather}입니다!</h1>
             <h1>${message}</h1>        
@@ -221,7 +204,7 @@
             H = 12,
             I = 2;
         
-        desc.innerHTML += (`
+        showCode(`
             1. 산술연산자 <br>
             ${F} + ${G} × ${H} ÷ ${I} = ${F+G*H/I} <br>
         `);
@@ -231,7 +214,7 @@
             앞수%뒷수 -> 앞수에서 뒷수를 나눈 나머지
             예) 숫자%2 -> 2로 나눈 나머지가 0이면 짝수
         *********************************************/
-       desc.innerHTML += (`
+       showCode(`
             2. 나머지 연산자 <br>
             ${H} % ${G} = ${H%G} <br>
        `);
@@ -257,7 +240,7 @@
 
        ************************************************/
 
-        desc.innerHTML += (`
+        showCode(`
             <br> 3. 비교연산자 <br>
             1 == '1' 의 결과는? ${1=='1'} <br>
             1 === '1' 의 결과는? ${1==='1'} <br>
@@ -290,7 +273,7 @@
 
         var txt = "무궁화 꽃이 ";
 
-        desc.innerHTML += (`
+        showCode(`
             <br> 4. 대입연산자 <br>
             ${txt} <br>
         `);
@@ -303,7 +286,7 @@
         txt += num + "개 ";
         txt += "피었습니다!";
 
-        desc.innerHTML += (`
+        showCode(`
             ${txt} <br>
         `);
 
@@ -328,7 +311,7 @@
         // 고양이변수
         var cat = 33;
 
-        desc.innerHTML += (`
+        showCode(`
             <br> 5. 증감연산자 <br>
 
             우리동네 고양이수는 ${cat}마리 <br>
@@ -345,14 +328,14 @@
         cat++; // 기존수에 1증가
         cat++; // 기존수에 1증가
 
-        desc.innerHTML += (`
+        showCode(`
             전체 고양이수는 이제 ${cat}마리 <br>
         `);
 
         // 강아지변수
         var dog = cat;
 
-        desc.innerHTML += (`
+        showCode(`
             전체 강아지수는 ${dog}마리 <br>
             강아지 한마리가 새끼를 낳고 있어요 <br>
             한마리의 강아지가 태어났어요 <br>
@@ -361,7 +344,7 @@
         // 고양이변수를 1증가해서 강아지 변수에 할당!
         dog = cat++;
 
-        desc.innerHTML += (`
+        showCode(`
             전체 강아지수는 ${dog}마리 <br>
             전체 고양이수는 ${cat}마리 <br>
             알고보니 고양이가 새끼를 낳았네! <br>
@@ -370,7 +353,7 @@
         // 고양이변수를 1씩 증가해서 ++을 앞에 붙여본다!
         dog = ++cat;
 
-        desc.innerHTML += (`
+        showCode(`
             전체 강아지수는 ${dog}마리 <br>
         `);
 
@@ -392,7 +375,7 @@
         var gen = "남자";
         var age = 25;
 
-        desc.innerHTML += (`
+        showCode(`
             <br> 6. 논리연산자 <br>             
             이 분의 성별은 ${gen}입니다. <br>
             이 분은 여자입니까? ${gen==="여자"} <br>
@@ -411,7 +394,7 @@
         var gen2 = "남자";
         var age2 = 25;
 
-        desc.innerHTML += (`
+        showCode(`
             <br>회원정보<br>
             회원소속: ${mem},
             회원성별: ${gen2},
@@ -423,7 +406,7 @@
 
         // 사람의 성별로 논리부정하기!
         var person = "여자";
-        desc.innerHTML += (`
+        showCode(`
             <br> 한 사람의 성별은 ${person}입니다.<br>
             이 사람의 성별이 여자가 맞으면 false라고 답하세요!
             ${!person==="여자"} <br>
@@ -462,7 +445,7 @@
        today === "비" ?
        res = "집에 있어요!" : res = "놀이동산가요!";
 
-       desc.innerHTML += (`
+       showCode(`
             <br> 7. 조건연산자 <br>
             오늘의 날씨는 어떤가요? ${today} <br>
             오늘 집에 있을까요? 놀러갈까요? ${res} <br>
@@ -473,7 +456,7 @@
        var ans = "좋아";
        ans = "글쎄";
        // ans의 답변에 따라 출력내용 다르게 하기!
-       desc.innerHTML += (`
+       showCode(`
             아빠, 아이스크림 사줘? <br>
             아빠왈 ${ans==="좋아"?"사줄께!":"안돼!"}
 
