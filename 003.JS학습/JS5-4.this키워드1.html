@@ -20,12 +20,17 @@
             4. 함수에서 엄격모드(use strict)일 경우 undefined
             5. 이벤트에서 이벤트를 수신한 요소자신을 의미
             6. call(), apply(), bind() 각 객체를 의미
+            ___________________________________________
 
+            (참고) https://www.w3schools.com/js/js_this.asp
+            
         ********************************************/
 
         // 엄격모드
         // "use strict";
         // (참고) https://www.w3schools.com/js/js_strict.asp
+        // 엄격모드에서는 대표적으로 선언되지 않은 변수는 사용못하며
+        // ES6이후에 추가된 새 기능 예약어는 사용할 수 없도록한다!
 
         // 1. 객체 메서드에서 객체자신을 의미 확인!
         const obj = {
@@ -33,16 +38,21 @@
 
             // 익명함수 메서드
             fn1: function(){
-                console.log("객체안 익명메서드:", this);
-                console.log("객체안 익명메서드 name:", this.name);
+                console.log("객체안 익명메서드:", 
+                this);
+                console.log("객체안 익명메서드 name:", 
+                this.name);
             },
 
             // 화살표함수 메서드
             fn2: ()=>{
-                console.log("객체안 화살표함수:", this);
-                console.log("객체안 화살표함수 name:", this.name);
+                console.log("객체안 화살표함수:", 
+                this);
+                console.log("객체안 화살표함수 name:", 
+                this.name);
                 // this는 window객체이므로 내부 속성에 접근불가!
-                console.log("객체안 화살표함수 name:", obj.name);
+                console.log("객체안 화살표함수 name:", 
+                obj.name);
                 // 이미 obj라는 객체가 전역등록되어서 객체명으로 접근
             }
         };

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체를 위한 for문</title>
+    <style>
+        button {
+            font-size: 30px;
+        }
+
+        .minfo {
+            display: flex;
+            /* 자식요소 박스 옆으로 흐르게! */
+        }
+
+        .photo img {
+            height: 200px;
+            margin-right: 20px;
+        }
+
+        /* 영화한마디 글자박스 */
+        .showtit {
+            display: none;
+        }
+
+        .show span {
+            display: inline-block;
+            /* 가로,세로 등 디자인 적용+한줄에 나옴 */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* 원 */
+            border: 5px solid #d30000;
+            background-color: #00f;
+            font-size: 30px;
+            color: #fff;
+
+            /* 동그라미 박스 정중앙 */
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+
+    <!-- 제이쿼리 라이브러리 CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- 제이쿼리 UI CDN -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        /// 영화정보 객체 ////
+        let mvi = {
+            "조제": {
+                "포스터": "https://movie-phinf.pstatic.net/20201116_276/1605491658399poUOC_JPEG/movie_image.jpg?type=m99_141_2",
+                "제목": "조제",
+                "개요": "멜로/로맨스, 드라마",
+                "감독": "김종관",
+                "출연": "한지민, 남주혁",
+                "문구": "조제 보러 오세요"
+            },
+            "이웃사촌": {
+                "포스터": "https://movie-phinf.pstatic.net/20201111_193/1605056611896fc6Ef_JPEG/movie_image.jpg?type=m99_141_2",
+                "제목": "이웃사촌",
+                "개요": "드라마, 코미디",
+                "감독": "이환경",
+                "출연": "정우, 김희원",
+                "문구": "이웃을 사랑합시다"
+            },
+            "도굴": {
+                "포스터": "https://movie-phinf.pstatic.net/20201104_45/160445535053439akc_JPEG/movie_image.jpg?type=m99_141_2",
+                "제목": "도굴",
+                "개요": "범죄",
+                "감독": "박정배",
+                "출연": "이제훈, 조우진, 신혜선, 임원희",
+                "문구": "도굴은 범죄예요"
+            }
+        }; ///////////////// mvi 객체 //////////////////////
+
+
+        /// 제이쿼리 구역 ///
+        $(() => {
+
+            // 로딩확인
+            console.log("로딩완료!");
+
+            /***************************************** 
+             [ 객체를 위한 for in문 ]
+             
+             - 구문:
+             for(변수 in 객체){코드}
+             
+             - 작동원리:
+             객체의 개수만큼 순서대로 속성명과 속성값을 가져옴
+             
+             - 변수는 객체의 속성명이다!
+             
+             - 객체의 값을 사용하려면 for in 문 안에
+             객체[변수]로 쓰면됨!
+             
+             *****************************************/
+
+            /******************************************************** 
+                [ 구현내용 ]
+                - 버튼을 클릭하면 해당 영화의 정보를 화면에 보여준다!
+                - 이벤트 대상: button
+                - 이벤트 종류: click
+                - 이벤트 대상 구분: 클릭된 버튼의 글자데이터
+                - 변경대상: .tit, .sum, .dir, .act
+                - 변경내용: 
+                    대상의 각 내용에 맞게 객체로부터 정보를 셋팅함!
+            ********************************************************/
+
+            // 이벤트 대상: .btns button
+            $(".btns button").click(function () {
+
+                // 1. 버튼텍스트 읽어오기
+                let btxt = $(this).text();
+                console.log("버튼:", btxt);
+
+                // 2. 버튼텍스트로 객체값 셋팅하기
+                // 버튼텍스트 === 객체속성명
+                // 객체명은 mvi , 객체값은 mvi[버튼텍스트]
+                let data = mvi[btxt];
+                console.log("데이터:", data);
+
+                // 3. 셋팅된 객체값으로 페이지 데이터 바인딩하기
+                // 데이터 바인딩이란? 데이터를 의도한 UI에
+                // 나오도록 데이터를 특정위치에 출력하는것!
+
+                // 객체값 만큼 자동 for문인 for in문 사용!
+                for (let x in data) {
+                    // x는 속성명임!
+                    console.log("x는? ", x);
+                    // 속성값은? data[x]
+                    console.log("속성값: ", data[x]);
+
+                    // switch case분기문으로 값을 셋팅
+                    switch (x) {
+                        case "포스터":
+                            $(".photo")
+                                .html(`<img src="${data[x]}" alt="포스터">`);
+                            break;
+                        case "제목":
+                            $(".tit").text(data[x]);
+                            break;
+                        case "개요":
+                            $(".sum").text(data[x]);
+                            break;
+                        case "감독":
+                            $(".dir").text(data[x]);
+                            break;
+                        case "출연":
+                            $(".act").text(data[x]);
+                            break;
+                    } ////////// switch case ///////
+
+                    // 영화한마디 타이틀 보이기
+                    // 대상: .showtit
+                    $(".showtit").show();
+                    // show()의 반대는 hide()
+                    // display:none과 그 반대전환!
+                    // toggle() -> show()/hide()전환!
+
+                    // 영화한마디 글자찍기
+                    // 대상: .show
+                    // html() - html코드 넣기
+                    // for of 문으로 한글자씩 태그넣기
+                    if (x === "문구") {
+                        // html코드변수
+                        let htc = "";
+                        // 한글자씩 돌면서 span태그싸기
+                        for(let z of data[x]){
+                            if(z===" ") // 스페이스일때
+                                htc += "&nbsp;&nbsp;&nbsp;";
+                            else
+                                htc += `<span>${z}</span>`;
+                        } ////// for of ////////
+
+                        // &nbsp; 는 띄어쓰기 특수문자처리
+                        // html에서는 스페이스를 많이줘도
+                        // 한칸밖에 안떨어짐. 이때 띄어쓰기 특수
+                        // 문자로 여러칸을 띄어쓸 수 있다!
+                        // nbsp
+                        // -> No-Break Space(줄바꿈없는 공백)
+
+                        // html코드 출력
+                        $(".show").html(htc);
+                    }
+
+                } ///////////// for in문 //////////////
+
+            }); //////// click //////////////////
+
+
+        }); /////////// jQB ////////////////////////////////
+        ////////////////////////////////////////////////////
+    </script>
+</head>
+
+<body>
+    <h1>영화정보</h1>
+    <div class="btns">
+        <button>조제</button>
+        <button>이웃사촌</button>
+        <button>도굴</button>
+    </div>
+
+    <hr>
+
+    <div class="minfo">
+        <!-- 1. 포스터 -->
+        <div class="photo"></div>
+        <div class="cont">
+            <!-- 2. 제목 -->
+            <h2 class="tit"></h2>
+            <!-- 3. 개요 -->
+            <h3 class="sum"></h3>
+            <!-- 4. 감독 -->
+            <h3 class="dir"></h3>
+            <!-- 5. 출연 -->
+            <h3 class="act"></h3>
+        </div>
+    </div>
+
+    <!-- 영화 한마디 -->
+    <h2 class="showtit">♥ 영화한마디!</h2>
+    <!-- 6. 문구 -->
+    <div class="show"></div>
+
+</body>
+
+</html>
