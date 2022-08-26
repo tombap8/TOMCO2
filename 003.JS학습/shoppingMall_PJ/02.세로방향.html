@@ -8,8 +8,24 @@
     <script src="js/main2.js"></script>
     <style>
         /* 플렉스 방향 변경 덮어쓰기 */
-        #slide{
+        #slide {
             flex-direction: column;
+        }
+
+        /* 이동버튼 배치 변경하기 */
+        .abtn {
+            left: 50%;
+            transform: translateX(-50%) rotate(90deg);
+        }
+        .ab1{/* 왼쪽버튼 */
+            top: -20px;
+        }
+        .ab2{/* 오른쪽버튼 */
+            bottom: -20px;
+
+            /* 기존값 해제 */
+            top: auto;
+            right: auto;
         }
     </style>
 </head>
